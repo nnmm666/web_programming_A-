@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="utf-8">
+	<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
+	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
+	<script src='./javascript/jquery-1.8.2.min.js'></script>
+</head>
+<body>
+	<div id="wrap">
+
+		<div id="top">
+			<div id="header">
+				<div id="logo">Let's Talk!!</div>
+				<div id="user">로그인 | 회원가입</div>
+			</div>
+			<div id="border"></div>
+		</div>
+	
+
+		<div id="middle">
+			<div id="content">
+				<div id="tab">
+					<ul>
+						<li><a href="#"><span id="maxRecommend">rec</span></a>
+							<div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								
+							</div>
+						</li>
+						
+						<li><a href="#"><span id="maxView">view</span></a>
+							<div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								
+							</div>
+						</li>
+						
+						<li><a href="#"><span id="maxReply">Reply</span></a>
+							<div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+								<div class="sub_content">
+									<div class="title">title bar</div>
+									<div class="text">
+									<img src="./images/charactor.png">
+									<textarea row="5" col="30">text area</textarea>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+
+		<div id="bottom">
+			<div id="footer">
+				Let's Talk!!&copy; 렛츠토크&copy; 렛톡&copy; 2012<br>
+				개발자 · 도움말 · 개인정보보호 · 쿠키 · 이용약관 · 고객센터
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+$(function(){
+	$('#tab').find('li>a').click(function(){
+		$('#tab li div').hide();
+		$('#tab li').removeClass('selected');
+		$(this).parent().addClass('selected');
+		$(this).parent().find('div').show();
+	});
+	$('#tab li a:first').click();
+});
+</script>

@@ -48,7 +48,7 @@
 	padding:2px;
 	padding-top:5px;
 }
-#tab ul li a {
+#tab>ul>li>a {
 	display: block;
 	width:150px;
 	height:30px;
@@ -62,3 +62,6 @@
 }
 
 li a:hover{ font-color:#fff; background-color: #888;}
+li a:active {background-color: blue;}
+
+.button {position:fixed; left:950px;top:180px;}

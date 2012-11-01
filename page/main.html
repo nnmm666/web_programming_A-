@@ -13,12 +13,17 @@
 		<div id="top">
 			<div id="header">
 				<div id="logo">Let's Talk!!</div>
-				<div id="login"><a href="">로그인</a></div>
-				|<div id="add"><a href=""> 회원가입</a></div>
+			<div class= "login">	
+				<div class="first"><a href="">로그인</a></div>
+				|<div class="second"><a href=""> 회원가입</a></div>
+			</div>
 			</div>
 			<div id="border"></div>
 		</div>
-	
+		<div class="button">
+			<input type="button"
+			value="click this"/>
+		</div>
 
 		<div id="middle">
 			<div id="content">
@@ -26,11 +31,14 @@
 					<ul>
 						<li><a href="#"><span id="maxRecommend">최다 추천수</span></a>
 							<div>
+
 								<div class="sub_content">
-									<div class="title">Today's talking</div>
+									<div class="title">
+										Today's talking
+										</div>
 									<div class="text">
 									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+									<textarea row="25" col="30">text area</textarea>
 									</div>
 								</div>
 								<div class="sub_content">
@@ -151,5 +159,10 @@ $(function(){
 		$(this).parent().find('div').show();
 	});
 	$('#tab li a:first').click();
+});
+$(function(){
+	$('.button').click(function(){
+		$(".sub_content").toggle();
+	});
 });
 </script>

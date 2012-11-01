@@ -43,8 +43,9 @@
 }
 #tab ul li a {
 	display: block;
-	width:100px;
+	width:150px;
 	height:30px;
+	text-align:center;
 	text-decoration: none;
 }
 #tab ul li a:link, #tab ul li a:visited{

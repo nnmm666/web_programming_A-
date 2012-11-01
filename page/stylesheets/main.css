@@ -36,10 +36,17 @@
 	border:1px solid #333;
 	margin:3px; padding:3px;
 	height:150px;
+	border:0px;
 }
 #tab ul li div.sub_content .title{
+		background-color: #33FFEE;
+		border-top:1px;
+		border-color:#3833ff;
+		padding-left:3px;
 }
 #tab ul li div.sub_content .text{
+	padding:2px;
+	padding-top:5px;
 }
 #tab ul li a {
 	display: block;
@@ -47,8 +54,11 @@
 	height:30px;
 	text-align:center;
 	text-decoration: none;
+
 }
 #tab ul li a:link, #tab ul li a:visited{
 	font:bold 12px/20px;
 	color:#555;
 }
+
+li a:hover{ font-color:#fff; background-color: #888;}

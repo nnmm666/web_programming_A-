@@ -27,10 +27,10 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 
 
 /* layout */
-#wrap { width: 100%; margin:0 auto; padding: 0; background-color: #232323;}
+#wrap { width: 100%; margin:0 auto; padding: 0; background-color: #302323;}
 
 /* top */
-#top { width: 100%; height: 80px; margin: 0; padding: 0; background-color: #594741; border-bottom: 1px solid #999; }
+#top { width: 100%; height: 80px; margin: 0; padding: 0; background-color: #302323; border-bottom: 1px solid #302323; }
 #header { width: 960px; height: 80px; margin: 0 auto; padding: 0; }
 #logo { font: 30px 'Kristen ITC' bold; padding: 15px; float: left; color:yellow;}
 #logo a:link, #logo a:visited { text-decoration:none; color:yellow;}
@@ -56,5 +56,5 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_bottom #tagcloud { width: 400px; height: 300px; margin: 25px; }
 
 /* bottom */
-#bottom { width: 100%; height: 75px; margin: 0; padding: 0; background-color: #181611; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
+#bottom { width: 100%; height: 75px; margin: 0; padding: 0; background-color: #302323; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
 #footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center; }

@@ -61,7 +61,4 @@
 	color:#555;
 }
 
-li a:hover{ font-color:#fff; background-color: #888;}
-li a:active {background-color: blue;}
-
 .button {position:fixed; left:950px;top:180px;}

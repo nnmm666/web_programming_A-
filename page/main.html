@@ -6,6 +6,7 @@
 	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css">
 	<script src='./javascript/jquery-1.8.2.min.js'></script>
+	<script src="js/jquery-ui-1.9.1.custom.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -26,44 +27,114 @@
 
 		<div id="middle">
 			<div id="content">
+				<div class="prev">prev
+				</div>
+				<div class="next">next
+				</div>
+
 				<div id="tab">
 					<ul>
-						<li><a href="#"><span id="maxRecommend">최다 추천수</span></a>
-							<div>
-								<div class="sub_content">
-									<div class="title">Today's talking</div>
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+						<li><a href="#"><span>최다 추천수</span></a>
+							<div id="maxRecommend">
+								<div class="section1">
+									<div class="sub_content">
+										<div class="title">section1</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
 								</div>
-								<div class="sub_content">
-									<div class="title">Today's talking</div>
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="50" col="30">text area</textarea>
+
+
+								<div class="section2">
+									<div class="sub_content">
+										<div class="title">section2</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
 								</div>
-								<div class="sub_content">
-									<div class="title">Today's talking</div>
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+
+								<div class="section3">
+									<div class="sub_content">
+										<div class="title">section3</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
 								</div>
-								<div class="sub_content">
-									<div class="title">Today's talking</div>
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								
+
 							</div>
 						</li>
 						
-						<li><a href="#"><span id="maxView">최다 조회수</span></a>
-							<div>
+						<li><a href="#"><span>최다 조회수</span></a>
+							<div id="maxView">
 								<div class="sub_content">
 									<div class="title">Today's talking</div>
 									<div class="text">
@@ -96,8 +167,8 @@
 							</div>
 						</li>
 						
-						<li><a href="#"><span id="maxReply">최다 의견수</span></a>
-							<div>
+						<li><a href="#"><span>최다 의견수</span></a>
+							<div id="maxReply">
 								<div class="sub_content">
 									<div class="title">Today's talking</div>
 									<div class="text">
@@ -155,5 +226,40 @@ $(function(){
 		$(this).parent().find('div').show();
 	});
 	$('#tab li a:first').click();
+});
+
+$(function(){
+	var num=0;
+	$('.next').click(function(){
+		if(num==0){
+			$('.selected').find($('.section1')).hide();
+			$('.selected').find($('.section3')).hide();
+			$('.selected').find($('.section2')).show();
+		}else if(num==1){
+			$('.selected').find($('.section1')).hide();
+			$('.selected').find($('.section2')).hide();
+			$('.selected').find($('.section3')).show();
+		}else{
+			alert("마지막입니다.");
+			num=-1;
+		}
+		num+=1;	
+	});
+	$('.prev').click(function(){
+		if(num==1 || num==0){
+			$('.selected').find($('.section1')).show();
+			$('.selected').find($('.section2')).hide();
+			$('.selected').find($('.section3')).hide();
+		}else if(num==2){
+			$('.selected').find($('.section1')).hide();
+			$('.selected').find($('.section3')).hide();
+			$('.selected').find($('.section2')).show();
+		}else{
+			alert("처음입니다.");
+			num+=1;
+		}
+		num-=1;
+	});
+	$('.prev').click();
 });
 </script>

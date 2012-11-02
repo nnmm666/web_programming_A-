@@ -39,7 +39,7 @@
 	border:0px;
 }
 #tab ul li div.sub_content .title{
-		background-color: #33FFEE;
+		background-color: #aaa;
 		border-top:1px;
 		border-color:#3833ff;
 		padding-left:3px;
@@ -54,11 +54,23 @@
 	height:30px;
 	text-align:center;
 	text-decoration: none;
-
 }
 #tab ul li a:link, #tab ul li a:visited{
 	font:bold 12px/20px;
 	color:#555;
 }
 
-li a:hover{ font-color:#fff; background-color: #888;}
+.prev{
+	display: inline;
+	position: absolute;
+	top:500px;
+	left:100px;
+	font-size:30px;
+}
+.next{
+	display: inline;
+	position: absolute;
+	top:500px;
+	left:800px;
+	font-size:30px;
+}

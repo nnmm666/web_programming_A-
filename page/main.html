@@ -329,7 +329,7 @@
 			</div>
 		</div>
 		<div class="123">
-		<a href="#" class="back"><span>&lsaquo;</span>이전</a>
+		<a href="#" class="prev"><span>&lsaquo;</span>이전</a>
 		<a href="#">1</a>
 		<a href="#">2</a>
 		<a href="#">3</a>
@@ -340,10 +340,8 @@
 		<a href="#">8</a>
 		<a href="#">9</a>
 		<a href="#">10</a>
-		<a href="#" class="go">다음 <span>&rsaquo;</span></a>
+		<a href="#" class="next">다음 <span>&rsaquo;</span></a>
 		</div>
-
-	
 
 		<div id="bottom">
 			<div id="footer">
@@ -356,55 +354,59 @@
 </html>
 
 <script type="text/javascript">
+var cur ;
 $(function(){
 	$('#tab').find('li>a').click(function(){
 		$('#tab li div').hide();
 		$('#tab li').removeClass('selected');
-		$(this).parent().addClass('selected');
-		$(this).parent().find('div').show();
+		cur = $(this).parent();
+		cur.addClass('selected');
+		cur.find('div').show();
+		//cur.find('div').show();
+		//$(this).parent().addClass('selected');
+		//$(this).parent().find('div').show();
 	});
 	$('#tab li a:first').click();
+	$('.next').click();
 });
-<<<<<<< HEAD
 
 $(function(){
-	var num=0;
-	$('.next').click(function(){
-		if(num==0){
-			$('.selected').find($('.section1')).hide();
-			$('.selected').find($('.section3')).hide();
-			$('.selected').find($('.section2')).show();
-		}else if(num==1){
-			$('.selected').find($('.section1')).hide();
-			$('.selected').find($('.section2')).hide();
-			$('.selected').find($('.section3')).show();
-		}else{
-			alert("마지막입니다.");
-			num=-1;
-		}
-		num+=1;	
-	});
+	var num = 1;
 	$('.prev').click(function(){
-		if(num==1 || num==0){
-			$('.selected').find($('.section1')).show();
-			$('.selected').find($('.section2')).hide();
-			$('.selected').find($('.section3')).hide();
+		if(num==1){
+			$('.section1').show();
+			$('.section2').hide();
+			$('.section3').hide();
 		}else if(num==2){
-			$('.selected').find($('.section1')).hide();
-			$('.selected').find($('.section3')).hide();
-			$('.selected').find($('.section2')).show();
-		}else{
+			$('.section2').show();
+			$('.section1').hide();
+			$('.section3').hide();
+		}else if(num==3){
+			$('.section3').show();
+			$('.section2').hide();
+			$('.section1').hide();
+		}else if(num<1 || num>3){
 			alert("처음입니다.");
-			num+=1;
 		}
 		num-=1;
 	});
-	$('.prev').click();
-=======
-$(function(){
-	$('.button').click(function(){
-		$(".sub_content").toggle();
+	$('.next').click(function(){
+		if(num==1){
+			$('.section1').show();
+			$('.section2').hide();
+			$('.section3').hide();
+		}else if(num==2){
+			$('.section2').show();
+			$('.section1').hide();
+			$('.section3').hide();
+		}else if(num==3){
+			$('.section3').show();
+			$('.section2').hide();
+			$('.section1').hide();
+		}else if(num<1 || num>3){
+			alert("마지막입니다.");
+		}
+		num+=1;
 	});
->>>>>>> 7075ad69684db621f65615ae46ae13ef2043bc9c
 });
 </script>

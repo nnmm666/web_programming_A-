@@ -1,4 +1,4 @@
-/* Reset CSS: from YUI2: Reset CSS */
+﻿/* Reset CSS: from YUI2: Reset CSS */
 html{color:#000;
 	background:#fff; 
 	padding:0;
@@ -27,7 +27,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 
 
 /* layout */
-#wrap { width: 100%; margin:0 auto; padding: 0; background-color: #302323;}
+#wrap { width: 100%; margin:0 auto; padding: 0; }
 
 /* top */
 #top { width: 100%; height: 80px; margin: 0; padding: 0; background-color: #302323; border-bottom: 1px solid #302323; }

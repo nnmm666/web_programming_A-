@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="kr">
 <head>
 	<meta charset="utf-8">
@@ -38,6 +38,7 @@
 							<span><a href="#">▼</a></span>
 						</div>
 						<div class="section">
+							내용~~
 						</div>
 					</div>
 				</div>
@@ -58,8 +59,11 @@
 <script type="text/javascript">
 $(function() {
 
-$(".titleborder>span>a").click(function(){
-	$("div.section:first").toggle();
-});
+	$(".titleborder>span>a").click(function(){
+		$(".titleborder>span>a").text("▲");
+		$("div.section").toggle();
+	});
+	$("div.section").hide();
+
 });
 </script>

@@ -13,5 +13,8 @@
 #opinionWrite {width: 55px; height: 25px; vertical-align: bottom; }
 
 /*MoreOpinion*/
-#MoreOpinion {width : 410px; height: 200px; margin : 0 auto; border: 1px solid; margin-top: 10px;}
-}
+#MoreOpinion { width : 410px; height: 200px; margin : 0 auto; border: 1px solid; margin-top: 10px;}
+.titleborder { width : 370px; height: 20px; border: 2px solid ; margin:5px auto 0px auto;}
+.titleborder>span { width: 20px; height: 18px; float: right;}
+.titleborder>span>a { text-decoration: none; color: orange;}
+.section { width: 370px; height: 100px; border: 1px solid; margin: 0 auto; }

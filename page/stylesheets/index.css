@@ -27,19 +27,17 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 
 
 /* layout */
-#wrap { width: 100%; margin:0 auto; padding: 0; background-color: #302323;}
+#wrap { width: 100%; margin:0 auto; padding: 0; background-color: #eee;}
 
 /* top */
-#top { width: 100%; height: 80px; margin: 0; padding: 0; background-color: #302323; border-bottom: 1px solid #302323; }
+#top { width: 100%; height: 80px; margin: 0; padding: 0; background-color: #236684; border-bottom: 1px solid #302323; }
 #header { width: 960px; height: 80px; margin: 0 auto; padding: 0; }
-<<<<<<< HEAD
 #header #logo { font: 30px 'Arial Black' bold; padding: 15px; float: left; }
 #header #login {float:right;}
 #header #login ul {margin:10px 50px 0 0; padding:0;}
 #header #login ul li {float:left; display:block; width:50px;}
 #header a:link, #header a:visited {text-decoration: none; color:#222;}
 #user { float:right; padding: 10px;} 
-=======
 #logo { font: 30px 'Kristen ITC' bold; padding: 15px; float: left; color:yellow;}
 #logo a:link, #logo a:visited { text-decoration:none; color:yellow;}
 #logo a:hover, #logo a:active { text-decoration:none; color:yellow;}
@@ -48,7 +46,6 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #user ul li { float:left; display:block; width:50px;}
 #user a:link, #user a:visited { text-decoration: none; color:#fff;}
 #user a:hover, #user a:active { text-decoration:none; color:#fff;} 
->>>>>>> 7075ad69684db621f65615ae46ae13ef2043bc9c
 
 /* middle */
 #middle { width: 100%; height: 520px ; margin: 0; padding: 0; }
@@ -65,5 +62,5 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_bottom #tagcloud { width: 400px; height: 300px; margin: 25px; }
 
 /* bottom */
-#bottom { width: 100%; height: 75px; margin: 0; padding: 0; background-color: #302323; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
+#bottom { width: 100%; height: 75px; margin: 0px; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
 #footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center; }

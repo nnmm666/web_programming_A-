@@ -367,46 +367,7 @@ $(function(){
 		//$(this).parent().find('div').show();
 	});
 	$('#tab li a:first').click();
-	$('.next').click();
 });
 
-$(function(){
-	var num = 1;
-	$('.prev').click(function(){
-		if(num==1){
-			$('.section1').show();
-			$('.section2').hide();
-			$('.section3').hide();
-		}else if(num==2){
-			$('.section2').show();
-			$('.section1').hide();
-			$('.section3').hide();
-		}else if(num==3){
-			$('.section3').show();
-			$('.section2').hide();
-			$('.section1').hide();
-		}else if(num<1 || num>3){
-			alert("처음입니다.");
-		}
-		num-=1;
-	});
-	$('.next').click(function(){
-		if(num==1){
-			$('.section1').show();
-			$('.section2').hide();
-			$('.section3').hide();
-		}else if(num==2){
-			$('.section2').show();
-			$('.section1').hide();
-			$('.section3').hide();
-		}else if(num==3){
-			$('.section3').show();
-			$('.section2').hide();
-			$('.section1').hide();
-		}else if(num<1 || num>3){
-			alert("마지막입니다.");
-		}
-		num+=1;
-	});
-});
+
 </script>

@@ -43,11 +43,19 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #logo { font: 30px 'Kristen ITC' bold; padding: 15px; float: left; color:yellow;}
 #logo a:link, #logo a:visited { text-decoration:none; color:yellow;}
 #logo a:hover, #logo a:active { text-decoration:none; color:yellow;}
+<<<<<<< HEAD
+#user { float:right; padding: 10px; color:#fff; }
+#user ul { margin:10px 50px 0 0; padding:3px; }
+#user ul li { float:left; display:block; width:50px;}
+#user a:link, #user a:visited { text-decoration: none;}
+#user a:hover, #user a:active { text-decoration:none; } 
+=======
 #user { float:right; padding: 10px;}
 #user ul { margin:10px 50px 0 0; padding:3px; font-size:12px;}
 #user ul li { float:left; display:block; width:50px; }
 #user a:link, #user a:visited { text-decoration: none; color:#fff;}
 #user a:hover, #user a:active { text-decoration:none; color:#fff;} 
+>>>>>>> bda7d492b75bd12d550cd124580cf515136a9872
 
 /* middle */
 #middle { width: 100%; height: 520px ; margin: 0; padding: 0; }
@@ -58,10 +66,14 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_top #search_bar { width: 300px; height: 20px; }
 #content_top #search_button { width: 50px; height: 25px; }
 
-#content_bottom { width: 960px; height: 440px; margin: 0; padding: 0; }
-#content_bottom #caption { width: 450px; height: 30px; margin: 0 auto; font: 20px 'Arial Black'; }
-#content_bottom #tag_cloud { width: 450px; height: 350px; border: 1px solid #000; margin: 0 auto; border-radius: 10px; }
-#content_bottom #tagcloud { width: 400px; height: 300px; margin: 25px; }
+#content_center { width: 960px; height: 440px; margin: 0; padding: 0; }
+#content_center #caption { width: 450px; height: 30px; margin: 0 auto; font: 20px 'Arial Black'; }
+#content_center #tag_cloud { width: 450px; height: 350px; border: 1px solid #000; margin: 0 auto; border-radius: 10px; }
+#content_center #tagcloud { width: 400px; height: 300px; margin: 25px; }
+
+#content_bottom { padding: 20px; color: #000; }
+#content_bottom a:link { text-decoration: none; }
+#content_bottom a:hover {text-decoration: underline; }
 
 /* bottom */
 #bottom { width: 100%; height: 75px; margin: 0px; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }

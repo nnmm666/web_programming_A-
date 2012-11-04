@@ -11,7 +11,7 @@
 	<div id="wrap">
 		<div id="top">
 			<div id="header">
-				<div id="logo"><a href="#">Let's Talk!!</a></div>
+				<div id="logo"><a href="index.html">Let's Talk!!</a></div>
 				<div id="user">
 					<ul>
 						<li><a href="#">로그인</a></li>
@@ -26,19 +26,32 @@
 			<div id="content">
 				<div id="search">
 					<form class="form-search">
-						<input type="text" class="input-medium search-query">
+						<input type="text" id="searchbar" class="input-medium search-query">
 						<button type="submit" class="searchButton">Search</button>
-						<button type="submit" class="searchButton">login</button>
 					</form>
 				</div>
-
-				<div id="topic"></div>
+				<div id="topicdiv">Selected Topic</div>
+				<div id="topic">서울대 담배녀</div>
 				<div id="myopinion">
 					<input type="text" id="opiniontext" value="my opinion text">
 					<input type="button" id="opinionWrite" value="Write">
 				</div>
 				<div id="MoreOpinion">
 					<div>
+						<div class="titleborder">
+							opinion1
+							<span><a href="#">▼</a></span>
+						</div>
+						<div class="section">
+							내용~~
+						</div>
+						<div class="titleborder">
+							opinion1
+							<span><a href="#">▼</a></span>
+						</div>
+						<div class="section">
+							내용~~
+						</div>
 						<div class="titleborder">
 							opinion1
 							<span><a href="#">▼</a></span>
@@ -70,6 +83,5 @@ $(function() {
 		$("div.section").toggle();
 	});
 	$("div.section").hide();
-
 });
 </script>

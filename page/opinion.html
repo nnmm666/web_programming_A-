@@ -26,14 +26,21 @@
 			<div id="content">
 				<div id="search">
 					<form class="form-search">
-						<input type="text" id="searchbar" class="input-medium search-query">
+						<input type="text" id="searchbar" class="input-medium search-query" value="다른 주제 검색">
 						<button type="submit" class="searchButton">Search</button>
 					</form>
 				</div>
-				<div id="topicdiv">Selected Topic</div>
-				<div id="topic">서울대 담배녀</div>
+				<div id="topicdiv">슈퍼스타k4</div>
+				<div id="topic">
+					<div id="topicPhoto">
+						<img src="./images/example.png" width='66px' height='100px'>
+					</div>
+					<div id="topicContent">
+					엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로<br> 논란이 끊기지 않습니다. 어떻게 생각하시나요??
+					</div>
+				</div>
 				<div id="myopinion">
-					<input type="text" id="opiniontext" value="my opinion text">
+					<input type="text" id="opiniontext" value="클릭하여 당신의 의견을 남겨주세요">
 				</div>
 				<div id ="myopinionbutton">
 					<input type="button" id="opinionWrite" value="Write">
@@ -42,43 +49,43 @@
 					<div>
 						<div class="opinion">
 							<div class="titleborder">
-								opinion1
+								인기가 있으면 논란이 되는건 당연한법~~
 								<span><a href="#">▼</a></span>
 							</div>
 							<div class="section">
-								내용~~
+								인기가 있으면 논란이 되는건 당연한법~~<br>
+								뭐 저런거갖다가 난리냐<br>
+								재미만 있으면 됏지<br>
 							</div>
 						</div>
 						<div class="opinion">
 							<div class="titleborder">
-								opinion1
+								재미없음
 								<span><a href="#">▼</a></span>
 							</div>
 							<div class="section">
-								내용~~
+								재미없음<br>
+								애들도 예전만 못하구..
 							</div>
 						</div>
 						<div class="opinion">
 							<div class="titleborder">
-								opinion1
+								사기방송!! 종영해라!!
 								<span><a href="#">▼</a></span>
 							</div>
 							<div class="section">
-								내용~~
+								사기방송!! 종영해라!!
+								사기치치지말고 이제 그만하지??
+								이승철 ㅗㅗ
 							</div>
 						</div>
+
 					</div>
 				</div>
 
 			</div>
 		</div>
 	
-		<div id="bottom">
-			<div id="footer">
-				Let's Talk!!&copy; 렛츠토크&copy; 렛톡&copy; 2012<br>
-				개발자 · 도움말 · 개인정보보호 · 쿠키 · 이용약관 · 고객센터
-			</div>
-		</div>
 	</div>
 </body>
 </html>
@@ -87,10 +94,16 @@
 $(function() {
 
 	$(".titleborder").click(function(){
-		$(".titleborder>span>a").text("▲");
-		$(this).parent().find(".section").slideToggle();
+		$(this).parent().find(".section").slideToggle( );
 	});
 	$(".titleborder>span>a").text("▼");
-	$("div.section").hide();
+	$("#opiniontext").click(function(){
+		$(this).val("");
+		$(this).css('text-align', 'left');
+	});
+	$("#searchbar").click(function(){
+		$(this).val("");
+		$(this).css('text-align', 'left');
+	});
 });
 </script>

@@ -1,6 +1,6 @@
 ﻿/* Reset CSS: from YUI2: Reset CSS */
 html{color:#000;
-	background:#fff; 
+	background:#eee; 
 	padding:0;
 	font: 12px/18px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdana, Arial, Tahoma;
 	overflow: auto;
@@ -43,22 +43,14 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #logo { font: 30px 'Kristen ITC' bold; padding: 15px; float: left; color:yellow;}
 #logo a:link, #logo a:visited { text-decoration:none; color:yellow;}
 #logo a:hover, #logo a:active { text-decoration:none; color:yellow;}
-<<<<<<< HEAD
-#user { float:right; padding: 10px; color:#fff; }
-#user ul { margin:10px 50px 0 0; padding:3px; }
-#user ul li { float:left; display:block; width:50px;}
-#user a:link, #user a:visited { text-decoration: none;}
-#user a:hover, #user a:active { text-decoration:none; } 
-=======
+
 #user { float:right; padding: 10px;}
 #user ul { margin:10px 50px 0 0; padding:3px; font-size:12px;}
 #user ul li { float:left; display:block; width:50px; }
 #user a:link, #user a:visited { text-decoration: none; color:#fff;}
 #user a:hover, #user a:active { text-decoration:none; color:#fff;} 
->>>>>>> bda7d492b75bd12d550cd124580cf515136a9872
-
 /* middle */
-#middle { width: 100%; height: 520px ; margin: 0; padding: 0; }
+#middle { width: 100%; height: 100%; margin: 0; padding: 0; }
 #content { width: 960px; height: 520px; margin: 0 auto; padding: 0; }
 
 #content_top { width: 960px; height: 80px; margin: 0; padding: 0; }
@@ -72,9 +64,15 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_center #tagcloud { width: 400px; height: 300px; margin: 25px; }
 
 #content_bottom { padding: 20px; color: #000; }
-#content_bottom a:link { text-decoration: none; }
+#content_bottom a:link { text-decoration: none;  color: #000; }
 #content_bottom a:hover {text-decoration: underline; }
 
 /* bottom */
-#bottom { width: 100%; height: 75px; margin: 0px; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
+#bottom {
+	width: 100%; height: 75px; margin: 0px; padding: 0;
+	background-color: #236684; border-top: 1px solid #999;
+	border-bottom: 1px solid #999; color:#fff;
+	position: relative;
+	bottom: 0;
+}
 #footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center; }

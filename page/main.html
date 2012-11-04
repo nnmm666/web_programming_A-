@@ -6,6 +6,7 @@
 	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css">
 	<script src='./javascript/jquery-1.8.2.min.js'></script>
+	<script src="js/jquery-ui-1.9.1.custom.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -22,159 +23,313 @@
 			</div>
 			<div id="border"></div>
 		</div>
-		<div class="button">
-			<input type="button"
-			value="<-- want to show?"/>
-		</div>
 
 		<div id="middle">
 			<div id="content">
+				<div class="prev">prev
+				</div>
+				<div class="next">next
+				</div>
+
 				<div id="tab">
 					<ul>
-						<li><a href="#"><span id="maxRecommend">최다 추천수</span></a>
-							<div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="25" col="30">text area</textarea>
+						<li><a href="#"><span>최다 추천수</span></a>
+							<div id="maxRecommend">
+								<div class="section1">
+									<div class="sub_content">
+										<div class="title">section1</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
 								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="50" col="30">text area</textarea>
+
+
+								<div class="section2">
+									<div class="sub_content">
+										<div class="title">section2</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
 								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+
+								<div class="section3">
+									<div class="sub_content">
+										<div class="title">section3</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
-								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
 									</div>
-								</div>
-								
-							</div>
-						</li>
-						
-						<li><a href="#"><span id="maxView">최다 조회수</span></a>
-							<div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
-								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								
-							</div>
-						</li>
-						
-						<li><a href="#"><span id="maxReply">최다 의견수</span></a>
-							<div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
-									</div>
-								</div>
-								<div class="title">
-									Today's talking
-								</div>
-								<div class="sub_content">
-									
-									<div class="text">
-									<img src="./images/charactor.png" alt="주제사진 ">
-									<textarea row="5" col="30">text area</textarea>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
 									</div>
 								</div>
 							</div>
 						</li>
-						
+						<li><a href="#"><span>최다 조회수</span></a>
+							<div id="maxView">
+								<div class="section1">
+									<div class="sub_content">
+										<div class="title">section1</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="section2">
+									<div class="sub_content">
+										<div class="title">section2</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+								</div>
+
+								<div class="section3">
+									<div class="sub_content">
+										<div class="title">section3</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li><a href="#"><span>최다 의견수</span></a>
+							<div id="maxReply">
+								<div class="section1">
+									<div class="sub_content">
+										<div class="title">section1</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="section2">
+									<div class="sub_content">
+										<div class="title">section2</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+								</div>
+
+								<div class="section3">
+									<div class="sub_content">
+										<div class="title">section3</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="50" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+									<div class="sub_content">
+										<div class="title">Today's talking</div>
+										<div class="text">
+										<img src="./images/charactor.png" alt="주제사진 ">
+										<textarea row="5" col="30">text area</textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="123">
-		<a href="#" class="back"><span>&lsaquo;</span>이전</a>
+		<a href="#" class="prev"><span>&lsaquo;</span>이전</a>
 		<a href="#">1</a>
 		<a href="#">2</a>
 		<a href="#">3</a>
@@ -185,10 +340,8 @@
 		<a href="#">8</a>
 		<a href="#">9</a>
 		<a href="#">10</a>
-		<a href="#" class="go">다음 <span>&rsaquo;</span></a>
+		<a href="#" class="next">다음 <span>&rsaquo;</span></a>
 		</div>
-
-	
 
 		<div id="bottom">
 			<div id="footer">
@@ -201,18 +354,59 @@
 </html>
 
 <script type="text/javascript">
+var cur ;
 $(function(){
 	$('#tab').find('li>a').click(function(){
 		$('#tab li div').hide();
 		$('#tab li').removeClass('selected');
-		$(this).parent().addClass('selected');
-		$(this).parent().find('div').show();
+		cur = $(this).parent();
+		cur.addClass('selected');
+		cur.find('div').show();
+		//cur.find('div').show();
+		//$(this).parent().addClass('selected');
+		//$(this).parent().find('div').show();
 	});
 	$('#tab li a:first').click();
+	$('.next').click();
 });
+
 $(function(){
-	$('.button').click(function(){
-		$(".sub_content").toggle();
+	var num = 1;
+	$('.prev').click(function(){
+		if(num==1){
+			$('.section1').show();
+			$('.section2').hide();
+			$('.section3').hide();
+		}else if(num==2){
+			$('.section2').show();
+			$('.section1').hide();
+			$('.section3').hide();
+		}else if(num==3){
+			$('.section3').show();
+			$('.section2').hide();
+			$('.section1').hide();
+		}else if(num<1 || num>3){
+			alert("처음입니다.");
+		}
+		num-=1;
+	});
+	$('.next').click(function(){
+		if(num==1){
+			$('.section1').show();
+			$('.section2').hide();
+			$('.section3').hide();
+		}else if(num==2){
+			$('.section2').show();
+			$('.section1').hide();
+			$('.section3').hide();
+		}else if(num==3){
+			$('.section3').show();
+			$('.section2').hide();
+			$('.section1').hide();
+		}else if(num<1 || num>3){
+			alert("마지막입니다.");
+		}
+		num+=1;
 	});
 });
 </script>

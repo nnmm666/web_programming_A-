@@ -34,30 +34,38 @@
 				<div id="topic">서울대 담배녀</div>
 				<div id="myopinion">
 					<input type="text" id="opiniontext" value="my opinion text">
+				</div>
+				<div id ="myopinionbutton">
 					<input type="button" id="opinionWrite" value="Write">
 				</div>
 				<div id="MoreOpinion">
 					<div>
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
+						<div class="opinion">
+							<div class="titleborder">
+								opinion1
+								<span><a href="#">▼</a></span>
+							</div>
+							<div class="section">
+								내용~~
+							</div>
 						</div>
-						<div class="section">
-							내용~~
+						<div class="opinion">
+							<div class="titleborder">
+								opinion1
+								<span><a href="#">▼</a></span>
+							</div>
+							<div class="section">
+								내용~~
+							</div>
 						</div>
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
-						</div>
-						<div class="section">
-							내용~~
-						</div>
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
-						</div>
-						<div class="section">
-							내용~~
+						<div class="opinion">
+							<div class="titleborder">
+								opinion1
+								<span><a href="#">▼</a></span>
+							</div>
+							<div class="section">
+								내용~~
+							</div>
 						</div>
 					</div>
 				</div>
@@ -78,10 +86,11 @@
 <script type="text/javascript">
 $(function() {
 
-	$(".titleborder>span>a").click(function(){
+	$(".titleborder").click(function(){
 		$(".titleborder>span>a").text("▲");
-		$("div.section").toggle();
+		$(this).parent().find(".section").slideToggle();
 	});
+	$(".titleborder>span>a").text("▼");
 	$("div.section").hide();
 });
 </script>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="kr">
 <head>
 	<meta charset="utf-8">
@@ -50,7 +50,7 @@
 						<div class="opinion">
 							<div class="titleborder">
 								인기가 있으면 논란이 되는건 당연한법~~
-								<span><a href="#">▼</a></span>
+								<a href="#"><span>▼</span></a>
 							</div>
 							<div class="section">
 								인기가 있으면 논란이 되는건 당연한법~~<br>
@@ -61,7 +61,7 @@
 						<div class="opinion">
 							<div class="titleborder">
 								재미없음
-								<span><a href="#">▼</a></span>
+								<a href="#"><span>▼</span></a>
 							</div>
 							<div class="section">
 								재미없음<br>
@@ -71,7 +71,7 @@
 						<div class="opinion">
 							<div class="titleborder">
 								사기방송!! 종영해라!!
-								<span><a href="#">▼</a></span>
+								<a href="#"><span>▼</span></a>
 							</div>
 							<div class="section">
 								사기방송!! 종영해라!!
@@ -92,11 +92,12 @@
 
 <script type="text/javascript">
 $(function() {
-
-	$(".titleborder").click(function(){
-		$(this).parent().find(".section").slideToggle( );
+	$(".titleborder>a").click(function(){
+		$(this).parents('.opinion').find('.section').slideUp();
+		$(this).find('span').empty();
+		$(this).find('span').text('▲');
 	});
-	$(".titleborder>span>a").text("▼");
+	//$(".titleborder>span>a").text("▼");
 	$("#opiniontext").click(function(){
 		$(this).val("");
 		$(this).css('text-align', 'left');

@@ -26,7 +26,7 @@
 			<div id="content">
 				<div id="search">
 					<form class="form-search">
-						<input type="text" id="searchbar" class="input-medium search-query" value="다른 주제 검색">
+						<input type="text" id="searchbar" class="input-medium search-query" placeholder="다른 주제 검색">
 						<button type="submit" class="searchButton">Search</button>
 					</form>
 				</div>
@@ -40,7 +40,7 @@
 					</div>
 				</div>
 				<div id="myopinion">
-					<input type="text" id="opiniontext" value="클릭하여 당신의 의견을 남겨주세요">
+					<input type="text" id="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
 				</div>
 				<div id ="myopinionbutton">
 					<input type="button" id="opinionWrite" value="Write">
@@ -92,19 +92,8 @@
 
 <script type="text/javascript">
 $(function() {
-	$(".titleborder>a").click(function(){
-		$(this).parents('.opinion').find('.section').slideUp();
-		$(this).find('span').empty();
-		$(this).find('span').text('▲');
-	});
-	//$(".titleborder>span>a").text("▼");
-	$("#opiniontext").click(function(){
-		$(this).val("");
-		$(this).css('text-align', 'left');
-	});
-	$("#searchbar").click(function(){
-		$(this).val("");
-		$(this).css('text-align', 'left');
+	$(".titleborder").click(function(){
+		$(this).parents('.opinion').find('.section').slideToggle();
 	});
 });
 </script>

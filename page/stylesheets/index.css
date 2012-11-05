@@ -76,3 +76,5 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 	bottom: 0;
 }
 #footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center; }
+
+#topicSelect { width: 800px; height: 600px; }

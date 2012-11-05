@@ -19,15 +19,21 @@
 	border-top: none;
 }
 
-#topic {   width : 500px;   height: 100px;   margin : 0 auto;    padding:
-10px;  text-align: left;   border: 1px solid #aaa;
-border-top: none; }
+#topic {
+	width: 500px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: left;
+	border: 1px solid #aaa;
+	border-top: none;
+}
 #topicPhoto { width: 100px; height: 100px; float: left; text-align: center; }
 #topicContent { width: 380px; margin: 10px; float: left; }
 
 /*myopinion*/
 #myopinion { width : 100%; height: 100px; text-align: center; margin-top: 10px; }
-#opiniontext { width: 500px; height: 80px; text-align: center; padding: 10px; }
+#opiniontext { width: 500px; height: 80px; text-align: left; padding: 10px; }
 #myopinionbutton{ width: 525px;  height: 30px; padding-top : 5px; margin : 0 auto; background-color: #d3d3d3;}
 #opinionWrite {width: 55px; height: 25px;  float: right; margin: }
 

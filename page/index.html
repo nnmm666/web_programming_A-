@@ -8,30 +8,35 @@
 </head>
 <body>
 	<div id="wrap">
-
 		<div id="top">
 			<div id="header">
 				<div id="logo"><a href="index.html">Let's Talk!!</a></div>
 				<div id="user">
 					<ul>
 						<li><a href="#">로그인</a></li>
-						<li><a href="#"> 회원가입</a></li>
+						<li><a href="./JSP/EX1/WebContent/ex1.jsp"> 회원가입</a></li>
 					</ul>
 				</div>
-					<div class ="login">
-				<ul>
-				<li>Id<input type = "text" name ="login" ></li> 
-				<li>Password<input type = "password" name ="pwd"></li>
-			</ul>
+				<div class ="login">
+					<form action = "" method="post">
+						<ul>
+							<li>Password
+								<input type = "password" name ="pwd"/>
+							</li>
+							<li>ID
+								<input type = "text" name ="login" />
+							</li>
+						</ul>
+					</form>
 				</div>
-			</div>
 			<div id="border"></div>
 		</div>
+	</div>
 		<div id="middle">
 			<div id="content">
 				<div id="content_top">
 					<form>
-						<input type="text" value="  키워드를 검색하세요!" id="search_bar">
+						<input type="text" placeholder="  키워드를 검색하세요!" id="search_bar">
 						<input type="button" value="검색" id="search_button">
 					</form>
 				</div>
@@ -62,6 +67,18 @@
 				개발자 · 도움말 · 개인정보보호 · 쿠키 · 이용약관 · 고객센터
 			</div>
 		</div>
+		<div id="topicSelect">
+		</div>
 	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+$(function() {
+
+	$("#search_bar").click(function(){
+		$(this).val("");
+		$(this).css('text-align', 'left');
+	});
+});
+</script>

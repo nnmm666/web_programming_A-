@@ -77,4 +77,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 
 /* bottom */
 #bottom { width: 100%; height: 75px; margin: 0px; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
-#footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center; }
+#footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center;}
+
+.login {color:white; width:5px; display:block; float:right;}
+#user {position:relative; left:15%;}

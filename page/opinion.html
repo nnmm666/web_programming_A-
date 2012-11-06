@@ -18,6 +18,12 @@
 						<li><a href="#"> 회원가입</a></li>
 					</ul>
 				</div>
+					<div class ="login">
+				<ul>
+						<li>Id<input type = "text" name ="login" ></li> 
+						<li>Password<input type = "password" name ="pwd"></li>
+				</ul>
+				</div>
 			</div>
 			<div id="border"></div>
 		</div>
@@ -45,20 +51,6 @@
 						<div class="section">
 							내용~~
 						</div>
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
-						</div>
-						<div class="section">
-							내용~~
-						</div>
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
-						</div>
-						<div class="section">
-							내용~~
-						</div>
 					</div>
 				</div>
 
@@ -76,12 +68,22 @@
 </html>
 
 <script type="text/javascript">
-$(function() {
-
+$(function(){
+	
 	$(".titleborder>span>a").click(function(){
-		$(".titleborder>span>a").text("▲");
-		$("div.section").toggle();
-	});
-	$("div.section").hide();
+
+		if($(this).text()==$(this).text("▲")){
+				$(this).text("▼");
+		}
+		else if($(this).text()==$(this).text("▼")){
+				$(this).text("▲");
+			}
+
+	$(".section").slideToggle();
+		});
+
+$("div.section").hide();
 });
+
+	
 </script>

@@ -53,15 +53,6 @@
 				</div>
 				<div id="MoreOpinion">
 					<div>
-<<<<<<< HEAD
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
-						</div>
-						<div class="section">
-							내용~~
-						</div>
-=======
 						<div class="opinion">
 							<div class="titleborder">
 								인기가 있으면 논란이 되는건 당연한법~~
@@ -94,8 +85,6 @@
 								이승철 ㅗㅗ
 							</div>
 						</div>
-
->>>>>>> cedcb69a9dab92bb7e844d39cfc68794e58d3414
 					</div>
 				</div>
 
@@ -107,28 +96,15 @@
 </html>
 
 <script type="text/javascript">
-<<<<<<< HEAD
-$(function(){
-	
-	$(".titleborder>span>a").click(function(){
 
-		if($(this).text()==$(this).text("▲")){
-				$(this).text("▼");
-		}
-		else if($(this).text()==$(this).text("▼")){
-				$(this).text("▲");
-			}
-
-	$(".section").slideToggle();
-		});
-
-$("div.section").hide();
-=======
 $(function() {
 	$(".titleborder").click(function(){
 		$(this).parents('.opinion').find('.section').slideToggle();
+//		if($(this).find('text') == "▼")
+			$(this).find('span').text("▲");
+	//	else
+//			$(this).parents('.opinion').find('span').text("▼");
 	});
->>>>>>> cedcb69a9dab92bb7e844d39cfc68794e58d3414
 });
 
 	

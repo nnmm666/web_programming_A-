@@ -61,7 +61,7 @@
 						<div class="opinion">
 							<div class="titleborder">
 								인기가 있으면 논란이 되는건 당연한법~~
-								<span>▼</span>
+								<span class="down">▼</span>
 							</div>
 							<div class="section">
 								인기가 있으면 논란이 되는건 당연한법~~<br>
@@ -103,16 +103,20 @@
 
 <script type="text/javascript">
 
-$(function() {
-	$(".titleborder").click(function(){
+$(function(){
+
+	$(".down").click(function(){
 		$(this).parents('.opinion').find('.section').slideToggle();
-//		if($(this).find('text') == "▼")
-			$(this).find('span').text("▲");
-	//	else
-//			$(this).parents('.opinion').find('span').text("▼");
+		$(this).attr('class', 'up');
+		$(this).text("▲");	
+
+		$(".up").click(function(){
+		$(this).attr('class', 'down');
+		$(this).text("▼");
+		});
+		
 	});
+	
 });
-
-
 	
 </script>

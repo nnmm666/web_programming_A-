@@ -44,7 +44,6 @@
 #user {position:relative; left:15%;}
 #MoreOpinion { width : 520px; height: 200px; margin : 0 auto; margin-top: 10px;}
 .titleborder { width : 510px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
-.titleborder a { text-decoration: none; color: #ff0;}
-.titleborder a span { width: 20px; height: 9px; float: right;}
-.titleborder a:hover span{ color:#fa0;}
+.titleborder span { text-decoration: none; color: #ff0; width: 20px; height: 9px; float: right; }
+.titleborder span:hover { color:#fa0;}
 .section { width: 500px; height: 80px; background-color: #fff; margin: 0 auto; text-align: left; padding: 10px; }

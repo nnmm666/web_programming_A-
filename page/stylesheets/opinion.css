@@ -40,10 +40,26 @@
 
 /*MoreOpinion*/
 #topic 		{position:relative; padding-top:3%;}
-.login {color:white; width:5px; display:block; float:right;}
-#user {position:relative; left:15%;}
+
 #MoreOpinion { width : 520px; height: 200px; margin : 0 auto; margin-top: 10px;}
 .titleborder { width : 510px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
+<<<<<<< HEAD
 .titleborder span { text-decoration: none; color: #ff0; width: 20px; height: 9px; float: right; }
 .titleborder span:hover { color:#fa0;}
 .section { width: 500px; height: 80px; background-color: #fff; margin: 0 auto; text-align: left; padding: 10px; }
+=======
+.titleborder a { text-decoration: none; color: #ff0;}
+.titleborder a span { width: 20px; height: 9px; float: right;}
+.titleborder a:hover span{ color:#fa0;}
+.section { width: 500px; height: 80px; background-color: #fff; margin: 0 auto; text-align: left; padding: 10px; }
+
+.login {color:white; float:right; margin-top:20px;}
+.login li {padding-left:10px; float:right;}
+.login li span {font-size: 12px;}
+#user { float:right; padding: 10px;}
+#user ul { margin:10px 30px 0 0; padding:3px; font-size:12px;}
+#user ul li { float:left; display:block; width:50px; }
+#user a:link, #user a:visited { text-decoration: none; color:#fff;}
+#user a:hover, #user a:active { text-decoration:none; color:#fff;} 
+/* middle */
+>>>>>>> fa48602f810bb9fcd8b3889b2e1ebc1f75f3278e

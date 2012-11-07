@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS-Cumulus => WP-Cumulus in Javascript</title>
+
+	<script type="text/javascript" src="js-cumulus.js"></script>
+
+	<script type="text/javascript">
+		//JSCumulus.noConflict();
+
+		/* DEBUG */ window.console && console.time && console.time("TagCloud1");
+		
+		/* TagCloud 1 */
+		var tags = [
+			new Tag("JS-Cumulus", 100),
+			new Tag("WP-Cumulus", 80, "http://www.roytanck.com/2008/05/19/how-to-repurpose-my-tag-cloud-flash-movie/", true),
+			new Tag("Jeroen van Warmerdam", 60, "http://www.jeroenvanwarmerdam.nl"),
+			new Tag("Stratus", "http://student.agh.edu.pl/~fatyga/repos/stratus/example.php"),
+			new Tag("JavaScript", {
+				color: "red"
+			}),
+			new Tag("Object Oriented"),
+			new Tag("XB (Cross Browser)"),
+			new Tag("Firefox", 5),
+			new Tag("Chrome", 4),
+			new Tag("Safari", 3),
+			new Tag("Opera", 2),
+			new Tag("IE", 1),
+			new Tag("<del>No flash</del>"),
+			new Tag("<del>No JavaScript library</del>"),
+			new Tag("Tag"),
+			new Tag("Tag Cloud"),
+			new Tag("<img src='icon-tagcloud.gif' />")
+		];
+		var tagCloud1 = new TagCloud(tags, 400, 400);
+		
+		/* DEBUG */ window.console && console.time && console.timeEnd("TagCloud1");
+	</script>
+
+	<style>
+		#tagCloud1
+		{
+			padding: 25px;
+		}
+		#tagCloud2
+		{
+			border-bottom: 1px solid silver;
+			margin-bottom: 5px;
+			padding-bottom: 5px;
+			width: 100%;  /* needed for IE to calc width */
+		}
+		#widget
+		{
+			border: 1px solid silver;
+			margin: 5px;
+			padding: 5px;
+			text-align:center;
+			width: 240px;
+		}
+		#widget h4
+		{
+			border-bottom: 1px solid silver;
+			color: #999999;
+			font-size: 15px;
+			margin: 0 0 5px;
+			padding-bottom: 5px;
+		}
+		#jsCumulus1
+		{
+			color: #86C25E;
+		}
+		#jsCumulus2
+		{
+			color: #50B5D5;
+		}
+		.tagCloud
+		{
+			background: transparent url("bg_blue.gif") 0 0 repeat;
+		}
+		.tagCloud ul, .tagCloud li
+		{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.tagCloud .tagClass img
+		{
+			border: 0 none;
+		}
+		.tagCloud .tagClass a
+		{
+			color: #fff;
+			font-family: Sans;
+			font-weight: normal;
+			padding: 3px;
+			text-align: center;
+			text-decoration: none;
+			vertical-align: middle;
+		}
+		.tagCloud .tagClass a:hover
+		{
+			border: solid 1px #ffdb00;
+			color: #ffdb00;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="tagCloud1"></div>
+
+	<script type="text/javascript">
+		tagCloud1.Distribute(document.getElementById("tagCloud1")).Animate();
+	</script>
+</body>
+</html>

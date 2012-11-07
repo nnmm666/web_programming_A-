@@ -15,16 +15,21 @@
 				<div id="user">
 					<ul>
 						<li><a href="#">로그인</a></li>
-						<li><a href="#"> 회원가입</a></li>
+						<li><a href="./loginPage.html"> 회원가입</a></li>
 					</ul>
 				</div>
-					<div class ="login">
-				<ul>
-						<li>Id<input type = "text" name ="login" ></li> 
-						<li>Password<input type = "password" name ="pwd"></li>
-				</ul>
+				<div class ="login">
+					<form action = "" method="post">
+						<ul>
+							<li><span>Password</span>
+								<input type = "password" name ="pwd"/>
+							</li>
+							<li><span>ID</span>
+								<input type = "text" name ="login" />
+							</li>
+						</ul>
+					</form>
 				</div>
-			</div>
 			<div id="border"></div>
 		</div>
 	
@@ -92,6 +97,7 @@
 		</div>
 	
 	</div>
+	
 </body>
 </html>
 
@@ -106,6 +112,7 @@ $(function() {
 //			$(this).parents('.opinion').find('span').text("▼");
 	});
 });
+
 
 	
 </script>

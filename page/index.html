@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="kr">
 <head>
 	<meta charset="utf-8">
@@ -16,17 +16,17 @@
 		var tags = [
 //			new Tag("JavaScript", {	color: "red"	}),		// Color setting Example
 //			new Tag("Jeroen van Warmerdam", 60, "http://www.jeroenvanwarmerdam.nl"),		// link Example
-			new Tag("이명박", 100, "opinion.html", false),
-			new Tag("박근혜", 80, "opinion.html", false),		// Tag(name, weight, link, new window)
-			new Tag("문재인", 5, "opinion.html", false),
-			new Tag("안철수", "opinion.html", false),
-			new Tag("슈퍼스타k4", "opinion.html", false),
-			new Tag("오바마", "opinion.html", false),
-			new Tag("한글날", "opinion.html", false),
-			new Tag("타블로", "opinion.html", false),
-			new Tag("묻지마 폭행", "opinion.html", false),
-			new Tag("윈도우8", "opinion.html", false),
-			new Tag("스티브 잡스", "opinion.html", false),
+			new Tag("이명박", 100, false),
+			new Tag("박근혜", 80,  false),		// Tag(name, weight, link, new window)
+			new Tag("문재인", 5, false),
+			new Tag("안철수", 50, false),
+			new Tag("슈퍼스타k4", 50, false),
+			new Tag("오바마", 50, false),
+			new Tag("한글날", 50, false),
+			new Tag("타블로", 50, false),
+			new Tag("묻지마 폭행", 50, false),
+			new Tag("윈도우8", 50, false),
+			new Tag("스티브 잡스", 50, false),
 		];
 		var tagCloud1 = new TagCloud(tags, 440, 340);
 		
@@ -70,6 +70,23 @@
 				</div>
 				<div id="content_center">
 					<div id="caption">Hot Keyword</div>
+					<div id="section_1">
+						<div id="section_1_top">
+							Hot Hot Topics!!
+							<span id="section_1_exit">X</span>
+						</div>
+						<div class="section_1_content">
+							<a href="opinion.html">뭐지</a>
+						</div>
+						<div class="section_1_content">
+							<a href="opinion.html">뭐지</a>
+						</div>
+						<div class="section_1_content">
+							<a href="opinion.html">뭐지</a>
+						</div>
+						<div id="section_1_bottom">
+						</div>
+					</div>
 					<div id="tag_cloud">
 						<div id="tagCloud1"></div>
 						<script type="text/javascript">
@@ -93,3 +110,21 @@
 	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+
+$(function(){
+
+	$(".tagClass").click(function(){
+		$("#section_1").show();
+	});
+
+	$("#section_1_exit").click(function(){
+	$("#section_1").hide();
+
+	});
+	$("#section_1").hide();
+});
+	
+</script>
+

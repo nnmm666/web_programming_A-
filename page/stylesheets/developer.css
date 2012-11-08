@@ -1,9 +1,9 @@
 h2{ margin:20px 0 0 0;font-size:20px;}
-.profiles{width:90%;font-size:12px; margin:20px auto;}
-.profiles .profiles_list{width:380px; height:150px; border:1px solid #eee; background: #eee; margin-bottom:80px; padding:5px;}
+.profiles{width:960px;font-size:12px; margin:20px auto;}
+.profiles .profiles_list{width:380px; height:150px; border:1px solid #eee; background: #eee; margin-bottom:70px; padding:5px;}
 .profiles .profiles_list .profile_factor_left{width:130px; float:left; padding:5px;}
 .profiles .profiles_list .profile_factor_right{float:left; text-align:left; padding:10px;}
 .profiles .profiles_list .profile_factor_right .profile_factor .factor{line-height: 25px; font-weight:bold;color:#555;}
 .profiles .profiles_list .profile_factor_right .profile_factor span{}
-#left{float:left; margin:30px 0 3px 10px;}
-#right{float:right; margin:30px 3px 0 10px;}
+#left{float:left; margin:25px 0 3px 10px;}
+#right{float:right; margin:25px 3px 0 10px;}

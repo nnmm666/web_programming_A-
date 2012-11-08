@@ -86,15 +86,8 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_bottom a:hover {text-decoration: underline; }
 
 /* bottom */
-#bottom { width: 100%; height: 75px; margin: 0px; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
-#footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center;}
-#bottom {
-	width: 100%; height: 75px; margin: 0px; padding: 0;
-	background-color: #236684; border-top: 1px solid #999;
-	border-bottom: 1px solid #999; color:#fff;
-	position: relative;
-	bottom: 0;
-}
-#footer { width: 960px; height: 35px; margin: 0 auto; padding: 20px 0; text-align: center; }
+#bottom { width: 100%; height: 75px; margin: 0 auto; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
+#footer { width: 960px; height: 35px; margin: 0 auto; padding:20px 0; text-align: center;}
+#footer a:link, #footer a:visited, #footer a:hover, #footer a:active {text-decoration: none; color:#fff;}
 #topicSelect { width: 800px; height: 600px; }
 

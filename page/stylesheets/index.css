@@ -78,8 +78,8 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 /**** tagcloud library ****/
 
 #content_bottom { padding: 20px; color: #000; }
-#content_bottom a:link { text-decoration: none;  color: #000; }
-#content_bottom a:hover {text-decoration: underline; }
+#content_bottom a:link, #content_bottom a:visited { font-size:14px; font-weight: bold; text-decoration: none;  color: #222; }
+#content_bottom a:hover #content_bottom a:active {text-decoration: underline; }
 
 /* bottom */
 #bottom { width: 100%; height: 75px; margin: 0 auto; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }

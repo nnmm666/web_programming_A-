@@ -15,16 +15,21 @@
 				<div id="user">
 					<ul>
 						<li><a href="#">로그인</a></li>
-						<li><a href="#"> 회원가입</a></li>
+						<li><a href="./loginPage.html"> 회원가입</a></li>
 					</ul>
 				</div>
-					<div class ="login">
-				<ul>
-						<li>Id<input type = "text" name ="login" ></li> 
-						<li>Password<input type = "password" name ="pwd"></li>
-				</ul>
+				<div class ="login">
+					<form action = "" method="post">
+						<ul>
+							<li><span>Password</span>
+								<input type = "password" name ="pwd"/>
+							</li>
+							<li><span>ID</span>
+								<input type = "text" name ="login" />
+							</li>
+						</ul>
+					</form>
 				</div>
-			</div>
 			<div id="border"></div>
 		</div>
 	
@@ -42,7 +47,7 @@
 						<img src="./images/example.png" width='66px' height='100px'>
 					</div>
 					<div id="topicContent">
-					엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로<br> 논란이 끊기지 않습니다. 어떻게 생각하시나요??
+					엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로 논란이 끊기지 않습니다. 어떻게 생각하시나요??
 					</div>
 				</div>
 				<div id="myopinion">
@@ -53,19 +58,11 @@
 				</div>
 				<div id="MoreOpinion">
 					<div>
-<<<<<<< HEAD
-						<div class="titleborder">
-							opinion1
-							<span><a href="#">▼</a></span>
-						</div>
-						<div class="section">
-							내용~~
-						</div>
-=======
 						<div class="opinion">
 							<div class="titleborder">
 								인기가 있으면 논란이 되는건 당연한법~~
-								<a href="#"><span>▼</span></a>
+								<span class="down">▼</span>
+								<span class="up">▲</span>
 							</div>
 							<div class="section">
 								인기가 있으면 논란이 되는건 당연한법~~<br>
@@ -76,7 +73,8 @@
 						<div class="opinion">
 							<div class="titleborder">
 								재미없음
-								<a href="#"><span>▼</span></a>
+								<span class="down">▼</span>
+								<span class="up">▲</span>
 							</div>
 							<div class="section">
 								재미없음<br>
@@ -86,7 +84,8 @@
 						<div class="opinion">
 							<div class="titleborder">
 								사기방송!! 종영해라!!
-								<a href="#"><span>▼</span></a>
+								<span class="down">▼</span>
+								<span class="up">▲</span>
 							</div>
 							<div class="section">
 								사기방송!! 종영해라!!
@@ -94,8 +93,6 @@
 								이승철 ㅗㅗ
 							</div>
 						</div>
-
->>>>>>> cedcb69a9dab92bb7e844d39cfc68794e58d3414
 					</div>
 				</div>
 
@@ -103,33 +100,29 @@
 		</div>
 	
 	</div>
+	
 </body>
 </html>
 
 <script type="text/javascript">
-<<<<<<< HEAD
+
 $(function(){
-	
-	$(".titleborder>span>a").click(function(){
 
-		if($(this).text()==$(this).text("▲")){
-				$(this).text("▼");
-		}
-		else if($(this).text()==$(this).text("▼")){
-				$(this).text("▲");
-			}
+	$(".down").click(function(){
+		$(this).parents('.opinion').find('.section').slideDown();
+		/*$(this).text("▲");	
 
-	$(".section").slideToggle();
-		});
+		$(this).click(function(){
+		$(this).attr('class', 'up');
+		$(this).text("▼");
 
-$("div.section").hide();
-=======
-$(function() {
-	$(".titleborder").click(function(){
-		$(this).parents('.opinion').find('.section').slideToggle();
+		});*/
 	});
->>>>>>> cedcb69a9dab92bb7e844d39cfc68794e58d3414
-});
 
+	$(".up").click(function(){
+		$(this).parents('.opinion').find('.section').slideUp();
+	});
+
+});
 	
 </script>

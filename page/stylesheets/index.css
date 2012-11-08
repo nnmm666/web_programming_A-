@@ -64,7 +64,18 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_center { width: 960px; height: 440px; margin: 0; padding: 0; }
 #content_center #caption { width: 450px; height: 30px; margin: 0 auto; font: 20px 'Arial Black'; }
 #content_center #tag_cloud { width: 450px; height: 350px; border: 1px solid #000; margin: 0 auto; border-radius: 10px; }
-#content_center #tagcloud { width: 400px; height: 300px; margin: 25px; }
+
+/**** tagcloud library ****/
+#content_center .tagCloud { margin: auto; padding-top: 8px }
+#content_center #widget{ border: 1px solid silver; margin: 5px; padding: 5px; text-align:center; width: 240px;	}
+#content_center #widget h4	{ border-bottom: 1px solid silver; color: #999999; font-size: 15px;	margin: 0 0 5px; padding-bottom: 5px; }
+/*	#content_center #jsCumulus1{color: #86C25E;}		first tag color */
+/*	#content_center #jsCumulus2{color: #50B5D5;}		second tag color */
+#content_center .tagCloud ul, .tagCloud li { list-style: none; margin: 0;	padding: 0;	}
+#content_center .tagCloud .tagClass img { border: 0 none;	}
+#content_center .tagCloud .tagClass a { color: #000; font-family: 'impact',"맑은 고딕", "Malgun Gothic", "Gulim", Verdana, Arial, Tahoma; font-weight: bold; text-align: center; text-decoration: none; vertical-align: middle; }
+#content_center .tagCloud .tagClass a:hover { border: solid 1px #ffdb00; color: #ffdb00; text-decoration: none; }
+/**** tagcloud library ****/
 
 #content_bottom { padding: 20px; color: #000; }
 #content_bottom a:link { text-decoration: none;  color: #000; }

@@ -5,7 +5,35 @@
 	<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
 	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<script src='./javascript/jquery-1.8.2.min.js'></script>
+	<script src='./javascript/js-cumulus.js'></script>
+
+	<script type="text/javascript">
+		//JSCumulus.noConflict();
+
+		/* DEBUG */ window.console && console.time && console.time("TagCloud1");
+		
+		/* TagCloud 1 */
+		var tags = [
+//			new Tag("JavaScript", {	color: "red"	}),		// Color setting Example
+//			new Tag("Jeroen van Warmerdam", 60, "http://www.jeroenvanwarmerdam.nl"),		// link Example
+			new Tag("이명박", 100, "opinion.html", false),
+			new Tag("박근혜", 80, "opinion.html", false),		// Tag(name, weight, link, new window)
+			new Tag("문재인", 5, "opinion.html", false),
+			new Tag("안철수", "opinion.html", false),
+			new Tag("슈퍼스타k4", "opinion.html", false),
+			new Tag("오바마", "opinion.html", false),
+			new Tag("한글날", "opinion.html", false),
+			new Tag("타블로", "opinion.html", false),
+			new Tag("묻지마 폭행", "opinion.html", false),
+			new Tag("윈도우8", "opinion.html", false),
+			new Tag("스티브 잡스", "opinion.html", false),
+		];
+		var tagCloud1 = new TagCloud(tags, 440, 340);
+		
+		/* DEBUG */ window.console && console.time && console.timeEnd("TagCloud1");
+	</script>
 </head>
+
 <body>
 	<div id="wrap">
 		<div id="top">
@@ -43,17 +71,10 @@
 				<div id="content_center">
 					<div id="caption">Hot Keyword</div>
 					<div id="tag_cloud">
-						<embed type="application/x-shockwave-flash" src="swf/tagcloud.swf" id="tagcloud" name="tagcloud"
-						quality="high" allowscriptaccess="always" wmode="transparent"
-						flashvars="tcolor=0x000000&mode=tags&distr=true&tspeed=100&tagcloud=<tags>			
-							<a href='opinion.html' style='font-size:14pt;'>서울대 담배녀</a>
-							<a href='opinion.html' style='font-size:14pt;'>슈퍼스타k4</a>
-							<a href='opinion.html' style='font-size:14pt;'>에이미</a>
-							<a href='opinion.html' style='font-size:14pt;'>용의자x</a>
-							<a href='opinion.html' style='font-size:14pt;'>안철수</a>
-							<a href='opinion.html' style='font-size:14pt;'>문재인</a>
-							<a href='opinion.html' style='font-size:14pt;'>박근혜</a>
-							<a href='opinion.html' style='font-size:14pt;'>이명박</a></tags>">
+						<div id="tagCloud1"></div>
+						<script type="text/javascript">
+							tagCloud1.Distribute(document.getElementById("tagCloud1")).Animate();
+						</script>
 					</div>
 					<div id="content_bottom">
 						<a href="main.html">Enter</a>
@@ -72,13 +93,3 @@
 	</div>
 </body>
 </html>
-
-<script type="text/javascript">
-$(function() {
-
-	$("#search_bar").click(function(){
-		$(this).val("");
-		$(this).css('text-align', 'left');
-	});
-});
-</script>

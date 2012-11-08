@@ -2,15 +2,15 @@
 /*searchBar */
 
 #search {
-	width: 520px; height: 50px; padding-top : 20px; margin: 30px auto 0px auto; background-color: #377c9b; border-radius: 5px 5px 0px 0px;
+	width: 720px; height: 50px; padding-top : 20px; margin: 30px auto 0px auto; background-color: #377c9b; border-radius: 5px 5px 0px 0px;
 	border: 1px solid #aaa;
 }
-#searchbar { width: 290px; height: 20px; border-radius: 5px; border: 1px solid #ccc; vertical-align: middle; margin: 0 auto; padding-left: 10px; }
+#searchbar { width: 390px; height: 20px; border-radius: 5px; border: 1px solid #ccc; vertical-align: middle; margin: 0 auto; padding-left: 10px; }
 .searchButton { width: 60px; height :25px; font-size: 13px; vertical-align: middle; }
 
 /*topic*/
 #topicdiv { 
-	width: 520px; 
+	width: 720px; 
 	height: 20px;
 	margin : 0 auto; 
 	background-color: #d3d3d3;
@@ -20,7 +20,7 @@
 }
 
 #topic {
-	width: 500px;
+	width: 700px;
 	height: 100px;
 	margin: 0 auto;
 	padding: 10px;
@@ -28,31 +28,32 @@
 	border: 1px solid #aaa;
 	border-top: none;
 }
-#topicPhoto { width: 100px; height: 100px; float: left; text-align: center; }
+#topicPhoto { width: 200px; height: 100px; float: left; text-align: center; }
 #topicContent { width: 380px; margin: 10px; float: left; }
 
 /*myopinion*/
 #myopinion { width : 100%; height: 100px; text-align: center; margin-top: 10px; }
-#opiniontext { width: 500px; height: 80px; text-align: left; padding: 10px; }
-#myopinionbutton{ width: 525px;  height: 30px; padding-top : 5px; margin : 0 auto; background-color: #d3d3d3;}
+#opiniontext { width: 700px; height: 80px; text-align: left; padding: 10px; }
+#myopinionbutton{ width: 725px;  height: 30px; padding-top : 5px; margin : 0 auto; background-color: #d3d3d3;}
 #opinionWrite {width: 55px; height: 25px;  float: right; margin: }
 
 
 /*MoreOpinion*/
-<<<<<<< HEAD
-#MoreOpinion { width : 410px; height: 200px; margin : 0 auto; margin-top: 10px;}
-.titleborder { width : 410px; height: 20px; background-color: #d3d3d3; margin:5px auto 0px auto;}
-.titleborder>span { width: 20px; height: 18px; float: right;}
-.titleborder>span>a { text-decoration: none; color: orange;}
-.section { width: 370px; height: 100px; border: 1px solid; margin: 0 auto; }
 #topic 		{position:relative; padding-top:3%;}
-.login {color:white; width:5px; display:block; float:right;}
-#user {position:relative; left:15%;}
-=======
-#MoreOpinion { width : 520px; height: 200px; margin : 0 auto; margin-top: 10px;}
-.titleborder { width : 510px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
-.titleborder a { text-decoration: none; color: #ff0;}
-.titleborder a span { width: 20px; height: 9px; float: right;}
-.titleborder a:hover span{ color:#fa0;}
-.section { width: 500px; height: 80px; background-color: #fff; margin: 0 auto; text-align: left; padding: 10px; }
->>>>>>> cedcb69a9dab92bb7e844d39cfc68794e58d3414
+
+#MoreOpinion { width : 720px; height: 200px; margin : 0 auto; margin-top: 10px;}
+.titleborder { width : 710px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
+
+.titleborder span { text-decoration: none; color: #ff0; width: 20px; height: 9px; float: right; }
+.titleborder span:hover { color:#fa0;}
+.section { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px; text-align: left; padding: 10px; }
+
+.login {color:white; float:right; margin-top:20px;}
+.login li {padding-left:10px; float:right;}
+.login li span {font-size: 12px;}
+#user { float:right; padding: 10px;}
+#user ul { margin:10px 30px 0 0; padding:3px; font-size:12px;}
+#user ul li { float:left; display:block; width:50px; }
+#user a:link, #user a:visited { text-decoration: none; color:#fff;}
+#user a:hover, #user a:active { text-decoration:none; color:#fff;} 
+/* middle */

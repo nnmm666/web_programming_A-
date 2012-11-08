@@ -47,7 +47,7 @@
 						<img src="./images/example.png" width='66px' height='100px'>
 					</div>
 					<div id="topicContent">
-					엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로<br> 논란이 끊기지 않습니다. 어떻게 생각하시나요??
+					엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로 논란이 끊기지 않습니다. 어떻게 생각하시나요??
 					</div>
 				</div>
 				<div id="myopinion">
@@ -62,6 +62,7 @@
 							<div class="titleborder">
 								인기가 있으면 논란이 되는건 당연한법~~
 								<span class="down">▼</span>
+								<span class="up">▲</span>
 							</div>
 							<div class="section">
 								인기가 있으면 논란이 되는건 당연한법~~<br>
@@ -72,7 +73,8 @@
 						<div class="opinion">
 							<div class="titleborder">
 								재미없음
-							<span>▼</span>
+								<span class="down">▼</span>
+								<span class="up">▲</span>
 							</div>
 							<div class="section">
 								재미없음<br>
@@ -82,7 +84,8 @@
 						<div class="opinion">
 							<div class="titleborder">
 								사기방송!! 종영해라!!
-								<span>▼</span>
+								<span class="down">▼</span>
+								<span class="up">▲</span>
 							</div>
 							<div class="section">
 								사기방송!! 종영해라!!
@@ -106,17 +109,20 @@
 $(function(){
 
 	$(".down").click(function(){
-		$(this).parents('.opinion').find('.section').slideToggle();
-		$(this).attr('class', 'up');
-		$(this).text("▲");	
+		$(this).parents('.opinion').find('.section').slideDown();
+		/*$(this).text("▲");	
 
-		$(".up").click(function(){
-		$(this).attr('class', 'down');
+		$(this).click(function(){
+		$(this).attr('class', 'up');
 		$(this).text("▼");
-		});
-		
+
+		});*/
 	});
-	
+
+	$(".up").click(function(){
+		$(this).parents('.opinion').find('.section').slideUp();
+	});
+
 });
 	
 </script>

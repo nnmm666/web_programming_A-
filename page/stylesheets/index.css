@@ -64,11 +64,23 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_center { width: 960px; height: 440px; margin: 0; padding: 0; }
 #content_center #caption { width: 450px; height: 30px; margin: 0 auto; font: 20px 'Arial Black'; }
 #content_center #tag_cloud { width: 450px; height: 350px; border: 1px solid #000; margin: 0 auto; border-radius: 10px; }
-#section_1 { width : 700px; height : 420px; background-color: #9b9699; margin: 0 auto; border-radius: 10px; z-index: 1000; position: absolute; left:300px; top:160px; }
+#section_1 { width : 700px; height : 420px;  background-color: #fff; margin: 0 auto; border-radius: 10px; z-index: 1000; position: absolute; left:300px; top:160px; }
 #section_1_exit { float: right; font-size: 20px; width: 20px; height: 20px; border: 1px solid #000; text-align: center; margin: 10px;}
 #section_1_top { width: 700px; height: 40px; background-color:#63676a; border-radius: 10px 10px 0 0; font-size: 20px; color: #fff;}
-.section_1_content { width: 700px; height: 100px; background-color: #ccc; margin: 10px 0 10px 0;}
 #section_1_bottom { width: 700px; height: 40px; background-color:#63676a; border-radius: 0 0 10px 10px;}
+/*---------------------------------
+ *	Tabs > Pagination
+ *---------------------------------*/	
+.pagination-basic { width : 650px; height :340; display: block; padding:10px;}
+.pagination-basic .sliderkit-nav{margin:0 0 10px;text-align:right;}
+.pagination-basic .sliderkit-nav li{display:inline;margin:0 2px;}
+.pagination-basic .sliderkit-nav li a{padding:1px 3px; border:1px solid #ccc;text-decoration:none;}
+.pagination-basic .sliderkit-nav li.sliderkit-selected a,
+.pagination-basic .sliderkit-nav li a:hover{color:#fff;border:1px solid #666;background:#666;}
+
+/* Content block */
+.pagination-basic .sliderkit-block{ width:630px; margin:9px; padding:15px;border:1px solid #666;}
+
 /**** tagcloud library ****/
 #content_center .tagCloud { margin: auto; padding-top: 8px }
 #content_center #widget{ border: 1px solid silver; margin: 5px; padding: 5px; text-align:center; width: 240px;	}

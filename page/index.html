@@ -3,9 +3,29 @@
 <head>
 	<meta charset="utf-8">
 	<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
+		<!-- Site styles -->
+	<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
+
 	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<script src='./javascript/jquery-1.8.2.min.js'></script>
 	<script src='./javascript/js-cumulus.js'></script>
+
+	<meta name="Keywords" content="slider, kit, slideshow, gallery, carousel, jquery plugin" />
+	<meta name="Description" content="Slider Kit jQuery slideshow plugin: content sliders examples" />
+		
+		<!-- Slider Kit scripts -->
+		<script type="text/javascript" src="javascript//js/sliderkit/jquery.sliderkit.1.9.2.pack.js"></script>
+	
+		<!-- Slider Kit launch -->
+		<script type="text/javascript">
+			$(window).load(function(){ 
+				$(".pagination-basic").sliderkit({
+					auto:false,
+					tabs:true,
+					freeheight:true
+				});			
+			});	
+		</script>
 
 	<script type="text/javascript">
 		//JSCumulus.noConflict();
@@ -70,22 +90,59 @@
 				</div>
 				<div id="content_center">
 					<div id="caption">Hot Keyword</div>
+
 					<div id="section_1">
+
 						<div id="section_1_top">
 							Hot Hot Topics!!
 							<span id="section_1_exit">X</span>
 						</div>
-						<div class="section_1_content">
-							<a href="opinion.html">뭐지</a>
+
+						<!-- Start of pagination-basic -->
+				<div class="pagination-basic">
+					<div class="sliderkit-nav">
+						<div class="sliderkit-nav-clip">
+							<ul>
+								<li><a href="#" title="[link title]">1</a></li>
+								<li><a href="#" title="[link title]">2</a></li>
+								<li><a href="#" title="[link title]">3</a></li>
+								<li><a href="#" title="[link title]">4</a></li>
+							</ul>
 						</div>
-						<div class="section_1_content">
-							<a href="opinion.html">뭐지</a>
+					</div>
+
+					<div class="sliderkit-panels">
+						<div class="sliderkit-panel">
+							<div class="sliderkit-block">A first content block.</div>
+							<div class="sliderkit-block">A second content block.</div>
+							<div class="sliderkit-block">A third content block.</div>
+							<div class="sliderkit-block">A fourth content block.</div>
+							<div class="sliderkit-block">A fifth content block.</div>
 						</div>
-						<div class="section_1_content">
-							<a href="opinion.html">뭐지</a>
+						<div class="sliderkit-panel">
+							<div class="sliderkit-block">A sixth block.</div>
+							<div class="sliderkit-block">A seventh content block.</div>
+							<div class="sliderkit-block">A eighth content block.</div>
+							<div class="sliderkit-block">A ninth content block.</div>
+							<div class="sliderkit-block">A tenth content block.</div>
 						</div>
-						<div id="section_1_bottom">
+						<div class="sliderkit-panel">
+							<div class="sliderkit-block">A eleventh block.</div>
+							<div class="sliderkit-block">A twelfth content block.</div>
+							<div class="sliderkit-block">A thirteenth content block.</div>
+							<div class="sliderkit-block">A fourteenth content block.</div>
+							<div class="sliderkit-block">A fifteenth content block.</div>
 						</div>
+						<div class="sliderkit-panel">
+							<div class="sliderkit-block">A sixteenth content block.</div>
+							<div class="sliderkit-block">A seventeenth content block.</div>
+							<div class="sliderkit-block">That's all folks !</div>
+						</div>
+					</div>
+				</div>
+				<div id="section_1_bottom">
+					</div>
+				<!-- // end of tabs-imbricate -->
 					</div>
 					<div id="tag_cloud">
 						<div id="tagCloud1"></div>
@@ -124,6 +181,7 @@ $(function(){
 
 	});
 	$("#section_1").hide();
+
 });
 	
 </script>

@@ -64,7 +64,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_center { width: 960px; height: 440px; margin: 0; padding: 0; }
 #content_center #caption { width: 450px; height: 30px; margin: 0 auto; font: 20px 'Arial Black'; }
 #content_center #tag_cloud { width: 450px; height: 350px; border: 1px solid #000; margin: 0 auto; border-radius: 10px; }
-#section_1 { width : 700px; height : 400px; padding: 10px 12px 0 7px; margin: 0 auto; z-index: 1000; position: absolute; left:300px; top:160px; 
+#section_1 { width : 700px; height : 400px; padding: 10px 12px 0 7px; margin: 0 auto; z-index: 1000; position: absolute; left:260px; top:160px; 
 	background:url('../images/backbg2.png') repeat-x; box-shadow: 3px 3px 7px #999; border-radius: 10px; border:1px #a6a6a6 solid;}
 #section_1_exit { float: right; width: 20px; height: 10px; padding :0 10px 0 0;}
 #section_1_top { width: 700px; height: 40px; font: 20px 'Arial Black'; padding-top: 7px;}

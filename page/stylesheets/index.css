@@ -80,7 +80,11 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 .pagination-basic .sliderkit-nav li a:hover{color:#fff;border:1px solid #666;background:#666;}
 
 /* Content block */
-.pagination-basic .sliderkit-block{ width:640px; height:60px; margin:5px; padding:15px;border:1px solid #a6a6a6;}
+#topicPhoto { width: 100px; height: 70px; float: left; text-align: center; }
+#topicContent { width: 520px; margin: 10px; float: left; }
+.pagination-basic .sliderkit-block{ width:640px; height:60px; margin:5px; padding:15px; border:1px solid #a6a6a6; text-align: left;}
+.pagination-basic .sliderkit-block:hover { background-color: #ccc;}
+.sliderkit-panel a { color : #000;}
 
 /**** tagcloud library ****/
 #content_center .tagCloud { margin: auto; padding-top: 8px }
@@ -90,7 +94,8 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 /*	#content_center #jsCumulus2{color: #50B5D5;}		second tag color */
 #content_center .tagCloud ul, .tagCloud li { list-style: none; margin: 0;	padding: 0;	}
 #content_center .tagCloud .tagClass img { border: 0 none;	}
-#content_center .tagCloud .tagClass a { color: #000; font-family: 'impact',"맑은 고딕", "Malgun Gothic", "Gulim", Verdana, Arial, Tahoma; font-weight: bold; text-align: center; text-decoration: none; vertical-align: middle; }
+#content_center .tagCloud .tagClass a { color: #000; font-family: 'impact',"맑은 고딕", "Malgun Gothic", "Gulim", Verdana, Arial, Tahoma;
+ font-weight: bold; text-align: center; text-decoration: none; vertical-align: middle; }
 #content_center .tagCloud .tagClass a:hover { border: #ffdb00; color: #ffdb00; text-decoration: none; }
 /**** tagcloud library ****/
 

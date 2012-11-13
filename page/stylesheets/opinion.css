@@ -46,7 +46,9 @@
 
 .titleborder span { text-decoration: none; color: #ff0; width: 20px; height: 9px; float: right; }
 .titleborder span:hover { color:#fa0;}
-.section { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px; text-align: left; padding: 10px; }
+.section_top { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px;  padding: 10px; }
+.section_left{  width: 600px; height: 80px; float : left; text-align: left;}
+.section_right{ float:right; width:80px; height: 30px;}
 .section_reply { width: 720px; height: 60px; background-color: #ccc; margin: 5px 0 5px 0;}
 .user_Face{ float :left; margin: 5px;}
 .user_content{float :left; margin: 10px; }

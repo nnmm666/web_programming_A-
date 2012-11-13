@@ -47,6 +47,12 @@
 .titleborder span { text-decoration: none; color: #ff0; width: 20px; height: 9px; float: right; }
 .titleborder span:hover { color:#fa0;}
 .section { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px; text-align: left; padding: 10px; }
+.section_reply { width: 720px; height: 60px; background-color: #ccc; margin: 5px 0 5px 0;}
+.user_Face{ float :left; margin: 5px;}
+.user_content{float :left; margin: 10px; }
+.section_reply_1 { width: 720px; height: 30px; background-color: #ccc; margin: 5px 0 5px 0;}
+.reply_more{ width: 98%; height: 20px; margin: 3px;}
+.toggle { padding: 0 10px 0 0;}
 
 .login {color:white; float:right; margin-top:20px;}
 .login li {padding-left:10px; float:right;}

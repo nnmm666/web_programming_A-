@@ -34,15 +34,16 @@
 /*myopinion*/
 #myopinion { width : 100%; height: 100px; text-align: center; margin-top: 10px; }
 #opiniontext { width: 700px; height: 80px; text-align: left; padding: 10px; }
-#myopinionbutton{ width: 725px;  height: 30px; padding-top : 5px; margin : 0 auto; background-color: #d3d3d3;}
-#opinionWrite {width: 55px; height: 25px;  float: right; margin: }
+#myopinion_sub{ width: 725px;  height: 30px; padding-top : 5px; margin : 0 auto; background-color: #d3d3d3;}
+.myopinion_likehate { width: 650px; padding: 5px 5px 5px 570px;}
+#opinionWrite {width: 55px; height: 25px;  float: right;}
 
 
 /*MoreOpinion*/
 
 #MoreOpinion { width : 720px; height: 200px; margin : 0 auto; margin-top: 10px;}
-.titleborder { width : 710px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
-
+.titleborder_like { width : 710px; height: 20px; background-color: #e42626; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
+.titleborder_hate { width : 710px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff;}
 .titleborder span { text-decoration: none; color: #ff0; width: 20px; height: 9px; float: right; }
 .titleborder span:hover { color:#fa0;}
 .section_top { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px;  padding: 10px; }

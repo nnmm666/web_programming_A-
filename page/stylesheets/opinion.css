@@ -35,7 +35,7 @@
 #myopinion { width : 100%; height: 100px; text-align: center; margin-top: 10px; }
 #opiniontext { width: 700px; height: 80px; text-align: left; padding: 10px; }
 #myopinion_sub{ width: 725px;  height: 30px; padding-top : 5px; margin : 0 auto; background-color: #d3d3d3;}
-.myopinion_likehate { width: 650px; padding: 5px 5px 5px 570px;}
+.myopinion_likehate { width: 650px; padding: 5px 5px 5px 570px; vertical-align: middle;}
 #opinionWrite {width: 55px; height: 25px;  float: right;}
 
 

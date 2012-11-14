@@ -38,7 +38,7 @@ public class test {
 			
 			while(true) {
 				getKeyword();
-				Thread.sleep(30000);
+				Thread.sleep(30000);		// 30초마다 검색어 갱신
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -65,8 +65,8 @@ public class test {
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
             Document doc = builder.parse(url);
             Element root = doc.getDocumentElement();
-            // 취득한 xml형식의 결과에서 실시간 겁색어만 뽑아온다
-            NodeList itemList = root.getElementsByTagName("K");
+            // 취득한 xml형식의 결과에서 실시간 검색어와 검색수를 뽑아온다
+            NodeList itemList = root.getElementsByTagName("K");	
             NodeList valueList = root.getElementsByTagName("V");
             
             for (int i = 0; i < itemList.getLength(); i++) {
@@ -75,9 +75,13 @@ public class test {
 
                 keyword = itemElement.getFirstChild().getNodeValue();
                 value = Integer.parseInt(valueElement.getFirstChild().getNodeValue());
-
+                
+                // 실시간 검색어와 검색수를 각각 keyword와 value에 넣는다
                 System.out.println(keyword + value);
+                // 확인차 콘솔에 출력
+                
                 setData(keyword, value);
+                // 데이터 베이스에 실시간 검색어와 검색수를 삽입하는 메소드
             }
             
         } catch (UnsupportedEncodingException e) {
@@ -102,9 +106,9 @@ public class test {
     		pstmt.setString(1, keyword);
     		rs = pstmt.executeQuery();
     		if(rs.next())
-    			temp = rs.getString(1);
+    			temp = rs.getString(1);			// 삽입하려는 키워드가 이미 테이블에 있는지 확인
     		
-    		if(!(temp.equals(keyword))) {
+    		if(!(temp.equals(keyword))) {		// 테이블에 그 키워드가 없을때만 insert
 				stmt = conn.prepareStatement("insert into testkeyword (id, count) values (?, ?)");
 				stmt.setString(1, keyword);
 				stmt.setInt(2, value);
@@ -115,5 +119,5 @@ public class test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}	
 }

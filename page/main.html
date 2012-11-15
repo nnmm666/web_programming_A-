@@ -56,11 +56,12 @@
 					<div id="logo"><a href="index.html">Let's Talk!!</a></div>
 					<div id="user">
 						<ul>
-							<li><a href="#">로그인</a></li>
-							<li><a href="#">회원가입</a></li>
+							<li><a href="javascript:loginform.submit()">로그인</a></li>
+							<li><a href="joinForm.jsp">회원가입</a></li>
 						</ul>
 					</div>
 					<div class ="login">
+						<form name="loginform" action = "loginProcess.jsp" method = "post">
 						<ul>
 							<li><span>Password</span>
 								<input type = "password" name ="pwd"/>
@@ -71,6 +72,7 @@
 						</ul>
 					</div>
 				</div>
+			</form>
 				<div id="border"></div>
 			</div>
 

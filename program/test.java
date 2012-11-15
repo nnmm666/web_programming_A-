@@ -38,7 +38,7 @@ public class test {
 			
 			while(true) {
 				getKeyword();
-				Thread.sleep(30000);		// 30초마다 검색어 갱신
+				Thread.sleep(10000);		// 30초마다 검색어 갱신
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -108,10 +108,15 @@ public class test {
     		if(rs.next())
     			temp = rs.getString(1);			// 삽입하려는 키워드가 이미 테이블에 있는지 확인
     		
-    		if(!(temp.equals(keyword))) {		// 테이블에 그 키워드가 없을때만 insert
+    		if(!(temp.equals(keyword))) {		// 테이블에 그 키워드가 없을때는 키워드와 검색수 insert
 				stmt = conn.prepareStatement("insert into testkeyword (id, count) values (?, ?)");
 				stmt.setString(1, keyword);
 				stmt.setInt(2, value);
+			
+				stmt.executeUpdate();
+    		} else {							// 있을때는 검색수만 더해줌
+    			stmt = conn.prepareStatement("update testkeyword set count = count + ?");
+				stmt.setInt(1, value);
 			
 				stmt.executeUpdate();
     		}

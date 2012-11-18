@@ -1,12 +1,11 @@
-﻿<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html lang="kr">
 <head>
 <meta charset="utf-8">
 <title>Let's Talk!!렛톡에 오신걸 환영합니다!!</title>
 <!-- Site styles -->
-<link rel="stylesheet" type="text/css"
-	href="stylesheets/sliderkit-core.css" media="screen, projection" />
-
 <link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 <script src='./javascript/jquery-1.8.2.min.js'></script>
 <script src='./javascript/js-cumulus.js'></script>
@@ -82,7 +81,7 @@
 
 							<div class="sliderkit-panels">
 								<div class="sliderkit-panel">
-									<a href="opinion.html">
+									<a href="opinion.jsp">
 										<div class="sliderkit-block">
 											<div id="topicPhoto">
 												<img src="./images/example.png" width='66px' height='60px'>
@@ -90,7 +89,7 @@
 											<div id="topicContent">
 												엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로 논란이 끊기지 않습니다. 어떻게 생각하시나요??<br>
 											</div>
-										</div> </a> <a href="opinion.html">
+										</div> </a> <a href="opinion.jsp">
 										<div class="sliderkit-block">
 											<div id="topicPhoto">
 												<img src="./images/example.png" width='66px' height='60px'>
@@ -98,7 +97,7 @@
 											<div id="topicContent">
 												엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로 논란이 끊기지 않습니다. 어떻게 생각하시나요??<br>
 											</div>
-										</div> </a> <a href="opinion.html">
+										</div> </a> <a href="opinion.jsp">
 										<div class="sliderkit-block">
 											<div id="topicPhoto">
 												<img src="./images/example.png" width='66px' height='60px'>
@@ -151,7 +150,7 @@
 						</script>
 					</div>
 					<div id="content_bottom">
-						<a href="main.html">Enter</a>
+						<a href="main.jsp">Enter</a>
 					</div>
 				</div>
 			</div>

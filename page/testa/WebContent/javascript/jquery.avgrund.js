@@ -29,9 +29,9 @@
 
 			body.addClass('avgrund-ready');
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
-			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + options.template + '</div>');
+			body.append('<div id="#section_1 ' + options.holderClass + '">' + options.template + '</div>');
 
-			$('.avgrund-popin').css({
+			$('#section_1').css({
 				'width': maxWidth + 'px',
 				'height': maxHeight + 'px',
 				'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
@@ -39,11 +39,11 @@
 			});
 
 			if (options.showClose == true) {
-				$('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
+				$('#section_1').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
 			}
 
 			if (options.enableStackAnimation == true) {
-				$('.avgrund-popin').addClass('stack');
+				$('#section_1').addClass('stack');
 			}
 
 			if (options.onBlurContainer != '') {

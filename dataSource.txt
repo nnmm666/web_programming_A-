@@ -1,0 +1,16 @@
+public static DataSource getDataSource() throws NamingException{
+	Context initCtx = null;
+	Context envCtx = null;
+
+	initCtx = new InitialContext();
+	envCtx 	= (context) initCtx.lookup("java:comp/env");
+
+	return (DataSource) envCtx.lookup("jdbc/데이터베이스이름");
+}
+	DataSource ds = getDataSource() ;
+
+	conn = ds.getConnection();
+	stmt = conn.여기 prepare 문 이나 create 문 써도되는데 
+		되도록이면 prepare 문 
+	데이터베이스이름 이랑 아이디 만들어야할것같습니다 
+	공용으로해야하는거!!

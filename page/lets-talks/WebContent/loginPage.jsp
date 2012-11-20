@@ -22,22 +22,22 @@
 					<div class ="add">
 						<form name="write" action="joinProcess.jsp" method ="POST">
 						<ul>
-							<li>name</li>
-							<li><input type = "text" name="name"/></li>
-							<li>ID :</li>
-							<li><input type = "text" name="id"/>
+							<li>name
+							<input type = "text" name="name"/></li>
+							<li>ID :
+							<input type = "text" name="id"/>
 							</li>
-							<li>Password:</li>
-							<li><input type = "password" name="pwd"/>
+							<li>Password:
+							<input type = "password" name="pwd"/>
 							</li>
-							<li>Password(again):</li>
-							<li><input type = "password" name="pwdagain"/>
+							<li>Password(again):
+							<input type = "password" name="pwdagain"/>
 							</li>
-							<li>E-mail</li>
-							<li><input type ="text" name="email"/>
+							<li>E-mail
+							<input type ="text" name="email"/>
 							</li>
-							<li>country</li>
-							<li><select name="country">
+							<li>country
+							<select name="country">
 								<option value = "kr">
 									Korea
 								</option>

@@ -168,7 +168,7 @@ function wrapWindowByMask(){
 	  // 구한 높이와 너비를 css에..
 	  $('#mask').css({'width':maskWidth,'height':maskHeight});
 		//불투명도 80%
-	  $('#mask').fadeTo("slow",0.8);  
+	  $('#mask').fadeTo("fast",0.8);  
 	  $("#section_1").show();
 }
 	$(document).ready(function() {
@@ -180,7 +180,7 @@ function wrapWindowByMask(){
 			//닫기 눌렀을 때
 			$("#section_1_exit").click(function(e) {
 				 e.preventDefault(); 
-				$("#section_1").hide();
+				$("#mask, #section_1").hide();
 			});
 			//검은 막 눌렀을 때
 			$('#mask').click(function () {            

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -9,6 +9,7 @@
 <link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 <script src='./javascript/jquery-1.8.2.min.js'></script>
 <script src='./javascript/js-cumulus.js'></script>
+
 
 <meta name="Keywords"
 	content="slider, kit, slideshow, gallery, carousel, jquery plugin" />
@@ -53,8 +54,9 @@
 
 <body>
 	<div id="wrap">
+		<div id="mask"></div>
 		<div id="top">
-					<jsp:include page="share/header.jsp" />
+			<jsp:include page="share/header.jsp" />
 		</div>
 		<div id="middle">
 			<div id="content">
@@ -71,8 +73,7 @@
 
 						<div id="section_1_top">
 							<span id="section_1_exit"><img
-								src="./images/btn_close.png">
-							</span> Hot Hot Topics!!
+								src="./images/btn_close.png"> </span> Hot Hot Topics!!
 							<hr></hr>
 						</div>
 
@@ -126,14 +127,10 @@
 							<div class="sliderkit-nav">
 								<div class="sliderkit-nav-clip">
 									<ul>
-										<li><a href="#" title="[link title]">1</a>
-										</li>
-										<li><a href="#" title="[link title]">2</a>
-										</li>
-										<li><a href="#" title="[link title]">3</a>
-										</li>
-										<li><a href="#" title="[link title]">4</a>
-										</li>
+										<li><a href="#" title="[link title]">1</a></li>
+										<li><a href="#" title="[link title]">2</a></li>
+										<li><a href="#" title="[link title]">3</a></li>
+										<li><a href="#" title="[link title]">4</a></li>
 									</ul>
 								</div>
 							</div>
@@ -156,24 +153,40 @@
 			</div>
 		</div>
 		<div id="bottom">
-					<jsp:include page="share/footer.jsp" />
+			<jsp:include page="share/footer.jsp" />
 		</div>
 	</div>
 </body>
 </html>
 
 <script type="text/javascript">
-	$(function() {
 
-		$(".tagClass").click(function() {
-			$("#section_1").show();
-		});
-
-		$("#section_1_exit").click(function() {
-			$("#section_1").hide();
-
-		});
+function wrapWindowByMask(){
+	//화면의 높이와 너비구함
+		var maskHeight = $(document).height();        
+	  var maskWidth = $(window).width();
+	  // 구한 높이와 너비를 css에..
+	  $('#mask').css({'width':maskWidth,'height':maskHeight});
+		//불투명도 80%
+	  $('#mask').fadeTo("slow",0.8);  
+	  $("#section_1").show();
+}
+	$(document).ready(function() {
+		//mask 띄우기
+		$(".tagClass").click(function(e) {       
+		    e.preventDefault();         
+		    wrapWindowByMask();     
+		  });
+			//닫기 눌렀을 때
+			$("#section_1_exit").click(function(e) {
+				 e.preventDefault(); 
+				$("#section_1").hide();
+			});
+			//검은 막 눌렀을 때
+			$('#mask').click(function () {            
+	    $(this).hide();            
+	    $("#section_1").hide();        
+	    }); 
 		$("#section_1").hide();
-
 	});
 </script>

@@ -1,4 +1,8 @@
-package Servlet;// 여기 path 를 설정해야하는 데 뭐가잘못된건지 잘모르겟습니다 ㅜㅜㅜㅜ 일 단 저의홈페이지제맞게 짜놓았습니다.
+import java.awt.List;
+import java.util.Arrays;
+import com.sun.xml.internal.ws.util.StringUtils;
+import java.util.*;
+
 
 public class Users implements java.io.Serializable {
 		private static final long serialVersionUid = 2193897931951340673L;
@@ -16,7 +20,8 @@ public class Users implements java.io.Serializable {
 			
 			public Users () { }  // java bean 의 조건으로 가려 노았습니다!!
 		
-			public users( String name , String id , String passoword, String email , String country , String gender , String hobby){
+			public Users(String name , String id , String passoword, String email , String country , String gender , String hobby)
+			{
 				super();
 				this.name = name;
 				this.id = id;
@@ -108,15 +113,15 @@ public class Users implements java.io.Serializable {
 					return "여성";
 				}
 				}
-			}
+			
 			public String checkCountry (String countryName)
 			{
 				return (countryNames.equals(country)) ? "selected": "";
 			}
 			public List<String> gethobbyList()
 			{
-				List<String> hobbyList = null;
-				if(hobby != null && hobby.length>0)
+				List hobbyList = null;
+				if(hobby != null && hobby.length()>0)
 				{
 					hobbyList = Arrays.asList(StringUtils.split(hobby, ","));
 				}

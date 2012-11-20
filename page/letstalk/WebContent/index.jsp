@@ -72,8 +72,7 @@
 					<div id="section_1">
 
 						<div id="section_1_top">
-							<span id="section_1_exit"><img
-								src="./images/btn_close.png"> </span> Hot Hot Topics!!
+							<span id="section_1_exit"><a href="#">×</a> </span> Hot Hot Topics!!
 							<hr></hr>
 						</div>
 

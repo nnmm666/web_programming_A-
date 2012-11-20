@@ -49,7 +49,7 @@
 						<div class="opinion">
 							<div class="titleborder_like">
 								인기가 있으면 논란이 되는건 당연한법~~
-								<span class="toggle">▲▼</span>
+								<a href="#"><a href="#"><span class="toggle">▲▼</span></a></a>
 							</div>
 							<div class="section">
 								<div class="section_top">
@@ -99,7 +99,7 @@
 						<div class="opinion">
 							<div class="titleborder_hate">
 								재미없음
-								<span class="toggle">▲▼</span>
+								<a href="#"><span class="toggle">▲▼</span></a>
 							</div>
 							<div class="section">
 								<div class="section_top">
@@ -148,7 +148,7 @@
 						<div class="opinion">
 							<div class="titleborder_hate">
 								사기방송!! 종영해라!!
-								<span class="toggle">▲▼</span>
+								<a href="#"><span class="toggle">▲▼</span></a>
 							</div>
 							<div class="section">
 								<div class="section_top">
@@ -198,7 +198,7 @@
 						<div class="opinion">
 							<div class="titleborder_like">
 								완전 재밌는뎅??
-								<span class="toggle">▲▼</span>
+								<a href="#"><span class="toggle">▲▼</span></a>
 							</div>
 							<div class="section">
 								<div class="section_top">

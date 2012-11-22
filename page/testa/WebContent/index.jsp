@@ -19,10 +19,9 @@
 	Statement stmt = null;
 	ResultSet rs = null;
 	
-	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+	String dbUrl = "jdbc:mysql://localhost:3306/web-progrmming";
 	String dbUser = "web";
-	String dbPassword = "asdf";
-	
+	String dbPassword = "123";
 	// 페이지 설정
 	int pageNo = 1;
 	

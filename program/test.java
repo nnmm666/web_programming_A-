@@ -1,4 +1,4 @@
-import java.io.IOException;
+﻿import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -38,7 +38,7 @@ public class test {
 			
 			while(true) {
 				getKeyword();
-				Thread.sleep(10000);		// 30초마다 검색어 갱신
+				Thread.sleep(10000);// 30초마다 검색어 갱신
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

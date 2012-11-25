@@ -5,9 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
+
+		<!-- bootstrap -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/test.css"/>
+		
 		<!-- Site styles -->
 		<link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
-		<link rel="stylesheet" type="text/css" href="stylesheets/test.css"/>
+		<link href="stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <div id="wrap">
@@ -24,38 +28,35 @@
 		      </div>
 		
 		    <div class="control-group">
-		
 		          <!-- Text input-->
-		          <label class="control-label" for="input01">작성자</label>
+		          <label class="control-label" for="user">작성자</label>
+		          <div class="controls" id="user_name">가을이
+		            
+		          </div>
+		     </div>
+		     <div class="control-group">			
+		          <!-- Text input-->
+		          <label class="control-label" for="ititle">제목</label>
 		          <div class="controls">
 		            <input type="text" placeholder="placeholder" class="input-xlarge">
-		            <p class="help-block">Supporting help text</p>
 		          </div>
-		        </div><div class="control-group">
-		          <label class="control-label">첨부하기</label>
-			
-		          <!-- Text input-->
-		          <label class="control-label" for="input01">제목</label>
-		          <div class="controls">
-		            <input type="text" placeholder="placeholder" class="input-xlarge">
-		            <p class="help-block">Supporting help text</p>
-		          </div>
-		        </div><div class="control-group">
-		
-		          <!-- Textarea -->
-		          <label class="control-label">내용</label>
+		      </div>
+		      <div class="control-group">
+				  <!-- Textarea -->
+		          <label class="control-label" for="context">내용</label>
 		          <div class="controls">
 		            <div class="textarea">
 		                  <textarea rows="10" cols="100"  class=""> </textarea>
 		            </div>
-		          </div>
-		          
-		        	<!-- File Upload -->
+		      </div>
+		   	  </div>
+		   	 <div class="control-group">
+		     	<!-- File Upload -->
 		          <div class="controls">
-		            <input class="input-file" id="fileInput" type="file">
+		         	 <label class="control-label">첨부하기</label>
+		             <input class="input-file" id="fileInput" type="file">
 		          </div>
-		        </div><div class="control-group">
-		        </div>
+		     </div>
 		
 		    
 		    </fieldset>

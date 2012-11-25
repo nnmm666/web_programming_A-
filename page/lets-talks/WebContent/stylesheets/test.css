@@ -1,0 +1,10 @@
+#wrap {width:100%; height:1000px;}
+#content {width:960px; height:500px; padding: 10px;}
+#content fieldset {width:600px; margin:0 auto;	}
+#content fieldset legend {font-size:15px; padding:10px;}
+#content fieldset label {font-size:12px; padding:0; margin:0;}
+#content fieldset input[type="text"]{width:400px;}
+#content fieldset textarea {width:400px; height:300px;}
+#content fieldset .control-label {padding:3px; }
+#contetn fieldset .controls {padding:3px;}
+#content fieldset #user_name {font-size:12px; width:100px; padding:3px;}

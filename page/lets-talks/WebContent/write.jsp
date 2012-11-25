@@ -7,10 +7,10 @@
 <title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
 
 		<!-- bootstrap -->
-		<link href="stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" media="screen" href="stylesheets/bootstrap.min.css" />
 		<!-- Site styles -->
 		<link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
-		<link rel="stylesheet" type="text/css" href="stylesheets/test.css"/>
+		<link rel="stylesheet" type="text/css" href="stylesheets/write.css"/>
 </head>
 <body>
 <div id="wrap">

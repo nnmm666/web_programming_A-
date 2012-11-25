@@ -11,7 +11,7 @@
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 	
-	String dbUrl = "jdbc:mysql://localhost:3306/web-progrmming";
+	String dbUrl = "jdbc:mysql://localhost:3306/web_progrmming";
 	String dbUser = "web";
 	String dbPassword = "123";
 	

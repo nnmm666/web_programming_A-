@@ -7,6 +7,7 @@ session.invalidate();
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   로그아웃 되었습니다.

@@ -1,8 +1,8 @@
 CREATE DATABASE web_programming DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL ON web2012.* TO 'web' IDENTIFIED BY '123';
+GRANT ALL ON web_programming.* TO 'web' IDENTIFIED BY '123';
 
-use web2012;
+use web_programming;
 
 
 CREATE TABLE users (

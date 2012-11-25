@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>Exercise 2</title>
    	<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
-
-	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
+	<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">	
+	
 	<script src='./javascript/jquery-1.8.2.min.js'></script>
 	<script src='./javascript/js-cumulus.js'></script>
 

@@ -16,10 +16,10 @@
   // DB 접속을 위한 준비
 	
 	Connection conn = null;
-	Statement stmt = null;
+	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	String dbUrl = "jdbc:mysql://localhost:3306/web-progrmming";
+	String dbUrl = "jdbc:mysql://localhost:3306/web_programming";
 	String dbUser = "web";
 	String dbPassword = "123";
 	// 페이지 설정
@@ -39,6 +39,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>회원목록</title>
+	<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/base.css" rel="stylesheet">
 	<script src="js/jquery-1.8.2.min.js"></script>
@@ -57,19 +58,19 @@
 	    // DB 접속
 		conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
  		
-		stmt = conn.createStatement();
+		pstmt = conn.prepareStatement("SELECT * FROM users id= ? ");
 		
 		// users 테이블: user 수 페이지수 개산
- 		rs = stmt.executeQuery("SELECT COUNT(*) FROM users");
+ 		rs = pstmt.executeQuery();
 		rs.next();
-		numItems = rs.getInt(1);
+		numItems = rs.getInt(2);
 		numPages = (int) Math.ceil((double)numItems / (double)numInPage);
 		rs.close();
-		stmt.close();
+		pstmt.close();
 		
  		// users 테이블 SELECT
-		stmt = conn.createStatement();
-		rs = stmt.executeQuery("SELECT * FROM users ORDER BY name LIMIT " + startPos + ", " + numInPage);
+		pstmt = conn.prepareStatement("SELECT * FROM users ORDER BY name LIMIT " + startPos + ", " + numInPage);
+		rs = pstmt.executeQuery();
 		String gender;
  	%>
  		<div class="row">
@@ -96,7 +97,7 @@
 			<tbody>
 			<%
 				while(rs.next()) {
-					gender = rs.getString("gender").equals("M") ? "남성":"여성";
+					gender = rs.getString("gender").equals("Man") ? "남성":"여성";
 			%>
 				<tr>
 					<td><a href="show.jsp?id=<%=rs.getInt("id")%>"><%=rs.getString("userid") %></a></td>
@@ -169,7 +170,7 @@
 		}finally {
 			// 무슨 일이 있어도 리소스를 제대로 종료
 			if (rs != null) try{rs.close();} catch(SQLException e) {}
-			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+			if (pstmt != null) try{pstmt.close();} catch(SQLException e) {}
 			if (conn != null) try{conn.close();} catch(SQLException e) {}
 		}
 		%>

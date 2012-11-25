@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Ex2</title>
 <style>

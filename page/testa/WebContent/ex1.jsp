@@ -7,10 +7,9 @@
 	<meta charset="UTF-8">
 	<title>Ex1</title>
    	<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
-
-	<link href="stylesheets/css/footer.css" rel="stylesheet" type="text/css">
-	<link href="stylesheets/css/header.css" rel="stylesheet" type="text/css">
-		
+	<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">
+	
+	
 </head>
 <body>
   <jsp:include page="share/header.jsp"></jsp:include>
@@ -27,8 +26,8 @@
 		    <li>좋아하는 그룹 :
 		      <ul>
 		      <% 
-		      if (request.getParameter("favorites") != null) {
-		        for(String name: request.getParameterValues("favorites")) {
+		      if (request.getParameter("favorits") != null) {
+		        for(String name: request.getParameterValues("hobby")) {
 		          out.println("<li>" + name + "</li>");
 		        }
 		      }
@@ -50,7 +49,7 @@
 				<div class="control-group">
 					<label class="control-label" for="name">Name</label>
 					<div class="controls">
-						<input type="text" placeholder="홍길동" name="name">
+						<input type="text" name="name">
 					</div>
 				</div>
 				<div class="control-group">

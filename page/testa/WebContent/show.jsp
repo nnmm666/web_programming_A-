@@ -2,7 +2,7 @@
     pageEncoding="UTF-8" import="java.util.*"  import="java.sql.*" 
     import="org.apache.commons.lang3.StringUtils"%>
 <%
-  String[][] genders = {{"M", "남성"}, {"F", "여성"}};
+  String[][] genders = {{"Man", "남성"}, {"Woman", "여성"}};
   
   String errorMsg = null;
 
@@ -12,7 +12,7 @@
   PreparedStatement stmt = null;
   ResultSet rs = null;
   
-	String dbUrl = "jdbc:mysql://localhost:3306/web-progrmming";
+	String dbUrl = "jdbc:mysql://localhost:3306/web_progrmming";
 	String dbUser = "web";
 	String dbPassword = "123";
   

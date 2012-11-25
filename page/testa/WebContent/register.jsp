@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*" import="java.util.*" 
     import="org.apache.commons.lang3.StringUtils"%>
-<%
+<% 
 	// DB 접속을 위한 준비
 	Connection conn = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
-	String dbUrl = "jdbc:mysql://localhost:3306/web-progrmming";
+	String dbUrl = "jdbc:mysql://localhost:3306/web_programming";
 	String dbUser = "web";
 	String dbPassword = "123";
 	
-	request.setCharacterEncoding("utf-8");
 	String userid = request.getParameter("userid");
 	String pwd = request.getParameter("pwd");
 	String pwd_confirm = request.getParameter("pwd_confirm");
@@ -19,7 +18,8 @@
 	String country = request.getParameter("country");
 	String gender = request.getParameter("gender");
 	String[] favorites = request.getParameterValues("favorites");
-	String favoriteStr = StringUtils.join(favorites, ",");
+	String favoriteStr = StringUtils.join(favorites,",");
+	String memo = request.getParameter("memo");
 	
 	List<String> errorMsgs = new ArrayList<String>();
 	int result = 0;
@@ -40,7 +40,7 @@
 		errorMsgs.add("이름을 반드시 입력해주세요.");
 	}
 	
-	if (gender == null || !(gender.equals("M") || gender.equals("F") )) {
+	if (gender == null || !(gender.equals("Man") || gender.equals("Woman") )) {
 		errorMsgs.add("성별에 적합하지 않은 값이 입력되었습니다.");
 	}
 	
@@ -48,16 +48,17 @@
 		try {
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			stmt = conn.prepareStatement(
-					"INSERT INTO users(userid, name, pwd, email, country, gender, favorites) " +
-					"VALUES(?, ?, ?, ?, ?, ?, ?)"
+					"INSERT INTO users (name ,id, password, email, country, gender, favorites ,meno) " +
+					"VALUES(?, ?, ?, ?, ?, ?, ?,?)"
 					);
-			stmt.setString(1,  userid);
-			stmt.setString(2,  name);
+			stmt.setString(1,  name);
+			stmt.setString(2,  userid);
 			stmt.setString(3,  pwd);
 			stmt.setString(4,  email);
 			stmt.setString(5,  country);
 			stmt.setString(6,  gender);
 			stmt.setString(7,  favoriteStr);
+			stmt.setString(8, memo);
 			
 			result = stmt.executeUpdate();
 			if (result != 1) {
@@ -65,6 +66,7 @@
 			}
 		} catch (SQLException e) {
 			errorMsgs.add("SQL 에러: " + e.getMessage());
+			e.printStackTrace();
 		} finally {
 			// 무슨 일이 있어도 리소스를 제대로 종료
 			if (rs != null) try{rs.close();} catch(SQLException e) {}

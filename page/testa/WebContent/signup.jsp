@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*"  import="java.sql.*" 
 		%>
-		<%@ page import="org.apache.commons.lang3.StringUtils" %>
+<%@ page import="org.apache.commons.lang3.StringUtils" %>
 <%
 	String[] countries = {"한국", "미국", "영국", "일본", "중국"};
 	String[] idols = {"아이유", "카라", "소녀시대", "2NE1", "씨스타"};

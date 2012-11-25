@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.sql.*, java.io.*, java.util.*, java.lang.*"%>
+
 <!DOCTYPE html>
 <%
 	String name = request.getParameter("name");
@@ -8,16 +9,18 @@
 	String email = request.getParameter("email");
 	String country = request.getParameter("country");
 	String gender = request.getParameter("gender");
+	String favorites = request.getParameter("favorites");
+	String memo  = request.getParameter("memo");
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs   = null;
 	StringBuffer sb =null;	
 
-	String dbUrl = "jdbc:mysql://localhost:3306/park";
-	String dbUser = "park";
-	String dbPassword = "123456";
-	String sql = "INSERT INTO user(name, id, password, email, country, gender) values(?, ?, ?, ?, ?, ?) ";
+	String dbUrl = "jdbc:mysql://localhost:3306/web_programming";
+	String dbUser = "web";
+	String dbPassword = "123";
+	String sql = "INSERT INTO users (name, id, password, email, country, gender,favorites,meno) values(?, ?, ?, ?, ?, ?,?,?) ";
 	String sql2 = "SELECT * FROM user";
 	
 	
@@ -30,14 +33,13 @@
 			pstmt.setString(2 ,id);
 			pstmt.setString(3 ,pwd);
 			pstmt.setString(4 ,email);
-			pstmt.setInt(5 ,10);
-			pstmt.setInt(6 ,1);
+			pstmt.setString(5 ,country);
+			pstmt.setString(6 ,gender);
+			pstmt.setString(7,"123");
+			pstmt.setString(8,memo);
 			int result = pstmt.executeUpdate();
-			pstmt.close();
-			
-			pstmt = conn.prepareStatement(sql2);
-			rs = pstmt.executeQuery();
-			rs.close();
+		
+		
 			
 			
 	} catch (ClassNotFoundException e) {
@@ -51,9 +53,10 @@
 		}
 
 	%>
-
 <title>입력 확인 페이지</title>
-<head></head>
+<head>
+<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">
+</head>
 <body>
 
 

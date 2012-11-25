@@ -23,7 +23,7 @@
 		  <form class="form-horizontal">
 		    <fieldset>
 		      <div id="legend" class="">
-		        <legend class="">Form Name</legend>
+		        <legend class="">글 작성하기</legend>
 		      </div>
 			
 			<div id="section">

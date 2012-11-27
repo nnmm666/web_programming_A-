@@ -80,12 +80,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>회원목록</title>
-   	<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
+   	
 
-	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
+	<link href="./stylesheets/css/index.css" rel="stylesheet" type="text/css">
+	<link href="./stylesheets/css/footer.css" rel="stylesheet" type="text/css">
+	<link href="./stylesheets/css/header.css" rel="stylesheet" type="text/css">
+
 	<script src='./javascript/jquery-1.8.2.min.js'></script>
 	<script src='./javascript/js-cumulus.js'></script>
-
+	<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
 	<meta name="Keywords" content="slider, kit, slideshow, gallery, carousel, jquery plugin" />
 	<meta name="Description" content="Slider Kit jQuery slideshow plugin: content sliders examples" />
 </head>

@@ -1,34 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    	<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
+<%
+	String[][] menu = {
+		{"./user", "Home" },
+		{"./user", "Sign Up" },
+		{"#", "Menu1" },
+		{"#", "Menu2" },
+		{"#", "Menu3" },
+		{"#", "Menu4" },
+		{"#", "Menu5" }
+	};
 
-	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
-	<script src='./javascript/jquery-1.8.2.min.js'></script>
-	<script src='./javascript/js-cumulus.js'></script>
-
-	<meta name="Keywords" content="slider, kit, slideshow, gallery, carousel, jquery plugin" />
-	<meta name="Description" content="Slider Kit jQuery slideshow plugin: content sliders examples" />
-		
-		<!-- Slider Kit scripts -->
-		<script type="text/javascript" src="javascript/jquery.sliderkit.1.9.2.pack.js"></script>
-			<div id="header">
-				<div id="logo"><a href="index.jsp">Let's Talk!!</a></div>
-				<div id="user">
-					<ul>
-						<li><a href="#">로그인</a></li>
-						<li><a href="./loginPage.jsp"> 회원가입</a></li>
-					</ul>
-				</div>
-				<div class ="login">
-					<form action = "" method="post">
-						<ul>
-							<li><span>Password</span>
-								<input type = "password" name ="pwd"/>
-							</li>
-							<li><span>ID</span>
-								<input type = "text" name ="login" />
-							</li>
-						</ul>
-					</form>
-				</div>
-			<div id="border"></div>
+  String currentMenu = request.getParameter("current");
+	
+%>    
+	<!-- Navbar
+  ================================================== -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="./index.jsp">DISLAB</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+          <%
+          	for(String[] menuItem : menu) {
+          		if (currentMenu != null && currentMenu.equals(menuItem[1])) {
+          			out.println("<li class='active'>");
+          		} else {
+          			out.println("<li class=''>");
+          		}
+          		
+          		out.println("<a href='"+menuItem[0]+"'>"+menuItem[1]+"</a>");
+          		out.println("</li>");
+          	}
+          %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top:50px">
+		<h1>Exercise: JSP &amp; Database</h1>
+ 	</div>

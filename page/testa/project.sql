@@ -1,6 +1,6 @@
 CREATE DATABASE web_programming DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL ON web_programming.* TO 'web' IDENTIFIED BY '123';
+GRANT ALL ON web_programming.* TO 'web'@'localhost' IDENTIFIED BY '123';
 
 use web_programming;
 

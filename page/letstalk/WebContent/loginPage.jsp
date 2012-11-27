@@ -3,6 +3,7 @@
  <% 
  	String errorMsg = null;
  	String actionUrl;
+ 	
  	Connection conn = null;
  	PreparedStatement stmt = null;
  	ResultSet rs = null;
@@ -11,8 +12,8 @@
  	String dbUser = "root";
  	String dbPassword = "tiger";
 
- 	String name = "";
  	String email = "";
+ 	String name = "";
  	String password = "";
  	String photo ="";
  	
@@ -35,10 +36,10 @@
 			rs = stmt.executeQuery();
 			
 			if(rs.next()){
+				email = rs.getString("email");
 				name = rs.getString("name");
-				name = rs.getString("email");
-				name = rs.getString("password");
-				name = rs.getString("picture");
+				password = rs.getString("password");
+				photo = rs.getString("photo");
 			}
 		}catch(SQLException e){
 			errorMsg = "SQL에러" + e.getMessage();
@@ -48,7 +49,7 @@
 			if(conn != null) try{conn.close();} catch(SQLException e) {}
 		}
 	}else {
-	actionUrl = "index.jsp";
+	actionUrl = "loginRegister.jsp";
 }
  %>
 <!DOCTYPE html>
@@ -84,9 +85,9 @@
 									%>
 									<div id="user_content">
 										<div class ="control-group">
-											<label class="control-label" for="name">E-mail</label>
+											<label class="control-label" for="email">E-mail</label>
 											<div class="controls">
-												<input class ="inputbox" type="email" placeholder="아이디 혹은 이메일" name="name" value="<%=email %>">
+												<input class ="inputbox" type="email" placeholder="아이디 혹은 이메일" name="email" value="<%=email %>">
 											</div>
 										</div>
 										
@@ -101,16 +102,16 @@
 		
 										<% if(id<= 0){ %>
 										<div class ="control-group">
-											<label class="control-label" for="pwd">Password</label>
+											<label class="control-label" for="password">Password</label>
 											<div class="controls">
-												<input class ="inputbox" type="password" name="pwd" >
+												<input class ="inputbox" type="password" name="password" >
 											</div>
 										</div>
 										
 										<div class ="control-group">
-											<label class="control-label" for="pwd_confirm">Password Confirmation</label>
+											<label class="control-label" for="password_confirm">Password Confirmation</label>
 											<div class="controls">
-												<input class ="inputbox" type="password" name="pwd_confirm" >
+												<input class ="inputbox" type="password" name="password_confirm" >
 											</div>
 										</div>
 										<% } %>
@@ -141,6 +142,7 @@
 		<div id="bottom">
 			<jsp:include page="share/footer.jsp" />
 		</div>
+	</div>
 	</div>
 </body>
 </html>

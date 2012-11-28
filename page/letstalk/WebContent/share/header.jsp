@@ -68,9 +68,9 @@
 		<% 
 		} else if(email.equals(inputemail) && password.equals(inputpwd)){
 			//로그인 성공
-			session.setAttribute("useremail", email);
+			session.setAttribute("userEmail", email);
 			session.setAttribute("userName", name);
-			session.setAttribute("userid", id);
+			session.setAttribute("userId", id);
 			response.sendRedirect("../index.jsp");
 		}else {
 		%>
@@ -98,7 +98,7 @@
 	<div id="loginsuccess">
 		<form method="post" action="logout.jsp">
 		안녕하세요. <b><%=session.getAttribute("userName") %></b> 님 반갑습니다.
-			<a href="signup.jsp?id=<%=session.getAttribute("userid") %>">개인정보수정</a>
+			<a href="signup.jsp?id=<%=session.getAttribute("userId") %>">개인정보수정</a>
 			<input type="submit" id = "logout" value="로그아웃"> 
 		</form>
 	</div>

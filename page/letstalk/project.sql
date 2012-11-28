@@ -14,7 +14,9 @@ CREATE TABLE users (
 );
 
 CREATE TABLE contents (
+	id INT AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR(100) NOT NULL UNIQUE,
+	name varchar(100) not null,
 	content TEXT NOT NULL
 );
 

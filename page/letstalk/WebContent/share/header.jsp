@@ -11,6 +11,7 @@
 	String dbUser = "root";
 	String dbPassword = "tiger";
 	
+	int id = 0;
 	String email="";
 	String password="";
 	String name = "";
@@ -31,6 +32,7 @@
 			rs=stmt.executeQuery();
 			
 			if(rs.next()){
+				id = rs.getInt("id");
 				email = rs.getString("email");
 				password = rs.getString("password");
 				name = rs.getString("name");
@@ -55,11 +57,12 @@
 <% if(request.getMethod() == "POST"){
 		String inputemail= request.getParameter("inputemail");
 		String inputpwd = request.getParameter("inputpwd");
+		int userid = id;
 
-		if(inputemail ==null || inputpwd ==null || inputemail.length()==0|| inputpwd.length()==0 ){
+		if(inputemail == null || inputpwd ==null || inputemail.length()==0|| inputpwd.length()==0 ){
 		%>
 		<script>
-  		alert("이메일과 비밀번호를 입력하세요.");
+  		alert("이메일과 비밀번호를 입력하세요."); 
   		location.href="index.jsp";
 		</script>
 		<% 
@@ -67,7 +70,8 @@
 			//로그인 성공
 			session.setAttribute("useremail", email);
 			session.setAttribute("userName", name);
-			response.sendRedirect("header.jsp");
+			session.setAttribute("userid", id);
+			response.sendRedirect("../index.jsp");
 		}else {
 		%>
 		<script>
@@ -86,7 +90,7 @@
 					<li><span>Email or ID</span> <input type="text" name="inputemail"></li>
 					<li><span>Password</span> <input type="password" name="inputpwd"></li>
 					<li><input type="submit" value="로그인"></li>
-					<li><a href="loginPage.jsp"> 회원가입</a></li>
+					<li><a href="signup.jsp"> 회원가입</a></li>
 				</ul>
 			</form>
 		</div>
@@ -94,8 +98,8 @@
 	<div id="loginsuccess">
 		<form method="post" action="logout.jsp">
 		안녕하세요. <b><%=session.getAttribute("userName") %></b> 님 반갑습니다.
-			<a href="loginPage.jsp">개인정보수정</a>
-			<input type="submit" id = "logout" value="로그아웃">
+			<a href="signup.jsp?id=<%=session.getAttribute("userid") %>">개인정보수정</a>
+			<input type="submit" id = "logout" value="로그아웃"> 
 		</form>
 	</div>
 	<%} %>

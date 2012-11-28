@@ -72,37 +72,39 @@
 <body>
 	<div id="wrap">
 		<div id="top">
-					<jsp:include page="share/header.jsp" />
+		<div id="header">
+			<div id="logo">
+				<a href="index.jsp">Let's Talk!!</a>
+			</div>
 		</div>
-		<div id="middle">
-			<div id="content">
-		<div class="container">
-			<% if(errorMsg.size() > 0){ %>
-				<div class = "alert alert-error">
-					<h3>Error:</h3>
-					<ul>
+	</div>
+	<div id="middle">
+		<div id="content">
+			<div class="container">
+				<% if(errorMsg.size() > 0){ %>
+				<div class = "alert">
+					<b>Error:</b>
 						<% for(String msg : errorMsg) { %>
-							<li><%=msg %></li>
-							<%} %>
-					</ul>
+							<%=msg%>
+						<%} %>		
 				</div>
 				<div class="form-action">
 					<a onclick ="history.back();" class="btn">뒤로 돌아가기</a>
 				</div>
-			<%}else if(result ==1) { %>
-			<div class="alert alert-success">
-				<b><%=name %></b>님 등록해주셔서 감사합니다.
+				<%}else if(result ==1) { %>
+				<div class="alert">
+					<b><%=name %></b>님 등록해주셔서 감사합니다.
+				</div>
+				<div class="form-action">
+					<a href="index.jsp" class="btn">토론하러가기</a>
+				</div>
+				<%} %>
 			</div>
-			<div class="form-action">
-				<a href="index.jsp" class="btn">목록으로</a>
-			</div>
-			<%} %>
+		</div>
 	</div>
-	<div id="bottom">
+		<div id="bottom">
 			<jsp:include page="share/footer.jsp" />
-		</div>
-		</div>
-		</div>
+	</div>
 		</div>
 
 </body>

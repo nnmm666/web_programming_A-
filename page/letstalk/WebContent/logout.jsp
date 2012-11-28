@@ -9,7 +9,8 @@
 </head>
 <body>
 
-로그아웃 되었습니다.
+			로그아웃 되었습니다.
+
 </body>
 </html>
 <script language="javascript">

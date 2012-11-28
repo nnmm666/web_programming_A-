@@ -21,7 +21,7 @@
 		<div id="content">
 				
 		  
-		  <form action="write_db.jsp?id="<%=session.getAttribute("userId") %>" class="form-horizontal">
+		  <form action="write_db.jsp" method="POST" class="form-horizontal">
 		    <fieldset>
 		      <div id="legend" class="">
 		        <legend class="">글 작성하기</legend>
@@ -35,19 +35,13 @@
 			            
 			          </div>
 			     </div>
-			     <div class="control-group">			
-			          <!-- Text input-->
-			          <label class="control-label" for="ititle">제목</label>
-			          <div class="controls">
-			            <input type="text" placeholder="insert title" class="input-xlarge">
-			          </div>
-			      </div>
+			     
 			      <div class="control-group">
 					  <!-- Textarea -->
 			          <label class="control-label" for="context">내용</label>
 			          <div class="controls">
 			            <div class="textarea">
-			                  <textarea rows="10" cols="100"  class=""> </textarea>
+			                  <textarea rows="10" cols="100"  name="content"> </textarea>
 			            </div>
 			      </div>
 			   	  </div>

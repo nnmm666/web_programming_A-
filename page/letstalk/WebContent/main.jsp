@@ -48,11 +48,11 @@
 			<div id="top">
 				<jsp:include page="share/header.jsp" /> 
 			</div>
-
+		<a href="write.jsp"> 글쓰기 </a>
 			<div id="page" class="inner layout-1col">
 				<div id="content">				
 					<noscript><div class="noscript"><span class="code-sitename">Slider Kit</span> jQuery plugin requires Javascript activation.</div></noscript>
-					<a href="write?=<%=session.Atrribute %>"
+		
 					<!-- Start contentslider-std -->
 					<div class="sliderkit contentslider-std">
 						<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev"><a href="#" title="Previous"><span>Previous</span></a></div>

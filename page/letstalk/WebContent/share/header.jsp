@@ -76,13 +76,13 @@
 		%>
 		<script>
   		alert("아이디나 비밀번호가 잘못되었습니다.");
-  		location.href="../index.jsp";
+  		location.href="../letstalk/index.jsp";
 		</script>
 	<%
 	}
 	}%>
 	
-	<% if(session.getAttribute("useremail") == null){%>
+	<% if(session.getAttribute("userEmail") == null){%>
 	
 	<div id="login">
 			<form method="post">

@@ -1,5 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.sql.*"%>
+    <%
+    	String content = request.getParameter("text");
+ 		String email = "zzzzz";//session.getAttribute("userEmail");
+ 		
+    	Connection conn = null;
+    	PreparedStatement pstmt = null;
+    	
+    	String url = "jdbc:mysql://localhost:3306/logindb";
+    	String user = "root"; 
+    	String pw = "tiger";
+    	
+    	try{
+    	Class.forName("com.mysql.jdbc.Driver");
+    	conn = DriverManager.getConnection(url,user,pw);
+    	pstmt = conn.prepareStatement("insert into contents(content, email) value(?,?)");
+    	pstmt.setString(1,text);
+    	pstmt.setString(2,email);
+    	
+    	int i = pstmt.executeUpdate();
+    	out.println(i);
+    	}catch(Exception e){ e.printStackTrace();}
+    	finally{if(conn!=null)conn.close(); 
+    			if(pstmt!=null)pstmt.close();}
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +34,12 @@
 <body>
 <div id="wrap">
 		<div id="top">
-				<jsp:include page="share/header.jsp" />
 		</div>
 		<div id="content">
+			<a href="index.jsp">리스트</a>
+			<%=session.getAttribute("userEmail") %>
 		</div>
 		<div id="bottom">
-					<jsp:include page="share/footer.jsp" />
 		</div>
 	</div>
 </body>

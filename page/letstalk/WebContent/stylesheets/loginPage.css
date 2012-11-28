@@ -4,10 +4,11 @@
 #logintitle span { font-size : 20px; text-align : left; line-height: 40px; color: #333333;}
 #user_content { width : 570px; margin: 0 auto;}
 
+fieldset {height :312px;}
 .legend {width: 95%; text-align : left; padding: 0; margin:0 0 20px 20px;; font-size: 21px; line-height: 40px; color: #333333; border: 0; border-bottom: 1px solid #e5e5e5;}
 .form-horizontal .control-group { margin-bottom: 20px; *zoom: 1;}
 .form-horizontal .control-label {float: left; font-size : 15px; width: 170px; padding-top: 5px; text-align: right;}
-.form-actions{ width : 100%; height:31px; border-radius : 0 0 10px 10px; background-color : #ccc; vertical-align: middle; padding :15px 0;}
+.form-actions{ width : 100%; height:30px; border-radius : 0 0 10px 10px; background-color : #ccc; vertical-align: middle; padding :15px 0;}
 .form-actions a {margin :0 7px;}
 .inputbox{ width : 300px; height:30px; border-radius: 5px; padding:0 10px; border:1px #ccc solid;}
 

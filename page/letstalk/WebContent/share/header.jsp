@@ -76,7 +76,7 @@
 		%>
 		<script>
   		alert("아이디나 비밀번호가 잘못되었습니다.");
-  		location.href="../index.jsp";
+  		location.href="./index.jsp";
 		</script>
 	<%
 	}

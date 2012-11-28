@@ -243,6 +243,7 @@
 								</div>
 							</div>
 						</div>
+						<div id="ejqhrl">더보기</div>
 					</div>
 				</div>
 
@@ -257,10 +258,16 @@
 <script type="text/javascript">
 
 $(function(){
+	$(window).scroll(function() {
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+			$("#ejqhrl").show();
+			}});
 
 	$(".toggle").click(function(){
 			$(this).parents('.opinion').find('.section').slideToggle();
 		});
+	$("#ejqhrl").hide();
 });
+
 	
 </script>

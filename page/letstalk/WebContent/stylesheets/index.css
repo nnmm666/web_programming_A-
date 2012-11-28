@@ -40,19 +40,20 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #header a:link, #header a:visited {text-decoration: none; color:#222;}
 
 /* logo */
-#logo { font: 30px 'Kristen ITC' bold; padding: 15px; float: left; color:yellow;}
+#logo { width : 200px; height:50px; font: 30px 'Kristen ITC' bold; padding: 15px; float: left; color:yellow;}
 #logo a:link, #logo a:visited { text-decoration:none; color:yellow;}
 #logo a:hover, #logo a:active { text-decoration:none; color:yellow;}
 /* login */
-.login {color:white; float:right; margin-top:20px;}
-.login li {padding-left:10px; float:right;}
-.login li span {font-size: 12px;}
-/* user */
-#user { float:right; padding: 10px;}
-#user ul { margin:10px 30px 0 0; padding:3px; font-size:12px;}
-#user ul li { float:left; display:block; width:50px; }
-#user a:link, #user a:visited { text-decoration: none; color:#fff;}
-#user a:hover, #user a:active { text-decoration:underline; color:#fff;} 
+
+#login {width : 580px; float:right; margin:30px auto 0 auto; color:#fff;}
+#login li {padding-left:10px; float:left;}
+#login li span {font-size: 14px;}
+#login a:link, #login a:visited { text-decoration: none; color:#fff;}
+#login a:hover, #login a:active { text-decoration:underline; color:#fff;}
+#loginsuccess { width : 580px; float: right; margin:30px auto 0 auto; color:#fff; font-size: 14px;}
+#loginsuccess a:link, #loginsuccess a:visited { text-decoration: none; color:#fff;}
+#loginsuccess a:hover, #loginsuccess a:active { text-decoration:underline; color:#fff;}
+
 /* middle */
 #middle { width: 100%; height: 520px; margin: 0; padding: 0; }
 #content { width: 960px; height: 520px; margin: 0 auto; padding: 0; }
@@ -109,8 +110,8 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #content_bottom a:hover #content_bottom a:active {text-decoration: underline; }
 
 /* bottom */
-#bottom { width: 100%; height: 75px; margin: 0 auto; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff; }
-#footer { width: 960px; height: 35px; margin: 0 auto; padding:20px 0; text-align: center;}
+#bottom { width: 100%; height: 75px; margin: 0 auto; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff;}
+#footer { width: 960px; height: 35px; margin: 0 auto; padding:20px 0; text-align: center; }
 #footer a:link, #footer a:visited {text-decoration: none; color:#fff;}
 #footer a:hover, #footer a:active { text-decoration:underline;}
 #topicSelect { width: 800px; height: 600px; }

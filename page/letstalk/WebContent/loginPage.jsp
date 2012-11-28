@@ -64,7 +64,7 @@
 <body>
 	<div id="wrap">
 		<div id="top">
-					<jsp:include page="share/header.jsp" />
+				<jsp:include page="share/header.jsp" />
 		</div>
 		<div id="middle">
 			<div id="content">

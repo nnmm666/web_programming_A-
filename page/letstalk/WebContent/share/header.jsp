@@ -1,25 +1,103 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<div id="header">
-	<div id="logo">
-		<a href="index.jsp">Let's Talk!!</a>
+    pageEncoding="UTF-8" import="java.util.*" import="java.sql.*" buffer="8kb"%>
+
+<%
+	String errorMsg =null;
+	Connection conn = null;
+	PreparedStatement stmt=null;
+	ResultSet rs= null;
+	
+	String dbUrl = "jdbc:mysql://localhost:3306/logindb";
+	String dbUser = "root";
+	String dbPassword = "tiger";
+	
+	String email="";
+	String password="";
+	String name = "";
+	
+	try{
+		email=request.getParameter("inputemail");
+	}catch (Exception e){}
+	
+	if(email != null) {
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			conn =DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+			
+			stmt = conn.prepareStatement("SELECT * FROM users WHERE email=?");
+			stmt.setString(1,email);
+	
+			rs=stmt.executeQuery();
+			
+			if(rs.next()){
+				email = rs.getString("email");
+				password = rs.getString("password");
+				name = rs.getString("name");
+			}
+		}catch (SQLException e){
+			errorMsg = "SQL에러 : " + e.getMessage();
+		}finally {
+			if(rs!=null ) try{rs.close();}catch(SQLException e){}
+			if(stmt !=null) try{stmt.close();} catch(SQLException e){}
+			if(conn != null) try{conn.close();} catch(SQLException e) {}
+		}
+	}else{
+		errorMsg = "email가 지정되지 않았습니다.";
+	}
+%>
+<script src='./javascript/jquery-1.8.2.min.js'></script>
+	<div id="header">
+		<div id="logo">
+			<a href="index.jsp">Let's Talk!!</a>
 	</div>
-	<div id="user">
-		<ul>
-			<li><a href="#">로그인</a>
-			</li>
-			<li><a href="./loginPage.jsp"> 회원가입</a>
-			</li>
-		</ul>
-	</div>
-	<div class="login">
-		<form action="" method="post">
-			<ul>
-				<li><span>Password</span> <input type="password" name="pwd" />
-				</li>
-				<li><span>ID</span> <input type="text" name="login" /></li>
-			</ul>
+
+<% if(request.getMethod() == "POST"){
+		String inputemail= request.getParameter("inputemail");
+		String inputpwd = request.getParameter("inputpwd");
+
+		if(inputemail ==null || inputpwd ==null || inputemail.length()==0|| inputpwd.length()==0 ){
+		%>
+		<script>
+  		alert("이메일과 비밀번호를 입력하세요.");
+  		location.href="index.jsp";
+		</script>
+		<% 
+		} else if(email.equals(inputemail) && password.equals(inputpwd)){
+			//로그인 성공
+			session.setAttribute("useremail", email);
+			session.setAttribute("userName", name);
+			response.sendRedirect("header.jsp");
+		}else {
+		%>
+		<script>
+  		alert("아이디나 비밀번호가 잘못되었습니다.");
+  		location.href="../index.jsp";
+		</script>
+	<%
+	}
+	}%>
+	
+	<% if(session.getAttribute("useremail") == null){%>
+	
+	<div id="login">
+			<form method="post">
+				<ul>
+					<li><span>Email or ID</span> <input type="text" name="inputemail"></li>
+					<li><span>Password</span> <input type="password" name="inputpwd"></li>
+					<li><input type="submit" value="로그인"></li>
+					<li><a href="loginPage.jsp"> 회원가입</a></li>
+				</ul>
+			</form>
+		</div>
+	<%} else{ %>
+	<div id="loginsuccess">
+		<form method="post" action="logout.jsp">
+		안녕하세요. <b><%=session.getAttribute("userName") %></b> 님 반갑습니다.
+			<a href="loginPage.jsp">개인정보수정</a>
+			<input type="submit" id = "logout" value="로그아웃">
 		</form>
 	</div>
-	<div id="border"></div>
+	<%} %>
+		<div id="border"></div>
 </div>

@@ -16,34 +16,38 @@
   	try{
   		id = Integer.parseInt(request.getParameter("id"));
   	}catch(Exception e){}
-  		String email = request.getParameter("email");
   		String name = request.getParameter("name");
   		String password = request.getParameter("password");
+  		String password_confirm = request.getParameter("password_confirm");
   		String photo = request.getParameter("photo");
-  		
+
   		List<String> errorMsg = new ArrayList<String>();
   		int result = 0 ;
   		
-  		if(email == null || email.trim().length() ==0){
-  			errorMsg.add("email을 반드시 입력해주세요.");
-  		}
   		if(name == null || name.trim().length() ==0){
   			errorMsg.add("이름을 반드시 입력해주세요.");
+  		}
+  		if(password == null ||password.length()<6){
+  			errorMsg.add("비밀번호는 6자 이상 입력해주세요.");
+  		}
+  		if (!password.equals(password_confirm)) {
+  			errorMsg.add("비밀번호가 일치하지 않습니다.");
   		}
   		
   		if(errorMsg.size() ==0){
   			try{
+  				Class.forName("com.mysql.jdbc.Driver");
+  				
   				conn = DriverManager.getConnection(dbUrl,dbUser, dbPassword);
   				stmt = conn.prepareStatement(
   					"UPDATE users " +
-  					"SET email=?, name=?,password=? photo=?" +
-  					"WHERE id=?"
+  					"SET name =?, password =?, photo =? " +
+  					"WHERE id =?"
   				);
   				stmt.setString(1, name);
-  				stmt.setString(2, email);
-  				stmt.setString(3, password);
-  				stmt.setString(4, photo);
-  				stmt.setInt(5,id);
+  				stmt.setString(2, password);
+  				stmt.setString(3, photo);
+  				stmt.setInt(4, id);
   				
   				result = stmt.executeUpdate();
   				if(result !=1){
@@ -70,31 +74,39 @@
 </head>
 <body>
 	<div id="wrap">
-		<div id="top">
-				<jsp:include page="share/header.jsp" />
+	<div id="top">
+		<div id="header">
+			<div id="logo">
+				<a href="index.jsp">Let's Talk!!</a>
+			</div>
 		</div>
-		<div class="container">
-			<% if(errorMsg.size() > 0){ %>
-				<div class="alert">
-					<h3>Errors:</h3>
-					<ul>
-						<% for(String msg : errorMsg){ %>
-							<li><%=msg %></li>
-						<%} %>
-					</ul>
+	</div>
+		<div id="middle">
+			<div id="content">
+				<div class="container">
+					<% if(errorMsg.size() > 0){ %>
+						<div class="alert">
+							<h3>Errors:</h3>
+							<ul>
+								<% for(String msg : errorMsg){ %>
+									<li><%=msg %></li>
+								<%} %>
+							</ul>
+						</div>
+						
+						<div class="form-action">
+							<a onclick="history.back();" class="btn">뒤로 돌아가기</a>
+						</div>
+						<%} else if (result == 1){ %>
+							<div class ="alert">
+								<b><%=name %></b>님 정보가 수정되었습니다.
+							</div>
+							<div class="form-action">
+								<a href="index.jsp" class="btn">첫 화면으로</a>
+							</div>
+						<%}%>
 				</div>
-				
-				<div class="form-action">
-					<a onclick="history.back();" class="btn">뒤로 돌아가기</a>
-				</div>
-				<%} else if (result == 1){ %>
-					<div class ="alert">
-						<b><%=name %></b>님 정보가 수정되었습니다.
-					</div>
-					<div class="form-action">
-						<a href="index.jsp" class="btn">첫 화면으로</a>
-					</div>
-				<%}%>
+			</div>
 		</div>
 		<div id="bottom">
 			<jsp:include page="share/footer.jsp" />

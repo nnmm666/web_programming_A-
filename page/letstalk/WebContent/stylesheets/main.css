@@ -1,8 +1,8 @@
 #page {padding:15px 0 0;}
-.inner{ height:100%;}
+.inner{ height:800px;}
 .layout-1col #content{ float:none;}
 
-#content { width:960px; height: 800px; margin: auto; padding: 3px; }
+#content { width: 960px; height: 520px; margin: 0 auto; padding: 0; }
 /*---------------------------------
  *  Content slider > Standard
  *---------------------------------*/
@@ -22,10 +22,7 @@
 /* Panel */
 .contentslider-std .sliderkit-panels{width:800px;height:640px;overflow:hidden;padding:10px 0;background:#fff;}
 .contentslider-std .sliderkit-panel{width:780px;height:620px;overflow:auto;padding:0 10px;background:#fff; }
-.contentslider-std .sliderkit-panel .sub {}
-.contentslider-std .sliderkit-panel .sub .sub_title { height:25px; background-color:#236684; margin: 5px 0 14px 0; padding: 3px 0 0 5px;}
-.contentslider-std .sliderkit-panel .sub .sub_title span {float:left; line-height: 23px; font-weight:bold; font-size:1.3em; color:#fff;}
-.contentslider-std .sliderkit-panel .sub .sub_title .sub_title_right {width:100px; height:25px; float: right;}
+.contentslider-std .sliderkit-panel h2{font-size:1.3em; padding: 5px; margin:3px 0 20px; background-color: #236684; color:#fff;}
 .contentslider-std .sliderkit-panel>a:link, .contentslider-std .sliderkit-panel>a:visited {color:#444; text-decoration: none;}
 .contentslider-std .sliderkit-panel>a:hover, .contentslider-std .sliderkit-panel>a:active {text-decoration: underline;}
 .contentslider-std .sub {margin-bottom:10px; border-top: 1px solid #ddd;}
@@ -33,7 +30,7 @@
 .contentslider-std .sliderkit-go-btn{position:absolute;top:45%;z-index:10;}
 .contentslider-std .sliderkit-go-prev{left:0px;}
 .contentslider-std .sliderkit-go-next{right:20px;}
-.contentslider-std .sliderkit-go-btn a{display:block;width:30px;height:40px;cursor:pointer;background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;}
+.contentslider-std .sliderkit-go-btn a{display:block;width:30px;height:40px;cursor:pointer;background:transparent url("images/arrows-h-big.png") no-repeat 0 0;}
 .contentslider-std .sliderkit-go-prev a{background-position:-30px 0;}
 .contentslider-std .sliderkit-go-next a{background-position:0 0;}
 .contentslider-std .sliderkit-go-prev a:hover{background-position:-90px 0;}

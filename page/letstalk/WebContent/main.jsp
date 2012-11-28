@@ -9,34 +9,34 @@
 		<meta name="Description" content="Slider Kit jQuery slideshow plugin: content sliders examples" />
 		
 		<!-- jQuery Plugin scripts -->
+		<script type="text/javascript" src="javascript/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript" src="javascript/jquery.easing.1.3.min.js"></script>
 		<script type="text/javascript" src="javascript/jquery.mousewheel.min.js"></script>
 		
 		<!-- Slider Kit scripts -->
 		<script type="text/javascript" src="javascript/jquery.sliderkit.1.9.2.pack.js"></script>
-
+		
 		<!-- Slider Kit launch -->
-		<script type="text/javascript">
-			$(window).load(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
-				
-				// Photo slider > Minimal
-				$(".contentslider-std").sliderkit({
-					auto:0,
-					tabs:1,
-					circular:1,
-					panelfx:"sliding",
-					panelfxfirst:"fading",
-					panelfxeasing:"easeInOutExpo",
-					fastchange:0,
-					keyboard:1
-				});
-				
-			});	
-		</script>
+			<script type="text/javascript">
+			$(function(){
+				$(window).load(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
+					// Photo slider > Minimal
+					$(".contentslider-std").sliderkit({
+						auto:0,
+						tabs:1,
+						circular:1,
+						panelfx:"sliding",
+						panelfxfirst:"fading",
+						panelfxeasing:"easeInOutExpo",
+						fastchange:0,
+						keyboard:1
+					});
+				});	
+				});	
+			</script>
 
 		<!-- Site styles -->
 		<link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
-		
 		<!-- Slider Kit styles -->
 		<link rel="stylesheet" type="text/css" href="stylesheets/sliderkit-core.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/main.css" media="screen, projection" />
@@ -51,12 +51,13 @@
 				<div id="content">				
 					<noscript><div class="noscript"><span class="code-sitename">Slider Kit</span> jQuery plugin requires Javascript activation.</div></noscript>
 					
-				
 					<!-- Start contentslider-std -->
 					<div class="sliderkit contentslider-std">
+				
 						<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev"><a href="#" title="Previous"><span>Previous</span></a></div>
 						<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-next"><a href="#" title="Next"><span>Next</span></a></div>
 						<div class="sliderkit-nav">
+						<div id="write"><a href="write.jsp" title="[link title]">토론해요!</a></div>
 							<div class="sliderkit-nav-clip">
 								<ul>
 									<li><a href="#" title="[link title]">추천수</a></li>

@@ -7,9 +7,17 @@ use logindb;
 
 CREATE TABLE users (
 	id INT AUTO_INCREMENT PRIMARY KEY, 
-	email VARCHAR(100) UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
 	name VARCHAR(100),
 	password VARCHAR(255) NOT NULL, 
 	photo VARCHAR(10000)
 );
+
+CREATE TABLE contents (
+	email VARCHAR(100) NOT NULL UNIQUE,
+	content TEXT NOT NULL
+);
+
+
+
 

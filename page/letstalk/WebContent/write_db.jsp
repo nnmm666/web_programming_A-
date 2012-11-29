@@ -2,7 +2,7 @@
     pageEncoding="UTF-8" import="java.sql.*"%>
     <%
     	String content = request.getParameter("text");
- 		String email = "zzzzz"; //session.getAttribute("userEmail");
+ 		String email =session.getAttribute("userEmail");
  		
     	Connection conn = null;
     	PreparedStatement pstmt = null;

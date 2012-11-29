@@ -29,6 +29,12 @@
 					</div>
 
 					<div id="section">
+					<div class="control-group">
+							<!-- Text input-->
+							<label class="control-label" for="keyword">키워드</label>
+							<div class="controls" id="keyword">
+								<%= request.getString("keyword_id")%></div>
+						</div>
 						<div class="control-group">
 							<!-- Text input-->
 							<label class="control-label" for="user">작성자</label>

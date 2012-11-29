@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
+    <jsp:useBean id="info" scope="request" class="project.LetsTalk">
     <%
-    	String content = request.getParameter("text");
- 		String email =session.getAttribute("userEmail");
  		
     	Connection conn = null;
     	PreparedStatement pstmt = null;
@@ -14,7 +13,7 @@
     	try{
     	Class.forName("com.mysql.jdbc.Driver");
     	conn = DriverManager.getConnection(url,user,pw);
-    	pstmt = conn.prepareStatement("insert into contents(content, email) value(?,?)");
+    	pstmt = conn.prepareStatement("insert into contents(keyword_id,content,writer,photo,) value(?,?,?,?)");
     	pstmt.setString(1,text);
     	pstmt.setString(2,email);
     	
@@ -44,3 +43,4 @@
 	</div>
 </body>
 </html>
+</jsp:useBean>

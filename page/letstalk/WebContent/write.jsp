@@ -21,7 +21,7 @@
 		</div>
 		<div id="content">
 
-
+	<%int i = (Integer.parseInt(request.getParameter("keyword_id"))); %>
 			<form action="write_db.jsp" method="POST" class="form-horizontal">
 				<fieldset>
 					<div id="legend" class="">
@@ -32,8 +32,8 @@
 					<div class="control-group">
 							<!-- Text input-->
 							<label class="control-label" for="keyword">키워드</label>
-							<div class="controls" id="keyword">
-								<%= request.getString("keyword_id")%></div>
+							<div class="controls" id="keyword"><%=i %>
+								</div>
 						</div>
 						<div class="control-group">
 							<!-- Text input-->

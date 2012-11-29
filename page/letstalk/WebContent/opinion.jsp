@@ -10,18 +10,21 @@
 		Class.forName("com.mysql.jdbc.Driver");
 
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-		String dbUser = "root";
-		String dbPassword = "32Armyband";
+		String dbUser = "web";
+		String dbPassword = "asdf";
 		
 		String topic_id = request.getParameter("topic_id");
 		String keyword = "";
 		String content = "";
 		String writer = "";
 		String date = "";
+		int pros = 0;
+		int cons = 0;
+		
 
 		try {
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-			stmt = conn.prepareStatement("SELECT topic.id, keyword, content, substr(topic.date, 1, 10) as date, writer " 
+			stmt = conn.prepareStatement("SELECT *, substr(topic.date, 1, 10) as conv_date " 
 					 + "FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE topic.id=?");
 	    stmt.setString(1, topic_id);
     	rs = stmt.executeQuery();
@@ -30,7 +33,9 @@
     	keyword = rs.getString("keyword");
     	content = rs.getString("content");
     	writer = rs.getString("writer");
-    	date = rs.getString("date");
+    	date = rs.getString("conv_date");
+    	pros = rs.getInt("pros");
+    	cons = rs.getInt("cons");
     	
     	
 	%>
@@ -66,7 +71,7 @@
 					<%=content %>
 					</div>
 					<div class="topicContentBottomInOpinion">
-							<span><img src="./images/like.png"> 0 </span><span><img src="./images/hate.png"> 0 </span>
+							<span><img src="./images/like.png"> <%=pros %> </span><span><img src="./images/hate.png"> <%=pros %> </span>
 							<span>작성자 : <%=writer %></span><span>작성일 : <%=date %></span>
 					</div>
 				</div>

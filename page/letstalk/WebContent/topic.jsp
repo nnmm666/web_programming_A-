@@ -29,8 +29,8 @@
 		Class.forName("com.mysql.jdbc.Driver");
 
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-		String dbUser = "root";
-		String dbPassword = "32Armyband";
+		String dbUser = "web";
+		String dbPassword = "asdf";
 		
 		String keyword_id = request.getParameter("keyword_id");
 		String keyword = "";

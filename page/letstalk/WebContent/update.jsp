@@ -5,9 +5,9 @@
   	PreparedStatement stmt =null;
   	ResultSet rs = null;
 
-		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-		String dbUser = "root";
-		String dbPassword = "32Armyband";
+	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+	String dbUser = "web";
+	String dbPassword = "asdf";
   	
   	request.setCharacterEncoding("utf-8");
   	

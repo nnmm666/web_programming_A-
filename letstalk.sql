@@ -1,3 +1,10 @@
+CREATE DATABASE web2012 DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
+GRANT ALL ON web2012.* TO 'web' IDENTIFIED BY 'asdf';
+
+use web2012;
+
+
 set character_set_results=euckr;
 set character_set_client=euckr;
 
@@ -21,6 +28,8 @@ CREATE TABLE topic (
 	keyword_id INT NOT NULL,
 	content TEXT NOT NULL,
 	writer VARCHAR(100) NOT NULL,
+	pros INT DEFAULT 0,
+	cons INT DEFAULT 0,
 	date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	photo VARCHAR(255),
 	address VARCHAR(255) NOT NULL

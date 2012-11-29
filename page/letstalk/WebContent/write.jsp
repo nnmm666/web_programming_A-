@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.sql.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,23 @@
 		</div>
 		<div id="content">
 
-	<%int i = (Integer.parseInt(request.getParameter("keyword_id"))); %>
+	<%int keyword_id = (Integer.parseInt(request.getParameter("keyword_id"))); 
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		String dbUser = "web";
+		String dbPassword = "asdf";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select keyword from keyword where id=?";
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1,keyword_id);
+			rs=pstmt.executeQuery();
+	%>
+	
 			<form action="write_db.jsp" method="POST" class="form-horizontal">
 				<fieldset>
 					<div id="legend" class="">
@@ -31,10 +47,18 @@
 					<div id="section">
 					<div class="control-group">
 							<!-- Text input-->
+							<% while(rs.next()){ %>
 							<label class="control-label" for="keyword">키워드</label>
-							<div class="controls" id="keyword"><%=i %>
+							<div class="controls" id="keyword"><%= rs.getString("keyword") %>
 								</div>
 						</div>
+					<%	}
+							}catch(Exception e){ e.printStackTrace();
+							}finally{
+    							if(conn!=null)conn.close(); 
+    							if(pstmt!=null)pstmt.close();
+    							if(rs!=null)rs.close();
+    						} %>
 						<div class="control-group">
 							<!-- Text input-->
 							<label class="control-label" for="user">작성자</label>

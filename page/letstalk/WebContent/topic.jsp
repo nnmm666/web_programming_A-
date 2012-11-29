@@ -151,7 +151,7 @@
 									<li><a href="topic.jsp?keyword_id=<%=keyword_id %>&page=<%=pageNo +1 %>">&raquo;</a></li>
 									<%}	%>
 								</ul>
-								<a href="#" id=writeButton>
+								<a href="write.jsp?keyword_id=<%= keyword_id %>" id=writeButton>
 									주제 추가하기
 								</a>
 							</div>

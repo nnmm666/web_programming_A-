@@ -6,10 +6,10 @@
  		
     	Connection conn = null;
     	PreparedStatement pstmt = null;
-    	
-    	String url = "jdbc:mysql://localhost:3306/logindb";
-    	String user = "root"; 
-    	String pw = "tiger";
+
+    	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+    	String dbUser = "root";
+    	String dbPassword = "32Armyband";
     	
     	try{
     	Class.forName("com.mysql.jdbc.Driver");

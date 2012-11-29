@@ -85,6 +85,23 @@
 					</span>
 					<input type="button" id="opinionWrite" value="Write">
 				</div>
+				<div id="order">
+					<ul>
+						<li><hr style="width:616px; margin-top:9px;"></li>
+				    <li>
+					    <a href="#">정렬▼</a>
+					    <ul>
+					        <li style="border-top: 1px solid #ccc;"><a href="#">추천수</a></li>
+					        <li><a href="#">반대수</a></li>
+					        <li><a href="#">추천만</a></li>
+					        <li><a href="#">반대만</a></li>
+					        <li><a href="#">덧글순</a></li>
+					        <li style="border-bottom: 1px solid #ccc;"><a href="#">최신순</a></li>
+					    </ul>
+				    </li>
+				    <li><hr style="width:34px;"></li>
+					</ul>
+				</div>
 				<div id="MoreOpinion">
 					<div>
 						<div class="opinion">

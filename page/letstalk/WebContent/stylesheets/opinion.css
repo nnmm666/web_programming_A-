@@ -41,7 +41,15 @@
 
 #opinionWrite {width: 55px; height: 25px; margin: 2px 5px; float: right;}
 
-
+#order { width: 725px; height:20px; margin : 0 auto; }
+#order ul {list-style: none;}
+#order ul li {float: left; padding: 5px; color : #000;}
+#order ul li a{text-decoration:none; color :#000 ;}
+#order ul li a:hover {color : #999;}
+#order ul li:hover > ul {display: block; }
+#order ul ul { display: none;margin: 0;padding: 0px; position: absolute;}
+#order ul ul li {float: none; margin-left:30px; padding: 3px 10px; background-color:#eee; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
+#order ul ul li a:hover {color : #999;}
 /*MoreOpinion*/
 
 #MoreOpinion { width : 720px; height: 200px; margin : 0 auto; margin-top: 10px;}

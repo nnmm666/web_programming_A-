@@ -87,7 +87,7 @@
 	<div id="login">
 			<form method="post">
 				<ul>
-					<li><span>Email or ID</span> <input type="text" name="inputemail"></li>
+					<li><span>E-mail</span> <input type="text" name="inputemail"></li>
 					<li><span>Password</span> <input type="password" name="inputpwd"></li>
 					<li><input type="submit" value="로그인"></li>
 					<li><a href="signup.jsp"> 회원가입</a></li>

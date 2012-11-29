@@ -21,7 +21,7 @@
 
 		try {
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-			stmt = conn.prepareStatement("SELECT topic.id, keyword, content, topic.date, writer " 
+			stmt = conn.prepareStatement("SELECT topic.id, keyword, content, substr(topic.date, 1, 10) as date, writer " 
 					 + "FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE topic.id=?");
 	    stmt.setString(1, topic_id);
     	rs = stmt.executeQuery();
@@ -30,7 +30,7 @@
     	keyword = rs.getString("keyword");
     	content = rs.getString("content");
     	writer = rs.getString("writer");
-    	date = rs.getString("topic.date");
+    	date = rs.getString("date");
     	
     	
 	%>
@@ -62,8 +62,11 @@
 					<div id="topicPhoto">
 						<img src="./images/example.png" width='66px' height='100px'>
 					</div>
-					<div id="topicContent">
+					<div id="topicContentInOpinion">
 					<%=content %>
+					</div>
+					<div class="topicContentBottomInOpinion">
+						<span>작성자 : <%=writer %></span><span>작성일 : <%=date %></span>
 					</div>
 				</div>
 				<div id="myopinion">

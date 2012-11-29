@@ -104,7 +104,7 @@
 									<div id="topicContent">
 										<%=content %>
 									</div>
-									<div id="topicContentBottom">
+									<div class="topicContentBottom">
 										<span>작성자 : <%=writer %></span><span>작성일 : <%=date %></span>
 									</div>
 								</div>

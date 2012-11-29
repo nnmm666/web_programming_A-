@@ -2,7 +2,7 @@ package project;
 
 public class LetsTalk {
 	private int id;
-	private int keyword_ID;
+	private int keywordID;
 	private String writer;
 	private String content;
 	private String date;
@@ -13,8 +13,8 @@ public class LetsTalk {
 	
 	public void setID(int id){this.id=id;}
 	public int getID(){return id;}
-	public void setkeyword_ID(int keyword_ID){this.keyword_ID=keyword_ID;}
-	public int getKeyword_ID(){return keyword_ID;}
+	public void setKeywordID(int keywordID){this.keywordID=keywordID;}
+	public int getKeywordID(){return keywordID;}
 	public void setWriter(String writer){this.writer=writer;}
 	public String getWriter(){return writer;}
 	public void setContent(String content){this.content=content;}

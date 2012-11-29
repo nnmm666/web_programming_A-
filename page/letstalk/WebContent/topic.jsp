@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.io.*" import="java.sql.*" %>
-<% request.setCharacterEncoding("utf-8"); %>	
+
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -11,6 +11,7 @@
 <script src='http://code.jquery.com/jquery-latest.js'></script>
 
 <%
+	request.setCharacterEncoding("utf-8");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -31,8 +32,9 @@
 		String dbUser = "root";
 		String dbPassword = "32Armyband";
 		
-		String id = request.getParameter("id");
+		String keyword_id = request.getParameter("keyword_id");
 		String keyword = "";
+		String topic_id = "";
 		String content = "";
 		String writer = "";
 		String date = "";
@@ -41,7 +43,7 @@
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			
 			stmt = conn.prepareStatement("SELECT keyword.keyword, count(*) FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE keyword_id=?");
-			stmt.setString(1, id);
+			stmt.setString(1, keyword_id);
 	    rs = stmt.executeQuery();
 	    rs.next();
 	    keyword = rs.getString("keyword.keyword");
@@ -51,10 +53,10 @@
 	    stmt.close();
 	    
 	    
-			stmt = conn.prepareStatement("SELECT keyword.id, keyword, content, topic.date, writer " 
+			stmt = conn.prepareStatement("SELECT topic.id, keyword.id, keyword, content, topic.date, writer " 
 					 + "FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE keyword_id=? "
 					 + "LIMIT ?, ?");
-    	stmt.setString(1, id);
+    	stmt.setString(1, keyword_id);
     	stmt.setInt(2, startPos);
     	stmt.setInt(3, numInPage);
     
@@ -92,8 +94,9 @@
 									content = rs.getString("content");
 									writer = rs.getString("writer");
 									date = rs.getString("date");
+									topic_id = rs.getString("topic.id");
 							%>
-							<a href="opinion.jsp">
+							<a href="opinion.jsp?topic_id=<%= topic_id %>">
 								<div class="sliderkit-block">
 									<div id="topicPhoto">
 										<img src="./images/example.png" width='66px' height='60px'>
@@ -129,7 +132,7 @@
 									%>
 									<li class="disable"><a href="#">&laquo;</a></li>
 									<% } else { %>
-									<li><a href="topic.jsp?id=<%=id %>&page=<%=pageNo -1 %>">&laquo;</a></li>
+									<li><a href="topic.jsp?id=<%=keyword_id %>&page=<%=pageNo -1 %>">&laquo;</a></li>
 									<%
 									}
 									
@@ -137,7 +140,7 @@
 									for(int i = startPageNo; i<=endPageNo; i++) {
 										className = (i == pageNo) ? "active" : "";
 										out.println("<li class='" + className + "'>");
-										out.println("<a href='topic.jsp?id=" + id + "&page=" + i + "'>" + i + "</a>");
+										out.println("<a href='topic.jsp?id=" + keyword_id + "&page=" + i + "'>" + i + "</a>");
 										out.println("</li>");
 									}
 									
@@ -145,7 +148,7 @@
 									%>
 									<li class="disable"><a href="#">&raquo;</a></li>
 									<% } else { %>
-									<li><a href="topic.jsp?id=<%=id %>&page=<%=pageNo +1 %>">&raquo;</a></li>
+									<li><a href="topic.jsp?id=<%=keyword_id %>&page=<%=pageNo +1 %>">&raquo;</a></li>
 									<%}	%>
 								</ul>
 							</div>

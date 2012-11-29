@@ -45,7 +45,7 @@
     		id = rs.getInt("id");
     		keyword = rs.getString("keyword");
     		weight = rs.getInt("weight");
-    		out.println("new Tag(\"" + keyword + "\", " + weight + ", \"topic.jsp?id=" + id + "\"" +  "),");
+    		out.println("new Tag(\"" + keyword + "\", " + weight + ", \"topic.jsp?keyword_id=" + id + "\"" +  "),");
     	}
     	
     	stmt.close();

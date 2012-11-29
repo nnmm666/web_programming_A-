@@ -1,5 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.io.*" import="java.sql.*"%>
+    
+<%
+		request.setCharacterEncoding("utf-8");
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		String dbUser = "root";
+		String dbPassword = "32Armyband";
+		
+		String topic_id = request.getParameter("topic_id");
+		String keyword = "";
+		String content = "";
+		String writer = "";
+		String date = "";
+
+		try {
+			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+			stmt = conn.prepareStatement("SELECT topic.id, keyword, content, topic.date, writer " 
+					 + "FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE topic.id=?");
+	    stmt.setString(1, topic_id);
+    	rs = stmt.executeQuery();
+    	rs.next();
+    	
+    	keyword = rs.getString("keyword");
+    	content = rs.getString("content");
+    	writer = rs.getString("writer");
+    	date = rs.getString("topic.date");
+    	
+    	
+	%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -23,15 +57,13 @@
 						<button type="submit" class="searchButton">Search</button>
 					</form>
 				</div>
-				<div id="topicdiv">슈퍼스타k4</div>
+				<div id="topicdiv"><%=keyword %></div>
 				<div id="topic">
 					<div id="topicPhoto">
 						<img src="./images/example.png" width='66px' height='100px'>
 					</div>
 					<div id="topicContent">
-					엠넷의 대국민 오디션 슈퍼스타k4는 한국 K-POP시장에 큰 파장을 불러 일으킨다고 생각합니다.
-					매 시즌마다 실력좋은 가수들이 나오고 있고, 시청률도 또한 동시간대 최고를 기록하고 있습니다....
-					어쩌고저쩌고...
+					<%=content %>
 					</div>
 				</div>
 				<div id="myopinion">
@@ -49,7 +81,7 @@
 						<div class="opinion">
 							<div class="titleborder_like">
 								인기가 있으면 논란이 되는건 당연한법~~
-								<a href="#"><a href="#"><span class="toggle">▲▼</span></a></a>
+								<a href="#"><span class="toggle">▲▼</span></a>
 							</div>
 							<div class="section">
 								<div class="section_top">
@@ -59,7 +91,7 @@
 										재미만 있으면 됏지<br>
 									</div>
 									<div class="section_right">
-										<span><img src="./images/like.png"> 0 </sapn>
+										<span><img src="./images/like.png"> 0 </span>
 										<span><img src="./images/hate.png"> 0 </span>
 									</div>
 								</div>
@@ -108,7 +140,7 @@
 										애들도 예전만 못하구..
 									</div>
 									<div class="section_right">
-										<span><img src="./images/like.png"> 0 </sapn>
+										<span><img src="./images/like.png"> 0 </span>
 										<span><img src="./images/hate.png"> 0 </span>
 									</div>
 								</div>
@@ -158,7 +190,7 @@
 										이승철 ㅗㅗ
 									</div>
 									<div class="section_right">
-										<span><img src="./images/like.png"> 0 </sapn>
+										<span><img src="./images/like.png"> 0 </span>
 										<span><img src="./images/hate.png"> 0 </span>
 									</div>
 								</div>
@@ -206,7 +238,7 @@
 										유승우는 왜 떨구냐! 정준영을 탈락시키자!
 									</div>
 									<div class="section_right">
-										<span><img src="./images/like.png"> 0 </sapn>
+										<span><img src="./images/like.png"> 0 </span>
 										<span><img src="./images/hate.png"> 0 </span>
 									</div>
 								</div>
@@ -253,8 +285,22 @@
 	</div>
 	
 </body>
-</html>
 
+		<%
+		stmt.close();
+		rs.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+		    if (rs != null) try{rs.close();} catch(SQLException e) {}
+		    if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+		    if (conn != null) try{conn.close();} catch(SQLException e) {}
+		}
+		
+		%>
+		
 <script type="text/javascript">
 
 $(function(){
@@ -271,3 +317,5 @@ $(function(){
 
 	
 </script>
+		
+</html>

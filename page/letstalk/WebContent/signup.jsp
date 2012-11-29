@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.*" import="java.sql.*"%>
- <% 
+	pageEncoding="UTF-8" import="java.util.*" import="java.sql.*"%>
+<% 
  	String errorMsg = null;
  	String actionUrl;
  	
@@ -8,9 +8,9 @@
  	PreparedStatement stmt = null;
  	ResultSet rs = null;
 
- 	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+ 	String dbUrl = "jdbc:mysql://localhost:3306/logindb";
  	String dbUser = "root";
- 	String dbPassword = "32Armyband";
+ 	String dbPassword = "tiger";
 
  	int id = 0;
  	String email = "";
@@ -54,85 +54,92 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-	<meta charset="utf-8">
-	<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
-	<link href="stylesheets/loginPage.css" rel="stylesheet" type="text/css">
-	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
-	<script src='./javascript/jquery-1.8.2.min.js'></script>
+<meta charset="utf-8">
+<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
+<link href="stylesheets/loginPage.css" rel="stylesheet" type="text/css">
+<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
+<script src='http://code.jquery.com/jquery-latest.js'></script>
 </head>
 <body>
 	<div id="wrap">
 		<div id="top">
-				<jsp:include page="share/header.jsp" />
+			<jsp:include page="share/header.jsp" />
 		</div>
 		<div id="middle">
 			<div id="content">
-				<div id = "content_border">
+				<div id="content_border">
 					<div id="logintitle">
-						<span><b>지금 Let's-talk에 가입하세요</b></span><br>
+						<span><b>지금 Let's-talk에 가입하세요</b>
+						</span><br>
 						<h4>당신의 생각을 향상시켜드립니다.</h4>
 					</div>
 					<div class="container">
-							<form class="form-horizontal" action="<%=actionUrl%>" method="POST">
-								<fieldset>
-									<legend class="legend">Sign Up</legend>
-									<%
+						<form class="form-horizontal" action="<%=actionUrl%>"
+							method="POST">
+							<fieldset>
+								<legend class="legend">Sign Up</legend>
+								<%
 										if(id>0){
 											out.println("<input type='hidden' name='id' value='"+id+"'>");
 										}
 									%>
-									<% if(id<= 0){ %>
-									<div id="user_content">
-										<div class ="control-group">
-											<label class="control-label" for="email">E-mail</label>
-											<div class="controls">
-												<input class ="inputbox" type="email" placeholder="아이디 혹은 이메일" name="email" value="<%=email %>">
-											</div>
+								<% if(id<= 0){ %>
+								<div id="user_content">
+									<div class="control-group">
+										<label class="control-label" for="email">E-mail</label>
+										<div class="controls">
+											<input class="inputbox" type="email" placeholder="아이디 혹은 이메일"
+												name="email" value="<%=email %>">
 										</div>
-										<% } %>
-										
-										<div class ="control-group">
-											<label class="control-label" for="name">Name</label>
-											<div class="controls">
-												<input class ="inputbox" type="text" placeholder="이름" name="name" value="<%=name %>">
-											</div>
-										</div>							
-										
-										<div class ="control-group">
-											<label class="control-label" for="password">Password</label>
-											<div class="controls">
-												<input class ="inputbox" type="password" name="password" >
-											</div>
+									</div>
+									<% } %>
+
+									<div class="control-group">
+										<label class="control-label" for="name">Name</label>
+										<div class="controls">
+											<input class="inputbox" type="text" placeholder="이름"
+												name="name" value="<%=name %>">
 										</div>
-										
-										<div class ="control-group">
-											<label class="control-label" for="password_confirm">Password Confirmation</label>
-											<div class="controls">
-												<input class ="inputbox" type="password" name="password_confirm" >
-											</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="password">Password</label>
+										<div class="controls">
+											<input class="inputbox" type="password" name="password">
 										</div>
-										
-		
-										<div class="control-group">
-								     		<label class="control-label" for="picture">Profile Photo</label>
-								          <div class="controls">
-								             <input class="input-file" id="fileInput" type="file">
-								          </div>
-								      	</div>
-										</div>								
-								</fieldset>
-							
-								<div class="form-actions">
-									<a href="index.jsp" class="btn">취소하기</a>
-									<% if(id<= 0) {%>
-										<input type="submit" class="btn btn-primary" value="가입">
-										<%}else{ %>
-										<input type="submit" class="btn btn-primary" value="수정">
-										<a href="#" class="btn btn-primary" data-action ="delete"
-										data-id="<%=id %> ">탈퇴  </a>
-										<%} %>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="password_confirm">Password
+											Confirmation</label>
+										<div class="controls">
+											<input class="inputbox" type="password"
+												name="password_confirm">
+										</div>
+									</div>
+
+
+									<div class="control-group">
+										<label class="control-label" for="picture">Profile
+											Photo</label>
+										<div class="controls">
+											<input class="input-file" id="fileInput" type="file">
+										</div>
+									</div>
 								</div>
-							</form>					
+							</fieldset>
+
+							<div class="form-actions">
+								<a href="index.jsp" class="btn">취소하기</a>
+								<% if(id<= 0) {%>
+								<input type="submit" class="btn btn-primary" value="가입">
+								<%}else{ %>
+								<input type="submit" class="btn btn-primary" value="수정">
+								<a href="#" class="btn btn-primary" data-action="delete"
+									data-id="<%=id %> ">탈퇴 </a>
+								<%} %>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>

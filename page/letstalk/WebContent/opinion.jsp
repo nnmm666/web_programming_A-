@@ -7,7 +7,7 @@
 	<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
 	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<link href="stylesheets/opinion.css" rel="stylesheet" type="text/css">
-	<script src='./javascript/jquery-1.8.2.min.js'></script>
+	<script src='http://code.jquery.com/jquery-latest.js'></script>
 </head>
 <body>
 	<div id="wrap">

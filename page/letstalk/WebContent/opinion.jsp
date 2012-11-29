@@ -66,7 +66,8 @@
 					<%=content %>
 					</div>
 					<div class="topicContentBottomInOpinion">
-						<span>작성자 : <%=writer %></span><span>작성일 : <%=date %></span>
+							<span><img src="./images/like.png"> 0 </span><span><img src="./images/hate.png"> 0 </span>
+							<span>작성자 : <%=writer %></span><span>작성일 : <%=date %></span>
 					</div>
 				</div>
 				<div id="myopinion">

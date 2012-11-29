@@ -58,7 +58,6 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #middle { width: 100%; height: 520px; margin: 0; padding: 0; }
 #content { width: 960px; height: 520px; margin: 0 auto; padding: 0; }
 
-
 #content_top { width: 960px; height: 80px; margin: 0; padding: 0; }
 #content_top form { width: 359px; height: 20px; margin: 0 auto; padding: 30px 0; }
 #content_top #search_bar { width: 300px; height: 20px; }
@@ -87,7 +86,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 /* Content block */
 #topicPhoto { width: 100px; height: 70px; float: left; text-align: center; }
 #topicContent { width: 520px; height: 40px; margin: 0 10px 10px 10px; float: left; }
-#topicContentInOpinion { float: right; width: 450px; margin: 10px 20px; }
+#topicContentInOpinion { float: right; width: 450px; height: 40px; margin: 10px 20px; }
 .topicContentBottomInOpinion { float: right; width: 400px; text-align: right; margin-top: 20px; margin-right: 10px; }
 .topicContentBottom { text-align: right; }
 .topicContentBottom span, .topicContentBottomInOpinion span { margin-left: 20px; text-decoration: none; }
@@ -114,7 +113,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 
 #content_bottom { padding: 20px; color: #000; }
 #content_bottom a:link, #content_bottom a:visited { font-size:14px; font-weight: bold; text-decoration: none;  color: #222; }
-/*#content_bottom a:hover #content_bottom a:active {text-decoration: underline; }*/
+#content_bottom a:hover #content_bottom a:active {text-decoration: underline; }
 
 /* bottom */
 #bottom { width: 100%; height: 75px; margin: 0 auto; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff;}

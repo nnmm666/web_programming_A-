@@ -38,7 +38,7 @@
 			rs=pstmt.executeQuery();
 	%>
 	
-			<form action="write_db.jsp" method="POST" class="form-horizontal">
+			<form action="write_db.jsp?keyword_id=<%=keyword_id %>" method="POST" class="form-horizontal">
 				<fieldset>
 					<div id="legend" class="">
 						<legend class="">글 작성하기</legend>

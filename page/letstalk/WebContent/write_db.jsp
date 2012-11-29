@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
     <jsp:useBean id="info" scope="request" class="project.Write">
-    <jsp:setproperty name="info" property="*"/>
+    <jsp:setProperty name="info" property="*"/>
 <%
-	int keyword=info.getKeywordID();
+	int keyword_id=info.getKeyword_id();
 	String content=info.getContent();
 	String writer=(String)session.getAttribute("userName");
+	String photo=info.getPhoto();
 
 	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 	String dbUser = "web";
@@ -14,11 +15,15 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	String sql = "insert into topic(keyword_id,content,writer,photo) value(?,?,?,?)";
+	String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
 	try{
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);
 	pstmt = conn.prepareStatement(sql);
+	pstmt.setInt(1,keyword_id);
+	pstmt.setString(2,content);
+	pstmt.setString(3,writer);
+	pstmt.setString(4,photo);
 	int i = pstmt.executeUpdate();
     	
     	out.println(i);

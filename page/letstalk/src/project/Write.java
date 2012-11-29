@@ -2,7 +2,7 @@ package project;
 
 public class Write {
 	private int id;
-	private int keywordID;
+	private int keyword_id;
 	private String writer;
 	private String content;
 	private String date;
@@ -13,8 +13,8 @@ public class Write {
 	
 	public void setID(int id){this.id=id;}
 	public int getID(){return id;}
-	public void setKeywordID(int keywordID){this.keywordID=keywordID;}
-	public int getKeywordID(){return keywordID;}
+	public void setKeyword_id(int keyword_id){this.keyword_id=keyword_id;}
+	public int getKeyword_id(){return keyword_id;}
 	public void setWriter(String writer){this.writer=writer;}
 	public String getWriter(){return writer;}
 	public void setContent(String content){this.content=content;}

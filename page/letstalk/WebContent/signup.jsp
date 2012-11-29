@@ -8,9 +8,9 @@
  	PreparedStatement stmt = null;
  	ResultSet rs = null;
 
- 	String dbUrl = "jdbc:mysql://localhost:3306/logindb";
+ 	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
  	String dbUser = "root";
- 	String dbPassword = "tiger";
+ 	String dbPassword = "32Armyband";
 
  	int id = 0;
  	String email = "";

@@ -1,7 +1,7 @@
 set character_set_results=euckr;
 set character_set_client=euckr;
 
-GRANT ALL ON web2012.* TO 'web'@'localhost' IDENTIFIED BY '32Armyband';
+GRANT ALL ON web2012.* TO 'web'@'localhost' IDENTIFIED BY 'asdf';
 
 use web2012;
 

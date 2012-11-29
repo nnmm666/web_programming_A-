@@ -132,7 +132,7 @@
 									%>
 									<li class="disable"><a href="#">&laquo;</a></li>
 									<% } else { %>
-									<li><a href="topic.jsp?id=<%=keyword_id %>&page=<%=pageNo -1 %>">&laquo;</a></li>
+									<li><a href="topic.jsp?keyword_id=<%=keyword_id %>&page=<%=pageNo -1 %>">&laquo;</a></li>
 									<%
 									}
 									
@@ -140,7 +140,7 @@
 									for(int i = startPageNo; i<=endPageNo; i++) {
 										className = (i == pageNo) ? "active" : "";
 										out.println("<li class='" + className + "'>");
-										out.println("<a href='topic.jsp?id=" + keyword_id + "&page=" + i + "'>" + i + "</a>");
+										out.println("<a href='topic.jsp?keyword_id=" + keyword_id + "&page=" + i + "'>" + i + "</a>");
 										out.println("</li>");
 									}
 									
@@ -148,7 +148,7 @@
 									%>
 									<li class="disable"><a href="#">&raquo;</a></li>
 									<% } else { %>
-									<li><a href="topic.jsp?id=<%=keyword_id %>&page=<%=pageNo +1 %>">&raquo;</a></li>
+									<li><a href="topic.jsp?keyword_id=<%=keyword_id %>&page=<%=pageNo +1 %>">&raquo;</a></li>
 									<%}	%>
 								</ul>
 							</div>

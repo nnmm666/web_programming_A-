@@ -25,30 +25,22 @@
 	pstmt.setString(3,writer);
 	pstmt.setString(4,photo);
 	int i = pstmt.executeUpdate();
-    	
-    	out.println(i);
-    	}catch(Exception e){ e.printStackTrace();}
-    	finally{if(conn!=null)conn.close(); 
-    			if(pstmt!=null)pstmt.close();}
-    
+    }catch(Exception e){ e.printStackTrace();}
+    finally{if(conn!=null)conn.close(); 
+    		if(pstmt!=null)pstmt.close();}
     %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
+<script src='http://code.jquery.com/jquery-latest.js'></script>
 </head>
 <body>
-<div id="wrap">
-		<div id="top">
-		</div>
-		<div id="content">
-			<a href="index.jsp">리스트</a>
-			<%=session.getAttribute("userEmail") %>
-		</div>
-		<div id="bottom">
-		</div>
-	</div>
+<script type="text/javascript">
+	$(function(){
+			location = 'index.jsp';
+	});</script>
 </body>
 </html>
 </jsp:useBean>

@@ -86,7 +86,7 @@
 					
 					<div id="content_bottom">
 						<a href="keyword.jsp" class="btn btn-mini" style="margin-right: 10px;">키워드추가</a>
-						<a href="main..jsp" class="btn btn-mini">주제보기</a>
+						<a href="main.jsp" class="btn btn-mini">주제보기</a>
 					</div>
 				</div>
 			</div>

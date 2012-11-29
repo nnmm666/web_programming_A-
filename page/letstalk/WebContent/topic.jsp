@@ -53,7 +53,7 @@
 	    stmt.close();
 	    
 	    
-			stmt = conn.prepareStatement("SELECT topic.id, keyword.id, keyword, content, topic.date, writer " 
+			stmt = conn.prepareStatement("SELECT topic.id, keyword.id, keyword, content, substr(topic.date, 1, 10) as date, writer " 
 					 + "FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE keyword_id=? "
 					 + "LIMIT ?, ?");
     	stmt.setString(1, keyword_id);
@@ -151,6 +151,9 @@
 									<li><a href="topic.jsp?keyword_id=<%=keyword_id %>&page=<%=pageNo +1 %>">&raquo;</a></li>
 									<%}	%>
 								</ul>
+								<a href="#" id=writeButton>
+									주제 추가하기
+								</a>
 							</div>
 						</div>
 			

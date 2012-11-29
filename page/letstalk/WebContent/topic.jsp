@@ -186,6 +186,10 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+			var maskHeight = $(document).height();        
+		  var maskWidth = $(window).width();
+		  // 구한 높이와 너비를 css에..
+		  $('#mask').css({'width':maskWidth,'height':maskHeight});
 			//검은 막 눌렀을 때
 			$('#mask').click(function () {            
 	    	location = "index.jsp";

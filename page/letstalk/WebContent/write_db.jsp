@@ -8,8 +8,8 @@
     	PreparedStatement pstmt = null;
 
     	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-    	String dbUser = "root";
-    	String dbPassword = "32Armyband";
+    	String dbUser = "web";
+    	String dbPassword = "asdf";
     	
     	try{
     	Class.forName("com.mysql.jdbc.Driver");

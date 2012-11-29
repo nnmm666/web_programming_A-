@@ -1,6 +1,6 @@
 package project;
 
-public class LetsTalk {
+public class Write {
 	private int id;
 	private int keywordID;
 	private String writer;
@@ -9,7 +9,7 @@ public class LetsTalk {
 	private String photo;
 	private String address;
 
-	public LetsTalk(){}
+	public Write(){}
 	
 	public void setID(int id){this.id=id;}
 	public int getID(){return id;}

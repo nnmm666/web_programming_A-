@@ -79,7 +79,7 @@
 							<!-- File Upload -->
 							<div class="controls">
 								<label class="control-label">첨부하기</label> <input
-									class="input-file" id="fileInput" type="file">
+									class="input-file" id="fileInput" type="file" name="photo">
 							</div>
 						</div>
 					</div>

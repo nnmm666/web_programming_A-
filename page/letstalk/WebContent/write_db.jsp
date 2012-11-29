@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
-    <jsp:useBean id="info" scope="request" class="project.LetsTalk">
+    <jsp:useBean id="info" scope="request" class="project.Write">
     <jsp:setproperty name="info" property="*"/>
 <%
 	int keyword=info.getKeywordID();

@@ -123,7 +123,7 @@
 										<label class="control-label" for="picture">Profile
 											Photo</label>
 										<div class="controls">
-											<input class="input-file" id="fileInput" type="file">
+											<input class="file" id="fileInput" name="file" type="file">
 										</div>
 									</div>
 								</div>

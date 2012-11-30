@@ -117,9 +117,9 @@
 										<% } %>
 		
 										<div class="control-group">
-								     		<label class="control-label" for="picture">Profile Photo</label>
+								     		<label class="control-label" for="photo">Profile Photo</label>
 								          <div class="controls">
-								             <input class="input-file" id="fileInput" type="file">
+								             <input class="file" id="fileInput" type="file" name ="photo">
 								          </div>
 								      	</div>
 									</div>

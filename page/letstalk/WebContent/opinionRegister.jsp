@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.io.*" import="java.sql.*" import="java.util.*"%>
 <%
+		
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -21,7 +22,7 @@
 		if (content == null || content.trim().length() == 0) {
 			errorMsg.add("내용을 반드시 입력해주세요.");
 		}
-		if(opinion_position == null || !(opinion_position.equals("like") || opinion_position.equals("hate") )){
+		if(opinion_position == null || !( opinion_position.equals("like") || opinion_position.equals("hate") )){
 			errorMsg.add("찬성인지 반대인지 선택해주세요.");
 		}
 
@@ -31,7 +32,7 @@
 						dbPassword);
 				stmt = conn
 						.prepareStatement("INSERT INTO opinion (topic_id,writer,content,position)"
-								+ "VALUES(?,?,?,?)");
+								+ " VALUES(?,?,?,?)");
 
 				stmt.setString(1, topic_id);
 				stmt.setString(2, writer);

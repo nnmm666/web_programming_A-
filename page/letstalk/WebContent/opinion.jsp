@@ -95,7 +95,8 @@
 				</div>
 				
 				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
-				<form method="put" action="opinionRegister.jsp?topic_id=<%=topic_id %>">
+				<form method="put" action="opinionRegister.jsp">
+					<input type="hidden" name="topic_id" value="<%=topic_id %>">
 					<div id="myopinion">
 						<input type="text" id="opiniontext" name="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
 					</div>
@@ -142,13 +143,11 @@
 					opinion_pros = rs.getInt("pros");
 					opinion_cons = rs.getInt("cons");
 					opinion_date = rs.getString("conv_date");
-					
-					opinion_position = opinion_position.equals("찬성") ? "like" : "hate";	
 					%>
 					
 				
 					<div class="opinion">
-						<div class="titleborder_<%=opinion_position%> ">
+						<div class="titleborder_<%=opinion_position %> ">
 							<%=opinion_title %>
 							<a href="#" class="toggle">▲▼</a><span class="opinion_writer">작성자 : <%=opinion_writer %></span>
 						</div>

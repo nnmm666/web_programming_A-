@@ -98,7 +98,7 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub">
-								<a href="opinion.jsp"> </a>
+								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
 									<img src=<%=rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
@@ -119,17 +119,17 @@ request.setCharacterEncoding("utf-8");
 							<div class="sub">
 								<a href="opinion.jsp"> zz </a>
 								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
+									<img src="images/charactor.png" alt="사진"> <span>사실 오바마가 4년간
 									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
+									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?</span>
 								</p>
 							</div>
 							<div class="sub">
 								<a href="opinion.jsp"> zz </a>
 								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
+									<img src="images/charactor.png" alt="사진"> <span>사실 오바마가 4년간
 									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
+									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?</span>
 								</p>
 							</div>
 						</div>

@@ -197,8 +197,12 @@
 								if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %> 
 								<div class="section_reply_1">
 									<div class="replyInputName"><%=session.getAttribute("userName") %></div>
-									<input type="text" class="reply_more" placeholder="댓글달기...">
-									<input type="submit" class="replyInputButton" value="Write">
+										<form method="GET" action="replyRegister.jsp">
+											<input type="hidden" name="topic_id" value="<%=topic_id %>">
+											<input type="hidden" name="opinion_id" value="<%=opinion_id %>">
+											<input type="text" class="reply_more" name= "reply_more" placeholder="댓글달기...">
+											<input type="submit" class="replyInputButton" value="Write">
+										</form>
 								</div>
 								<%} %>
 							</div>

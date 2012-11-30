@@ -73,7 +73,7 @@
 
 /* Panel */
 .contentslider-std .sliderkit-panels{width:800px;height:640px;overflow:hidden;padding:10px 0; background:#236684;}
-.contentslider-std .sliderkit-panel{width:780px;height:620px;overflow:auto;padding:0 10px; background:#236684;}
+.contentslider-std .sliderkit-panel{width:780px;height:620px;overflow:hidden;padding:0 10px; background:#236684;}
 .contentslider-std .sliderkit-panel .sub{height:180px; padding:10px; background:#fff;}
 .contentslider-std .sliderkit-panel .sub img {width:200px; height:140px;}
 .contentslider-std .sliderkit-panel .sub span {}

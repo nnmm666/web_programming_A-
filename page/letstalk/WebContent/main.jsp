@@ -43,8 +43,6 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 
 <!-- Slider Kit styles -->
-<link rel="stylesheet" type="text/css"
-	href="stylesheets/sliderkit-core.css" media="screen, projection" />
 <link rel="stylesheet" type="text/css" href="stylesheets/main.css"
 	media="screen, projection" />
 </head>

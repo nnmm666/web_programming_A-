@@ -5,7 +5,6 @@
     <jsp:setProperty name="info" property="*"/>
 <%
 	int keyword_id=info.getKeyword_id();
-//	String content=info.getContent();
 	String content = new String(info.getContent().getBytes("8859_1"),"UTF-8");
 	String writer=(String)session.getAttribute("userName");
 	String photo=info.getPhoto();

@@ -95,7 +95,7 @@
 				</div>
 				
 				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
-				<form method="put" action="opinionRegister.jsp">
+				<form method="GET" action="opinionRegister.jsp">
 					<input type="hidden" name="topic_id" value="<%=topic_id %>">
 					<div id="myopinion">
 						<input type="text" id="opiniontext" name="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">

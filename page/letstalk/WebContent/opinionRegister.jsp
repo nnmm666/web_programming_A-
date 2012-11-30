@@ -13,7 +13,7 @@
 		
 		String topic_id = request.getParameter("topic_id");
 		String writer=(String)session.getAttribute("userName");
-		String content = request.getParameter("opiniontext");
+		String content = new String(request.getParameter("opiniontext").getBytes("8859_1"),"UTF-8");
 		String opinion_position = request.getParameter("likehate");
 		
 		List<String> errorMsg = new ArrayList<String>();

@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.sql.*" %>
+	<%
+	request.setCharacterEncoding("utf-8");
+	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+	String dbUser = "web";
+	String dbPw = "asdf";	
+	Connection = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+	
+	Class.forName("com.mysql.jdbc.Driver");
+	conn = DriverManager(dbUrl,dbUser,dbPw);
+	%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,9 +21,8 @@
 	content="slider, kit, slideshow, gallery, carousel, jquery plugin" />
 <meta name="Description"
 	content="Slider Kit jQuery slideshow plugin: content sliders examples" />
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
 <!-- jQuery Plugin scripts -->
 <script type="text/javascript" src="javascript/jquery.easing.1.3.min.js"></script>
 <script type="text/javascript" src="javascript/jquery.mousewheel.min.js"></script>
@@ -19,12 +30,10 @@
 <!-- Slider Kit scripts -->
 <script type="text/javascript"
 	src="javascript/jquery.sliderkit.1.9.2.pack.js"></script>
-
 <!-- Slider Kit launch -->
 <script type="text/javascript">
 	$(window).load(function() { //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
-
-		// Photo slider > Minimal
+	// Photo slider > Minimal
 		$(".contentslider-std").sliderkit({
 			auto : 0,
 			tabs : 1,
@@ -38,15 +47,12 @@
 
 	});
 </script>
-
-<!-- Site styles -->
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
-
-<!-- Slider Kit styles -->
 <link rel="stylesheet" type="text/css" href="stylesheets/main.css"
 	media="screen, projection" />
 </head>
 
+<!-- Body Start -->
 <body>
 	<div id="wrap">
 		<div id="top">
@@ -74,12 +80,9 @@
 					<div class="sliderkit-nav">
 						<div class="sliderkit-nav-clip">
 							<ul>
-								<li><a href="#" title="[link title]">추천수</a>
-								</li>
-								<li><a href="#" title="[link title]">조회수</a>
-								</li>
-								<li><a href="#" title="[link title]">댓글수</a>
-								</li>
+								<li><a href="#" title="[link title]">추천수</a></li>
+								<li><a href="#" title="[link title]">조회수</a></li>
+								<li><a href="#" title="[link title]">댓글수</a></li>
 							</ul>
 						</div>
 					</div>
@@ -139,7 +142,7 @@
 									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
 								</p>
 							</div>
-							
+
 						</div>
 						<!-- // end of sliderkit-panel -->
 					</div>

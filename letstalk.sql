@@ -130,16 +130,16 @@ INSERT INTO opinion (topic_id, content, writer, position) VALUES (3, "재미없음 �
 INSERT INTO opinion (topic_id, content, writer, position) VALUES (3, "사기방송!! 종영해라!! 사기치치지말고 이제 그만하지?? 이승철 ㅗㅗ", "윤나라", "반대");
 INSERT INTO opinion (topic_id, content, writer, position) VALUES (3, "유승우는 왜 떨구냐! 정준영을 탈락시키자!", "이창희", "찬성");
 
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (4, "인기가 있으면 논란이 되는건 당연한법~~뭐 저런거 갖다가 난리냐 재미만 있으면 됏지", "박세진", "찬성");
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (4, "재미없음 애들도 예전만 못하구..", "이가을", "반대");
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (4, "사기방송!! 종영해라!! 사기치치지말고 이제 그만하지?? 이승철 ㅗㅗ", "윤나라", "반대");
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (4, "유승우는 왜 떨구냐! 정준영을 탈락시키자!", "이창희", "찬성");
+INSERT INTO opinion (topic_id, content, writer, position) VALUES (15, "인기가 있으면 논란이 되는건 당연한법~~뭐 저런거 갖다가 난리냐 재미만 있으면 됏지", "박세진", "찬성");
+INSERT INTO opinion (topic_id, content, writer, position) VALUES (15, "재미없음 애들도 예전만 못하구..", "이가을", "반대");
+INSERT INTO opinion (topic_id, content, writer, position) VALUES (15, "사기방송!! 종영해라!! 사기치치지말고 이제 그만하지?? 이승철 ㅗㅗ", "윤나라", "반대");
+INSERT INTO opinion (topic_id, content, writer, position) VALUES (15, "유승우는 왜 떨구냐! 정준영을 탈락시키자!", "이창희", "찬성");
 
 
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "공감합니당", "이창희");
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "개미즐", "윤나라");
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "넵 깨갱..", "이창희");
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "ㅎㅎㅎ..", "윤나라");
+INSERT INTO reply (opinion_id, content, writer) VALUES (13, "공감합니당", "이창희");
+INSERT INTO reply (opinion_id, content, writer) VALUES (13, "개미즐", "윤나라");
+INSERT INTO reply (opinion_id, content, writer) VALUES (13, "넵 깨갱..", "이창희");
+INSERT INTO reply (opinion_id, content, writer) VALUES (13, "ㅎㅎㅎ..", "윤나라");
 INSERT INTO reply (opinion_id, content, writer) VALUES (2, "공감합니당", "박세진");
 INSERT INTO reply (opinion_id, content, writer) VALUES (2, "개미즐", "이가을");
 INSERT INTO reply (opinion_id, content, writer) VALUES (2, "넵 깨갱..", "박세진");

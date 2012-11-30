@@ -28,6 +28,7 @@
 		String opinion_content = "";
 		String opinion_writer = "";
 		String opinion_position = "";
+		
 		int opinion_pros = 0;
 		int opinion_cons = 0;
 		String opinion_date = "";
@@ -94,7 +95,7 @@
 				</div>
 				
 				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
-				<form method="put" action="opinion.jsp?topic_id=<%=topic_id %>">
+				<form method="put" action="opinionRegister.jsp?topic_id=<%=topic_id %>">
 					<div id="myopinion">
 						<input type="text" id="opiniontext" name="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
 					</div>

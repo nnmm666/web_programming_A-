@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.sql.*" %>
-	<%
-	request.setCharacterEncoding("utf-8");
-	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-	String dbUser = "web";
-	String dbPw = "asdf";	
-	Connection = null;
-	Statement stmt = null;
-	ResultSet rs = null;
-	
-	Class.forName("com.mysql.jdbc.Driver");
-	conn = DriverManager(dbUrl,dbUser,dbPw);
-	%>
+	pageEncoding="UTF-8" import="java.sql.*"%>
+<%
+Connection conn = null;
+Statement stmt =null;
+ResultSet rs = null;
+
+String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+String dbUser = "web";
+String dbPassword = "asdf";
+
+request.setCharacterEncoding("utf-8");
+	String sql = "select * from topic";
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,7 +33,7 @@
 <!-- Slider Kit launch -->
 <script type="text/javascript">
 	$(window).load(function() { //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
-	// Photo slider > Minimal
+		// Photo slider > Minimal
 		$(".contentslider-std").sliderkit({
 			auto : 0,
 			tabs : 1,
@@ -44,7 +44,6 @@
 			fastchange : 0,
 			keyboard : 1
 		});
-
 	});
 </script>
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
@@ -90,22 +89,31 @@
 					<!-- Start sliderkit-panels -->
 					<div class="sliderkit-panels">
 						<div class="sliderkit-panel">
+							<%
+								try {
+									Class.forName("com.mysql.jdbc.Driver");
+									conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+									stmt = conn.createStatement();
+									rs = stmt.executeQuery(sql);
+									while (rs.next()) {
+							%>
 							<div class="sub">
-								<a href="opinion.jsp"> zz </a>
+								<a href="opinion.jsp"> </a>
 								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
-									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
+									<img src=<%=rs.getString("photo") %> alt="사진">
+									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
-							<div class="sub">
-								<a href="opinion.jsp"> zz </a>
-								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
-									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
-								</p>
-							</div>
+							<%
+								}
+								} catch (Exception e) {
+									out.println(e.toString());
+								} finally {
+									conn.close();
+									stmt.close();
+									rs.close();
+								}
+							%>
 						</div>
 						<div class="sliderkit-panel">
 							<div class="sub">

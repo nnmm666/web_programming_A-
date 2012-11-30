@@ -52,14 +52,16 @@
 #order ul ul li a:hover {color : #999;}
 /*MoreOpinion*/
 
-#MoreOpinion { width : 720px; height: 200px; margin : 0 auto; margin-top: 10px;}
+#MoreOpinion { width : 720px; margin : 0 auto; }
 .titleborder_like { width : 710px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
 .titleborder_hate { width : 710px; height: 20px; background-color: #e42626; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff;}
-.toggle { text-decoration: none; padding: 0 15px 0 0; color: #ff0; width: 20px; height: 9px; float: right; }
+.opinion_writer { float: right; margin-right: 10px; }
+.toggle { text-decoration: none; padding: 0 15px 0 0; color: #ff0; width: 20px; height: 18px; float: right; }
 .toggle:hover { color:#fa0;}
 .section_top { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px;  padding: 10px; }
-.section_left{  width: 600px; height: 80px; float : left; text-align: left;}
+.section_left{  width: 600px; height: 70px; float : left; text-align: left;}
 .section_right{ float:right; width:80px; height: 30px;}
+.section_bottom { float: right;}
 .section_reply { width: 720px; height: 60px; background-color: #ccc; margin: 5px 0 5px 0;}
 .user_Face{ float :left; margin: 5px;}
 .user_content{float :left; margin: 10px; }

@@ -92,18 +92,20 @@
 					</div>
 				</div>
 				
-				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %> 
-				<div id="myopinion">
-					<input type="text" id="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
-				</div>
-				<div id ="myopinion_sub">
-					<span class="myopinion_likehate">
-						<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
-						<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
-					</span>
-					<input type="button" id="opinionWrite" value="Write">
-				</div>
-				<%} %>
+				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
+				<form method="put" action="opinion.jsp?topic_id=<%=topic_id %>">
+					<div id="myopinion">
+						<input type="text" id="opiniontext" name="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
+					</div>
+					<div id ="myopinion_sub">
+						<span class="myopinion_likehate">
+							<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
+							<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
+						</span>
+							<input type="submit" class="opinionWrite" value="Write">
+					</div>
+				</form>
+				<%}%>
 				<div id="order">
 					<ul>
 						<li><hr style="width:616px; margin-top:9px;"></li>
@@ -191,7 +193,11 @@
 								}
 								
 								if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %> 
-								<div class="section_reply_1"> <input type="text" class="reply_more" placeholder="댓글달기..."> </div>
+								<div class="section_reply_1">
+									<div class="replyInputName"><%=session.getAttribute("userName") %></div>
+									<input type="text" class="reply_more" placeholder="댓글달기...">
+									<input type="submit" class="replyInputButton" value="Write">
+								</div>
 								<%} %>
 							</div>
 						</div>

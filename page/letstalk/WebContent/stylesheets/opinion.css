@@ -39,7 +39,7 @@
 .myopinion_likehate { width: 690px; padding: 5px 5px 5px 510px;}
 .myopinion_likehate input { margin: 8px 4px; }
 
-#opinionWrite {width: 55px; height: 25px; margin: 2px 5px; float: right;}
+.opinionWrite {width: 55px; height: 25px; margin: 2px 5px; float: right;}
 
 #order { width: 725px; height:20px; margin : 0 auto; }
 #order ul {list-style: none;}
@@ -64,9 +64,10 @@
 .section_bottom { float: right;}
 .section_reply { width: 710px; height: 20px; background-color: #ccc; margin: 5px 0 5px 0; padding: 5px; text-align: left; }
 .reply_writer { width: 70px; margin-left: 10px; float: left; }
-.reply_content { width: 450px; margin-right: 10px; float: left; }
+.reply_content { width: 540px; margin-right: 10px; float: left; }
 .reply_date {width: 80px; float:right; }
-.section_reply_1 { width: 720px; height: 30px; background-color: #ccc; margin: 5px 0 5px 0;}
-.reply_more{ width: 98%; height: 20px; margin: 3px;}
-
+.section_reply_1 { width: 720px; height: 30px; background-color: #ccc; margin: 5px 0 5px 0; }
+.reply_more{ width: 550px; height: 20px; margin: 3px; float: left;}
+.replyInputName {width:60px; float: left; padding: 5px;}
+.replyInputButton { width: 55px; height: 25px; float: right; margin-top: 2px; margin-right: 20px; }
 

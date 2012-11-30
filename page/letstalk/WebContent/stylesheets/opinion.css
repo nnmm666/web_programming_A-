@@ -62,9 +62,10 @@
 .section_left{  width: 600px; height: 70px; float : left; text-align: left;}
 .section_right{ float:right; width:80px; height: 30px;}
 .section_bottom { float: right;}
-.section_reply { width: 720px; height: 60px; background-color: #ccc; margin: 5px 0 5px 0;}
-.user_Face{ float :left; margin: 5px;}
-.user_content{float :left; margin: 10px; }
+.section_reply { width: 710px; height: 20px; background-color: #ccc; margin: 5px 0 5px 0; padding: 5px; text-align: left; }
+.reply_writer { width: 70px; margin-left: 10px; float: left; }
+.reply_content { width: 450px; margin-right: 10px; float: left; }
+.reply_date {width: 80px; float:right; }
 .section_reply_1 { width: 720px; height: 30px; background-color: #ccc; margin: 5px 0 5px 0;}
 .reply_more{ width: 98%; height: 20px; margin: 3px;}
 

@@ -171,11 +171,9 @@
 								 		reply_date = reply_rs.getString("conv_date");
 								%>
 								<div class="section_reply">
-									<div class="user_Face"><img src="./images/charactor.png" width ="70px;" height="50px;"></div>
-									<div class="user_content">
-										<div><b><%=reply_writer %></b><%=reply_content %></div>
-										<div><%=reply_date %></div>
-									</div>
+									<span class="reply_writer"><b><%=reply_writer %></b></span>
+									<span class="reply_content"><%=reply_content %></span>
+									<span class="reply_date"><%=reply_date %></span>
 								</div>
 								<%
 									}

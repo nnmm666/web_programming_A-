@@ -78,6 +78,7 @@
 					</form>
 				</div>
 				<div id="topicdiv"><%=keyword %></div>
+
 				<div id="topic">
 					<div id="topicPhoto">
 						<img src="./images/example.png" width='66px' height='100px'>
@@ -90,6 +91,8 @@
 							<span>작성자 : <%=topic_writer %></span><span>작성일 : <%=topic_date %></span>
 					</div>
 				</div>
+				
+				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %> 
 				<div id="myopinion">
 					<input type="text" id="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
 				</div>
@@ -100,6 +103,7 @@
 					</span>
 					<input type="button" id="opinionWrite" value="Write">
 				</div>
+				<%} %>
 				<div id="order">
 					<ul>
 						<li><hr style="width:616px; margin-top:9px;"></li>
@@ -185,9 +189,10 @@
 								    if (reply_rs != null) try{reply_rs.close();} catch(SQLException e) {}
 								    if (reply_stmt != null) try{reply_stmt.close();} catch(SQLException e) {}
 								}
-								%>
 								
+								if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %> 
 								<div class="section_reply_1"> <input type="text" class="reply_more" placeholder="댓글달기..."> </div>
+								<%} %>
 							</div>
 						</div>
 					</div>

@@ -3,6 +3,7 @@
     <jsp:useBean id="info" scope="request" class="project.Write">
     <jsp:setProperty name="info" property="*"/>
 <%
+	
 	int keyword_id=info.getKeyword_id();
 	String content=info.getContent();
 	String writer=(String)session.getAttribute("userName");

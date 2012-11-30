@@ -24,6 +24,7 @@
 		int topic_cons = 0;
 		
 		String opinion_id = "";
+		String opinion_title = "";
 		String opinion_content = "";
 		String opinion_writer = "";
 		String opinion_position = "";
@@ -126,13 +127,14 @@
 				<div id="MoreOpinion">
 
 					<%
-					stmt = conn.prepareStatement("SELECT *, substr(date, 1, 10) as conv_date FROM opinion WHERE topic_id=?");
+					stmt = conn.prepareStatement("SELECT *, substr(content, 1, 20) as title, substr(date, 1, 10) as conv_date FROM opinion WHERE topic_id=?");
 					stmt.setString(1, topic_id);
 					rs = stmt.executeQuery();
 					
 					while(rs.next()) {
 					
 					opinion_id = rs.getString("id");
+					opinion_title = rs.getString("title");
 					opinion_content = rs.getString("content"); 
 					opinion_writer = rs.getString("writer");
 					opinion_position = rs.getString("position");	
@@ -146,7 +148,7 @@
 				
 					<div class="opinion">
 						<div class="titleborder_<%=opinion_position%> ">
-							인기가 있으면 논란이 되는건 당연한법~~
+							<%=opinion_title %>
 							<a href="#" class="toggle">▲▼</a><span class="opinion_writer">작성자 : <%=opinion_writer %></span>
 						</div>
 						<div class="section">

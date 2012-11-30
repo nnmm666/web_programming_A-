@@ -21,7 +21,8 @@
 		</div>
 		<div id="content">
 
-	<%int keyword_id = (Integer.parseInt(request.getParameter("keyword_id"))); 
+	<%if(session.getAttribute("userName")!=null){ 
+		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id"))); 
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 		String dbUser = "web";
 		String dbPassword = "asdf";
@@ -87,9 +88,14 @@
 				</fieldset>
 				<input type="submit" value="올리기"> <input type="reset"
 					value="다시">
-			</form>
-
+			</form>	
+			<%}else{%>
+			<script>
+				alert("로그인해주세요");
+			</script>
+		<%}%>
 		</div>
+	
 		<div id="bottom">
 			<jsp:include page="share/footer.jsp" />
 		</div>

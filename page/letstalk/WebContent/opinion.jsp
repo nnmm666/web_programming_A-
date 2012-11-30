@@ -159,15 +159,16 @@
 							<div id="section_sub">
 								
 								<%
-								reply_stmt = conn.prepareStatement("SELECT *, substr(date, 1, 10) as conv_date FROM reply WHERE opinion_id=?");
-								reply_stmt.setString(1, opinion_id);
-								reply_rs = reply_stmt.executeQuery();
-								
-								while(reply_rs.next()) {									
-									reply_id = reply_rs.getString("id");
-							 		reply_content = reply_rs.getString("content");
-							 		reply_writer = reply_rs.getString("writer");
-							 		reply_date = reply_rs.getString("conv_date");
+								try {
+									reply_stmt = conn.prepareStatement("SELECT *, substr(date, 1, 10) as conv_date FROM reply WHERE opinion_id=?");
+									reply_stmt.setString(1, opinion_id);
+									reply_rs = reply_stmt.executeQuery();
+									
+									while(reply_rs.next()) {									
+										reply_id = reply_rs.getString("id");
+								 		reply_content = reply_rs.getString("content");
+								 		reply_writer = reply_rs.getString("writer");
+								 		reply_date = reply_rs.getString("conv_date");
 								%>
 								<div class="section_reply">
 									<div class="user_Face"><img src="./images/charactor.png" width ="70px;" height="50px;"></div>
@@ -176,7 +177,17 @@
 										<div><%=reply_date %></div>
 									</div>
 								</div>
-								<%} %>
+								<%
+									}
+
+								} catch (SQLException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} finally {
+								    if (reply_rs != null) try{reply_rs.close();} catch(SQLException e) {}
+								    if (reply_stmt != null) try{reply_stmt.close();} catch(SQLException e) {}
+								}
+								%>
 								
 								<div class="section_reply_1"> <input type="text" class="reply_more" placeholder="댓글달기..."> </div>
 							</div>

@@ -1,9 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.*" import="java.sql.*"%>
+    pageEncoding="UTF-8" import="java.util.*" import="java.sql.*" 
+    import="com.oreilly.servlet.MultipartRequest, 
+	com.oreilly.servlet.multipart.DefaultFileRenamePolicy,java.util.*
+	,java.io.*,bean.*"%>
  <% 
  	String errorMsg = null;
  	String actionUrl;
- 	
+/* 사진넣는거 하는중
+ 	String realFolder = "";
+	int maxSize = 1024*1024*5;
+	String encType = "euc-kr";
+	String savefile = "file";
+	ServletContext scontext = getServletContext();
+	realFolder = scontext.getRealPath(savefile);
+	MultipartRequest multi = null;
+	multi = new MultipartRequest(request,realFolder,maxSize,encType,new 
+	DefaultFileRenamePolicy());
+*/
  	Connection conn = null;
  	PreparedStatement stmt = null;
  	ResultSet rs = null;

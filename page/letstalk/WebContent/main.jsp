@@ -10,7 +10,7 @@ String dbUser = "web";
 String dbPassword = "asdf";
 
 request.setCharacterEncoding("utf-8");
-	String sql = "select * from topic";
+	String imgURL="http://localhost:8080/letstalk/";
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -67,7 +67,6 @@ request.setCharacterEncoding("utf-8");
 					</div>
 				</noscript>
 
-
 				<!-- Start contentslider-std -->
 				<div class="sliderkit contentslider-std">
 					<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev">
@@ -81,7 +80,6 @@ request.setCharacterEncoding("utf-8");
 							<ul>
 								<li><a href="#" title="[link title]">추천순</a></li>
 								<li><a href="#" title="[link title]">반대순</a></li>
-								<li><a href="#" title="[link title]">댓글순</a></li>
 								<li><a href="#" title="[link title]">최신순</a></li>
 							</ul>
 						</div>
@@ -95,13 +93,13 @@ request.setCharacterEncoding("utf-8");
 									Class.forName("com.mysql.jdbc.Driver");
 									conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 									stmt = conn.createStatement();
-									rs = stmt.executeQuery(sql);
+									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY pros DESC");
 									while (rs.next()) {
 							%>
 							<div class="sub">
 								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
-									<img src=<%=rs.getString("photo") %> alt="사진">
+									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
@@ -110,41 +108,58 @@ request.setCharacterEncoding("utf-8");
 								} catch (Exception e) {
 									out.println(e.toString());
 								} finally {
-									conn.close();
 									stmt.close();
 									rs.close();
 								}
 							%>
 						</div>
 						<div class="sliderkit-panel">
+							<%
+								try{
+									stmt = conn.createStatement();
+									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY cons DESC");
+									while (rs.next()) {
+							%>
 							<div class="sub">
-								<a href="opinion.jsp"> zz </a>
+								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
-									<img src="images/charactor.png" alt="사진"> <span>사실 오바마가 4년간
-									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?</span>
+									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
+									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
+							<%
+								}
+								} catch (Exception e) {
+									out.println(e.toString());
+								} finally {
+									stmt.close();
+									rs.close();
+								}
+							%>
 						</div>
 						<div class="sliderkit-panel">
+							<%
+								try{
+									stmt = conn.createStatement();
+									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY date DESC");
+									while (rs.next()) {
+							%>
 							<div class="sub">
-								<a href="opinion.jsp"> zz </a>
+								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
-									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
+									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
+									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<div class="sub">
-								<a href="opinion.jsp"> zz </a>
-								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
-									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
-								</p>
-							</div>
+							<%
+								}
+								} catch (Exception e) {
+									out.println(e.toString());
+								} finally {
+									stmt.close();
+									rs.close();
+								}
+							%>
 						</div>
 						<!-- // end of sliderkit-panel -->
 					</div>

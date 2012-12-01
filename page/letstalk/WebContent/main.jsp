@@ -79,9 +79,10 @@ request.setCharacterEncoding("utf-8");
 					<div class="sliderkit-nav">
 						<div class="sliderkit-nav-clip">
 							<ul>
-								<li><a href="#" title="[link title]">추천수</a></li>
-								<li><a href="#" title="[link title]">조회수</a></li>
-								<li><a href="#" title="[link title]">댓글수</a></li>
+								<li><a href="#" title="[link title]">추천순</a></li>
+								<li><a href="#" title="[link title]">반대순</a></li>
+								<li><a href="#" title="[link title]">댓글순</a></li>
+								<li><a href="#" title="[link title]">최신순</a></li>
 							</ul>
 						</div>
 					</div>
@@ -124,12 +125,14 @@ request.setCharacterEncoding("utf-8");
 									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?</span>
 								</p>
 							</div>
+						</div>
+						<div class="sliderkit-panel">
 							<div class="sub">
 								<a href="opinion.jsp"> zz </a>
 								<p>
-									<img src="images/charactor.png" alt="사진"> <span>사실 오바마가 4년간
+									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
 									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?</span>
+									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
 								</p>
 							</div>
 						</div>
@@ -142,15 +145,6 @@ request.setCharacterEncoding("utf-8");
 									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
 								</p>
 							</div>
-							<div class="sub">
-								<a href="opinion.jsp"> zz </a>
-								<p>
-									<img src="images/charactor.png" alt="사진"> 사실 오바마가 4년간
-									집권하면서 미국 경제 살리기는 커녕 부시가 벌려놓은 일들 뒷바라지 하느라 바빳잖아요. 못한 일은 없지만 딱히 잘한
-									일도 없는것 같은데 이번엔 미국이 과연 바뀔 수 있을까요?
-								</p>
-							</div>
-
 						</div>
 						<!-- // end of sliderkit-panel -->
 					</div>

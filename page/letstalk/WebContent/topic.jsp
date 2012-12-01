@@ -11,7 +11,7 @@
 <script src='http://code.jquery.com/jquery-latest.js'></script>
 
 <%
-	request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;

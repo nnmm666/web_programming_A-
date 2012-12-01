@@ -70,10 +70,11 @@
 			//로그인 성공
 			session.setAttribute("userEmail", email);
 			session.setAttribute("userName", name);
-			session.setAttribute("userId", id);
-			response.sendRedirect("../index.jsp");
-		}else {
-		%>
+			session.setAttribute("userId", id);%>
+			<script type="text/javascript">
+			location = 'index.jsp';
+			</script>
+	<%}else {%>
 		<script>
   		alert("아이디나 비밀번호가 잘못되었습니다.");
   		location.href="../letstalk/index.jsp";

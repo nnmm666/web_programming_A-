@@ -92,6 +92,7 @@
 			<%}else{%>
 			<script>
 				alert("로그인해주세요");
+				location.href="index.jsp";
 			</script>
 		<%}%>
 		</div>

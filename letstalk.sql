@@ -4,7 +4,6 @@ GRANT ALL ON web2012.* TO 'web@localhost' IDENTIFIED BY 'asdf';
 
 use web2012;
 
-
 set character_set_results=euckr;
 set character_set_client=euckr;
 
@@ -80,34 +79,3 @@ INSERT INTO keyword (keyword, weight, type) VALUES ("묻지마 폭행", 500, "reg");
 INSERT INTO keyword (keyword, weight, type) VALUES ("윈도우8", 500, "reg");
 INSERT INTO keyword (keyword, weight, type) VALUES ("스티브잡스", 500, "reg");
 
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로 논란이 끊기지 않습니다. 어떻게 생각하시나요??", "윤나라", "http://");	
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "엠넷의 대국민 오디션 슈퍼스타k4는 한국 K-POP시장에 큰 파장을 불러 일으킨다고 생각합니다. 매 시즌마다 실력좋은 가수들이 나오고 있고, 시청률도 또한 동시간대 최고를 기록하고 있습니다.... 어쩌고저쩌고...", "이창희", "http://");	
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "슈퍼스타k 재밌나요???", "이가을", "http://");
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "슈퍼스타k 누가 이길거 같으세요??", "박세진");
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (1, "안철수 대통령 후보가 어이없게 사퇴한점 어떻게 생각하시나요??", "이가을", "http://");
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (1, "대통령 누가 될까요?? 안철수, 문재인 ,박근혜??", "박세진", "http://");
-
-
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (2, "인기가 있으면 논란이 되는건 당연한법~~뭐 저런거 갖다가 난리냐 재미만 있으면 됏지", "박세진", "찬성");
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (2, "재미없음 애들도 예전만 못하구..", "이가을", "반대");
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (2, "사기방송!! 종영해라!! 사기치치지말고 이제 그만하지?? 이승철 ㅗㅗ", "윤나라", "반대");
-INSERT INTO opinion (topic_id, content, writer, position) VALUES (2, "유승우는 왜 떨구냐! 정준영을 탈락시키자!", "강기태", "찬성");
-
-
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "공감합니당", "이창희");
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "개미즐", "윤나라");
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "넵 깨갱..", "이창희");
-INSERT INTO reply (opinion_id, content, writer) VALUES (1, "ㅎㅎㅎ..", "윤나라");
-INSERT INTO reply (opinion_id, content, writer) VALUES (2, "공감합니당", "박세진");
-INSERT INTO reply (opinion_id, content, writer) VALUES (2, "개미즐", "이가을");
-INSERT INTO reply (opinion_id, content, writer) VALUES (2, "넵 깨갱..", "박세진");
-INSERT INTO reply (opinion_id, content, writer) VALUES (2, "ㅎㅎㅎ..", "이가을");
-
-INSERT INTO reply (opinion_id, content, writer) VALUES (3, "공감합니당", "이창희");
-INSERT INTO reply (opinion_id, content, writer) VALUES (3, "개미즐", "윤나라");
-INSERT INTO reply (opinion_id, content, writer) VALUES (3, "넵 깨갱..", "이창희");
-INSERT INTO reply (opinion_id, content, writer) VALUES (3, "ㅎㅎㅎ..", "윤나라");
-INSERT INTO reply (opinion_id, content, writer) VALUES (4, "공감합니당", "박세진");
-INSERT INTO reply (opinion_id, content, writer) VALUES (4, "개미즐", "이가을");
-INSERT INTO reply (opinion_id, content, writer) VALUES (4, "넵 깨갱..", "박세진");
-INSERT INTO reply (opinion_id, content, writer) VALUES (4, "ㅎㅎㅎ..", "이가을");

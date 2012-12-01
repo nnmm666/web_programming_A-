@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 CREATE DATABASE web2012 DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+=======
+﻿set character_set_results=euckr;
+set character_set_client=euckr;
+>>>>>>> 93192a52c3a172fdb76b04221beeef8c2bfd3f77
 
 GRANT ALL ON web2012.* TO 'web@localhost' IDENTIFIED BY 'asdf';
 

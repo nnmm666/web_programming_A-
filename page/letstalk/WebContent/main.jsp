@@ -96,8 +96,8 @@ request.setCharacterEncoding("utf-8");
 									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY pros DESC");
 									while (rs.next()) {
 							%>
-							<div class="sub">
-								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
+							<div class="sub" id="<%=rs.getInt("id")%>">
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
 									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
@@ -120,8 +120,8 @@ request.setCharacterEncoding("utf-8");
 									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY cons DESC");
 									while (rs.next()) {
 							%>
-							<div class="sub">
-								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
+							<div class="sub" id="<%=rs.getInt("id")%>">
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
 									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
@@ -144,8 +144,8 @@ request.setCharacterEncoding("utf-8");
 									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY date DESC");
 									while (rs.next()) {
 							%>
-							<div class="sub">
-								<a href="opinion.jsp?id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
+							<div class="sub" id="<%=rs.getInt("id")%>">
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
 								<p>
 									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
@@ -162,6 +162,25 @@ request.setCharacterEncoding("utf-8");
 							%>
 						</div>
 						<!-- // end of sliderkit-panel -->
+						<script type="text/javascript">
+							function lastPostFunc(){
+								$.post("scroll.asp?action=getLastPost&lastID=" + $('.sub:last').attr('id'),
+								function(data){
+									if(data != " "){
+										$('.sub:last').after(data);
+									}
+								});
+							};
+							$(function(){
+								$(window).scroll(function(){	
+									if($(window).scrollTop() == $(document).height() - $(window).height()){
+										alert("hello");
+										lastPostFunc();
+									}
+								});
+							});
+					
+						</script>
 					</div>
 					<!-- // end of sliderkit-panels -->
 

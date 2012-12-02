@@ -84,16 +84,14 @@ request.setCharacterEncoding("utf-8");
 							</ul>
 						</div>
 					</div>
-
+					<% int items = 20; %>
 					<!-- Start sliderkit-panels -->
 					<div class="sliderkit-panels">
 						<div class="sliderkit-panel">
-							<%
-								try {
-									Class.forName("com.mysql.jdbc.Driver");
+							<%	Class.forName("com.mysql.jdbc.Driver");
 									conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 									stmt = conn.createStatement();
-									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY pros DESC");
+									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY pros DESC LIMIT "+items);
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
@@ -103,21 +101,14 @@ request.setCharacterEncoding("utf-8");
 									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
-							<%
-								}
-								} catch (Exception e) {
-									out.println(e.toString());
-								} finally {
+							<%	}
 									stmt.close();
 									rs.close();
-								}
 							%>
 						</div>
 						<div class="sliderkit-panel">
-							<%
-								try{
-									stmt = conn.createStatement();
-									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY cons DESC");
+							<%	stmt = conn.createStatement();
+									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY cons DESC LIMIT " + items);
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
@@ -127,21 +118,14 @@ request.setCharacterEncoding("utf-8");
 									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
-							<%
-								}
-								} catch (Exception e) {
-									out.println(e.toString());
-								} finally {
+							<%	}
 									stmt.close();
 									rs.close();
-								}
 							%>
 						</div>
 						<div class="sliderkit-panel">
-							<%
-								try{
-									stmt = conn.createStatement();
-									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY date DESC");
+							<%	stmt = conn.createStatement();
+									rs = stmt.executeQuery("SELECT * FROM topic ORDER BY date DESC LIMIT " + items);
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
@@ -151,36 +135,13 @@ request.setCharacterEncoding("utf-8");
 									<span><%= rs.getString("content")%></span>
 								</p>
 							</div>
-							<%
-								}
-								} catch (Exception e) {
-									out.println(e.toString());
-								} finally {
+							<%	}
 									stmt.close();
 									rs.close();
-								}
 							%>
 						</div>
 						<!-- // end of sliderkit-panel -->
-						<script type="text/javascript">
-							function lastPostFunc(){
-								$.post("scroll.asp?action=getLastPost&lastID=" + $('.sub:last').attr('id'),
-								function(data){
-									if(data != " "){
-										$('.sub:last').after(data);
-									}
-								});
-							};
-							$(function(){
-								$(window).scroll(function(){	
-									if($(window).scrollTop() == $(document).height() - $(window).height()){
-										alert("hello");
-										lastPostFunc();
-									}
-								});
-							});
-					
-						</script>
+						
 					</div>
 					<!-- // end of sliderkit-panels -->
 

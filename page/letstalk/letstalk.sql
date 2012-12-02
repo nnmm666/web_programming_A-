@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 CREATE DATABASE web2012 DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-=======
+
 ﻿set character_set_results=euckr;
 set character_set_client=euckr;
->>>>>>> 93192a52c3a172fdb76b04221beeef8c2bfd3f77
 
 GRANT ALL ON web2012.* TO 'web@localhost' IDENTIFIED BY 'asdf';
 
 use web2012;
-
 
 set character_set_results=euckr;
 set character_set_client=euckr;
@@ -88,7 +85,7 @@ INSERT INTO keyword (keyword, weight, type) VALUES ("스티브잡스", 500, "reg
 INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "엠넷의 대국민 오디션 슈퍼스타k4가 악마의 편집으로 논란이 끊기지 않습니다. 어떻게 생각하시나요??", "윤나라", "http://");	
 INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "엠넷의 대국민 오디션 슈퍼스타k4는 한국 K-POP시장에 큰 파장을 불러 일으킨다고 생각합니다. 매 시즌마다 실력좋은 가수들이 나오고 있고, 시청률도 또한 동시간대 최고를 기록하고 있습니다.... 어쩌고저쩌고...", "이창희", "http://");	
 INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "슈퍼스타k 재밌나요???", "이가을", "http://");
-INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "슈퍼스타k 누가 이길거 같으세요??", "박세진");
+INSERT INTO topic (keyword_id, content, writer, photo) VALUES (5, "슈퍼스타k 누가 이길거 같으세요??", "박세진","http://");
 INSERT INTO topic (keyword_id, content, writer, photo) VALUES (1, "안철수 대통령 후보가 어이없게 사퇴한점 어떻게 생각하시나요??", "이가을", "http://");
 INSERT INTO topic (keyword_id, content, writer, photo) VALUES (1, "대통령 누가 될까요?? 안철수, 문재인 ,박근혜??", "박세진", "http://");
 

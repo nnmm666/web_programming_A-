@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/write.css" />
 </head>
-
 <body>
 	<div id="wrap">
 		<div id="top">
@@ -22,8 +21,9 @@
 		</div>
 		<div id="content">
 
-	<%if(session.getAttribute("userName")!=null){ 
-		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id"))); 
+	<%
+		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
+		if(session.getAttribute("userName")!=null){  
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 		String dbUser = "web";
 		String dbPassword = "asdf";
@@ -43,17 +43,17 @@
 			<form action="write_db.jsp?keyword_id=<%=keyword_id %>" method="POST" class="form-horizontal">
 				<fieldset>
 					<div id="legend" class="">
-						<legend class="">글 작성하기</legend>
+						<legend class="">당신의 생각을 넓혀드립니다 :-) </legend>
 					</div>
 
 					<div id="section">
 					<div class="control-group">
 							<!-- Text input-->
 							<% while(rs.next()){ %>
-							<div class="control-label">내가 선택한 키워드는
-								<span><%= rs.getString("keyword")%></span>입니다.
-							</div>
-					</div>
+							<label class="control-label" for="keyword">무엇에 대해서?</label>
+							<div class="controls" id="keyword"><%= rs.getString("keyword") %>
+								</div>
+						</div>
 					<%	}
 							}catch(Exception e){ e.printStackTrace();
 							}finally{
@@ -63,13 +63,18 @@
     						} %>
 						<div class="control-group">
 							<!-- Text input-->
-							<div class="control-label">내 이름은 
-							<span><%=session.getAttribute("userName")%></span> 입니다.</div>
+							<label class="control-label" for="user">나의 이름은</label>
+							<div class="controls" id="user_name">
+								<%=session.getAttribute("userName")%></div>
 						</div>
+
 						<div class="control-group">
 							<!-- Textarea -->
-							<div class="control-label">내 생각은
-									<textarea rows="10" cols="100" name="content"> </textarea>
+							<label class="control-label" for="context">내용</label>
+							<div class="controls">
+								<div class="textarea">
+									<textarea name="content"> </textarea>
+								</div>
 							</div>
 						</div>
 						<div class="control-group">
@@ -82,13 +87,15 @@
 					</div>
 
 				</fieldset>
-				<input type="submit" value="올리기"> <input type="reset"
-					value="다시">
+				<input type="submit" value="Lets Talk!"> <input type="reset"
+					value="재작성">
 			</form>	
 			<%}else{%>
 			<script>
-				alert("로그인해주세요");
-				location.href="index.jsp";
+				$(function(){
+				alert("글쓰기는 로그인 후 작성 가능합니다 :-)");
+				location='topic.jsp';
+				});
 			</script>
 		<%}%>
 		</div>

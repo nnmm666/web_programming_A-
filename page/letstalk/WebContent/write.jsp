@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/write.css" />
 </head>
+
 <body>
 	<div id="wrap">
 		<div id="top">
@@ -49,10 +50,10 @@
 					<div class="control-group">
 							<!-- Text input-->
 							<% while(rs.next()){ %>
-							<label class="control-label" for="keyword">키워드</label>
-							<div class="controls" id="keyword"><%= rs.getString("keyword") %>
-								</div>
-						</div>
+							<div class="control-label">내가 선택한 키워드는
+								<span><%= rs.getString("keyword")%></span>입니다.
+							</div>
+					</div>
 					<%	}
 							}catch(Exception e){ e.printStackTrace();
 							}finally{
@@ -62,18 +63,13 @@
     						} %>
 						<div class="control-group">
 							<!-- Text input-->
-							<label class="control-label" for="user">작성자</label>
-							<div class="controls" id="user_name">
-								<%=session.getAttribute("userName")%></div>
+							<div class="control-label">내 이름은 
+							<span><%=session.getAttribute("userName")%></span> 입니다.</div>
 						</div>
-
 						<div class="control-group">
 							<!-- Textarea -->
-							<label class="control-label" for="context">내용</label>
-							<div class="controls">
-								<div class="textarea">
+							<div class="control-label">내 생각은
 									<textarea rows="10" cols="100" name="content"> </textarea>
-								</div>
 							</div>
 						</div>
 						<div class="control-group">

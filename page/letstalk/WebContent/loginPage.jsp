@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" import="java.sql.*" 
-    import="com.oreilly.servlet.MultipartRequest, 
-	com.oreilly.servlet.multipart.DefaultFileRenamePolicy,java.util.*
-	,java.io.*,bean.*"%>
+    import="com.oreilly.servlet.MultipartRequest"
+    import = "com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+    
  <% 
+ 	
+  
+ 	// 사진 넣는 것
  	String errorMsg = null;
  	String actionUrl;
-/* 사진넣는거 하는중
- 	String realFolder = "";
-	int maxSize = 1024*1024*5;
-	String encType = "euc-kr";
-	String savefile = "file";
-	ServletContext scontext = getServletContext();
-	realFolder = scontext.getRealPath(savefile);
-	MultipartRequest multi = null;
-	multi = new MultipartRequest(request,realFolder,maxSize,encType,new 
-	DefaultFileRenamePolicy());
-*/
+ 	// 사진 넣는 거시작 
+ 	     String uploadPath = request.getRealPath("upload");
+ 		 int size = 10 * 1024 * 1024;
+ 		 
+    	 String email     = "";
+   		 String name     = "";
+   	     String password = "";
+   	     String photo = "" ;
+   	     // 초기화 ;
  	Connection conn = null;
  	PreparedStatement stmt = null;
  	ResultSet rs = null;
@@ -25,17 +26,8 @@
 	String dbUser = "web";
 	String dbPassword = "asdf";
 
- 	String email = "";
- 	String name = "";
- 	String password = "";
- 	String photo ="";
- 	
  	int id =0;
 
- 	try {
-		id = Integer.parseInt(request.getParameter("id"));
-	}catch(Exception e){}
-	
 	if(id >0) {
 		actionUrl = "update.jsp"; //회원가입 수정 페이지 만들기
 		try {
@@ -47,7 +39,7 @@
 			stmt.setInt(1,id);
 			
 			rs = stmt.executeQuery();
-			
+		
 			if(rs.next()){
 				email = rs.getString("email");
 				name = rs.getString("name");
@@ -88,7 +80,7 @@
 					</div>
 					<div class="container">
 						<div>
-							<form class="form-horizontal" action="<%=actionUrl%>" method="POST">
+							<form class="form-horizontal" action="<%=actionUrl%>" method="POST" enctype = "multipart/form-data">
 								<fieldset>
 									<legend class="legend">Sign Up</legend>
 									<%
@@ -132,7 +124,7 @@
 										<div class="control-group">
 								     		<label class="control-label" for="photo">Profile Photo</label>
 								          <div class="controls">
-								             <input class="file" id="fileInput" type="file" name ="photo">
+								             <input class="file" id="fileInput" type="file" name ="photoname">
 								          </div>
 								      	</div>
 									</div>

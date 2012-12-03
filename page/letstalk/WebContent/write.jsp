@@ -9,7 +9,6 @@
 
 <!-- Site styles -->
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
-<link rel="stylesheet" type="text/css" href="stylesheets/write.css" />
 </head>
 <body>
 	<div id="wrap">
@@ -17,6 +16,7 @@
 			<jsp:include page="share/header.jsp" />
 		</div>
 		<div id="content">
+		<div id="write">
 
 	<%
 		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
@@ -96,7 +96,7 @@
 			</script>
 		<%}%>
 		</div>
-	
+	</div>
 		<div id="bottom">
 			<jsp:include page="share/footer.jsp" />
 		</div>

@@ -1,8 +1,8 @@
-body {font:12px/18px 'Arial',"맑은 고딕", "Malgun Gothic", "Gulim", Verdana, Arial, Tahoma;}
-fieldset {width:700px; padding:10px; margin:20px auto; border:2px solid #bbb;}
-.control-group{margin:10px 0;display: table;line-height: 0;content: "";}
-.control-label{float:left;width:160px;padding-top: 5px;text-align: right;}	
-.controls{font-weight:bold; text-align:left; padding-top:10px; margin-left:180px;}
-label{margin-bottom: 5px;font-size: 14px;font-weight: normal;line-height: 20px;}
-textarea {margin: 0px;width: 476px;height: 146px;}
-legend{display: block;width: 100%;font-size: 21px;line-height: 40px;border: 0;border-bottom: 1px solid #E5E5E5;}
+#write {padding:40px 0 50px 0}
+#write fieldset {width:700px; padding:10px; margin:20px auto; border:2px solid #bbb;}
+#write .control-group{margin:10px 0;display: table;line-height: 0;content: "";}
+#write .control-group .control-label{float:left;width:160px;padding-top: 5px;text-align: right;}	
+#write .control-group .controls{font-weight:bold; text-align:left; padding-top:10px; margin-left:180px;}
+#write label{margin-bottom: 5px;font-size: 14px;font-weight: normal;line-height: 20px;}
+#write textarea {margin: 0px;width: 476px;height: 146px;}
+#write legend{display: block;width: 100%;font-size: 21px;line-height: 40px;border: 0;border-bottom: 1px solid #E5E5E5;}

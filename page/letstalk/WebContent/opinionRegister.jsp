@@ -98,9 +98,6 @@
 								}
 							%>
 						</div>
-						<div class="form-action">
-							<a onclick="history.back();" class="btn">뒤로 돌아가기</a>
-						</div>
 						<%
 							} else if (result == 1) {
 						%>

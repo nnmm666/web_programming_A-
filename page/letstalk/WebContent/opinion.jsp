@@ -89,8 +89,10 @@
 					<%=topic_content %>
 					</div>
 					<div class="topicContentBottomInOpinion">
-							<span><img src="./images/like.png"> <%=topic_pros %> </span><span><img src="./images/hate.png"> <%=topic_cons %> </span>
-							<span>작성자 : <%=topic_writer %></span><span>작성일 : <%=topic_date %></span>
+							<span><a href="likehate.jsp?likehate=likes&topic_id=<%=topic_id%>"><img src="./images/like.png"> </a><%=topic_pros %> </span>
+							<span><a href="likehate.jsp?likehate=hates&topic_id=<%=topic_id%>"><img src="./images/hate.png"> </a><%=topic_cons %> </span>
+							<span>작성자 : <%=topic_writer %></span>
+							<span>작성일 : <%=topic_date %></span>
 					</div>
 				</div>
 				
@@ -148,8 +150,8 @@
 				
 					<div class="opinion">
 						<div class="titleborder_<%=opinion_position %> ">
-							<%=opinion_title %>
-							<a href="#" class="toggle">▲▼</a><span class="opinion_writer">작성자 : <%=opinion_writer %></span>
+							<%=opinion_position %>
+							<span class="opinion_writer">작성자 : <%=opinion_writer %></span>
 						</div>
 						<div class="section">
 							<div class="section_top">
@@ -157,13 +159,15 @@
 									<%=opinion_content %>
 								</div>
 								<div class="section_right">
-									<span><img src="./images/like.png"> <%=opinion_pros %> </span>
-									<span><img src="./images/hate.png"> <%=opinion_cons %> </span>
+									<span><a href="likehate.jsp?likehate=like&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img src="./images/like.png"></a> <%=opinion_pros %> </span>
+									<span><a href="likehate.jsp?likehate=hate&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img src="./images/hate.png"></a> <%=opinion_cons %> </span>
 								</div>
 								<div class="section_bottom">
-								작성일 : <%=opinion_date %>
+								<a href="#" class="toggle"> Reply ↕ </a>
+								<span> 작성일 : <%=opinion_date %></span>
 								</div>
 							</div>
+							
 							<div id="section_sub">
 								
 								<%
@@ -245,7 +249,7 @@ $(function(){
 			}});
 
 	$(".toggle").click(function(){
-			$(this).parents('.opinion').find('.section').slideToggle();
+			$(this).parents('.opinion').find('#section_sub').slideToggle();
 		});
 	$("#ejqhrl").hide();
 });

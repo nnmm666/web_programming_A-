@@ -17,9 +17,8 @@
 		</div>
 		<div id="content">
 		<div id="write">
-	<%	
+	<%int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
 		if(session.getAttribute("userName")!=null){  
-		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 		String dbUser = "web";
 		String dbPassword = "asdf";
@@ -86,7 +85,7 @@
 			<script>
 				$(function(){
 					alert("글쓰기는 로그인 후 작성 가능합니다.");
-					location='index.jsp';
+					location='topic.jsp?keyword_id=<%=keyword_id%>';
 				});
 			</script>
 		<%}%>

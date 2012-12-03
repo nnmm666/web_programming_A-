@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
-
 <!-- Site styles -->
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -17,10 +17,9 @@
 		</div>
 		<div id="content">
 		<div id="write">
-
-	<%
-		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
+	<%	
 		if(session.getAttribute("userName")!=null){  
+		int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 		String dbUser = "web";
 		String dbPassword = "asdf";
@@ -36,13 +35,11 @@
 			pstmt.setInt(1,keyword_id);
 			rs=pstmt.executeQuery();
 	%>
-	
 			<form action="write_db.jsp?keyword_id=<%=keyword_id %>" method="POST" class="form-horizontal">
 				<fieldset>
 					<div id="legend" class="">
 						<legend class="">당신의 생각을 넓혀드립니다 :-) </legend>
 					</div>
-
 					<div id="section">
 					<div class="control-group">
 							<!-- Text input-->
@@ -64,7 +61,6 @@
 							<div class="controls" id="user_name">
 								<%=session.getAttribute("userName")%></div>
 						</div>
-
 						<div class="control-group">
 							<!-- Textarea -->
 							<label class="control-label" for="context">내용</label>
@@ -82,7 +78,6 @@
 							</div>
 						</div>
 					</div>
-
 				</fieldset>
 				<input type="submit" value="Lets Talk!"> <input type="reset"
 					value="재작성">
@@ -90,8 +85,8 @@
 			<%}else{%>
 			<script>
 				$(function(){
-				alert("글쓰기는 로그인 후 작성 가능합니다 :-)");
-				location='topic.jsp?';
+					alert("글쓰기는 로그인 후 작성 가능합니다.");
+					location='index.jsp';
 				});
 			</script>
 		<%}%>

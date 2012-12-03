@@ -126,7 +126,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div id="bottom">
 					<jsp:include page="share/footer.jsp" />
 		</div>

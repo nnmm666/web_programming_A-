@@ -49,23 +49,13 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css" href="stylesheets/main.css"
 	media="screen, projection" />
 </head>
-
-<!-- Body Start -->
 <body>
 	<div id="wrap">
 		<div id="top">
 			<jsp:include page="share/header.jsp" />
 		</div>
-
-		<div id="page" class="inner layout-1col">
+		<div id="middle" class="inner layout-1col">
 			<div id="content">
-				<noscript>
-					<div class="noscript">
-						<span class="code-sitename">Slider Kit</span> jQuery plugin
-						requires Javascript activation.
-					</div>
-				</noscript>
-
 				<!-- Start contentslider-std -->
 				<div class="sliderkit contentslider-std">
 					<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev">
@@ -134,24 +124,17 @@ request.setCharacterEncoding("utf-8");
 							%>
 						</div>
 						<!-- // end of sliderkit-panel -->
-						
 					</div>
 					<!-- // end of sliderkit-panels -->
-
 				</div>
 				<!-- // end of contentslider-std -->
-
 			</div>
 			<!-- // end of contetnt-->
-
 		</div>
 		<!-- // end of layout-1col -->
-
 		<div id="bottom">
 			<jsp:include page="share/footer.jsp" />
 		</div>
-
 	</div>
-	<!-- // end of wrap -->
 </body>
 </html>

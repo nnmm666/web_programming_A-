@@ -50,11 +50,7 @@
 .sliderkit .sliderkit-panel .sliderkit-panel-overlay{position:absolute;z-index:2;top:0;left:0;}
 
 /* page, inner */
-#page {padding:15px 0 0;}
-.inner{ height:800px;}
-.layout-1col #content{ float:none;}
-
-#content { width: 960px; height: 720px; margin: 0 auto; padding: 0; }
+#middle {padding:25px 0 50px;}
 /*---------------------------------
  *  Content slider > Standard
  *---------------------------------*/
@@ -69,7 +65,7 @@
 .contentslider-std .sliderkit-nav-clip li a{height:18px;margin:0;padding:3px 10px 1px;color:#fff;text-decoration:none;}
 .contentslider-std .sliderkit-nav-clip li a:hover{background:#666;}
 .contentslider-std .sliderkit-nav-clip li.sliderkit-selected{}
-.contentslider-std .sliderkit-nav-clip li.sliderkit-selected a{color:#000;background:#ddd;}
+.contentslider-std .sliderkit-nav-clip li.sliderkit-selected a{color:#fff;font-weight:bold;background:#236684}
 
 /* Panel */
 .contentslider-std .sliderkit-panels{width:800px;height:640px;overflow:hidden;padding:10px 0;background:#236684;}

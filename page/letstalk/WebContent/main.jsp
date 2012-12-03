@@ -94,11 +94,9 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
-								<p>
 									<span><%= rs.getString("content")%></span>
 									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
-								</p>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 							</div>
 							<%	}
 									stmt.close();
@@ -111,11 +109,9 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
-								<p>
 									<span><%= rs.getString("content")%></span>
 									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
-								</p>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 							</div>
 							<%	}
 									stmt.close();
@@ -128,11 +124,9 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
-								<p>
 									<span><%= rs.getString("content")%></span>
 									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
-								</p>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 							</div>
 							<%	}
 									stmt.close();

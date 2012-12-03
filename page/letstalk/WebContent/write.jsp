@@ -7,9 +7,6 @@
 <meta charset="UTF-8">
 <title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
 
-<!-- bootstrap -->
-<link rel="stylesheet" media="screen"
-	href="stylesheets/bootstrap.min.css" />
 <!-- Site styles -->
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/write.css" />

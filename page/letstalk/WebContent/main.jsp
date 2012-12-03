@@ -21,8 +21,7 @@ request.setCharacterEncoding("utf-8");
 	content="slider, kit, slideshow, gallery, carousel, jquery plugin" />
 <meta name="Description"
 	content="Slider Kit jQuery slideshow plugin: content sliders examples" />
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <!-- jQuery Plugin scripts -->
 <script type="text/javascript" src="javascript/jquery.easing.1.3.min.js"></script>
 <script type="text/javascript" src="javascript/jquery.mousewheel.min.js"></script>
@@ -95,10 +94,10 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 								<p>
-									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
+									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 								</p>
 							</div>
 							<%	}
@@ -112,10 +111,10 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 								<p>
-									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
+									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 								</p>
 							</div>
 							<%	}
@@ -129,10 +128,10 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 의견 나누기! </a>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 								<p>
-									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 									<span><%= rs.getString("content")%></span>
+									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
 								</p>
 							</div>
 							<%	}

@@ -94,7 +94,7 @@
 			<script>
 				$(function(){
 				alert("글쓰기는 로그인 후 작성 가능합니다 :-)");
-				location='topic.jsp';
+				location='topic.jsp?';
 				});
 			</script>
 		<%}%>

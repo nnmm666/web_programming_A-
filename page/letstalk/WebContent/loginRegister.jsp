@@ -62,7 +62,6 @@
 	}
 	if (!password.equals(password_confirm)) {
 		errorMsg.add("비밀번호가 일치하지 않습니다.");
-		
 	}
 	
 

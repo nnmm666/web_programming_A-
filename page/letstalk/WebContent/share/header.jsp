@@ -90,7 +90,7 @@
 				<ul>
 					<li><span>E-mail</span> <input type="text" name="inputemail"></li>
 					<li><span>Password</span> <input type="password" name="inputpwd"></li>
-					<li><input type="submit" value="로그인"></li>
+					<li><input type="submit" id="login_button" value="로그인"></li>
 					<li><a href="signup.jsp"> 회원가입</a></li>
 				</ul>
 			</form>
@@ -100,7 +100,7 @@
 		<form method="post" action="logout.jsp">
 		안녕하세요. <b><%=session.getAttribute("userName") %></b> 님 반갑습니다.
 			<a href="signup.jsp?id=<%=session.getAttribute("userId") %>">개인정보수정</a>
-			<input type="submit" id = "logout" value="로그아웃"> 
+			<input type="submit" id ="logout_button" value="로그아웃"> 
 		</form>
 	</div>
 	<%} %>

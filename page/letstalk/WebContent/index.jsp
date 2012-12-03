@@ -67,9 +67,9 @@
 		<div id="middle">
 			<div id="content">
 				<div id="content_top">
-					<form>
-						<input type="text" placeholder="  키워드를 검색하세요!" id="search_bar">
-						<input type="button" value="검색" id="search_button">
+					<form method="get" action="keyword.jsp">
+						<input type="text" placeholder="  토론하고 싶은 키워드를 추가하세요!" name="add_keyword" id="add_bar">
+						<input type="submit" value="추가" id="add_button">
 					</form>
 				</div>
 				<div id="content_center">
@@ -85,8 +85,7 @@
 					</div>
 					
 					<div id="content_bottom">
-						<a href="keyword.jsp" class="btn btn-mini" style="margin-right: 10px;">키워드추가</a>
-						<a href="main.jsp" class="btn btn-mini">주제보기</a>
+						<a href="main.jsp" class="btn btn-mini">입장하기</a>
 					</div>
 				</div>
 			</div>

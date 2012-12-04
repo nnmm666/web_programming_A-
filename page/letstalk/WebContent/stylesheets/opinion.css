@@ -1,12 +1,13 @@
-#content{ }
 /*searchBar */
 
 #search {
 	width: 720px; height: 50px; padding-top : 20px; margin: 30px auto 0px auto; background-color: #377c9b; border-radius: 5px 5px 0px 0px;
-	border: 1px solid #aaa;
-}
+	border: 1px solid #aaa;}
 #searchbar { width: 390px; height: 20px; border-radius: 5px; border: 1px solid #ccc; vertical-align: middle; margin: 0 auto; padding-left: 10px; }
 .searchButton { width: 60px; height :25px; font-size: 13px; vertical-align: middle; }
+.suggest_box {position: absolute; left: 442px; width: 400px; margin: 0px; background-color: #000; color: #fff; text-align:left;}
+.suggest_box li {margin: 0px 0px 3px 0px;	padding: 5px;	cursor: pointer; list-style-type:none;}
+.suggest_box li:hover {background-color: #659CD8;}
 
 /*topic*/
 #topicdiv { 
@@ -56,10 +57,11 @@
 .titleborder_like { width : 710px; height: 20px; background-color: #377c9b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
 .titleborder_hate { width : 710px; height: 20px; background-color: #e42626; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff;}
 .opinion_writer { float: right; margin-right: 10px; }
-.toggle { text-decoration: none; padding: 0 15px 0 0; color: #ff0; width: 20px; height: 18px; float: right; }
+.toggle { text-decoration: none; padding: 0 15px 0 0; color:#000; float: left; }
 .toggle:hover { color:#fa0;}
 .section_top { width: 700px; height: 80px; background-color: #fff; margin: 0 auto; border-radius: 0 0 5px 5px;  padding: 10px; }
-.section_left{  width: 600px; height: 70px; float : left; text-align: left;}
+.section_left{  width: 600px; height: 60px; float : left; text-align: left;}
+.section_letf a{ width:30px; float :letf; }
 .section_right{ float:right; width:80px; height: 30px;}
 .section_bottom { float: right;}
 .section_reply { width: 710px; height: 20px; background-color: #ccc; margin: 5px 0 5px 0; padding: 5px; text-align: left; }
@@ -70,4 +72,5 @@
 .reply_more{ width: 550px; height: 20px; margin: 3px; float: left;}
 .replyInputName {width:60px; float: left; padding: 5px;}
 .replyInputButton { width: 55px; height: 25px; float: right; margin-top: 2px; margin-right: 20px; }
+
 

@@ -74,9 +74,10 @@
 		<div id="middle">
 			<div id="content">
 				<div id="search">
-					<form class="form-search">
-						<input type="text" id="searchbar" class="input-medium search-query" placeholder="다른 주제 검색">
+					<form class="form-search" action="topicServlet">
+						<input type="text" id="searchbar" placeholder="다른 키워드 검색">
 						<button type="submit" class="searchButton">Search</button>
+						<div id="suggest_box" class="suggest_box"></div> 		
 					</form>
 				</div>
 				<div id="topicdiv"><%=keyword %></div>
@@ -241,20 +242,34 @@
 		%>
 		
 <script type="text/javascript">
+function fill(name) {
+	// 아이템이 선택되었을때 처리 
+	$('#searchbar').val(name);
+	$('#suggest_box').fadeOut();
+}
 
 $(function(){
+	$('#searchbar').keyup(function() {
+		// 입력창에 키가 눌러진 경우 이벤트 처리
+		// Ajax로 값을 전송
+		$.post('KeywordSuggestServlet', {query: $('#searchbar').val()}, 
+			function(data) {
+				$('#suggest_box').html(data).show();
+			});		
+	});
+	
 	$(window).scroll(function() {
 		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
 			$("#ejqhrl").show();
-			}});
+			}
+		});
 
 	$(".toggle").click(function(){
 			$(this).parents('.opinion').find('#section_sub').slideToggle();
 		});
+	
 	$("#ejqhrl").hide();
 });
-
-	
 </script>
 		
 </html>

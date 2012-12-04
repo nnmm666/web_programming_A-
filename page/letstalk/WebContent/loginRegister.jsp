@@ -1,21 +1,51 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.sql.*" import="java.util.*"%>
+	pageEncoding="UTF-8" import="java.io.*" %>
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import="java.util.*" %>
+<%@page import = "java.sql.*" %>
 <%
-	Connection conn = null;
-	PreparedStatement stmt = null;
-	ResultSet rs = null;
+int size = 10 * 1024 * 1024;
 
-	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-	String dbUser = "web";
-	String dbPassword = "asdf";
 
-	request.setCharacterEncoding("utf-8");
+Connection conn = null;
+PreparedStatement stmt = null;
+ResultSet rs = null;
 
-	String email = request.getParameter("email");
-	String name = request.getParameter("name");
-	String password = request.getParameter("password");
-	String password_confirm = request.getParameter("password_confirm");
-	String photo = request.getParameter("photo");
+String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+String dbUser = "web";
+String dbPassword = "asdf";
+
+request.setCharacterEncoding("utf-8");
+String uploadPath = request.getRealPath("upload");
+
+String fileName     = "";
+String origFileName = "";
+String email =  "";
+String name =  "";
+String password = ""; 
+String password_confirm = ""; 
+String photo =  "";
+
+MultipartRequest multi = new MultipartRequest(request,
+            uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
+    
+	email = multi.getParameter("email");
+	name = multi.getParameter("name");
+	password = multi.getParameter("password");
+	password_confirm = multi.getParameter("password_confirm");
+	photo = multi.getParameter("photo");
+    
+    Enumeration files = multi.getFileNames(); 
+
+    
+    String file = (String)files.nextElement();
+    fileName = multi.getFilesystemName(file);
+    origFileName = multi.getOriginalFileName(file);
+
+	
+
 
 	List<String> errorMsg = new ArrayList<String>();
 	int result = 0;
@@ -29,7 +59,7 @@
 	if (password == null || password.length() < 6) {
 		errorMsg.add("비밀번호는 6자 이상 입력해주세요.");
 	}
-	if (!password.equals(password_confirm)) {
+	if (password.equals(password_confirm) != true) {
 		errorMsg.add("비밀번호가 일치하지 않습니다.");
 	}
 

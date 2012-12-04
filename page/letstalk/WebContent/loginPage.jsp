@@ -9,9 +9,6 @@
  	// 사진 넣는 것
  	String errorMsg = null;
  	String actionUrl;
- 	// 사진 넣는 거시작 
- 	     String uploadPath = request.getRealPath("upload");
- 		 int size = 10 * 1024 * 1024;
  		 
     	 String email     = "";
    		 String name     = "";
@@ -124,7 +121,7 @@
 										<div class="control-group">
 								     		<label class="control-label" for="photo">Profile Photo</label>
 								          <div class="controls">
-								             <input class="file" id="fileInput" type="file" name ="photoname">
+								             <input class="file" id="fileInput" type="file" name ="photo">
 								          </div>
 								      	</div>
 									</div>

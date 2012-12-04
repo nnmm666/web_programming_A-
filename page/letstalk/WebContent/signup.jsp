@@ -74,8 +74,8 @@
 						<h4>당신의 생각을 향상시켜드립니다.</h4>
 					</div>
 					<div class="container">
-						<form class="form-horizontal" action="<%=actionUrl%>"
-							method="POST">
+						<form class="form-horizontal" action="<%=actionUrl%>" enctype ="multipart/form-data"
+							method="POST" >
 							<fieldset>
 								<legend class="legend">Sign Up</legend>
 								<%

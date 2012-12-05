@@ -84,7 +84,7 @@
 
 				<div id="topic">
 					<div id="topicPhoto">
-						<img src="./images/example.png" width='66px' height='100px'>
+						<img src="./upload/<%= %>" width='66px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
 					<%=topic_content %>

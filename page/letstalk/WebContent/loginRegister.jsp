@@ -18,7 +18,7 @@ String dbUser = "web";
 String dbPassword = "asdf";
 
 request.setCharacterEncoding("utf-8");
-String uploadPath = request.getRealPath("upload");
+String uploadPath = request.getRealPath("upload/user");
 
 String fileName     = "";
 String origFileName = "";

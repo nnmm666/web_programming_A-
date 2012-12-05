@@ -38,7 +38,8 @@
 		String content = "";
 		String writer = "";
 		String date = "";
-
+		String photo = "";
+		
 		try {
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			
@@ -59,7 +60,7 @@
     	stmt.setString(1, keyword_id);
     	stmt.setInt(2, startPos);
     	stmt.setInt(3, numInPage);
-    
+ 		   
     	rs = stmt.executeQuery();
     	
 	%>
@@ -95,11 +96,12 @@
 									writer = rs.getString("writer");
 									date = rs.getString("date");
 									topic_id = rs.getString("topic.id");
+									photo = rs.getString("photo");
 							%>
 							<a href="opinion.jsp?topic_id=<%= topic_id %>">
 								<div class="sliderkit-block">
 									<div id="topicPhoto">
-										<img src="./images/example.png" width='66px' height='60px'>
+										<img src="upload/topic/<%=photo %>" width='66px' height='60px'>
 									</div>
 									<div id="topicContent">
 										<%=content %>

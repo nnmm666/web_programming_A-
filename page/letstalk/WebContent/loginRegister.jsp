@@ -28,8 +28,7 @@ String password = "";
 String password_confirm = ""; 
 String photo =  "";
 
-MultipartRequest multi = new MultipartRequest(request,
-            uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
+MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
     
 	email = multi.getParameter("email");
 	name = multi.getParameter("name");

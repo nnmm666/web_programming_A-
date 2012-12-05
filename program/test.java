@@ -1,4 +1,4 @@
-﻿import java.io.IOException;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,16 +29,16 @@ public class test {
 			e1.printStackTrace();
 		}
 
-		String dbUrl = "jdbc:mysql://localhost:3306/letstalk";
-		String dbUser = "ctrl0703";
-		String dbPassword = "32Armyband";
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		String dbUser = "web";
+		String dbPassword = "asdf";
 	
 		try {
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			
 			while(true) {
 				getKeyword();
-				Thread.sleep(10000);// 30초마다 검색어 갱신
+				Thread.sleep(60000);		// 1분마다 검색어 갱신
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -56,7 +56,8 @@ public class test {
     public static void getKeyword() {
         try {
         	String apiKey = "7917d5df6bb7d982057f6bb5ee3658f5";
-            String url = "http://openapi.naver.com/search?key=" + apiKey + "&query=nexearch&target=rank";
+ //          String url = "http://openapi.naver.com/search?key=" + apiKey + "&query=nexearch&target=rank";
+        	String url = "http://apis.daum.net/socialpick/search?category=c";
             String keyword;
             int value;
             
@@ -66,8 +67,10 @@ public class test {
             Document doc = builder.parse(url);
             Element root = doc.getDocumentElement();
             // 취득한 xml형식의 결과에서 실시간 검색어와 검색수를 뽑아온다
-            NodeList itemList = root.getElementsByTagName("K");	
-            NodeList valueList = root.getElementsByTagName("V");
+//            NodeList itemList = root.getElementsByTagName("K");	
+//            NodeList valueList = root.getElementsByTagName("V");
+            NodeList itemList = root.getElementsByTagName("keyword");
+            NodeList valueList = root.getElementsByTagName("rank_diff");
             
             for (int i = 0; i < itemList.getLength(); i++) {
                 Element itemElement = (Element) itemList.item(i);
@@ -102,20 +105,21 @@ public class test {
     public static void setData(String keyword, int value) {
     	try {
     		String temp="";
-    		PreparedStatement pstmt = conn.prepareStatement("select id from testkeyword where id = ?");
+    		PreparedStatement pstmt = conn.prepareStatement("select keyword from keyword where keyword = ?");
     		pstmt.setString(1, keyword);
     		rs = pstmt.executeQuery();
     		if(rs.next())
     			temp = rs.getString(1);			// 삽입하려는 키워드가 이미 테이블에 있는지 확인
     		
     		if(!(temp.equals(keyword))) {		// 테이블에 그 키워드가 없을때는 키워드와 검색수 insert
-				stmt = conn.prepareStatement("insert into testkeyword (id, count) values (?, ?)");
+				stmt = conn.prepareStatement("insert into keyword values (null, ?, ?, ?, null)");
 				stmt.setString(1, keyword);
 				stmt.setInt(2, value);
+				stmt.setString(3, "search");
 			
 				stmt.executeUpdate();
     		} else {							// 있을때는 검색수만 더해줌
-    			stmt = conn.prepareStatement("update testkeyword set count = count + ?");
+    			stmt = conn.prepareStatement("update keyword set weight = weight + ?");
 				stmt.setInt(1, value);
 			
 				stmt.executeUpdate();

@@ -52,7 +52,7 @@ public class TopicDAO {
 			stmt.close();
 			stmt = null;
 				 		
-			stmt = conn.prepareStatement("SELECT *, substr(topic.date, 1, 10) as date" +
+			stmt = conn.prepareStatement("SELECT *, substr(topic.date, 1, 10) as convDate" +
 					" FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE keyword_id=? ORDER BY pros LIMIT ?, 3");
 			stmt.setInt(1, keyword_id);
 			stmt.setInt(2, startPos);
@@ -61,7 +61,7 @@ public class TopicDAO {
 			while(rs.next()) {
 				result.getList().add(new Topic(rs.getInt("topic.id"), rs.getInt("keyword_id"),
 						rs.getString("content"), rs.getString("writer"), rs.getInt("pros"),
-						rs.getInt("cons"), rs.getString("date"), rs.getString("photo")));
+						rs.getInt("cons"), rs.getString("convDate"), rs.getString("photo")));
 			}
 		} finally {
 			// 무슨 일이 있어도 리소스를 제대로 종료
@@ -86,7 +86,7 @@ public class TopicDAO {
 			conn = ds.getConnection();
 
 			// 질의 준비
-			stmt = conn.prepareStatement("SELECT * FROM topic WHERE id=?");
+			stmt = conn.prepareStatement("SELECT *, substr(topic.date, 1, 10) as convDate FROM topic WHERE id=?");
 			stmt.setInt(1, id);
 			
 			// 수행
@@ -94,7 +94,7 @@ public class TopicDAO {
 
 			if (rs.next()) {
 				topic = new Topic(rs.getInt("id"), rs.getInt("keyword_id"), rs.getString("content"), rs.getString("writer"),
-						rs.getInt("pros"), rs.getInt("cons"), rs.getString("date"), rs.getString("photo"));
+						rs.getInt("pros"), rs.getInt("cons"), rs.getString("convDate"), rs.getString("photo"));
 			}
 		} finally {
 			// 무슨 일이 있어도 리소스를 제대로 종료

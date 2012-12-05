@@ -45,7 +45,7 @@ public class OpinionDAO {
 				List<Reply> replies = ReplyDAO.getReplies(rs.getInt("id"));
 				
 				list.add(new Opinion(rs.getInt("id"), rs.getInt("topic_id"), rs.getString("content"), rs.getString("writer"),
-						rs.getString("position"), rs.getInt("pros"), rs.getInt("cons"), rs.getString("date"), replies));
+						rs.getString("position"), rs.getInt("pros"), rs.getInt("cons"), rs.getString("date").substring(0, 5), replies));
 			}
 			
 		} finally {

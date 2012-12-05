@@ -54,7 +54,7 @@
 	    stmt.close();
 	    
 	    
-			stmt = conn.prepareStatement("SELECT topic.id, keyword.id, keyword, content, substr(topic.date, 1, 10) as date, writer " 
+			stmt = conn.prepareStatement("SELECT *, substr(topic.date, 1, 10) as date, writer " 
 					 + "FROM keyword JOIN topic ON keyword.id = topic.keyword_id WHERE keyword_id=? "
 					 + "LIMIT ?, ?");
     	stmt.setString(1, keyword_id);
@@ -102,7 +102,7 @@
 							<a href="opinion.jsp?topic_id=<%= topic_id %>">
 								<div class="sliderkit-block">
 									<div id="topicPhoto">
-										<img src="upload/topic/<%=photo %>" width='66px' height='60px'>
+										<img src="<%=photo %>" width='66px' height='60px'>
 									</div>
 									<div id="topicContent">
 										<%=content %>

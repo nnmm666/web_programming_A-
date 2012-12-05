@@ -51,7 +51,7 @@
 <script src='./javascript/jquery-1.8.2.min.js'></script>
 	<div id="header">
 		<div id="logo">
-			<a href="index.jsp">Let's Talk!!</a>
+			<a href="pageServlet">Let's Talk!!</a>
 	</div>
 
 <% if(request.getMethod() == "POST"){

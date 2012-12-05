@@ -12,9 +12,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import bean.Keyword;
+import bean.Reply;
 
-public class KeywordDAO {
+public class ReplyDAO {
 	public static DataSource getDataSource() throws NamingException {
 		Context initCtx = null;
 		Context envCtx = null;
@@ -26,22 +26,23 @@ public class KeywordDAO {
 		// Look up our data source
 		return (DataSource) envCtx.lookup("jdbc/WebDB");
 	}
-
-	public static List<Keyword> getKeywords() throws NamingException, SQLException {
+	
+	public static List<Reply> getReplies(int opinion_id) throws NamingException, SQLException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 				
-		List<Keyword> list = new ArrayList<Keyword>();
+		List<Reply> list = new ArrayList<Reply>();
 		
 		DataSource ds = getDataSource();
 		try {
 			conn = ds.getConnection();
-			stmt = conn.prepareStatement("SELECT * FROM keyword");
+			stmt = conn.prepareStatement("SELECT * FROM reply WHERE opinion_id=?");
+			stmt.setInt(1, opinion_id);
 			rs = stmt.executeQuery();
 			while(rs.next()) {
-				list.add(new Keyword(rs.getInt("id"), rs.getString("keyword"), 
-						rs.getInt("weight"), rs.getString("type"), rs.getString("date")));
+				list.add(new Reply(rs.getInt("id"), rs.getInt("opinion_id"), rs.getString("content"), rs.getString("writer"),
+						rs.getString("date")));
 			}
 			
 		} finally {
@@ -52,9 +53,8 @@ public class KeywordDAO {
 		return list;
 	}
 	
-	
-	public static Keyword findById(int id) throws NamingException, SQLException {
-		Keyword keyword = null;
+	public static Reply findById(int id) throws NamingException, SQLException {
+		Reply reply = null;
 		
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -66,16 +66,16 @@ public class KeywordDAO {
 			conn = ds.getConnection();
 
 			// 질의 준비
-			stmt = conn.prepareStatement("SELECT * FROM keyword WHERE id = ?");
+			stmt = conn.prepareStatement("SELECT * FROM reply WHERE id = ?");
 			stmt.setInt(1, id);
 			
 			// 수행
 			rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				keyword = new Keyword(rs.getInt("id"), rs.getString("keyword"),
-						rs.getInt("weight"), rs.getString("type"), rs.getString("date"));
-			}	
+				reply = new Reply(rs.getInt("id"), rs.getInt("opinion_id"), rs.getString("content"), rs.getString("writer"),
+						rs.getString("date"));
+			}
 		} finally {
 			// 무슨 일이 있어도 리소스를 제대로 종료
 			if (rs != null) try{rs.close();} catch(SQLException e) {}
@@ -83,6 +83,6 @@ public class KeywordDAO {
 			if (conn != null) try{conn.close();} catch(SQLException e) {}
 		}
 		
-		return keyword;
+		return reply;
 	}
 }

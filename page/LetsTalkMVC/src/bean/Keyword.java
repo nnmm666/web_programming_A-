@@ -22,11 +22,11 @@ public class Keyword implements Serializable {
 		this.date = date;
 	}
 
-	public int getId() {
+	public int getKeyword_id() {
 		return keyword_id;
 	}
 
-	public void setId(int keyword_id) {
+	public void setKeyword_id(int keyword_id) {
 		this.keyword_id = keyword_id;
 	}
 

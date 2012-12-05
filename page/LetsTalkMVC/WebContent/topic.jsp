@@ -36,7 +36,7 @@
 						</c:if>
 
 							<c:forEach var="topic" items="${topics.list }">
-								<a href="opinion.jsp?topic_id=${topic.topic_id }">
+								<a href="pageServlet?op=opinion&topic_id=${topic.topic_id }">
 									<div class="sliderkit-block">
 										<div id="topicPhoto">
 											<img src="./images/example.png" width='66px' height='60px'>
@@ -67,7 +67,7 @@
 									<c:forEach var="i" begin="${topics.startPageNo }" end="${topics.endPageNo }">
 										<c:choose>
 											<c:when test="${i == topics.page }">
-												<li class="active"><a	href='pageServlet?op=topic&keyword_id=${keyword.id }&page=${i }'>${i }</a></li>
+												<li class="active"><a	href='pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${i }'>${i }</a></li>
 											</c:when>
 											<c:otherwise>
 												<li><a href='pageServlet?op=topic&keyword_id=${keyword.id }&page=${i }'>${i }</a></li>
@@ -81,11 +81,11 @@
 										</c:when>
 										<c:otherwise>
 											<li><a
-												href="pageServlet?op=topic&keyword_id=${keyword.id }&page=${topics.page + 1 }">&raquo;</a></li>
+												href="pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${topics.page + 1 }">&raquo;</a></li>
 										</c:otherwise>
 									</c:choose>
 								</ul>
-								<a href="pageServlet?op=write&keyword_id=${keyword.id }" id=writeButton> 주제 추가하기 </a>
+								<a href="pageServlet?op=write&keyword_id=${keyword.keyword_id }" id=writeButton> 주제 추가하기 </a>
 							</div>
 						</div>
 

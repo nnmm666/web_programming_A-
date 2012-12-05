@@ -20,6 +20,7 @@
 		String topic_content = "";
 		String topic_writer = "";
 		String topic_date = "";
+		String topic_photo = "";
 		int topic_pros = 0;
 		int topic_cons = 0;
 		
@@ -52,6 +53,7 @@
     	topic_date = rs.getString("conv_date");
     	topic_pros = rs.getInt("pros");
     	topic_cons = rs.getInt("cons");
+    	topic_photo = rs.getString("photo");
     	
     	stmt.close();
     	rs.close();
@@ -84,7 +86,7 @@
 
 				<div id="topic">
 					<div id="topicPhoto">
-						<img src="./upload/<%= %>" width='66px' height='100px'>
+						<img src="<%=topic_photo %>" width='66px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
 					<%=topic_content %>

@@ -59,7 +59,7 @@ public class TopicDAO {
 			
 			rs = stmt.executeQuery();
 			while(rs.next()) {
-				result.getList().add(new Topic(rs.getInt("id"), rs.getInt("keyword_id"),
+				result.getList().add(new Topic(rs.getInt("topic.id"), rs.getInt("keyword_id"),
 						rs.getString("content"), rs.getString("writer"), rs.getInt("pros"),
 						rs.getInt("cons"), rs.getString("date"), rs.getString("photo")));
 			}
@@ -86,7 +86,7 @@ public class TopicDAO {
 			conn = ds.getConnection();
 
 			// 질의 준비
-			stmt = conn.prepareStatement("SELECT * FROM topic WHERE id = ?");
+			stmt = conn.prepareStatement("SELECT * FROM topic WHERE id=?");
 			stmt.setInt(1, id);
 			
 			// 수행

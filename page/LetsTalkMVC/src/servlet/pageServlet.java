@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DAO.KeywordDAO;
+import DAO.OpinionDAO;
 import DAO.TopicDAO;
 import bean.Keyword;
+import bean.Opinion;
 import bean.PageResult;
 import bean.Topic;
 
@@ -58,13 +60,25 @@ public class pageServlet extends HttpServlet {
 				
 			} else if(op.equals("topic")) {
 				int page = getIntFromParameter(request.getParameter("page"), 1);
-				int keyword_id = getIntFromParameter(request.getParameter("keyword_id"), 1);
+				int keyword_id = getIntFromParameter(request.getParameter("keyword_id"), 0);
 				PageResult<Topic> topics = TopicDAO.getTopicPage(page, keyword_id);
 				Keyword keyword = KeywordDAO.findById(keyword_id);
 				request.setAttribute("topics", topics);
 				request.setAttribute("page", page);
 				request.setAttribute("keyword", keyword);
 				actionUrl = "topic.jsp";
+				
+			} else if(op.equals("opinion")) {
+				int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+				Topic topic = TopicDAO.findById(topic_id);
+				Keyword keyword = KeywordDAO.findById(topic.getKeyword_id());
+				List<Opinion> opinions = OpinionDAO.getOpinions(topic_id);
+				
+				request.setAttribute("topic", topic);
+				request.setAttribute("keyword", keyword);
+				request.setAttribute("opinions", opinions);
+				
+				actionUrl = "opinion.jsp";
 			}
 		} catch (NamingException | SQLException e) {
 			// TODO Auto-generated catch block

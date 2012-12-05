@@ -12,22 +12,23 @@
 <script type="text/javascript">
 	//JSCumulus.noConflict();
 
-	/* DEBUG */window.console && console.time && console.time("TagCloud1");
+	/* DEBUG */
+	window.console && console.time && console.time("TagCloud1");
 
 	/* TagCloud 1 */
 	var tags = [
-/*
+			/*
 			new Tag("JavaScript", {	color: "red"	}),																		// Color setting Example
 			new Tag("Jeroen van Warmerdam", 60, "http://www.jeroenvanwarmerdam.nl"),		// link Example
 			new Tag("이명박", 100, false),																							// Tag(name, weight, link, new window)
-*/
+			*/
 <%
 		List<Keyword> list = (List<Keyword>)request.getAttribute("keywords");
 
 		for(Keyword keywords : list) {
 			String keyword = keywords.getKeyword();
 			int weight = keywords.getWeight();
-			int id = keywords.getId();
+			int id = keywords.getKeyword_id();
 	   	out.println("new Tag(\"" + keyword + "\", " + weight + ", \"pageServlet?op=topic&keyword_id=" + id + "\"" +  "),");
 		}
 %>
@@ -57,9 +58,7 @@
 					<div id="tag_cloud">
 						<div id="tagCloud1"></div>
 						<script type="text/javascript">
-							tagCloud1.Distribute(
-									document.getElementById("tagCloud1"))
-									.Animate();
+							tagCloud1.Distribute(document.getElementById("tagCloud1")).Animate();
 						</script>
 					</div>
 					

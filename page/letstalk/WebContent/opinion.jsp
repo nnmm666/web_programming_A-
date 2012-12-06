@@ -94,7 +94,7 @@
 
 				<div id="topic">
 					<div id="topicPhoto">
-						<img src="upload/topic/<%=topic_photo %>" width='66px' height='100px'>
+						<img src="./upload/topic/<%=topic_photo %>" width='66px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
 					<%=topic_content %>

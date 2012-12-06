@@ -18,7 +18,7 @@ String dbUser = "web";
 String dbPassword = "asdf";
 
 request.setCharacterEncoding("utf-8");
-String uploadPath = request.getRealPath("upload/user");
+String uploadPath = getServletContext().getRealPath("./upload/user");
 
 String fileName     = "";
 String origFileName = "";
@@ -28,20 +28,22 @@ String password = "";
 String password_confirm = ""; 
 String photo =  "";
 
-MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
-    
+MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
+	
+	
 	email = multi.getParameter("email");
 	name = multi.getParameter("name");
 	password = multi.getParameter("password");
 	password_confirm = multi.getParameter("password_confirm");
-	photo = multi.getParameter("photo");
+	photo = multi.getParameter("fileName");
     
-    Enumeration files = multi.getFileNames(); 
+     
 
+	Enumeration files = multi.getFileNames();
+	String file = (String)files.nextElement();
+	fileName = multi.getFilesystemName(file);
     
-    String file = (String)files.nextElement();
-    fileName = multi.getFilesystemName(file);
-    origFileName = multi.getOriginalFileName(file);
+  
 
 	
 
@@ -73,7 +75,7 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",n
 			stmt.setString(1, email);
 			stmt.setString(2, name);
 			stmt.setString(3, password);
-			stmt.setString(4, photo);
+			stmt.setString(4, fileName);
 
 			result = stmt.executeUpdate();
 			if (result != 1) {
@@ -144,6 +146,9 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",n
 						<b><%=name%></b>님 등록해주셔서 감사합니다.
 					</div>
 					<div class="form-action">
+					<div>
+					<input type = "text " value = <%=fileName %>/>
+					</div>
 						<a href="index.jsp" class="btn">토론하러가기</a>
 					</div>
 					<%

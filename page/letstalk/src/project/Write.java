@@ -1,6 +1,6 @@
 package project;
 
-public class Write {
+public class Write implements java.io.Serializable{
 	private int id;
 	private int keyword_id;
 	private String writer;

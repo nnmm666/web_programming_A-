@@ -1,15 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
-    
+
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
     <jsp:useBean id="info" scope="request" class="project.Write">
     <jsp:setProperty name="info" property="*"/>
 <%
+	int size = 10 * 1024 * 1024;
+	String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
 	int keyword_id=info.getKeyword_id();
+
+	String uploadPath = request.getRealPath("upload/user");
+
+	MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
 	String content = new String(info.getContent().getBytes("8859_1"),"UTF-8");
 	String writer=(String)session.getAttribute("userName");
-	String photo=info.getPhoto();
+	String photo=multi.getParameter("photo");
 
 	request.setCharacterEncoding("utf-8");
+
 	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 	String dbUser = "web";
 	String dbPassword = "asdf";
@@ -17,8 +26,8 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	
-	String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
+
+    
 	try{
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);

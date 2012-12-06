@@ -1,8 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.io.*" import="java.sql.*"%>
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import="java.util.*" %>
+<%@page import = "java.sql.*" %>
     
 <%
+		int size = 10 * 1024 * 1024;
+
 		request.setCharacterEncoding("utf-8");
+		String uploadPath = request.getRealPath("upload/topic");
+
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		PreparedStatement reply_stmt = null;

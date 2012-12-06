@@ -83,7 +83,7 @@ request.setCharacterEncoding("utf-8");
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
 									<span><%= rs.getString("content")%></span>
-									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
+									<img src=upload/topic/<%=rs.getString("photo")  %> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
 							<%	}
@@ -98,7 +98,7 @@ request.setCharacterEncoding("utf-8");
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
 									<span><%= rs.getString("content")%></span>
-									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
+									<img src=upload/topic/<%=rs.getString("photo") %> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
 							<%	}
@@ -113,7 +113,7 @@ request.setCharacterEncoding("utf-8");
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
 									<span><%= rs.getString("content")%></span>
-									<img src=<%= imgURL + rs.getString("photo") %> alt="사진">
+									<img src=upload/topic/<%=rs.getString("photo")%> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
 							<%	}

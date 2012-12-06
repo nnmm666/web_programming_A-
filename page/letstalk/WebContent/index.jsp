@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<meta charset="utf-8">
 <title>Let's Talk!!렛톡에 오신걸 환영합니다!!</title>
 <!-- Site styles -->
 <link href="stylesheets/index.css" rel="stylesheet" type="text/css">

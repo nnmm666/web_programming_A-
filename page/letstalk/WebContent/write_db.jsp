@@ -8,11 +8,13 @@
 <%
 	int size = 10 * 1024 * 1024;
 	String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
+	
 	int keyword_id=info.getKeyword_id();
 
-	String uploadPath = request.getRealPath("upload/user");
+	String uploadPath = request.getRealPath("upload/topic");
 
 	MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
+	
 	String content = new String(info.getContent().getBytes("8859_1"),"UTF-8");
 	String writer=(String)session.getAttribute("userName");
 	String photo=multi.getParameter("photo");

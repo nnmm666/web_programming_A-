@@ -1,25 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.sql.*"%>
 
-<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.io.*" %>
+<%@ page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import="java.util.*" %>
+<%@page import = "java.sql.*" %>
     <jsp:useBean id="info" scope="request" class="project.Write">
     <jsp:setProperty name="info" property="*"/>
 <%
-	int size = 10 * 1024 * 1024;
-	String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
-	
-	int keyword_id=info.getKeyword_id();
+int size = 10 * 1024 * 1024;
+String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
+request.setCharacterEncoding("utf-8");
 
-	String uploadPath = request.getRealPath("upload/topic");
-
-	MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"euc-kr",new DefaultFileRenamePolicy());  
+String fileName     = "";
+String origFileName = "";
+int keyword_id=0;
+String photo =  "";
+String content = "";
+String writer = "" ;
+ServletContext context = getServletContext();
+String uploadPath = context.getRealPath("upload/topic");
+MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
 	
+	keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
+	photo=multi.getParameter("photo");
+	/* 원래 코드 
 	String content = new String(info.getContent().getBytes("8859_1"),"UTF-8");
-	String writer=(String)session.getAttribute("userName");
-	String photo=multi.getParameter("photo");
-
-	request.setCharacterEncoding("utf-8");
+	writer=(String)session.getAttribute("userName");
+	*/
+	writer =  multi.getParameter("writer");
+	content = multi.getParameter("context");
+	
+	Enumeration files = multi.getFileNames();
+	String file = (String)files.nextElement();
+	fileName = multi.getFilesystemName(file);
 
 	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 	String dbUser = "web";
@@ -37,7 +51,7 @@
 	pstmt.setInt(1,keyword_id);
 	pstmt.setString(2,content);
 	pstmt.setString(3,writer);
-	pstmt.setString(4,photo);
+	pstmt.setString(4,fileName);
 	int i = pstmt.executeUpdate();
     }catch(Exception e){ e.printStackTrace();}
     finally{if(conn!=null)conn.close(); 

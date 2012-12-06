@@ -60,7 +60,7 @@
     	stmt.setString(1, keyword_id);
     	stmt.setInt(2, startPos);
     	stmt.setInt(3, numInPage);
-    	stmt.setString(4,photo);
+    	//stmt.setString(4,photo);
  		   
     	rs = stmt.executeQuery();
     	

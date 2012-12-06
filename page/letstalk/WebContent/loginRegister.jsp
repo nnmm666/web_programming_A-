@@ -146,9 +146,7 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",ne
 						<b><%=name%></b>님 등록해주셔서 감사합니다.
 					</div>
 					<div class="form-action">
-					<div>
-					<input type = "text " value = <%=fileName %>/>
-					</div>
+				
 						<a href="index.jsp" class="btn">토론하러가기</a>
 					</div>
 					<%

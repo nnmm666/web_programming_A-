@@ -116,6 +116,9 @@ request.setCharacterEncoding("utf-8");
 									<img src=upload/topic/<%=rs.getString("photo")%> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
+							<div>
+								<a href = "write.jsp?topic_id=<%=rs.getInt("id")%>">등록하기</a>
+							</div>
 							<%	}
 									stmt.close();
 									rs.close();

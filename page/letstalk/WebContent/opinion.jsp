@@ -170,15 +170,10 @@
 									<%=opinion_content %>
 								</div>
 								<div class="section_right">
-<<<<<<< HEAD
 									<span><a href="likehate.jsp?likehate=like&id=<%=opinion_id %>&topic_id=<%= topic_id%>">
 									<img src="./images/like.png"></a> <%=opinion_pros %> </span>
 									<span><a href="likehate.jsp?likehate=hate&id=<%=opinion_id %>&topic_id=<%= topic_id%>">
 									<img src="./images/hate.png"></a> <%=opinion_cons %> </span>
-=======
-									<span><a href="likehate.jsp?likehate=like&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img src="./images/like.png"></a> <%=opinion_pros %> </span>
-									<span><a href="likehate.jsp?likehate=hate&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img src="./images/hate.png"></a> <%=opinion_cons %> </span>
->>>>>>> ad4d49dff66bdd5fddf0ad5c867dce651562b50b
 								</div>
 								<div class="section_bottom">
 								<a href="#" class="toggle"> Reply ↕ </a>

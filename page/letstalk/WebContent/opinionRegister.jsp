@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.io.*" import="java.sql.*" import="java.util.*"%>
 <%
+
 		
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-
+		
+		
 		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
 		String dbUser = "web";
 		String dbPassword = "asdf";

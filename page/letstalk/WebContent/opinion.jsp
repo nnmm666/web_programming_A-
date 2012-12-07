@@ -170,7 +170,8 @@
 									<%=opinion_content %>
 								</div>
 								<div class="section_right">
-									<span><a href="likehate.jsp?likehate=like&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img src="./images/like.png"></a> <%=opinion_pros %> </span>
+									<span><a href="likehate.jsp?likehate=like&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img 
+="./images/like.png"></a> <%=opinion_pros %> </span>
 									<span><a href="likehate.jsp?likehate=hate&id=<%=opinion_id %>&topic_id=<%= topic_id%>"><img src="./images/hate.png"></a> <%=opinion_cons %> </span>
 								</div>
 								<div class="section_bottom">

@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.sql.*"%>
 
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +34,8 @@
 			pstmt.setInt(1,keyword_id);
 			rs=pstmt.executeQuery();
 	%>
-			<form action="write_db.jsp?keyword_id=<%=keyword_id %>" method="POST" class="form-horizontal" enctype = "multipart/From-data">
+			<form action="write_db.jsp?keyword_id=<%=keyword_id %>"class="form-horizontal" 
+			enctype ="multipart/form-data"  method ="post" >
 				<fieldset>
 					<div id="legend" class="">
 						<legend class="">당신의 생각을 넓혀드립니다 :-) </legend>
@@ -51,7 +45,7 @@
 							<!-- Text input-->
 							<% while(rs.next()){ %>
 							<label class="control-label" for="keyword">무엇에 대해서?</label>
-							<div class="controls" id="keyword"><%= rs.getString("keyword") %>
+							<div class="controls" id="keyword"><%=rs.getString("keyword") %>
 								</div>
 						</div>
 					<%	}

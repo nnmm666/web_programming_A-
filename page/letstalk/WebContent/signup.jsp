@@ -118,12 +118,15 @@
 										</div>
 									</div>
 
-
+			
 									<div class="control-group">
 										<label class="control-label" for="picture">Profile
 											Photo</label>
 										<div class="controls">
-											<input class="file" id="fileInput" name="file" type="file">
+											<% if(id> 0){ %>
+										  <img src="./upload/user/<%=photo %>" width='80px' height='80px'>
+										  <% } %>
+											<input class="file" id="fileInput" name="file" type="file" >
 										</div>
 									</div>
 								</div>

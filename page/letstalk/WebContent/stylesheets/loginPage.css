@@ -1,5 +1,5 @@
 
-#content_border { width: 620px; height: 450px; margin :40px auto 0  auto; border-radius: 10px; border:1px #a6a6a6 solid; font-family: "맑은 고딕";}
+#content_border { width: 620px; height: 450px; margin :40px auto 40px auto; border-radius: 10px; border:1px #a6a6a6 solid; font-family: "맑은 고딕";}
 #logintitle { margin : 10px;}
 #logintitle span { font-size : 20px; text-align : left; line-height: 40px; color: #333333;}
 #user_content { width : 570px; margin: 0 auto;}

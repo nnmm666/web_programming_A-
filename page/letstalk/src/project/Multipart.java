@@ -8,18 +8,15 @@ public class Multipart implements java.io.Serializable {
 	private String content;
 	private String date;
 	private String photo;
-	private String address;
-	
 	public Multipart(){}
 	
-	public Multipart(int id , int keyword_id , String content , String date, String photo,String address)
+	public Multipart(int id , int keyword_id , String content , String date, String photo)
 	{
 		this.id = id;
 		this.keyword_id = keyword_id;
 		this.content =content;
 		this.date = date ;
 		this.photo  = photo ;
-		this.address =address;
 	}
 	
 	public void setID(int id){this.id=id;}
@@ -34,6 +31,4 @@ public class Multipart implements java.io.Serializable {
 	public String getDate(){return date;}
 	public void setPhoto(String photo){this.photo=photo;}
 	public String getPhoto(){return photo;}
-	public void setAddress(String address){this.address=address;}
-	public String getAddress(){return address;}
 }

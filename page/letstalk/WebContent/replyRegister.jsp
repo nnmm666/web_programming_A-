@@ -14,7 +14,7 @@
 		String topic_id = request.getParameter("topic_id");
 		String opinion_id = request.getParameter("opinion_id");
 		String writer=(String)session.getAttribute("userName");
-		String content = new String(request.getParameter("reply_more").getBytes("8859_1"),"UTF-8");
+		String content = request.getParameter("reply_more");
 		
 		List<String> errorMsg = new ArrayList<String>();
 		int result = 0;

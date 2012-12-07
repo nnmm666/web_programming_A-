@@ -10,7 +10,7 @@ String dbUser = "web";
 String dbPassword = "asdf";
 
 request.setCharacterEncoding("utf-8");
-	String imgURL="http://localhost:8080/letstalk/upload";
+	String imgURL="upload/topic/";
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -83,7 +83,7 @@ request.setCharacterEncoding("utf-8");
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
 									<span><%= rs.getString("content")%></span>
-									<img src=upload/topic/<%=rs.getString("photo")  %> alt="사진">
+									<img src=<%= imgURL + rs.getString("photo")  %> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
 							<%	}
@@ -98,7 +98,7 @@ request.setCharacterEncoding("utf-8");
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
 									<span><%= rs.getString("content")%></span>
-									<img src=upload/topic/<%=rs.getString("photo") %> alt="사진">
+									<img src=<%=imgURL + rs.getString("photo") %> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
 							<%	}
@@ -113,12 +113,10 @@ request.setCharacterEncoding("utf-8");
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
 									<span><%= rs.getString("content")%></span>
-									<img src=upload/topic/<%=rs.getString("photo")%> alt="사진">
+									<img src=<%=imgURL + rs.getString("photo")%> alt="사진">
 								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
 							</div>
-							<div>
-								<a href = "write.jsp?topic_id=<%=rs.getInt("id")%>">등록하기</a>
-							</div>
+							
 							<%	}
 									stmt.close();
 									rs.close();

@@ -10,7 +10,7 @@ String dbUser = "web";
 String dbPassword = "asdf";
 
 request.setCharacterEncoding("utf-8");
-	String imgURL="http://localhost:8080/letstalk/upload";
+	String imgURL="./upload/user/";
 %>
 <!DOCTYPE html>
 <html lang="ko">

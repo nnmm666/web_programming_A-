@@ -230,12 +230,9 @@
 						
 						<div id="ejqhrl">더보기</div>
 				</div>
-
 			</div>
 		</div>
-	
 	</div>
-	
 </body>
 
 		<%

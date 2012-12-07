@@ -82,9 +82,10 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-									<span><%= rs.getString("content")%></span>
-									<img src=<%= imgURL + rs.getString("photo")  %> alt="사진">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
+								<p><%= rs.getString("content")%></p>
+								<img src=<%= imgURL + rs.getString("photo")  %> alt="사진">
+								<div class="opi-info"><span> 작성일 </span><%=rs.getString("date")%> <span> 찬성 </span> <%= rs.getInt("pros")%> <span> 반대 </span> <%=rs.getInt("cons") %></div>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 							</div>
 							<%	}
 									stmt.close();
@@ -97,9 +98,10 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-									<span><%= rs.getString("content")%></span>
-									<img src=<%=imgURL + rs.getString("photo") %> alt="사진">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
+								<p><%= rs.getString("content")%></p>
+								<img src=<%=imgURL + rs.getString("photo") %> alt="사진">
+								<div class="opi-info"><span> 작성일 </span><%=rs.getString("date")%> <span> 찬성 </span> <%= rs.getInt("pros")%> <span> 반대 </span> <%=rs.getInt("cons") %></div>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 							</div>
 							<%	}
 									stmt.close();
@@ -112,9 +114,10 @@ request.setCharacterEncoding("utf-8");
 									while (rs.next()) {
 							%>
 							<div class="sub" id="<%=rs.getInt("id")%>">
-									<span><%= rs.getString("content")%></span>
-									<img src=<%=imgURL + rs.getString("photo")%> alt="사진">
-								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!) ☞</a>
+								<p><%= rs.getString("content")%></p>
+								<img src=<%=imgURL + rs.getString("photo")%> alt="사진">
+								<div class="opi-info"><span> 작성일 </span><%=rs.getString("date")%> <span> 찬성 </span> <%= rs.getInt("pros")%> <span> 반대 </span> <%=rs.getInt("cons") %></div>
+								<a href="opinion.jsp?topic_id=<%=rs.getInt("id")%>"> 토론하고싶어요(go!)</a>
 							</div>
 							
 							<%	}

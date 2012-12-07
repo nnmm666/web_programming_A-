@@ -7,33 +7,18 @@
 <%@page import = "java.sql.*" %>
 
 <%
-<<<<<<< HEAD
-		int size = 10 * 1024 * 1024;
-		String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
-		
-		String fileName = "";
-		String origFileName = "";
-		int keyword_id=0;
-		String photo =  "";
-		String content = "";
-		String writer = "" ;
-		
-		ServletContext context = getServletContext();
-		String uploadPath = context.getRealPath("upload/topic");
-		MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
-=======
-int size = 10 * 1024 * 1024;
-String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
-
-String fileName = "";
-String origFileName = "";
-int keyword_id=0;
-String photo =  "";
-String content = "";
-String writer = "" ;
-ServletContext context = getServletContext();
-String uploadPath = context.getRealPath("upload/topic");
-MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
+	int size = 10 * 1024 * 1024;
+	String sql = "insert into topic(keyword_id,content,writer,photo) values(?,?,?,?)";
+	
+	String fileName = "";
+	String origFileName = "";
+	int keyword_id=0;
+	String photo =  "";
+	String content = "";
+	String writer = "" ;
+	ServletContext context = getServletContext();
+	String uploadPath = context.getRealPath("upload/topic");
+	MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
 
 
 	keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
@@ -41,14 +26,11 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",ne
 	content = multi.getParameter("content");
 	writer=(String)session.getAttribute("userName");
 
-	Enumeration files = multi.getFileNames();
-	String file = (String)files.nextElement();
-	fileName = multi.getFilesystemName(file);
 
 	String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
 	String dbUser = "web";
 	String dbPassword = "asdf";
->>>>>>> ad4d49dff66bdd5fddf0ad5c867dce651562b50b
+
 	
 	
 		keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
@@ -59,10 +41,6 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",ne
 		Enumeration files = multi.getFileNames();
 		String file = (String)files.nextElement();
 		fileName = multi.getFilesystemName(file);
-	
-		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-		String dbUser = "web";
-		String dbPassword = "asdf";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;

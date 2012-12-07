@@ -8,14 +8,14 @@
 		ResultSet rs = null;
 		
 		
-		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
 		String dbUser = "web";
 		String dbPassword = "asdf";
 		request.setCharacterEncoding("utf-8");
 		
 		String topic_id = request.getParameter("topic_id");
 		String writer=(String)session.getAttribute("userName");
-		String content = new String(request.getParameter("opiniontext").getBytes("8859_1"),"UTF-8");
+		String content = request.getParameter("opiniontext");
 		String opinion_position = request.getParameter("likehate");
 		
 		List<String> errorMsg = new ArrayList<String>();

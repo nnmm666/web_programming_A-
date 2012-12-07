@@ -8,7 +8,7 @@
  	PreparedStatement stmt = null;
  	ResultSet rs = null;
 
-	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+	String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
 	String dbUser = "web";
 	String dbPassword = "asdf";
 

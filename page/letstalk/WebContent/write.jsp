@@ -19,7 +19,7 @@
 		<div id="write">
 	<%int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
 		if(session.getAttribute("userName")!=null){  
-		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
 		String dbUser = "web";
 		String dbPassword = "asdf";
 		Connection conn = null;

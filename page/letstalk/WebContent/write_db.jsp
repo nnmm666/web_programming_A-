@@ -67,4 +67,4 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",ne
 	});</script>
 </body>
 </html>
-</jsp:useBean> 
+

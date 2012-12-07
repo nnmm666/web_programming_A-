@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.io.*" import="java.sql.*" %>
+	
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -7,6 +8,7 @@
 <meta charset="utf-8">
 <title>Let's Talk!!렛톡에 오신걸 환영합니다!!</title>
 <!-- Site styles -->
+
 <link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 <script src='http://code.jquery.com/jquery-latest.js'></script>
 
@@ -102,7 +104,7 @@
 							<a href="opinion.jsp?topic_id=<%= topic_id %>">
 								<div class="sliderkit-block">
 									<div id="topicPhoto">
-										<img src="<%=photo %>" width='66px' height='60px'>
+										<img src="./upload/topic/<%=photo %>" width='66px' height='60px'>
 									</div>
 									<div id="topicContent">
 										<%=content %>

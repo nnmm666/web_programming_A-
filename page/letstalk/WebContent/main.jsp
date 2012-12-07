@@ -10,11 +10,7 @@ String dbUser = "web";
 String dbPassword = "asdf";
 
 request.setCharacterEncoding("utf-8");
-<<<<<<< HEAD
 	String imgURL="./upload/user/";
-=======
-	String imgURL="upload/topic/";
->>>>>>> 1d07a3d786f2ccd87ee49c0b901b4c9e12734b53
 %>
 <!DOCTYPE html>
 <html lang="ko">

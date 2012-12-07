@@ -82,13 +82,14 @@
 				</div>
 			</div>
 			<div id="middle">
-				<div id="content">
+				<div id="content" style="height:520px;">
 					<div class="container">
 						<%if (errorMsg.size() > 0) {%>
 						<div class="alert">
-							<b>Error:</b>
+							<b>Error:</b><br><br><br>
 							<%	for (String msg : errorMsg) {%>
 							<%=msg%>
+							<br><br><br>
 							<%}%>
 						</div>
 						<%} else if (result == 1) {%>

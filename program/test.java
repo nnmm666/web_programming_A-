@@ -28,8 +28,8 @@ public class test {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
-		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
 		String dbUser = "web";
 		String dbPassword = "asdf";
 	
@@ -56,8 +56,8 @@ public class test {
     public static void getKeyword() {
         try {
         	String apiKey = "7917d5df6bb7d982057f6bb5ee3658f5";
- //          String url = "http://openapi.naver.com/search?key=" + apiKey + "&query=nexearch&target=rank";
-        	String url = "http://apis.daum.net/socialpick/search?category=c";
+ //          String url = "http://openapi.naver.com/search?key=" + apiKey + "&query=nexearch&target=rank";	// 네이버 검색 api
+        	String url = "http://apis.daum.net/socialpick/search?category=c";								// 다음 소셜톡 검색 api
             String keyword;
             int value;
             
@@ -67,8 +67,8 @@ public class test {
             Document doc = builder.parse(url);
             Element root = doc.getDocumentElement();
             // 취득한 xml형식의 결과에서 실시간 검색어와 검색수를 뽑아온다
-//            NodeList itemList = root.getElementsByTagName("K");	
-//            NodeList valueList = root.getElementsByTagName("V");
+//            NodeList itemList = root.getElementsByTagName("K");						// 네이버 검색 api 사용시
+//            NodeList valueList = root.getElementsByTagName("V");						// 다음 소셜톡 검색 api 사용시
             NodeList itemList = root.getElementsByTagName("keyword");
             NodeList valueList = root.getElementsByTagName("rank_diff");
             
@@ -80,7 +80,7 @@ public class test {
                 value = Integer.parseInt(valueElement.getFirstChild().getNodeValue());
                 
                 // 실시간 검색어와 검색수를 각각 keyword와 value에 넣는다
-                System.out.println(keyword + value);
+               // System.out.println(keyword + value);
                 // 확인차 콘솔에 출력
                 
                 setData(keyword, value);
@@ -105,11 +105,13 @@ public class test {
     public static void setData(String keyword, int value) {
     	try {
     		String temp="";
-    		PreparedStatement pstmt = conn.prepareStatement("select keyword from keyword where keyword = ?");
-    		pstmt.setString(1, keyword);
-    		rs = pstmt.executeQuery();
+    		stmt = conn.prepareStatement("select keyword from keyword where keyword = ?");
+    		stmt.setString(1, keyword);
+    		rs = stmt.executeQuery();
     		if(rs.next())
     			temp = rs.getString(1);			// 삽입하려는 키워드가 이미 테이블에 있는지 확인
+    		
+    		stmt.close();
     		
     		if(!(temp.equals(keyword))) {		// 테이블에 그 키워드가 없을때는 키워드와 검색수 insert
 				stmt = conn.prepareStatement("insert into keyword values (null, ?, ?, ?, null)");
@@ -128,5 +130,10 @@ public class test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}	
+	}
+    /*
+    public static keywordGarbageCollector() {
+    	stmt = conn.prepareStatement("SELECT COUNT(*) from ")
+    }
+    */
 }

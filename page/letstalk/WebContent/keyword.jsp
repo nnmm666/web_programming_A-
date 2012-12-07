@@ -11,7 +11,7 @@
 		String dbPassword = "asdf";
 		request.setCharacterEncoding("utf-8");
 		
-		String keyword = new String(request.getParameter("add_keyword").getBytes("8859_1"),"UTF-8");
+		String keyword = request.getParameter("add_keyword");
 		
 		List<String> errorMsg = new ArrayList<String>();
 		int result = 0;

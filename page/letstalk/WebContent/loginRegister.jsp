@@ -110,27 +110,21 @@
 			</div>
 		</div>
 		<div id="middle">
-			<div id="content">
+			<div id="content" style="height:520px;">
 				<div class="container">
-					<%
-						if (errorMsg.size() > 0) {
-					%>
-					<div class="alert">
-						<b>Error:</b>
-						<%
-							for (String msg : errorMsg) {
-						%>
-						<%=msg%>
-						<%
-							}
-						%>
-					</div>
+					<%if (errorMsg.size() > 0) {%>
+						<div class="alert">
+							<b>Error:</b><br><br>
+							<%for (String msg : errorMsg) {%>
+							<%=msg%>
+							<br><br><br>
+							<%}	%>
+						</div>
+		
 					<div class="form-action">
 						<a onclick="history.back();" class="btn">뒤로 돌아가기</a>
 					</div>
-					<%
-						} else if (result == 1) {
-					%>
+					<%} else if (result == 1) {%>
 					<div class="alert">
 						<b><%=name%></b>님 등록해주셔서 감사합니다.
 					</div>

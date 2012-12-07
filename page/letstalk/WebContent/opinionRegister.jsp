@@ -85,32 +85,23 @@
 				</div>
 			</div>
 			<div id="middle">
-				<div id="content">
+				<div id="content" style="height:520px;">
 					<div class="container">
-						<%
-							if (errorMsg.size() > 0) {
-						%>
+						<%if (errorMsg.size() > 0) {%>
 						<div class="alert">
-							<b>Error:</b>
-							<%
-								for (String msg : errorMsg) {
-							%>
+							<b>Error:</b><br><br>
+							<%for (String msg : errorMsg) {%>
 							<%=msg%>
-							<%
-								}
-							%>
+							<br><br><br>
+							<%}	%>
 						</div>
-						<%
-							} else if (result == 1) {
-						%>
+						<%} else if (result == 1) {%>
 							<script type="text/javascript">
 								$(function(){
 										alert('의견이 등록 되었습니다.');
 										location = 'opinion.jsp?topic_id=<%=topic_id %>';
 								});</script>
-						<%
-							}
-						%>
+						<%}%>
 					</div>
 				</div>
 			</div>

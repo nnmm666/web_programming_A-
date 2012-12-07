@@ -1,24 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.sql.*" import="java.util.*"%>
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%
+		int size = 10 * 1024 * 1024;
+
   	Connection conn = null;
   	PreparedStatement stmt =null;
   	ResultSet rs = null;
 
-	String dbUrl = "jdbc:mysql://localhost:3306/web2012";
-	String dbUser = "web";
-	String dbPassword = "asdf";
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012";
+		String dbUser = "web";
+		String dbPassword = "asdf";
   	
   	request.setCharacterEncoding("utf-8");
+  	String uploadPath = getServletContext().getRealPath("./upload/user");
+  	
+  	MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
   	
   	int id = 0 ;
   	try{
-  		id = Integer.parseInt(request.getParameter("id"));
+  		id = Integer.parseInt(multi.getParameter("id"));
   	}catch(Exception e){}
-  		String name = request.getParameter("name");
-  		String password = request.getParameter("password");
-  		String password_confirm = request.getParameter("password_confirm");
-  		String photo = request.getParameter("photo");
+  		String name = multi.getParameter("name");
+  		String password = multi.getParameter("password");
+  		String password_confirm = multi.getParameter("password_confirm");
+  		String photo = multi.getParameter("photo");
+  		
+  		Enumeration files = multi.getFileNames();
+  		String file = (String)files.nextElement();
+  		photo = multi.getFilesystemName(file);
 
   		List<String> errorMsg = new ArrayList<String>();
   		int result = 0 ;

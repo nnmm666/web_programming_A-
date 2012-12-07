@@ -5,8 +5,6 @@
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ page import="java.util.*" %>
 <%@page import = "java.sql.*" %>
-   <jsp:useBean id="info" scope="request" class="project.Multipart">
-    <jsp:setProperty name="info" property="*"/>
 
 <%
 int size = 10 * 1024 * 1024;
@@ -26,12 +24,8 @@ MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",ne
 	keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
 	photo=multi.getParameter("photo");
 	content = multi.getParameter("content");
-	//content = new String(content.getBytes("8859_1"),"UTF-8");
 	writer=(String)session.getAttribute("userName");
-	
-	//writer = multi.getParameter("userName");
-	//content = multi.getParameter("context");
-	
+
 	Enumeration files = multi.getFileNames();
 	String file = (String)files.nextElement();
 	fileName = multi.getFilesystemName(file);

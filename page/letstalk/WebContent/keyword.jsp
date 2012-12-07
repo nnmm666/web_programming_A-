@@ -65,23 +65,15 @@
 			</div>
 			<div id="middle">
 				<div id="content">
-					<div class="container">
-						<%
-							if (errorMsg.size() > 0) {
-						%>
+					<%if (errorMsg.size() > 0) {%>
 						<div class="alert">
-							<b>Error:</b>
-							<%
-								for (String msg : errorMsg) {
-							%>
+							<b>Error:</b><br><br>
+							<%for (String msg : errorMsg) {%>
 							<%=msg%>
-							<%
-								}
-							%>
+							<br><br><br>
+							<%}	%>
 						</div>
-						<%
-							} else if (result == 1) {
-						%>
+						<%} else if (result == 1) {%>
 							<script type="text/javascript">
 								$(function(){
 										alert('키워드가 등록 되었습니다.');

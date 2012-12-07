@@ -62,7 +62,8 @@
 			pstmt.setString(2,content);
 			pstmt.setString(3,writer);
 			pstmt.setString(4,fileName);
-			int i = pstmt.executeUpdate();
+			
+			result = pstmt.executeUpdate();
 	  }catch(Exception e){
 		  e.printStackTrace();
 	  }finally{

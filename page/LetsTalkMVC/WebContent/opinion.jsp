@@ -66,12 +66,12 @@
 				    <li>
 					    <a href="#">정렬▼</a>
 					    <ul>
-					        <li style="border-top: 1px solid #ccc;"><a href="#">찬성순</a></li>
-					        <li><a href="#">반대순</a></li>
-					        <li><a href="#">찬성만</a></li>
-					        <li><a href="#">반대만</a></li>
-					        <li><a href="#">덧글순</a></li>
-					        <li style="border-bottom: 1px solid #ccc;"><a href="#">최신순</a></li>
+					        <li style="border-top: 1px solid #ccc;"><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=like">찬성순</a></li>
+					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=hate">반대순</a></li>
+					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=likeOnly">찬성만</a></li>
+					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=hateOnly">반대만</a></li>
+					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=reply">덧글순</a></li>
+					        <li style="border-bottom: 1px solid #ccc;"><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=default">최신순</a></li>
 					    </ul>
 				    </li>
 				    <li><hr style="width:34px;"></li>

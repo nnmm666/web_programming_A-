@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*" import="bean.Keyword;"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -47,10 +48,12 @@
 		<div id="middle">
 			<div id="content">
 				<div id="content_top">
-					<form method="get" action="keyword.jsp">
-						<input type="text" placeholder="  토론하고 싶은 키워드를 추가하세요!" name="add_keyword" id="add_bar">
-						<input type="submit" value="추가" id="add_button">
-					</form>
+					<c:if test="${sessionScope.user.nickname != null }">
+						<form method="get" action="keyword.jsp">
+							<input type="text" placeholder="  토론하고 싶은 키워드를 추가하세요!" name="add_keyword" id="add_bar">
+							<input type="submit" value="추가" id="add_button">
+						</form>
+					</c:if>
 				</div>
 				<div id="content_center">
 					<div id="caption">Hot Keyword</div>

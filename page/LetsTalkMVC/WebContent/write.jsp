@@ -27,7 +27,7 @@
 				</script>
 			</c:if>
 
-			<form action="multiServlet?op=write"class="form-horizontal" enctype ="multipart/form-data"  method ="post" >
+			<form action="topicServlet" class="form-horizontal" enctype ="multipart/form-data"  method ="POST" >
 				<fieldset>
 					<div id="legend" class="">
 						<legend class="">당신의 생각을 넓혀드립니다 :-) </legend>
@@ -37,8 +37,7 @@
 							<!-- Text input-->
 
 							<label class="control-label" for="keyword">무엇에 대해서?</label>
-							<div class="controls" id="keyword">${keyword_id }
-								</div>
+							<div class="controls" id="keyword"><%=request.getParameter("keyword_id") %>	</div>
 						</div>
 
 						<div class="control-group">
@@ -53,7 +52,7 @@
 							<label class="control-label" for="context">내용</label>
 							<div class="controls">
 								<div class="textarea">
-									<textarea name="content"> </textarea>
+									<textarea name="content"></textarea>
 								</div>
 							</div>
 						</div>
@@ -61,15 +60,16 @@
 						<div class="control-group">
 							<!-- File Upload -->
 							<div class="controls">
-								<label class="control-label">첨부하기</label> <input
-									class="input-file" id="fileInput" type="file" name="photo">
+								<label class="control-label">첨부하기</label>
+								<input class="input-file" id="fileInput" type="file" name="photo">
 							</div>
 						</div>
 					</div>
 				</fieldset>
 				
-				<input type="hidden" name="keyword_id" value="${keyword_id }">
+				<input type="hidden" name="keyword_id" value="<%=request.getParameter("keyword_id") %>">
 				<input type="hidden" name="op" value="write">
+				<input type="hidden" name="writer" value="${sessionScope.user.nickname }">
 				<input type="submit" value="Lets Talk!">
 				<input type="reset" value="재작성">
 			</form>	

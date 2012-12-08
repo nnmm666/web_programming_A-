@@ -39,7 +39,7 @@
 								<a href="pageServlet?op=opinion&topic_id=${topic.topic_id }">
 									<div class="sliderkit-block">
 										<div id="topicPhoto">
-											<img src="./images/example.png" width='66px' height='60px'>
+											<img src="./upload/topic/${topic.photo }" width='66px' height='60px'>
 										</div>
 										<div id="topicContent">${topic.content }</div>
 										<div class="topicContentBottom">

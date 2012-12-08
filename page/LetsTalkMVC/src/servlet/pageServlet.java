@@ -119,7 +119,6 @@ public class pageServlet extends HttpServlet {
 			response.getWriter().write(e.getMessage());
 
 		}
-	
 	}
 
 }

@@ -12,7 +12,7 @@
 	<c:choose>
 		<c:when test="${sessionScope.user.nickname == null }">
 			<div id="login">
-				<form action="userServlet" enctype="multipart/form-data" method="POST">
+				<form action="multiServlet" enctype="multipart/form-data" method="POST">
 					<ul>
 						<li><span>E-mail</span> <input type="text" name="inputemail"></li>
 						<li><span>Password</span> <input type="password" name="inputpwd"></li>

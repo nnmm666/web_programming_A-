@@ -23,7 +23,7 @@
 					</div>
 					<div class="container">
 						
-						<form id="form" class="form-horizontal" action="userServlet" enctype="multipart/form-data" method="POST">
+						<form id="form" class="form-horizontal" action="multiServlet" enctype="multipart/form-data" method="POST">
 							<fieldset>
 								<legend class="legend">Sign Up</legend>
 

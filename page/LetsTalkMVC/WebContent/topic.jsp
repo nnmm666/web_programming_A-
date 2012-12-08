@@ -85,7 +85,7 @@
 										</c:otherwise>
 									</c:choose>
 								</ul>
-								<a href="pageServlet?op=write&keyword_id=${keyword.keyword_id }" id=writeButton> 주제 추가하기 </a>
+								<a href="write.jsp?keyword_id=${keyword.keyword_id }" id=writeButton> 주제 추가하기 </a>
 							</div>
 						</div>
 

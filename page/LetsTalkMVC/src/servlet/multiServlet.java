@@ -23,13 +23,13 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
  * Servlet implementation class userServlet
  */
 @WebServlet("/userServlet")
-public class userServlet extends HttpServlet {
+public class multiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public userServlet() {
+    public multiServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

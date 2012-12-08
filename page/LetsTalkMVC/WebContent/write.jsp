@@ -27,7 +27,7 @@
 				</script>
 			</c:if>
 
-			<form action="pageServlet?op=write"class="form-horizontal" enctype ="multipart/form-data"  method ="post" >
+			<form action="multiServlet?op=write"class="form-horizontal" enctype ="multipart/form-data"  method ="post" >
 				<fieldset>
 					<div id="legend" class="">
 						<legend class="">당신의 생각을 넓혀드립니다 :-) </legend>
@@ -35,9 +35,9 @@
 					<div id="section">
 					<div class="control-group">
 							<!-- Text input-->
-							<% while(rs.next()){ %>
+
 							<label class="control-label" for="keyword">무엇에 대해서?</label>
-							<div class="controls" id="keyword"><%=rs.getString("keyword") %>
+							<div class="controls" id="keyword">${keyword_id }
 								</div>
 						</div>
 
@@ -45,7 +45,7 @@
 							<!-- Text input-->
 							<label class="control-label" for="user">나의 이름은</label>
 							<div class="controls" id="user_name">
-								<%=session.getAttribute("nickName")%></div>
+								${sessionScope.user.nickname }</div>
 						</div>
 						
 						<div class="control-group">
@@ -69,6 +69,7 @@
 				</fieldset>
 				
 				<input type="hidden" name="keyword_id" value="${keyword_id }">
+				<input type="hidden" name="op" value="write">
 				<input type="submit" value="Lets Talk!">
 				<input type="reset" value="재작성">
 			</form>	

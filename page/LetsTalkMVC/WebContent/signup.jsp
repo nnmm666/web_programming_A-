@@ -81,6 +81,8 @@
 								<input id="btn" type="button" class="btn btn-primary" value="가입">
 							</div>
 						</form>
+						
+						
 					</div>
 				</div>
 			</div>

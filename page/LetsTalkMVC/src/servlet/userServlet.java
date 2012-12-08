@@ -45,18 +45,26 @@ public class userServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String op = request.getParameter("op"); 
 		String actionUrl = "";
+		String errorMsg = "";
+		String file = "";
 		request.setCharacterEncoding("utf-8");
+		boolean result = false;
+		int size = 10 * 1024 * 1024;
+		String uploadPath = getServletContext().getRealPath("./upload/user");
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy());  
+		Enumeration files = multi.getFileNames();
+		if(files.hasMoreElements()) {
+			file = (String)files.nextElement();
+		} 
+		String op = multi.getParameter("op");
 		
 		try {
-			if(op == null || op.equals("register")) {
-				boolean result = false;
-				int size = 10 * 1024 * 1024;
-				String uploadPath = getServletContext().getRealPath("./upload/user");
-				MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy());  
-				Enumeration files = multi.getFileNames();
-				String file = (String)files.nextElement();
+			if(op == null) {
+				errorMsg = "명령오류";
+				request.setAttribute("errorMsg", errorMsg);
+				actionUrl = "error.jsp";
+			} else if(op.equals("register")) {
 		
 				String email = "";
 				String nickname = "";
@@ -78,14 +86,31 @@ public class userServlet extends HttpServlet {
 					actionUrl = "register.jsp";
 				}
 				else {
+					errorMsg = "등록에 실패하였습니다.";
+					request.setAttribute("errorMsg", errorMsg);
 					actionUrl = "error.jsp";
 				}
-			} else if(op.equals("login")) {
-				String inputEmail = request.getParameter("inputemail");
-				String inputPwd = request.getParameter("inputpwd");
 				
-				HttpSession session = request.getSession();
-				session.setAttribute("email", inputEmail);
+				RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);
+				dispatcher.forward(request, response);
+				
+			} else if(op.equals("login")) {
+				String inputEmail = multi.getParameter("inputemail");
+				String inputPwd = multi.getParameter("inputpwd");
+				
+				User user = userDAO.findById(inputEmail);
+				
+				if(user.getPassword().equals(inputPwd)) {
+					HttpSession session = request.getSession();
+					session.setAttribute("user", user);
+					
+					actionUrl = "pageServlet";
+					response.sendRedirect(actionUrl);
+				} else {
+					errorMsg = "비밀번호가 틀렸습니다.";
+					request.setAttribute("errorMsg", errorMsg);
+					actionUrl = "error.jsp";
+				}
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -94,9 +119,6 @@ public class userServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);
-		dispatcher.forward(request, response);
 	}
 
 }

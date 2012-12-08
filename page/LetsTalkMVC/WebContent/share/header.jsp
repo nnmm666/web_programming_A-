@@ -10,9 +10,9 @@
 	</div>
 
 	<c:choose>
-		<c:when test="${sessionScope.nickname == null }">
+		<c:when test="${sessionScope.user.nickname == null }">
 			<div id="login">
-				<form method="post" action="pageServlet">
+				<form action="userServlet" enctype="multipart/form-data" method="POST">
 					<ul>
 						<li><span>E-mail</span> <input type="text" name="inputemail"></li>
 						<li><span>Password</span> <input type="password" name="inputpwd"></li>
@@ -26,8 +26,8 @@
 		<c:otherwise>
 			<div id="loginsuccess">
 				<form method="post" action="logout.jsp">
-					안녕하세요. <b><%=session.getAttribute("nickname") %></b> 님 반갑습니다.
-					<a href="signup.jsp?id=<%=session.getAttribute("nickname") %>">개인정보수정</a>
+					안녕하세요. <b>${sessionScope.user.nickname }</b> 님 반갑습니다.
+					<a href="signup.jsp?id=${sessionScope.user.user_id }">개인정보수정</a>
 					<input type="submit" id="logout_button" value="로그아웃">
 				</form>
 			</div>

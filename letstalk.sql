@@ -55,6 +55,7 @@ CREATE TABLE reply (
 CREATE TABLE users (
 	id INT AUTO_INCREMENT PRIMARY KEY, 
 	email VARCHAR(100) NOT NULL UNIQUE,
+	nickname VARCHAR(100) NOT NULL UNIQUE,
 	name VARCHAR(100) NOT NULL,
 	password VARCHAR(255) NOT NULL, 
 	photo VARCHAR(255)
@@ -65,17 +66,3 @@ CREATE TABLE friend (
 	friend_id INT NOT NULL,
 	PRIMARY KEY(id, friend_id)
 );
-
-
-INSERT INTO keyword (keyword, weight, type) VALUES ("안철수", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("이명박", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("박근혜", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("문재인", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("슈퍼스타k4", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("오바마", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("한글날", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("타블로", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("묻지마 폭행", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("윈도우8", 500, "reg");
-INSERT INTO keyword (keyword, weight, type) VALUES ("스티브잡스", 500, "reg");
-

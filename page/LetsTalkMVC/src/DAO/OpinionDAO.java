@@ -28,7 +28,7 @@ public class OpinionDAO {
 		return (DataSource) envCtx.lookup("jdbc/WebDB");
 	}
 	
-	public static List<Opinion> getOpinions(int topic_id) throws NamingException, SQLException {
+	public static List<Opinion> getOpinions(int topic_id, String align) throws NamingException, SQLException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -38,7 +38,20 @@ public class OpinionDAO {
 		DataSource ds = getDataSource();
 		try {
 			conn = ds.getConnection();
-			stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=?");
+			if(align == null || align.equals("default"))
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=?");
+			else if(align.equals("likeOnly"))
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? AND position='like' ORDER BY id desc");
+			else if(align.equals("hateOnly"))
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? AND position='hate' ORDER BY id desc");
+			else if(align.equals("like"))
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? ORDER BY pros desc, id desc");
+			else if(align.equals("hate"))
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? Order By cons desc, id desc");
+			else if(align.equals("reply")) {
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=?");
+			}
+			
 			stmt.setInt(1, topic_id);
 			rs = stmt.executeQuery();
 			while(rs.next()) {

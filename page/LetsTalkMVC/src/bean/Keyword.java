@@ -22,6 +22,14 @@ public class Keyword implements Serializable {
 		this.date = date;
 	}
 
+	
+	public Keyword(String keyword, int weight, String type) {
+		super();
+		this.keyword = keyword;
+		this.weight = weight;
+		this.type = type;
+	}
+
 	public int getKeyword_id() {
 		return keyword_id;
 	}

@@ -103,4 +103,34 @@ public class OpinionDAO {
 		
 		return opinion;
 	}
+	
+	public static boolean sendOpinion(Opinion opinion) throws NamingException, SQLException {
+		
+		int result;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		DataSource ds = getDataSource();
+		
+		try{
+			conn = ds.getConnection();
+			
+			stmt = conn.prepareStatement("INSERT INTO opinion(topic_id, content,writer,position) VALUES (?, ?, ?, ?);");
+			stmt.setInt(1, opinion.getTopic_id());
+			stmt.setString(2, opinion.getContent());
+			stmt.setString(3, opinion.getWriter());
+			stmt.setString(4, opinion.getPosition());
+
+			
+			result = stmt.executeUpdate();
+			
+		}finally {
+			if(rs!=null) try{rs.close();} catch(SQLException e){}
+			if(stmt!=null) try{stmt.close();} catch(SQLException e){}
+			if(conn!=null) try{conn.close();} catch(SQLException e){}
+		}
+		return (result == 1);
+	}
+	
 }

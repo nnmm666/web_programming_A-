@@ -1,9 +1,11 @@
-package bean;
+package project;
+
+
 import java.io.Serializable;
 import java.util.List;
 
 
-public class Opinion implements Serializable {
+public class opinion implements Serializable {
 	private static final long serialVersionUID = -4595483688249147779L;
 
 	private int opinion_id;
@@ -14,13 +16,13 @@ public class Opinion implements Serializable {
 	private int pros;
 	private int cons;
 	private String date;
-	private List<Reply> replies = null;
+	private List<reply> replies = null;
 	
-	public Opinion() {}
+	public opinion() {}
 	
-	public Opinion(int opinion_id, int topic_id, String content, String writer,
+	public opinion(int opinion_id, int topic_id, String content, String writer,
 			String position, int pros, int cons, String date,
-			List<Reply> replies) {
+			List<reply> replies) {
 		super();
 		this.opinion_id = opinion_id;
 		this.topic_id = topic_id;
@@ -31,14 +33,6 @@ public class Opinion implements Serializable {
 		this.cons = cons;
 		this.date = date;
 		this.replies = replies;
-	}
-
-	public Opinion(int topic_id, String content, String writer, String position) {
-		super();
-		this.topic_id = topic_id;
-		this.content = content;
-		this.writer = writer;
-		this.position = position;
 	}
 
 	public int getOpinion_id() {
@@ -105,11 +99,11 @@ public class Opinion implements Serializable {
 		this.date = date;
 	}
 	
-	public List<Reply> getReplies() {
+	public List<reply> getReplies() {
 		return replies;
 	}
 
-	public void setReplies(List<Reply> replies) {
+	public void setReplies(List<reply> replies) {
 		this.replies = replies;
 	}
 	

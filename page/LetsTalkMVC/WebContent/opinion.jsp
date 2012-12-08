@@ -179,7 +179,7 @@ $(function(){
 				opinion_id : $(this).parent().find((".opinion_id")).val(),
 				content : $(this).parent().find((".reply_more")).val()
 		}, function(){
-				alert("댓글이 정상적으로 등록되었습니다.");
+				alert("댓글이 등록되었습니다.");
 				location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
 			});
 		$(this).parent().find((".reply_more")).val("");

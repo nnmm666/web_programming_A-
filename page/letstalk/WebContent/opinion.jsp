@@ -251,8 +251,11 @@
 		%>
 		
 <script type="text/javascript">
-var last_id = -1;
-var timer = null;
+function fill(name) {
+	// 아이템이 선택되었을때 처리 
+	$('#searchbar').val(name);
+	$('#suggest_box').fadeOut();
+}
 
 $(function() {
 	$(".replyInputButton").click(function() {
@@ -266,25 +269,16 @@ $(function() {
 		$.post('replyServlet', {
 				opinion_id : $(this).parent().find((".opinion_id")).val(),
 				content : $(this).parent().find((".reply_more")).val()
-		}, function(){alert("댓글이 정상적으로 등록되었습니다.");});
+		}, function(){
+				alert("댓글이 정상적으로 등록되었습니다.");
+				location = 'opinion.jsp?topic_id=<%=topic_id %>';
+			});
 		$(this).parent().find((".reply_more")).val("");
 	});
 	$('.reply_more').keydown(function(event){
 		if(event.keyCode == 13)
 		$(this).parent().find((".replyInputButton")).click();
 	});
-	
-	setInterval(receive, 1000);
-});
-
-
-function fill(name) {
-	// 아이템이 선택되었을때 처리 
-	$('#searchbar').val(name);
-	$('#suggest_box').fadeOut();
-}
-
-$(function(){
 	$('#searchbar').keyup(function() {
 		// 입력창에 키가 눌러진 경우 이벤트 처리
 		// Ajax로 값을 전송
@@ -305,9 +299,9 @@ $(function(){
 		});
 	
 	$("#ejqhrl").hide();
-	
-	
+
 });
+
 </script>
 		
 </html>

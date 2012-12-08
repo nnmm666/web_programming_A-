@@ -11,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import DAO.KeywordDAO;
 import DAO.OpinionDAO;
@@ -71,16 +70,16 @@ public class pageServlet extends HttpServlet {
 				
 			} else if(op.equals("opinion")) {
 				int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+				String align = request.getParameter("align");
 				Topic topic = TopicDAO.findById(topic_id);
 				Keyword keyword = KeywordDAO.findById(topic.getKeyword_id());
-				List<Opinion> opinions = OpinionDAO.getOpinions(topic_id);
+				List<Opinion> opinions = OpinionDAO.getOpinions(topic_id, align);
 				
 				request.setAttribute("topic", topic);
 				request.setAttribute("keyword", keyword);
 				request.setAttribute("opinions", opinions);
 				
 				actionUrl = "opinion.jsp";
-				
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -98,11 +97,7 @@ public class pageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String inputEmail = request.getParameter("inputemail");
-		String inputPwd = request.getParameter("inputpwd");
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("email", inputEmail);
+
 	}
 
 }

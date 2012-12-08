@@ -81,7 +81,11 @@ public class userServlet extends HttpServlet {
 					actionUrl = "error.jsp";
 				}
 			} else if(op.equals("login")) {
+				String inputEmail = request.getParameter("inputemail");
+				String inputPwd = request.getParameter("inputpwd");
 				
+				HttpSession session = request.getSession();
+				session.setAttribute("email", inputEmail);
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

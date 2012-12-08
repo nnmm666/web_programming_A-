@@ -35,12 +35,15 @@
 					${topic.content }
 					</div>
 					<div class="topicContentBottomInOpinion">
-							<span><a class="likes" href="likehate.jsp?likehate=likes&topic_id=${topic.topic_id }">
-							<img src="./images/like.png"> </a>${topic.pros } </span>
-							<span><a class="hates" href="likehate.jsp?likehate=hates&topic_id=${topic.topic_id }">
-							<img src="./images/hate.png"> </a>${topic.cons } </span>
-							<span>작성자 : ${topic.writer }</span>
-							<span>작성일 : ${topic.date }</span>
+						<c:if test="${sessionScope.user.nickname == topic.writer }">
+							<span><a class="modified" href="#">수정</a><a class="deleted" href="#">삭제</a></span>
+						</c:if>
+						<span><a class="likes" href="likehate.jsp?likehate=likes&topic_id=${topic.topic_id }">
+						<img src="./images/like.png"> </a>${topic.pros } </span>
+						<span><a class="hates" href="likehate.jsp?likehate=hates&topic_id=${topic.topic_id }">
+						<img src="./images/hate.png"> </a>${topic.cons } </span>
+						<span>작성자 : ${topic.writer }</span>
+						<span>작성일 : ${topic.date }</span>
 					</div>
 				</div>
 				
@@ -97,8 +100,11 @@
 										<img src="./images/hate.png"></a> ${opinion.cons } </span>
 									</div>
 									<div class="section_bottom">
+									<c:if test="${sessionScope.user.nickname == opinion.writer }">
+										<span><a class="modified" href="#">수정</a><a class="deleted" href="#">삭제</a></span>
+									</c:if>
 									<a href="#" class="toggle"> Reply ↕ </a>
-									<span> 작성일 : ${opinion.date }</span>
+									<span class="opinion-date"> 작성일 : ${opinion.date }</span>
 									</div>
 								</div>
 								
@@ -109,6 +115,10 @@
 											<span class="reply_writer"><b>${reply.writer }</b></span>
 											<span class="reply_content">${reply.content }</span>
 											<span class="reply_date">${reply.date }</span>
+											<c:if test="${sessionScope.user.nickname == reply.writer }">
+												<span><a class="deleted" href="#" style="float:right;" >삭제</a>
+												<a class="modified" href="#" style="float:right; ">수정</a></span>
+											</c:if>
 										</div>
 									</c:forEach>
 									

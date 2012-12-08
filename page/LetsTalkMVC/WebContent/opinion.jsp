@@ -152,7 +152,7 @@ $(function(){
 			$("#opiniontext").focus();
 			return;
 		}
-		if($('input:radio[name="likehate"]').length == 0) {
+		if($(':radio[name="likehate"]:checked').length == 0) {
 			alert("찬성인지 반대인지 선택해 주세요.");
 			return;
 		}

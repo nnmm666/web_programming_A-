@@ -13,7 +13,7 @@
 <body>
 	<div id="wrap">
 		<div id="top">
-					<jsp:include page="share/header.jsp" />
+			<jsp:include page="share/header.jsp" />
 		</div>
 	
 		<div id="middle">
@@ -29,21 +29,23 @@
 
 				<div id="topic">
 					<div id="topicPhoto">
-						<img src="./upload/topic/${topic.photo }" width='120px' height='100px'>
+						<img src="${topic.photo }" width='66px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
 					${topic.content }
 					</div>
 					<div class="topicContentBottomInOpinion">
+
 						<c:if test="${sessionScope.user.nickname == topic.writer }">
 							<span><a class="modified" href="#">수정</a><a class="deleted" href="#">삭제</a></span>
 						</c:if>
-						<span><a class="likes" href="likehate.jsp?likehate=likes&topic_id=${topic.topic_id }">
-						<img src="./images/like.png"> </a>${topic.pros } </span>
-						<span><a class="hates" href="likehate.jsp?likehate=hates&topic_id=${topic.topic_id }">
-						<img src="./images/hate.png"> </a>${topic.cons } </span>
-						<span>작성자 : ${topic.writer }</span>
-						<span>작성일 : ${topic.date }</span>
+						<span><a class="likes" href="#">
+							<img src="./images/like.png"> </a>${topic.pros } </span>
+							<span><a class="hates" href="#">
+							<img src="./images/hate.png"> </a>${topic.cons } </span>
+							<span>작성자 : ${topic.writer }</span>
+							<span>작성일 : ${topic.date }</span>
+
 					</div>
 				</div>
 				
@@ -94,9 +96,9 @@
 										${opinion.content }
 									</div>
 									<div class="section_right">
-										<span><a class="like" href="likehate.jsp?likehate=like&id=${opinion.opinion_id }&topic_id=${topic.topic_id}">
+										<span><a class="like" href="#">
 										<img src="./images/like.png"></a> ${opinion.pros } </span>
-										<span><a class="hate" href="likehate.jsp?likehate=hate&id=${opinion.opinion_id }&topic_id=${topic.topic_id}">
+										<span><a class="hate" href="#">
 										<img src="./images/hate.png"></a> ${opinion.cons } </span>
 									</div>
 									<div class="section_bottom">
@@ -155,10 +157,40 @@ function fill(name) {
 }
 
 $(function(){
-	$("#opinionWrite").click(function(){
-		
-		
+	$(".likes").click(function(){
+		$.post('likehateServlet', {
+			likehate : likes
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
 	});
+	$(".like").click(function(){
+		$.post('likehateServlet', {
+			likehate : like
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	});
+	$(".hates").click(function(){
+		$.post('likehateServlet', {
+			likehate : hates
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	});
+	$(".hate").click(function(){
+		$.post('likehateServlet', {
+			likehate : hate
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	});
+	
+	
 	$("#opinionWrite").click(function(){
 		if($("#opiniontext").val().length == 0) {
 			alert("내용을 입력하여 주세요.");

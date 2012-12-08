@@ -24,8 +24,7 @@ public class likehateServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		boolean ret = false;
+
 		request.setCharacterEncoding("UTF-8");
 
 		String position = request.getParameter("likehate");

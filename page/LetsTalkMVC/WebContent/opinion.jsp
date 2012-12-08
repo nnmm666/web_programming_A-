@@ -29,7 +29,7 @@
 
 				<div id="topic">
 					<div id="topicPhoto">
-						<img src="${topic.photo }" width='66px' height='100px'>
+						<img src="./upload/topic/${topic.photo }" width='120px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
 					${topic.content }

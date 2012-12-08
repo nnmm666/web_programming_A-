@@ -44,9 +44,8 @@
 					</div>
 				</div>
 				
-				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
-				<form method="GET" action="opinionRegister.jsp">
-					<input type="hidden" name="topic_id" value="${topic.topic_id }">
+				<form class="opinion_form">
+					<input type="hidden" id="topic_id" name="topic_id" value="${topic.topic_id }">
 					<div id="myopinion">
 						<input type="text" id="opiniontext" name="opiniontext"
 						 placeholder="클릭하여 당신의 의견을 남겨주세요">
@@ -56,10 +55,10 @@
 							<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
 							<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
 						</span>
-							<input type="submit" class="opinionWrite" value="Write">
+							<input type="button" class="opinionWrite" value="Write">
 					</div>
 				</form>
-				<%}%>
+				
 				<div id="order">
 					<ul>
 						<li><hr style="width:616px; margin-top:9px;"></li>
@@ -145,6 +144,33 @@ function fill(name) {
 }
 
 $(function(){
+	
+	$(".opinionWrite").click(function(){
+		if($("#opiniontext").val().length == 0) {
+			alert("내용을 입력하여 주세요.");
+			$("#opiniontext").focus();
+			return;
+		}
+		if($('input:radio[name="likehate"]').val().length == 0) {
+			alert("찬성인지 반대인지 선택해 주세요.");
+			return;
+		}
+		
+		$.post('pageServlet', {
+			topic_id : $("#topic_id").val(),
+			content : $("#opiniontext").val(),
+			position : $(':radio[name="likehate"]:checked').val()
+		}, function(){
+			alert("의견이 정상적으로 등록되었습니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+		$("#opiniontext").val("");
+	});
+	$('#opiniontext').keydown(function(event){
+		if(event.keyCode == 13)
+		$(this).parent().find((".opinionWrite")).click();
+	});
+	
 	$('#searchbar').keyup(function() {
 		// 입력창에 키가 눌러진 경우 이벤트 처리
 		// Ajax로 값을 전송

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.KeywordDAO;
 import DAO.OpinionDAO;
@@ -80,7 +81,7 @@ public class pageServlet extends HttpServlet {
 				request.setAttribute("opinions", opinions);
 				
 				actionUrl = "opinion.jsp";
-			}
+			} 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -97,7 +98,28 @@ public class pageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		boolean ret = false;
+
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession(true);
+
+		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+		String writer = (String)session.getAttribute("userName");
+		String content = request.getParameter("content");
+		String position = request.getParameter("position");
+		
+
+		try{
+			if(OpinionDAO.sendOpinion(new Opinion(topic_id, content, writer, position))){
+				response.getWriter().write("ok");
+			}else {
+				response.getWriter().write("메세지 전송에 실패했습니다..");
+			}
+		}catch(Exception e){
+			response.getWriter().write(e.getMessage());
+
+		}
+	
 	}
 
 }

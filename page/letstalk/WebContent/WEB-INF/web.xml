@@ -8,9 +8,20 @@
 		<servlet-name>replyServlet</servlet-name>
 		<servlet-class>project.replyServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>opinionServlet</display-name>
+		<servlet-name>opinionServlet</servlet-name>
+		<servlet-class>project.opinionServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>replyServlet</servlet-name>
 		<url-pattern>/replyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>opinionServlet</servlet-name>
+		<url-pattern>/opinionServlet</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

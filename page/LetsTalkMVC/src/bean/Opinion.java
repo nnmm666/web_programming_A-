@@ -41,6 +41,13 @@ public class Opinion implements Serializable {
 		this.position = position;
 	}
 
+	
+	public Opinion(String position) {
+		super();
+		this.position = position;
+	}
+
+
 	public int getOpinion_id() {
 		return opinion_id;
 	}

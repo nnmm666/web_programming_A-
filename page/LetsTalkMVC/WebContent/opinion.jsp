@@ -35,9 +35,9 @@
 					${topic.content }
 					</div>
 					<div class="topicContentBottomInOpinion">
-							<span><a href="likehate.jsp?likehate=likes&topic_id=${topic.topic_id }">
+							<span><a class="likes" href="likehate.jsp?likehate=likes&topic_id=${topic.topic_id }">
 							<img src="./images/like.png"> </a>${topic.pros } </span>
-							<span><a href="likehate.jsp?likehate=hates&topic_id=${topic.topic_id }">
+							<span><a class="hates" href="likehate.jsp?likehate=hates&topic_id=${topic.topic_id }">
 							<img src="./images/hate.png"> </a>${topic.cons } </span>
 							<span>작성자 : ${topic.writer }</span>
 							<span>작성일 : ${topic.date }</span>
@@ -91,9 +91,9 @@
 										${opinion.content }
 									</div>
 									<div class="section_right">
-										<span><a href="likehate.jsp?likehate=like&id=${opinion.opinion_id }&topic_id=${topic.topic_id}">
+										<span><a class="like" href="likehate.jsp?likehate=like&id=${opinion.opinion_id }&topic_id=${topic.topic_id}">
 										<img src="./images/like.png"></a> ${opinion.pros } </span>
-										<span><a href="likehate.jsp?likehate=hate&id=${opinion.opinion_id }&topic_id=${topic.topic_id}">
+										<span><a class="hate" href="likehate.jsp?likehate=hate&id=${opinion.opinion_id }&topic_id=${topic.topic_id}">
 										<img src="./images/hate.png"></a> ${opinion.cons } </span>
 									</div>
 									<div class="section_bottom">
@@ -145,7 +145,10 @@ function fill(name) {
 }
 
 $(function(){
-	
+	$("#opinionWrite").click(function(){
+		
+		
+	});
 	$("#opinionWrite").click(function(){
 		if($("#opiniontext").val().length == 0) {
 			alert("내용을 입력하여 주세요.");

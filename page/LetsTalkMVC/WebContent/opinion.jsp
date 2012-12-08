@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.io.*" import="java.sql.*" %>
+    pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
@@ -45,20 +45,19 @@
 				</div>
 				
 				<c:if test="${sessionScope.user.nickname != null }">
-					<form class="opinion_form">
+					<div class="opinion_form">
 						<input type="hidden" id="topic_id" name="topic_id" value="${topic.topic_id }">
 						<div id="myopinion">
-							<input type="text" id="opiniontext" name="opiniontext"
-							 placeholder="클릭하여 당신의 의견을 남겨주세요">
+							<input type="text" id="opiniontext" name="opiniontext" placeholder="클릭하여 당신의 의견을 남겨주세요">
 						</div>
 						<div id ="myopinion_sub">
 							<span class="myopinion_likehate">
 								<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
 								<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
 							</span>
-								<input type="button" class="opinionWrite" value="Write">
+								<input type="button" id="opinionWrite" class="opinionWrite" value="Write">
 						</div>
-					</form>
+					</div>
 				</c:if>
 				
 				<div id="order">
@@ -116,12 +115,12 @@
 										<c:if test="${sessionScope.user.nickname != null }">
 											<div class="section_reply_1">
 											<div class="replyInputName">${sessionScope.user.nickname }</div>
-												<form method="GET" action="replyRegister.jsp">
+												<div id="reply_form">
 													<input type="hidden" name="topic_id" value="${topic.topic_id }">
-													<input type="hidden" name="opinion_id" value="${opinion.opinion_id }">
+													<input type="hidden" class ="opinion_id" name="opinion_id" value="${opinion.opinion_id }">
 													<input type="text" class="reply_more" name= "reply_more" placeholder="댓글달기...">
-													<input type="submit" class="replyInputButton" value="Write">
-												</form>
+													<input type="button" class="replyInputButton" value="Write">
+												</div>
 										</div>
 										</c:if>
 								</div>
@@ -147,13 +146,13 @@ function fill(name) {
 
 $(function(){
 	
-	$(".opinionWrite").click(function(){
+	$("#opinionWrite").click(function(){
 		if($("#opiniontext").val().length == 0) {
 			alert("내용을 입력하여 주세요.");
 			$("#opiniontext").focus();
 			return;
 		}
-		if($('input:radio[name="likehate"]').val().length == 0) {
+		if($(':radio[name="likehate"]:checked').length == 0) {
 			alert("찬성인지 반대인지 선택해 주세요.");
 			return;
 		}
@@ -168,9 +167,32 @@ $(function(){
 		});
 		$("#opiniontext").val("");
 	});
+	
+	$(".replyInputButton").click(function() {
+		if ($(this).parent().find((".reply_more")).val().length == 0) {
+			alert("댓글을 입력하여 주세요.");
+			$(this).parent().find((".reply_more")).focus();
+			return;
+		}
+		
+		$.post('replyServlet', {
+				opinion_id : $(this).parent().find((".opinion_id")).val(),
+				content : $(this).parent().find((".reply_more")).val()
+		}, function(){
+				alert("댓글이 정상적으로 등록되었습니다.");
+				location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+			});
+		$(this).parent().find((".reply_more")).val("");
+	});
+	
+	$('.reply_more').keydown(function(event){
+		if(event.keyCode == 13)
+		$(this).parent().find(".replyInputButton").click();
+	});
+	
 	$('#opiniontext').keydown(function(event){
 		if(event.keyCode == 13)
-		$(this).parent().find((".opinionWrite")).click();
+		$("#opinionWrite").click();
 	});
 	
 	$('#searchbar').keyup(function() {

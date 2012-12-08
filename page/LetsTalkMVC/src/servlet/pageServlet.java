@@ -100,18 +100,16 @@ public class pageServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean ret = false;
-
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession(true);
-
+			
 		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
 		
 		User user = (User) session.getAttribute("user");
 		String writer = user.getNickname();
 		String content = request.getParameter("content");
 		String position = request.getParameter("position");
-		
-
+	
 		try{
 			if(OpinionDAO.sendOpinion(new Opinion(topic_id, content, writer, position))){
 				response.getWriter().write("ok");

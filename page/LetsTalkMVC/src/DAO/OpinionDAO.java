@@ -39,15 +39,15 @@ public class OpinionDAO {
 		try {
 			conn = ds.getConnection();
 			if(align == null || align.equals("default"))
-				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=?");
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? ORDER BY id DESC");
 			else if(align.equals("likeOnly"))
-				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? AND position='like' ORDER BY id desc");
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? AND position='like' ORDER BY id DESC");
 			else if(align.equals("hateOnly"))
-				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? AND position='hate' ORDER BY id desc");
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? AND position='hate' ORDER BY id DESC");
 			else if(align.equals("like"))
-				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? ORDER BY pros desc, id desc");
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? ORDER BY pros desc, id DESC");
 			else if(align.equals("hate"))
-				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? Order By cons desc, id desc");
+				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=? Order By cons desc, id DESC");
 			else if(align.equals("reply")) {
 				stmt = conn.prepareStatement("SELECT * FROM opinion WHERE topic_id=?");
 			}

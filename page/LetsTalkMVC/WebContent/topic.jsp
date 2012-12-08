@@ -60,7 +60,7 @@
 											<li class="disable"><a href="#">&laquo;</a></li>
 										</c:when>
 										<c:otherwise>
-											<li><a href="pageServlet?op=topic&keyword_id=${id }&page=${topics.page - 1 }">&laquo;</a></li>
+											<li><a href="pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${topics.page - 1 }">&laquo;</a></li>
 										</c:otherwise>
 									</c:choose>
 

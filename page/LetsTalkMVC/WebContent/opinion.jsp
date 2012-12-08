@@ -55,7 +55,7 @@
 								<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
 								<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
 							</span>
-								<input type="button" id="opinionWrite" value="Write">
+								<input type="button" id="opinionWrite" class="opinionWrite" value="Write">
 						</div>
 					</div>
 				</c:if>
@@ -152,7 +152,7 @@ $(function(){
 			$("#opiniontext").focus();
 			return;
 		}
-		if($('input:radio[name="likehate"]').val().length == 0) {
+		if($('input:radio[name="likehate"]').length == 0) {
 			alert("찬성인지 반대인지 선택해 주세요.");
 			return;
 		}

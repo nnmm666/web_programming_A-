@@ -1,3 +1,0 @@
-table id : park 
-      password : 123456
-ют╢о╢Г

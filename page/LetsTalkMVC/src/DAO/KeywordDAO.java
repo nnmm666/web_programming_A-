@@ -13,6 +13,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import bean.Keyword;
+import bean.Reply;
 
 public class KeywordDAO {
 	public static DataSource getDataSource() throws NamingException {
@@ -84,5 +85,32 @@ public class KeywordDAO {
 		}
 		
 		return keyword;
+	}
+	
+	public static boolean sendkeyword(Keyword key) throws SQLException, NamingException{
+
+		int result;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		DataSource ds = getDataSource();
+		
+		try{
+			conn = ds.getConnection();
+			
+			stmt = conn.prepareStatement("INSERT INTO keyword (keyword,weight,type)"
+					+ " VALUES(?,?,?)");
+			stmt.setString(1, key.getKeyword());
+			stmt.setInt(2, 500);
+			stmt.setString(3, "reg");
+
+			result = stmt.executeUpdate();
+		}finally {
+			if(rs!=null) try{rs.close();} catch(SQLException e){}
+			if(stmt!=null) try{stmt.close();} catch(SQLException e){}
+			if(conn!=null) try{conn.close();} catch(SQLException e){}
+		}
+		return (result==1);
 	}
 }

@@ -82,7 +82,7 @@ public class pageServlet extends HttpServlet {
 				request.setAttribute("opinions", opinions);
 				
 				actionUrl = "opinion.jsp";
-			} 
+			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -43,22 +43,23 @@
 							<span>작성일 : ${topic.date }</span>
 					</div>
 				</div>
-				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
-				<form class="opinion_form">
-					<input type="hidden" id="topic_id" name="topic_id" value="${topic.topic_id }">
-					<div id="myopinion">
-						<input type="text" id="opiniontext" name="opiniontext"
-						 placeholder="클릭하여 당신의 의견을 남겨주세요">
-					</div>
-					<div id ="myopinion_sub">
-						<span class="myopinion_likehate">
-							<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
-							<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
-						</span>
-							<input type="button" class="opinionWrite" value="Write">
-					</div>
-				</form>
-				<%}%>
+				
+				<c:if test="${sessionScope.user.nickname != null }">
+					<form class="opinion_form">
+						<input type="hidden" id="topic_id" name="topic_id" value="${topic.topic_id }">
+						<div id="myopinion">
+							<input type="text" id="opiniontext" name="opiniontext"
+							 placeholder="클릭하여 당신의 의견을 남겨주세요">
+						</div>
+						<div id ="myopinion_sub">
+							<span class="myopinion_likehate">
+								<input type="radio" name="likehate" value="like">찬성 <img src="./images/like.png">
+								<input type="radio" name="likehate" value="hate">반대 <img src="./images/hate.png"> 
+							</span>
+								<input type="button" class="opinionWrite" value="Write">
+						</div>
+					</form>
+				</c:if>
 				
 				<div id="order">
 					<ul>
@@ -108,13 +109,13 @@
 										<div class="section_reply">
 											<span class="reply_writer"><b>${reply.writer }</b></span>
 											<span class="reply_content">${reply.content }</span>
-											<span class="reply_date">${reply.date }></span>
+											<span class="reply_date">${reply.date }</span>
 										</div>
 									</c:forEach>
 									
-										<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
-										<div class="section_reply_1">
-											<div class="replyInputName"><%=session.getAttribute("userName") %></div>
+										<c:if test="${sessionScope.user.nickname != null }">
+											<div class="section_reply_1">
+											<div class="replyInputName">${sessionScope.user.nickname }</div>
 												<form method="GET" action="replyRegister.jsp">
 													<input type="hidden" name="topic_id" value="${topic.topic_id }">
 													<input type="hidden" name="opinion_id" value="${opinion.opinion_id }">
@@ -122,7 +123,7 @@
 													<input type="submit" class="replyInputButton" value="Write">
 												</form>
 										</div>
-										<%} %>
+										</c:if>
 								</div>
 							</div>
 						</div>

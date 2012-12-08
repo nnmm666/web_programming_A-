@@ -37,12 +37,12 @@ public class ReplyDAO {
 		DataSource ds = getDataSource();
 		try {
 			conn = ds.getConnection();
-			stmt = conn.prepareStatement("SELECT * FROM reply WHERE opinion_id=?");
+			stmt = conn.prepareStatement("SELECT *, substr(date, 1, 16) as convDate FROM reply WHERE opinion_id=?");
 			stmt.setInt(1, opinion_id);
 			rs = stmt.executeQuery();
 			while(rs.next()) {
 				list.add(new Reply(rs.getInt("id"), rs.getInt("opinion_id"), rs.getString("content"), rs.getString("writer"),
-						rs.getString("date")));
+						rs.getString("convDate")));
 			}
 			
 		} finally {

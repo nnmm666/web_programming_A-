@@ -20,6 +20,7 @@ import bean.Keyword;
 import bean.Opinion;
 import bean.PageResult;
 import bean.Topic;
+import bean.User;
 
 /**
  * Servlet implementation class pageServlet
@@ -104,7 +105,10 @@ public class pageServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 
 		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
-		String writer = (String)session.getAttribute("nickname");
+		
+		User user = (User) session.getAttribute("user");
+		
+		String writer = user.getNickname();
 		String content = request.getParameter("content");
 		String position = request.getParameter("position");
 		

@@ -82,7 +82,7 @@ public class OpinionDAO {
 			conn = ds.getConnection();
 
 			// 질의 준비
-			stmt = conn.prepareStatement("SELECT * FROM opinion WHERE id = ?");
+			stmt = conn.prepareStatement("SELECT *, substr(date, 1, 10) as convDate FROM opinion WHERE id = ?");
 			stmt.setInt(1, id);
 			
 			// 수행
@@ -92,7 +92,7 @@ public class OpinionDAO {
 				List<Reply> replies = ReplyDAO.getReplies(id);
 				
 				opinion = new Opinion(rs.getInt("id"), rs.getInt("topic_id"), rs.getString("content"), rs.getString("writer"),
-						rs.getString("position"), rs.getInt("pros"), rs.getInt("cons"), rs.getString("date"), replies);
+						rs.getString("position"), rs.getInt("pros"), rs.getInt("cons"), rs.getString("convDate"), replies);
 			}
 		} finally {
 			// 무슨 일이 있어도 리소스를 제대로 종료

@@ -67,7 +67,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 .topicContentBottomInOpinion { float: right; width: 400px; text-align: right; margin-top: 20px; margin-right: 10px; }
 .topicContentBottomInOpinion a{text-decoration:none;}
 .topicContentBottom { text-align: right; }
-.topicContentBottom span, .topicContentBottomInOpinion span { margin-left: 20px; text-decoration: none; }
+.topicContentBottom span, .topicContentBottomInOpinion span { margin-left: 10px; text-decoration: none; }
 .pagination-basic .sliderkit-block{ width:640px; height:60px; margin:5px; padding:15px; border:1px solid #a6a6a6; text-align: left;}
 .pagination-basic .sliderkit-block:hover { background-color: #ccc;}
 .sliderkit-panel { height: 300px; }

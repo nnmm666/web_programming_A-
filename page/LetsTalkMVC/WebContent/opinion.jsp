@@ -145,38 +145,38 @@ function fill(name) {
 }
 
 $(function(){
-	if($(".likes").click(function(){
+	$(".likes").click(function(){
 		$.post('likehateServlet', {
-			likehate : 'likes'
+			likehate : likes
 		}, function(){
 			alert("감사합니다.");
 			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
 		});
-	}));
-	if($(".like").click(function(){
+	});
+	$(".like").click(function(){
 		$.post('likehateServlet', {
-			likehate : 'like'
+			likehate : like
 		}, function(){
 			alert("감사합니다.");
 			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
 		});
-	}));
-	if($(".hates").click(function(){
+	});
+	$(".hates").click(function(){
 		$.post('likehateServlet', {
-			likehate : 'hates'
+			likehate : hates
 		}, function(){
 			alert("감사합니다.");
 			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
 		});
-	}));
-	if($(".hate").click(function(){
+	});
+	$(".hate").click(function(){
 		$.post('likehateServlet', {
-			likehate : 'hate'
+			likehate : hate
 		}, function(){
 			alert("감사합니다.");
 			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
 		});
-	}));
+	});
 	
 	
 	$("#opinionWrite").click(function(){

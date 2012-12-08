@@ -98,6 +98,11 @@ public class pageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String inputEmail = request.getParameter("inputemail");
+		String inputPwd = request.getParameter("inputpwd");
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("email", inputEmail);
 	}
 
 }

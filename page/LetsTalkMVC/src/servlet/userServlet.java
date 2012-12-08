@@ -45,36 +45,43 @@ public class userServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String op = request.getParameter("op"); 
 		String actionUrl = "";
-		boolean result = false;
 		request.setCharacterEncoding("utf-8");
-		int size = 10 * 1024 * 1024;
-		String uploadPath = getServletContext().getRealPath("./upload/user");
-		MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy());  
-		Enumeration files = multi.getFileNames();
-		String file = (String)files.nextElement();
-
-		String email = "";
-		String nickname = "";
-		String name = "";
-		String password = ""; 
-		String photo = "";
-		
-		email = multi.getParameter("email");
-		nickname = multi.getParameter("nickname");
-		name = multi.getParameter("name");
-		password = multi.getParameter("password");
-		photo = multi.getFilesystemName(file);
 		
 		try {
-			result = userDAO.insert(email, nickname, name, password, photo);
-			request.setAttribute("nickname", nickname);
-			request.setAttribute("email", email);
-			if(result) {
-				actionUrl = "register.jsp";
-			}
-			else {
-				actionUrl = "error.jsp";
+			if(op == null || op.equals("register")) {
+				boolean result = false;
+				int size = 10 * 1024 * 1024;
+				String uploadPath = getServletContext().getRealPath("./upload/user");
+				MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy());  
+				Enumeration files = multi.getFileNames();
+				String file = (String)files.nextElement();
+		
+				String email = "";
+				String nickname = "";
+				String name = "";
+				String password = ""; 
+				String photo = "";
+				
+				email = multi.getParameter("email");
+				nickname = multi.getParameter("nickname");
+				name = multi.getParameter("name");
+				password = multi.getParameter("password");
+				photo = multi.getFilesystemName(file);
+		
+		
+				result = userDAO.insert(email, nickname, name, password, photo);
+				request.setAttribute("nickname", nickname);
+				request.setAttribute("email", email);
+				if(result) {
+					actionUrl = "register.jsp";
+				}
+				else {
+					actionUrl = "error.jsp";
+				}
+			} else if(op.equals("login")) {
+				
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

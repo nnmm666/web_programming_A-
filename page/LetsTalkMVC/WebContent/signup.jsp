@@ -76,6 +76,7 @@
 							</fieldset>
 
 							<div class="form-actions">
+								<input type="hidden" name="op" value="register">
 								<input id="cancel" type="button" class="btn" value="취소하기">
 								<input id="btn" type="button" class="btn btn-primary" value="가입">
 							</div>

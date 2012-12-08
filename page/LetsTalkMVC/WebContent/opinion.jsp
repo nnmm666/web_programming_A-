@@ -35,9 +35,9 @@
 					${topic.content }
 					</div>
 					<div class="topicContentBottomInOpinion">
-							<span><a class="likes" href="likehate.jsp?likehate=likes&topic_id=${topic.topic_id }">
+							<span><a class="likes" href="likehateServlet?likehate=likes">
 							<img src="./images/like.png"> </a>${topic.pros } </span>
-							<span><a class="hates" href="likehate.jsp?likehate=hates&topic_id=${topic.topic_id }">
+							<span><a class="hates" href="likehateServlet?likehate=hates">
 							<img src="./images/hate.png"> </a>${topic.cons } </span>
 							<span>작성자 : ${topic.writer }</span>
 							<span>작성일 : ${topic.date }</span>
@@ -145,10 +145,40 @@ function fill(name) {
 }
 
 $(function(){
-	$("#opinionWrite").click(function(){
-		
-		
-	});
+	if($(".likes").click(function(){
+		$.post('likehateServlet', {
+			likehate : 'likes'
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	}));
+	if($(".like").click(function(){
+		$.post('likehateServlet', {
+			likehate : 'like'
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	}));
+	if($(".hates").click(function(){
+		$.post('likehateServlet', {
+			likehate : 'hates'
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	}));
+	if($(".hate").click(function(){
+		$.post('likehateServlet', {
+			likehate : 'hate'
+		}, function(){
+			alert("감사합니다.");
+			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
+		});
+	}));
+	
+	
 	$("#opinionWrite").click(function(){
 		if($("#opiniontext").val().length == 0) {
 			alert("내용을 입력하여 주세요.");

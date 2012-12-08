@@ -104,7 +104,7 @@ public class pageServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 
 		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
-		String writer = (String)session.getAttribute("userName");
+		String writer = (String)session.getAttribute("nickname");
 		String content = request.getParameter("content");
 		String position = request.getParameter("position");
 		

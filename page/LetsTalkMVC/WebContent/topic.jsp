@@ -70,7 +70,7 @@
 												<li class="active"><a	href='pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${i }'>${i }</a></li>
 											</c:when>
 											<c:otherwise>
-												<li><a href='pageServlet?op=topic&keyword_id=${keyword.id }&page=${i }'>${i }</a></li>
+												<li><a href='pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${i }'>${i }</a></li>
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>

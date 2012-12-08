@@ -43,7 +43,7 @@
 							<span>작성일 : ${topic.date }</span>
 					</div>
 				</div>
-				
+				<% if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %>
 				<form class="opinion_form">
 					<input type="hidden" id="topic_id" name="topic_id" value="${topic.topic_id }">
 					<div id="myopinion">
@@ -58,6 +58,7 @@
 							<input type="button" class="opinionWrite" value="Write">
 					</div>
 				</form>
+				<%}%>
 				
 				<div id="order">
 					<ul>

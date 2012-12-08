@@ -102,19 +102,16 @@ public class pageServlet extends HttpServlet {
 		boolean ret = false;
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession(true);
-		String op=request.getParameter("op");
+			
+		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
 		
-		try{
-			
-			int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
-			
-			User user = (User) session.getAttribute("user");
-			
-			String writer = user.getNickname();
-			String content = request.getParameter("content");
-			String position = request.getParameter("position");
+		User user = (User) session.getAttribute("user");
+		
+		String writer = user.getNickname();
+		String content = request.getParameter("content");
+		String position = request.getParameter("position");
 	
-			
+		try{
 			if(OpinionDAO.sendOpinion(new Opinion(topic_id, content, writer, position))){
 				response.getWriter().write("ok");
 			}else {

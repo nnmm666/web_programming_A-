@@ -12,6 +12,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+
 import bean.Reply;
 
 public class ReplyDAO {
@@ -84,5 +85,30 @@ public class ReplyDAO {
 		}
 		
 		return reply;
+	}
+	public static boolean sendreply(Reply rp) throws SQLException, NamingException{
+
+		int result;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		DataSource ds = getDataSource();
+		
+		try{
+			conn = ds.getConnection();
+			
+			stmt = conn.prepareStatement("INSERT INTO reply(opinion_id, content, writer) VALUES (?, ?, ?);");
+			stmt.setInt(1, rp.getOpinion_id());
+			stmt.setString(2, rp.getContent());
+			stmt.setString(3, rp.getWriter());
+
+			result = stmt.executeUpdate();
+		}finally {
+			if(rs!=null) try{rs.close();} catch(SQLException e){}
+			if(stmt!=null) try{stmt.close();} catch(SQLException e){}
+			if(conn!=null) try{conn.close();} catch(SQLException e){}
+		}
+		return (result==1);
 	}
 }

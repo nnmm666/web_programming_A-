@@ -37,7 +37,7 @@ public class pageServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	private int getIntFromParameter(String str, int defaultValue) {
+	public static int getIntFromParameter(String str, int defaultValue) {
 		int id;
 		
 		try {
@@ -106,7 +106,6 @@ public class pageServlet extends HttpServlet {
 		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
 		
 		User user = (User) session.getAttribute("user");
-		
 		String writer = user.getNickname();
 		String content = request.getParameter("content");
 		String position = request.getParameter("position");

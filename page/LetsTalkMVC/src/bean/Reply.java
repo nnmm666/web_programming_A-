@@ -23,6 +23,13 @@ public class Reply implements Serializable {
 		this.date = date;
 	}
 
+	public Reply(int opinion_id, String content, String writer) {
+		super();
+		this.opinion_id = opinion_id;
+		this.content = content;
+		this.writer = writer;
+	}
+
 	public int getReply_id() {
 		return reply_id;
 	}

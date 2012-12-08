@@ -13,8 +13,16 @@ public class Topic implements Serializable {
 	private int cons;
 	private String date;
 	private String photo;
-	
+
 	public Topic() {}
+	
+	public Topic(int keyword_id, String content, String writer, String photo) {
+		super();
+		this.keyword_id = keyword_id;
+		this.content = content;
+		this.writer = writer;
+		this.photo = photo;
+	}
 
 	public Topic(int topic_id, int keyword_id, String content,
 			String writer, int pros, int cons, String date, String photo) {

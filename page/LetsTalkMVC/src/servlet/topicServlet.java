@@ -13,24 +13,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.TopicDAO;
-import DAO.userDAO;
-import bean.User;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import DAO.TopicDAO;
+
 /**
- * Servlet implementation class userServlet
+ * Servlet implementation class topicServlet
  */
-@WebServlet("/multiServlet")
-public class multiServlet extends HttpServlet {
+@WebServlet("/topicServlet")
+public class topicServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public multiServlet() {
+    public topicServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,7 +50,7 @@ public class multiServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		boolean result = false;
 		int size = 10 * 1024 * 1024;
-		String uploadPath = getServletContext().getRealPath("./upload/user");
+		String uploadPath = getServletContext().getRealPath("./upload/topic");
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy());  
 		Enumeration files = multi.getFileNames();
 		if(files.hasMoreElements()) {
@@ -61,50 +59,21 @@ public class multiServlet extends HttpServlet {
 		String op = multi.getParameter("op");
 		
 		try {
-			if(op == null) {
-				errorMsg = "명령오류";
-				request.setAttribute("errorMsg", errorMsg);
-				actionUrl = "error.jsp";
-			} else if(op.equals("register")) {
-				uploadPath = getServletContext().getRealPath("./upload/user");
-				String email = multi.getParameter("email");
-				String nickname = multi.getParameter("nickname");
-				String name = multi.getParameter("name");
-				String password = multi.getParameter("password");
+			if(op.equals("write")) {
+
+				int keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
+//				String nickname = (String) session.getAttribute("user.nickname");
+				String nickname = multi.getParameter("writer");
+				String content = multi.getParameter("content");
 				String photo = multi.getFilesystemName(file);
-			
-				result = userDAO.insert(email, nickname, name, password, photo);
-				request.setAttribute("nickname", nickname);
-				request.setAttribute("email", email);
-				if(result) {
-					actionUrl = "register.jsp";
-				}
-				else {
-					errorMsg = "등록에 실패하였습니다.";
-					request.setAttribute("errorMsg", errorMsg);
-					actionUrl = "error.jsp";
-				}
+
+				result = TopicDAO.insert(keyword_id, nickname, content, photo);
 				
-				RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);
-				dispatcher.forward(request, response);
-				
-			} else if(op.equals("login")) {
-				String inputEmail = multi.getParameter("inputemail");
-				String inputPwd = multi.getParameter("inputpwd");
-				
-				User user = userDAO.findById(inputEmail);
-				
-				if(user.getPassword().equals(inputPwd)) {
-					HttpSession session = request.getSession();
-					session.setAttribute("user", user);
-					
-					actionUrl = "pageServlet";
-					response.sendRedirect(actionUrl);
-				} else {
-					errorMsg = "비밀번호가 틀렸습니다.";
-					request.setAttribute("errorMsg", errorMsg);
-					actionUrl = "error.jsp";
-				}
+				actionUrl = "pageServlet?op=topic&keyword_id=" + keyword_id;
+
+
+				response.sendRedirect(actionUrl);
+
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -114,5 +83,4 @@ public class multiServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }

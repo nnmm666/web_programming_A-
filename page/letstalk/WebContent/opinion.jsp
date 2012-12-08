@@ -214,11 +214,11 @@
 								if(session.getAttribute("userEmail") != null) { //로그인시에만 나오게함 %> 
 								<div class="section_reply_1">
 									<div class="replyInputName"><%=session.getAttribute("userName") %></div>
-										<form method="GET" action="replyRegister.jsp">
+										<form id="reply_form">
 											<input type="hidden" name="topic_id" value="<%=topic_id %>">
-											<input type="hidden" name="opinion_id" value="<%=opinion_id %>">
+											<input type="hidden" class ="opinion_id" name="opinion_id" value="<%=opinion_id %>">
 											<input type="text" class="reply_more" name= "reply_more" placeholder="댓글달기...">
-											<input type="submit" class="replyInputButton" value="Write">
+											<input type="button" class="replyInputButton" value="Write">
 										</form>
 								</div>
 								<%} %>
@@ -251,6 +251,33 @@
 		%>
 		
 <script type="text/javascript">
+var last_id = -1;
+var timer = null;
+
+$(function() {
+	$(".replyInputButton").click(function() {
+		// 이름이나 내용이 없으면 포커스를 옮기고 종료
+		if ($(this).parent().find((".reply_more")).val().length == 0) {
+			alert("내용을 입력하여 주세요.");
+			$(this).parent().find((".reply_more")).focus();
+			return;
+		}
+		
+		$.post('replyServlet', {
+				opinion_id : $(this).parent().find((".opinion_id")).val(),
+				content : $(this).parent().find((".reply_more")).val()
+		}, function(){alert("댓글이 정상적으로 등록되었습니다.");});
+		$(this).parent().find((".reply_more")).val("");
+	});
+	$('.reply_more').keydown(function(event){
+		if(event.keyCode == 13)
+		$(this).parent().find((".replyInputButton")).click();
+	});
+	
+	setInterval(receive, 1000);
+});
+
+
 function fill(name) {
 	// 아이템이 선택되었을때 처리 
 	$('#searchbar').val(name);
@@ -278,6 +305,8 @@ $(function(){
 		});
 	
 	$("#ejqhrl").hide();
+	
+	
 });
 </script>
 		

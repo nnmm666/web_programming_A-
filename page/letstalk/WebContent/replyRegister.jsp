@@ -11,6 +11,7 @@
 		String dbPassword = "asdf";
 		request.setCharacterEncoding("utf-8");
 		
+		
 		String topic_id = request.getParameter("topic_id");
 		String opinion_id = request.getParameter("opinion_id");
 		String writer=(String)session.getAttribute("userName");

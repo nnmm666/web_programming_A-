@@ -19,8 +19,8 @@
 		<div id="middle">
 			<div id="content">
 				<div id="search">
-					<form class="form-search" action="topicServlet">
-						<input type="text" id="searchbar" placeholder="다른 키워드 검색">
+					<form class="form-search" action="topicServlet?op=find">
+						<input type="text" id="searchbar" name="searchbar" placeholder="다른 키워드 검색">
 						<button type="submit" class="searchButton">Search</button>
 						<div id="suggest_box" class="suggest_box"></div> 		
 					</form>

@@ -28,19 +28,15 @@
 							<fieldset>
 								<legend class="legend">Sign Up</legend>
 
-							<%int id = Integer.parseInt(request.getParameter("id")); %>
 									<div id="user_content">
-									<c:if test ="id > 0">
 										<div class="control-group">
 											<label class="control-label" for="email">E-mail</label>
-											
 												<div class="controls">
 													<input id="email" class="inputbox" type="email" placeholder="아이디 혹은 이메일"
-													name="email" >
-												</div>
-											
+													name="email" value="${sessionScope.user.email }">
+												</div>											
 										</div>
-									</c:if>
+
 									
 									<div class="control-group">
 										<label class="control-label" for="nickname">Nick-Name</label>

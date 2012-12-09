@@ -97,8 +97,10 @@ public class topicServlet extends HttpServlet {
 		boolean result = false;
 		int size = 10 * 1024 * 1024;
 		String uploadPath = getServletContext().getRealPath("./upload/topic");
-		MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy());  
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size,"UTF-8", new DefaultFileRenamePolicy()); 
+		
 		Enumeration files = multi.getFileNames();
+		
 		if(files.hasMoreElements()) {
 			file = (String)files.nextElement();
 		} 
@@ -108,7 +110,6 @@ public class topicServlet extends HttpServlet {
 			if(op.equals("write")) {
 
 				int keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
-				//				String nickname = (String) session.getAttribute("user.nickname");
 				String nickname = multi.getParameter("writer");
 				String content = multi.getParameter("content");
 				String photo = multi.getFilesystemName(file);

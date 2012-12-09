@@ -42,9 +42,9 @@
 								<a class="deleted_tp" href="#" data-id="${topic.topic_id }">삭제</a>
 							</span>
 						</c:if>
-							<span><a class="likes" href="PositionServlet?likehate=likes&opinion_id=${opinion.opinion_id}&topic_id=${topic.topic_id}">
+							<span><a class="likes" href="PositionServlet?likehate=likes&topic_id=${topic.topic_id}&opinion_id=${opinion.opinion_id}">
 							<img src="./images/like.png"> </a>${topic.pros } </span>
-							<span><a class="hates" href="PositionServlet?likehate=hates&opinion_id=${opinion.opinion_id}&topic_id=${topic.topic_id}">
+							<span><a class="hates" href="PositionServlet?likehate=hates&topic_id=${topic.topic_id}&opinion_id=${opinion.opinion_id}">
 							<img src="./images/hate.png"> </a>${topic.cons } </span>
 							<span>작성자 : ${topic.writer }</span>
 							<span>작성일 : ${topic.date }</span>

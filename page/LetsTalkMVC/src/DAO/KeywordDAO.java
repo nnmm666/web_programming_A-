@@ -1,9 +1,11 @@
 package DAO;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,5 +114,39 @@ public class KeywordDAO {
 			if(conn!=null) try{conn.close();} catch(SQLException e){}
 		}
 		return (result==1);
+	}
+	
+	public static List<String> getKeyword() throws SQLException, NamingException {
+		List<String> list = new ArrayList<String>();
+		
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		DataSource ds = getDataSource();
+		String keywords="";
+	
+		try {
+			conn = ds.getConnection();
+			
+			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("select keyword from keyword");
+			
+			while(rs.next()) {
+				keywords = rs.getString("keyword");
+				list.add(keywords);
+			}
+			
+			stmt.close();
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) try{rs.close();} catch(SQLException e) {}
+			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+			if (conn != null) try{conn.close();} catch(SQLException e) {}
+		}
+		return list;
 	}
 }

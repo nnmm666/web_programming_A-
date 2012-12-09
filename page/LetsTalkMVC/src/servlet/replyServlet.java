@@ -17,7 +17,6 @@ import bean.User;
 
 import DAO.OpinionDAO;
 import DAO.ReplyDAO;
-import DAO.TopicDAO;
 
 @WebServlet("/replyServlet")
 public class replyServlet extends HttpServlet {

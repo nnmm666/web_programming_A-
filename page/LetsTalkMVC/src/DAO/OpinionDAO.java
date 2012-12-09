@@ -14,7 +14,6 @@ import javax.sql.DataSource;
 
 import bean.Opinion;
 import bean.Reply;
-import bean.Topic;
 
 public class OpinionDAO {
 	public static DataSource getDataSource() throws NamingException {

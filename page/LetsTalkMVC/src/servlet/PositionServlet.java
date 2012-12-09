@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -12,13 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.KeywordDAO;
 import DAO.OpinionDAO;
-import DAO.TopicDAO;
-import bean.Keyword;
-import bean.Opinion;
-import bean.PageResult;
-import bean.Topic;
+
 
 @WebServlet("/PositionServlet")
 public class PositionServlet extends HttpServlet {

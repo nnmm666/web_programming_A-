@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -164,7 +166,6 @@ public class TopicDAO {
 		
 		try {
 			conn = ds.getConnection();
-			
 			stmt = conn.prepareStatement("select id from keyword WHERE keyword =?");
 			stmt.setString(1,keyword);
 			

@@ -48,16 +48,16 @@ public class PositionServlet extends HttpServlet {
 		
 		try {
 			if(likehate.equals("likes")) {
-				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				OpinionDAO.sendlikehate(likehate,opinion_id,topic_id);
 				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}else if(likehate.equals("like")) {
-				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				OpinionDAO.sendlikehate(likehate,opinion_id,topic_id);
 				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}else if(likehate.equals("hates")) {
-				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				OpinionDAO.sendlikehate(likehate,opinion_id,topic_id);
 				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}else if(likehate.equals("hate")) {
-				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				OpinionDAO.sendlikehate(likehate,opinion_id,topic_id);
 				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}
 		}catch (NamingException e) {

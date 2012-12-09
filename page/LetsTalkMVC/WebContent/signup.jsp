@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -27,27 +28,32 @@
 							<fieldset>
 								<legend class="legend">Sign Up</legend>
 
-								<div id="user_content">
-									<div class="control-group">
-										<label class="control-label" for="email">E-mail</label>
-										<div class="controls">
-											<input id="email" class="inputbox" type="email" placeholder="아이디 혹은 이메일"
-												name="email">
+							<%int id = Integer.parseInt(request.getParameter("id")); %>
+									<div id="user_content">
+									<c:if test ="id > 0">
+										<div class="control-group">
+											<label class="control-label" for="email">E-mail</label>
+											
+												<div class="controls">
+													<input id="email" class="inputbox" type="email" placeholder="아이디 혹은 이메일"
+													name="email" >
+												</div>
+											
 										</div>
-									</div>
-
+									</c:if>
+									
 									<div class="control-group">
 										<label class="control-label" for="nickname">Nick-Name</label>
 										<div class="controls">
 											<input id="nickname" class="inputbox" type="text" placeholder="닉네임"
-												name="nickname">
+												name="nickname" value="${sessionScope.user.nickname }">
 										</div>
 									</div>
 
 									<div class="control-group">
 										<label class="control-label" for="name">Name</label>
 										<div class="controls">
-											<input id="name" class="inputbox" type="text" placeholder="이름" name="name">
+											<input id="name" class="inputbox" type="text" placeholder="이름" name="name" value="${sessionScope.user.name }">
 										</div>
 									</div>
 

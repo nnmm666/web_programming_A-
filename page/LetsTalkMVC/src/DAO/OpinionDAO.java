@@ -82,7 +82,7 @@ public class OpinionDAO {
 			conn = ds.getConnection();
 
 			// 질의 준비
-			stmt = conn.prepareStatement("SELECT *, substr(opinion.date, 1, 10) as convDate FROM opinion WHERE id = ?");
+			stmt = conn.prepareStatement("SELECT *, substr(date, 1, 10) as convDate FROM opinion WHERE id = ?");
 			stmt.setInt(1, id);
 
 			// 수행

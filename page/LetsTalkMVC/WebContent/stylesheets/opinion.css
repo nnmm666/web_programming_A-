@@ -55,9 +55,10 @@
 #order ul ul li a:hover {color : #999;}
 /*MoreOpinion*/
 
-#MoreOpinion { width : 720px; margin : 0 auto; }
+#MoreOpinion { width : 720px; margin : 0 auto ; }
 .titleborder_like { width : 710px; height: 20px; background-color: #4da8d0; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff; }
 .titleborder_hate { width : 710px; height: 20px; background-color: #f27d8b; text-align:left; text-indent:5px; margin:10px auto 0px auto; padding: 5px; border-radius: 5px 5px 0 0; color: #fff;}
+.opinion { margin-bottom :30px;}
 .opinion_writer { float: right; margin-right: 10px; }
 .toggle { float:right; width:80px; text-decoration: none; padding: 0 5px 0 0; color:#000; }
 .toggle:hover { color:#fa0;}

@@ -41,7 +41,7 @@
 										<div id="topicPhoto">
 											<img src="./upload/topic/${topic.photo }" width='66px' height='60px'>
 										</div>
-										<div id="topicContent">${topic.content }</div>
+										<div id="topicContent"><pre>${topic.content }</pre></div>
 										<div class="topicContentBottom">
 											<span>작성자 : ${topic.writer }</span>
 											<span>작성일 :	${topic.date }</span>

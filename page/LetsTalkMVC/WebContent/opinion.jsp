@@ -33,7 +33,7 @@
 						<img src="./upload/topic/${topic.photo }" width='120px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
-					${topic.content }
+					<pre>${topic.content }</pre>
 					</div>
 					<div class="topicContentBottomInOpinion">
 
@@ -96,7 +96,7 @@
 							<div class="section">
 								<div class="section_top_${opinion.position }">
 									<div class="section_left">
-										${opinion.content }
+										<pre>${opinion.content }</pre>
 									</div>
 									<div class="section_right">
 										<span><a class="like" href="PositionServlet?likehate=like&opinion_id=${opinion.opinion_id}&topic_id=${topic.topic_id}">

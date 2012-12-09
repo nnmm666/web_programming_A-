@@ -78,7 +78,7 @@
 .replyInputButton { width: 55px; height: 25px; float: right; margin-top: 2px; margin-right: 20px; }
 .topicContentBottomInOpinion { width: 450px; } 
 
-.opinion-date { float: right;}
+.opinion-date { float: right; width:170px;}
 .modified { float: left; margin-right: 10px;  }
 .deleted_op, .deleted_rp, .deleted_tp { float: left; margin-right: 10px;  }
 

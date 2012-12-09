@@ -22,8 +22,6 @@ public class KeywordSuggestServlet extends HttpServlet {
 	public KeywordSuggestServlet() {
 		super();
 	}
-	
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

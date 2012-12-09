@@ -27,20 +27,32 @@ public class PositionServlet extends HttpServlet {
 		super();
 	}
 
+	public static int getIntFromParameter(String str, int defaultValue) {
+		int id;
+		
+		try {
+			id = Integer.parseInt(str);
+		} catch (Exception e) {
+			id = defaultValue;
+		}
+		return id;
+	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
 		String likehate = request.getParameter("likehate");
+		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+		int opinion_id = getIntFromParameter(request.getParameter("opinion_id"), 0);
 
 		try {
 			if(likehate.equals("likes")) {
-				OpinionDAO.sendlikehate(likehate);
+				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
 			}else if(likehate.equals("like")) {
-				OpinionDAO.sendlikehate(likehate);
+				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
 			}else if(likehate.equals("hates")) {
-				OpinionDAO.sendlikehate(likehate);
+				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
 			}else if(likehate.equals("hate")) {
-				OpinionDAO.sendlikehate(likehate);
+				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
 			}
 		}catch (NamingException e) {
 			// TODO Auto-generated catch block

@@ -83,7 +83,7 @@ public class OpinionDAO {
 			conn = ds.getConnection();
 
 			// 질의 준비
-			stmt = conn.prepareStatement("SELECT *, substr(date, 1, 10) as convDate FROM opinion WHERE id = ?");
+			stmt = conn.prepareStatement("SELECT *, substr(opinion.date, 1, 10) as convDate FROM opinion WHERE id = ?");
 			stmt.setInt(1, id);
 
 			// 수행
@@ -133,13 +133,13 @@ public class OpinionDAO {
 		return (result == 1);
 	}
 
-	public static boolean sendlikehate(String likehate) throws NamingException, SQLException {
+	public static boolean sendlikehate(String likehate, int opinion_id, int topic_id) throws NamingException, SQLException {
 
 		int result;
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-
+		
 		DataSource ds = getDataSource();
 		Opinion opinion = new Opinion();
 		
@@ -148,16 +148,16 @@ public class OpinionDAO {
 			
 			if(likehate.equals("like")){
 				stmt = conn.prepareStatement("UPDATE opinion SET pros = pros+1 WHERE id =? ");
-				stmt.setInt(1, opinion.getOpinion_id());
+				stmt.setInt(1, opinion_id);
 			}else if(likehate.equals("likes")){
 				stmt = conn.prepareStatement("UPDATE topic SET pros = pros+1 WHERE id =? ");
-				stmt.setInt(1, opinion.getTopic_id());
+				stmt.setInt(1, topic_id);
 			}else if(likehate.equals("hate")){
 				stmt = conn.prepareStatement("UPDATE opinion SET cons = cons+1 WHERE id =? ");
-				stmt.setInt(1, opinion.getOpinion_id());
+				stmt.setInt(1, opinion_id);
 			}else if(likehate.equals("hates")){
 				stmt = conn.prepareStatement("UPDATE topic SET cons = cons+1 WHERE id =? ");
-				stmt.setInt(1, opinion.getTopic_id());
+				stmt.setInt(1, topic_id);
 			}
 			result = stmt.executeUpdate();
 

@@ -7,6 +7,18 @@
 	<title>Let's Talk!! 렛톡에 오신걸 환영합니다!!</title>
 	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<script src='http://code.jquery.com/jquery-latest.js'></script>
+	<style>
+	.profiles{width : 890px; height:500px; padding-left:110px;}
+.profiles .profiles_list{width:400px; height:150px; border:1px solid #eee; background: #eee; margin-bottom:70px; padding:5px;}
+.profiles .profiles_list .profile_factor_left{width:130px; float:left; padding:5px;}
+.profiles .profiles_list .profile_factor_right{margin-left:15px; text-align:left; padding:10px;}
+.profiles .profiles_list .profile_factor_right .profile_factor .factor{line-height: 25px; font-weight:bold;color:#555;}
+.profiles .profiles_list .profile_factor_right .profile_factor span{}
+#profil_left{float:left; margin:25px 0 3px 10px;}
+#profil_right{float:right; margin:25px 3px 0 10px;}
+
+.profile_factor_left {margin-right:50px;}
+	</style>
 </head>
 <body>
 	<div id="wrap">

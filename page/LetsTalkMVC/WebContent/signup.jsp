@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	int id = 0;
+
+	try {
+		id = Integer.parseInt(request.getParameter("id"));
+	}catch(Exception e){}
+%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -80,9 +87,12 @@
 							<div class="form-actions">
 								<input type="hidden" name="op" value="register">
 								<input id="cancel" type="button" class="btn" value="취소하기">
-								<input id="btn" type="button" class="btn btn-primary" value="가입">
-								<a href="#" class="btn btn-primary" data-action="delete"
-									data-id="${id }">탈퇴 </a>
+									<% if(id<= 0) {%>
+										<input id="btn" type="button" class="btn btn-primary" value="가입">
+									<%}else{ %>
+										<input id="btn" type="button" class="btn btn-primary" value="수정">
+										<a href="#" class="btn btn-primary" data-action="delete" data-id="<%=id %>">탈퇴 </a>
+									<%} %>
 							</div>
 						</form>
 						

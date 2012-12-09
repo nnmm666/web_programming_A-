@@ -100,7 +100,7 @@ public class userDAO {
 		
 		try {
 			conn = ds.getConnection();
-			stmt = conn.prepareStatement("INSERT INTO users VALUES (null, ?, ?, ?, ?, ?)");
+			stmt = conn.prepareStatement("INSERT INTO users VALUES (null, ?, ?, ?, password(?), ?)");
 			stmt.setString(1, email);
 			stmt.setString(2, nickname);
 			stmt.setString(3, name);

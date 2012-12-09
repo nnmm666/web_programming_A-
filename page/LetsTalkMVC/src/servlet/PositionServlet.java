@@ -43,9 +43,9 @@ public class PositionServlet extends HttpServlet {
 		String actionUrl = "";
 
 		String likehate = request.getParameter("likehate");
-		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
 		int opinion_id = getIntFromParameter(request.getParameter("opinion_id"), 0);
-
+		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+		
 		try {
 			if(likehate.equals("likes")) {
 				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);

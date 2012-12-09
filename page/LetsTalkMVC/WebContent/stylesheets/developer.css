@@ -1,14 +1,10 @@
-.profiles{height:500px;}
-.profiles .profiles_list{width:380px; height:150px; border:1px solid #eee; background: #eee; margin-bottom:70px; padding:5px;}
+.profiles{width : 890px; height:500px; padding-left:110px;}
+.profiles .profiles_list{width:400px; height:150px; border:1px solid #eee; background: #eee; margin-bottom:70px; padding:5px;}
 .profiles .profiles_list .profile_factor_left{width:130px; float:left; padding:5px;}
-.profiles .profiles_list .profile_factor_right{float:left; text-align:left; padding:10px;}
+.profiles .profiles_list .profile_factor_right{margin-left:15px; text-align:left; padding:10px;}
 .profiles .profiles_list .profile_factor_right .profile_factor .factor{line-height: 25px; font-weight:bold;color:#555;}
 .profiles .profiles_list .profile_factor_right .profile_factor span{}
-#left{float:left; margin:25px 0 3px 10px;}
-#right{float:right; margin:25px 3px 0 10px;}
-#bottom{posotion:fixed; top:500px; left:0;}
-#bottom { width: 100%; height: 75px; margin: 0 auto; padding: 0; background-color: #236684; border-top: 1px solid #999; border-bottom: 1px solid #999; color:#fff;}
-#footer { width: 960px; height: 35px; margin: 0 auto; padding:20px 0; text-align: center; }
-#footer a:link, #footer a:visited {text-decoration: none; color:#fff;}
-#footer a:hover, #footer a:active { text-decoration:underline;}
+#profil_left{float:left; margin:25px 0 3px 10px;}
+#profil_right{float:right; margin:25px 3px 0 10px;}
+
 .profile_factor_left {margin-right:50px;}

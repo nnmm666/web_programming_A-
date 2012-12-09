@@ -16,104 +16,89 @@
 		</div>
 		<div id="middle">
 			<div id="content">
-				<h2>Who Make this Site?</h2>
+				<p style="margin-top:30px; font-size:30px;">Who Make this Site?</p>
 				<div class="profiles">
-					<div id="left">
+					<div id="profil_left">
 						<div class="profiles_list">
-							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz"></div>
+							<div class="profile_factor_left"><img style="width:150px; height:120px;" src="./images/image3.JPG" alt="zz"></div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
-									<span class="factor">Name</span>
+									<span class="factor">Name : 이창희</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">H.P</span>
+									<span class="factor">email : ctrl0703@naver.com</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">email</span>
+									<span class="factor">Job : 학생</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Job</span>
-									<span></span>
-								</div>
-								<div class="profile_factor">
-									<span class="factor">Site</span>
+									<span class="factor">Site : letstalk</span>
 									<span></span>
 								</div>
 							</div>
 						</div>
 						<div class="profiles_list">
-							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz"></div>
+							<div class="profile_factor_left"><img style="width:150px; height:120px;" src="./images/image2.jpg" alt="zz"></div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
-									<span class="factor">Name</span>
+									<span class="factor">Name : 윤나라</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">H.P</span>
+									<span class="factor">email : si1254@naver.com</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">email</span>
+									<span class="factor">Job : 학생</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Job</span>
-									<span></span>
-								</div>
-								<div class="profile_factor">
-									<span class="factor">Site</span>
+									<span class="factor">Site : letstalk</span>
 									<span></span>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div id="right">
+					<div id="profil_right">
 						<div class="profiles_list">
-							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz"> </div>
+							<div class="profile_factor_left"><img style="width:150px; height:120px;" src="./images/image1.jpg" alt="zz"> </div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
-									<span class="factor">Name</span>
+									<span class="factor">Name : 박세진</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">H.P</span>
+									<span class="factor">Email : nnmm666@naver.com</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Email</span>
+									<span class="factor">Job : 학생</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Job</span>
-									<span></span>
-								</div>
-								<div class="profile_factor">
-									<span class="factor">Site</span>
+									<span class="factor">Site : letstalk</span>
 									<span></span>
 								</div>
 							</div>
 						</div>
 						<div class="profiles_list">
-							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="이가을"></div>
+							<div class="profile_factor_left"><img style="width:150px; height:120px;" src="./images/image4.jpg" alt="이가을"></div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
-									<span class="factor">Name</span>
+									<span class="factor">Name : 이가을</span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">H.P</span>
+									<span class="factor">Email : leegaeul92@naver.com</span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Email</span>
+									<span class="factor">Job : 학생</span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Job</span>
-								</div>
-								<div class="profile_factor">
-									<span class="factor">Site</span>
+									<span class="factor">Site : letstalk</span>
 								</div>
 							</div>
 						</div>

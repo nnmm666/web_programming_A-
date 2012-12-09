@@ -112,7 +112,7 @@
 											<a class="deleted_op" href="#" data-id="${opinion.opinion_id }">삭제</a>
 										</span>
 									</c:if>
-									<a href="#" class="toggle"> 덧글보기 ↕ </a>
+									<a href="#" class="toggle"> 댓글보기  </a>
 									<span class="opinion-date"> 작성일 : ${opinion.date }</span>
 									</div>
 								</div>

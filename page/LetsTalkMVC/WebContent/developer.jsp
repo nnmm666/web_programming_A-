@@ -73,7 +73,7 @@
 
 					<div id="right">
 						<div class="profiles_list">
-							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz">사진</div>
+							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz"></div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
 									<span class="factor">Name</span>

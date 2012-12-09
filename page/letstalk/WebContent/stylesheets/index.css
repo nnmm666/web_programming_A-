@@ -127,7 +127,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 .contentslider-std .sliderkit-panel{width:780px;height:620px;overflow:auto;padding:0 10px;background:#236684; }
 .contentslider-std .sliderkit-panel .sub{height:180px;padding:5px; background:#fff;margin-bottom:10px;}
 .contentslider-std .sliderkit-panel .sub img {width:240px; height:178px;float:right;}
-.contentslider-std .sliderkit-panel .sub p {width:480px;height:140px;padding:3px;margin:3px;float:left;font-size:15px;border-bottom:1px solid #ddd;border-right:1px solid #ddd;}
+.contentslider-std .sliderkit-panel .sub p {width:480px;height:140px;padding:3px;margin:3px;float:left; font-size:15px; border :1px solid #ddd;}
 .contentslider-std .sliderkit-panel .sub a {margin-right:10px;float:right;font-size:15px;font-weight:bold;color:#f22039;text-decoration:none;}
 .contentslider-std .sliderkit-panel .sub .opi-info {margin-left:10px;width:300px; float:left}
 .contentslider-std .sliderkit-panel .sub .opi-info span{font-weight:bold; color:#d29103;}

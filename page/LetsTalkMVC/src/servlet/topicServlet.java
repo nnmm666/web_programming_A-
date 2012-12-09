@@ -3,7 +3,6 @@ package servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Enumeration;
-import java.util.List;
 
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -13,16 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.Keyword;
-import bean.Opinion;
-import bean.PageResult;
-import bean.Topic;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import DAO.KeywordDAO;
-import DAO.OpinionDAO;
 import DAO.TopicDAO;
 
 /**
@@ -64,7 +57,6 @@ public class topicServlet extends HttpServlet {
 				boolean ret;
 
 				int id = getIntFromParameter(request.getParameter("id"), 0);
-				int keyword_id = TopicDAO.findById(id).getKeyword_id();
 				ret = TopicDAO.remove(id);
 				request.setAttribute("result", ret);
 				if(ret){

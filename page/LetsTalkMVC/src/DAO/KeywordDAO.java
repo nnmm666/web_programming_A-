@@ -1,7 +1,6 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +14,6 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import bean.Keyword;
-import bean.Reply;
 
 public class KeywordDAO {
 	public static DataSource getDataSource() throws NamingException {

@@ -78,18 +78,18 @@
 						
 						<div class="control-group">
 							<!-- Textarea -->
-							<label class="control-label" for="context">내용</label>
+							<label class="control-label" for="context">토론 주제</label>
 							<div class="controls">
 								<div class="textarea">
-									<textarea name="content"></textarea>
+									<textarea name="content"  placeholder="선택하신 키워드와 관련된 토론 주제를 적어주세요!"></textarea>
 								</div>
 							</div>
 						</div>
 						
 						<div class="control-group">
-						<div class="controls">
 							<!-- File Upload -->		
 								<label class="control-label">첨부하기</label>
+							<div class="controls">
 								<input class="input-file" id="fileInput" type="file" name="photo">
 							</div>
 						</div>
@@ -99,8 +99,8 @@
 				<input type="hidden" name="keyword_id" value="<%=request.getParameter("keyword_id") %>">
 				<input type="hidden" name="op" value="write">
 				<input type="hidden" name="writer" value="${sessionScope.user.nickname }">
-				<input type="submit" value="Lets Talk!">
-				<input type="reset" value="재작성">
+				<input style="width:70px; height:25px;" type="submit" value="Lets Talk!">
+				<input style="width:70px; height:25px;" type="reset" value="재작성">
 			</form>	
 
 		</div>

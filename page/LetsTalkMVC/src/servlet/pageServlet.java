@@ -16,7 +16,6 @@ import javax.servlet.http.HttpSession;
 import DAO.KeywordDAO;
 import DAO.OpinionDAO;
 import DAO.TopicDAO;
-import DAO.userDAO;
 import bean.Keyword;
 import bean.Opinion;
 import bean.PageResult;

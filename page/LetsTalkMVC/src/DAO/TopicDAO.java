@@ -154,13 +154,13 @@ public class TopicDAO {
 		
 		return (result == 1);
 	}
-	public static Topic findBykeyword(String keyword) throws NamingException, SQLException {
+	public static int findBykeyword(String keyword) throws NamingException, SQLException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs;
+		int result = 0;
 		
 		DataSource ds = getDataSource();
-		Topic topic = null;
 		
 		try {
 			conn = ds.getConnection();
@@ -170,7 +170,7 @@ public class TopicDAO {
 			
 			rs = stmt.executeQuery();	
 			if (rs.next()) { 
-				topic = new Topic(rs.getInt("id"));
+				result = rs.getInt("id");
 			}
 				
 		} finally {
@@ -178,7 +178,6 @@ public class TopicDAO {
 			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
 			if (conn != null) try{conn.close();} catch(SQLException e) {}
 		}
-		
-		return topic;
+		return result;
 	}
 }

@@ -73,6 +73,12 @@ public class topicServlet extends HttpServlet {
 					request.setAttribute("errorMsg", "사용자 정보 삭제에 실패했습니다.");
 					actionUrl = "error.jsp";
 				}
+			}else if(op.equals("find")){
+				String keyword = request.getParameter("searchbar");
+				int keyword_id;
+
+				keyword_id = TopicDAO.findBykeyword(keyword);
+				actionUrl = "pageServlet?op=topic&keyword_id=" + keyword_id;
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -93,7 +99,9 @@ public class topicServlet extends HttpServlet {
 		String actionUrl = "";
 		String errorMsg = "";
 		String file = "";
+		
 		request.setCharacterEncoding("utf-8");
+		
 		boolean result = false;
 		int size = 10 * 1024 * 1024;
 		String uploadPath = getServletContext().getRealPath("./upload/topic");
@@ -120,14 +128,7 @@ public class topicServlet extends HttpServlet {
 				response.sendRedirect(actionUrl);
 
 			}
-			if(op.equals("find")){
-				String keyword = multi.getParameter("searchbar");
-				Topic keyword_id = null;
-				
-				keyword_id = TopicDAO.findBykeyword(keyword);
-				actionUrl = "pageServlet?op=topic&keyword_id=" + keyword_id;
-				response.sendRedirect(actionUrl);
-			}
+			
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

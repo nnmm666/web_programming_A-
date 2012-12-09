@@ -145,7 +145,6 @@
 							</div>
 						</div>
 					</c:forEach>
-					<div id="ejqhrl">더보기</div>
 				</div>
 
 			</div>
@@ -239,18 +238,12 @@ $(function(){
 				$('#suggest_box').html(data).show();
 			});		
 	});
-	
-	$(window).scroll(function() {
-		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-			$("#ejqhrl").show();
-			}
-		});
+
 
 	$(".toggle").click(function(){
 			$(this).parents('.opinion').find('#section_sub').slideToggle();
 		});
-	
-	$("#ejqhrl").hide();
+
 });
 </script>
 </html>

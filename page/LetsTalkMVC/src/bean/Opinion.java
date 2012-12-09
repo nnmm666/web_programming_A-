@@ -15,6 +15,7 @@ public class Opinion implements Serializable {
 	private int cons;
 	private String date;
 	private List<Reply> replies = null;
+	private String likehate;
 	
 	public Opinion() {}
 	
@@ -42,14 +43,22 @@ public class Opinion implements Serializable {
 	}
 
 	
-	public Opinion(String position) {
+	public Opinion(String likehate) {
 		super();
-		this.position = position;
+		this.likehate = likehate;
 	}
 
 
 	public int getOpinion_id() {
 		return opinion_id;
+	}
+
+	public String getLikehate() {
+		return likehate;
+	}
+
+	public void setLikehate(String likehate) {
+		this.likehate = likehate;
 	}
 
 	public void setOpinion_id(int opinion_id) {

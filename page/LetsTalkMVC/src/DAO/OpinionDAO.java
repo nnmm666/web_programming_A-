@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 
 import bean.Opinion;
 import bean.Reply;
+import bean.Topic;
 
 public class OpinionDAO {
 	public static DataSource getDataSource() throws NamingException {
@@ -132,7 +133,7 @@ public class OpinionDAO {
 		return (result == 1);
 	}
 
-	public static boolean sendlikehate(Opinion opinion) throws NamingException, SQLException {
+	public static boolean sendlikehate(String likehate) throws NamingException, SQLException {
 
 		int result;
 		Connection conn = null;
@@ -140,17 +141,21 @@ public class OpinionDAO {
 		ResultSet rs = null;
 
 		DataSource ds = getDataSource();
+		Opinion opinion = new Opinion();
+		
 		try {
-			if(opinion.getPosition().equals("like")){
+			conn = ds.getConnection();
+			
+			if(likehate.equals("like")){
 				stmt = conn.prepareStatement("UPDATE opinion SET pros = pros+1 WHERE id =? ");
 				stmt.setInt(1, opinion.getOpinion_id());
-			}else if(opinion.getPosition().equals("likes")){
+			}else if(likehate.equals("likes")){
 				stmt = conn.prepareStatement("UPDATE topic SET pros = pros+1 WHERE id =? ");
 				stmt.setInt(1, opinion.getTopic_id());
-			}else if(opinion.getPosition().equals("hate")){
+			}else if(likehate.equals("hate")){
 				stmt = conn.prepareStatement("UPDATE opinion SET cons = cons+1 WHERE id =? ");
 				stmt.setInt(1, opinion.getOpinion_id());
-			}else if(opinion.getPosition().equals("hates")){
+			}else if(likehate.equals("hates")){
 				stmt = conn.prepareStatement("UPDATE topic SET cons = cons+1 WHERE id =? ");
 				stmt.setInt(1, opinion.getTopic_id());
 			}
@@ -161,6 +166,30 @@ public class OpinionDAO {
 			if(stmt!=null) try{stmt.close();} catch(SQLException e){}
 			if(conn!=null) try{conn.close();} catch(SQLException e){}
 		}
+		return (result == 1);
+	}
+	
+	public static boolean remove(int id) throws NamingException, SQLException {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		int result;
+		
+		DataSource ds = getDataSource();
+		
+		try {
+			conn = ds.getConnection();
+			
+			stmt = conn.prepareStatement("DELETE FROM opinion where id=?");
+			stmt.setInt(1,id);
+			
+			result = stmt.executeUpdate();	
+				
+		} finally {
+			// 무슨 일이 있어도 리소스를 제대로 종료
+			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+			if (conn != null) try{conn.close();} catch(SQLException e) {}
+		}
+		
 		return (result == 1);
 	}
 }

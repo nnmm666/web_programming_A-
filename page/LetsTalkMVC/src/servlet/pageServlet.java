@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import DAO.KeywordDAO;
 import DAO.OpinionDAO;
 import DAO.TopicDAO;
+import DAO.userDAO;
 import bean.Keyword;
 import bean.Opinion;
 import bean.PageResult;
@@ -82,6 +83,21 @@ public class pageServlet extends HttpServlet {
 				request.setAttribute("opinions", opinions);
 				
 				actionUrl = "opinion.jsp";
+				
+			}else if (op.equals("delete")){
+				boolean ret;
+
+				int id = getIntFromParameter(request.getParameter("id"), 0);
+				int topic_id = OpinionDAO.findById(id).getTopic_id();
+				ret = OpinionDAO.remove(id);
+				request.setAttribute("result", ret);
+				if(ret){
+					request.setAttribute("errorMsg", "사용자 정보가 삭제되었습니다.");
+					actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
+				}else{
+					request.setAttribute("errorMsg", "사용자 정보 삭제에 실패했습니다.");
+					actionUrl = "error.jsp";
+				}
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

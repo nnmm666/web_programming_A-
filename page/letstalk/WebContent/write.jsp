@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.sql.*"%>
+	pageEncoding="UTF-8" import="java.sql.*" import="import javax.sql.DataSource;"%>
 
 <!DOCTYPE html>
 <html>
@@ -31,6 +31,7 @@
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);
 			pstmt=conn.prepareStatement(sql);
+			
 			pstmt.setInt(1,keyword_id);
 			rs=pstmt.executeQuery();
 	%>
@@ -73,8 +74,9 @@
 						<div class="control-group">
 							<!-- File Upload -->
 							<div class="controls">
-								<label class="control-label">첨부하기</label> <input
-									class="input-file" id="fileInput" type="file" name="photo">
+								<label class="control-label">첨부하기</label> 
+								<input
+class="input-file" id="fileInput" type="file" name="photo">
 							</div>
 						</div>
 					</div>

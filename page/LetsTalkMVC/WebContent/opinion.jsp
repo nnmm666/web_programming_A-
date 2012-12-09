@@ -37,11 +37,14 @@
 					<div class="topicContentBottomInOpinion">
 
 						<c:if test="${sessionScope.user.nickname == topic.writer }">
-							<span><a class="modified" href="#">수정</a><a class="deleted" href="#">삭제</a></span>
+							<span>
+								<a class="modified" href="#">수정</a>
+								<a class="deleted_tp" href="#" data-id="${topic.topic_id }">삭제</a>
+							</span>
 						</c:if>
-						<span><a class="likes" href="#">
+							<span><a class="likes" href="PositionServlet?likehate=likes">
 							<img src="./images/like.png"> </a>${topic.pros } </span>
-							<span><a class="hates" href="#">
+							<span><a class="hates" href="PositionServlet?likehate=hates">
 							<img src="./images/hate.png"> </a>${topic.cons } </span>
 							<span>작성자 : ${topic.writer }</span>
 							<span>작성일 : ${topic.date }</span>
@@ -91,19 +94,22 @@
 								<span class="opinion_writer">작성자 : ${opinion.writer }</span>
 							</div>
 							<div class="section">
-								<div class="section_top">
+								<div class="section_top_${opinion.position }">
 									<div class="section_left">
 										${opinion.content }
 									</div>
 									<div class="section_right">
-										<span><a class="like" href="#">
+										<span><a class="like" href="PositionServlet?likehate=like">
 										<img src="./images/like.png"></a> ${opinion.pros } </span>
-										<span><a class="hate" href="#">
+										<span><a class="hate" href="PositionServlet?likehate=hate">
 										<img src="./images/hate.png"></a> ${opinion.cons } </span>
 									</div>
 									<div class="section_bottom">
 									<c:if test="${sessionScope.user.nickname == opinion.writer }">
-										<span><a class="modified" href="#">수정</a><a class="deleted" href="#">삭제</a></span>
+										<span>
+											<a class="modified" href="#">수정</a>
+											<a class="deleted_op" href="#" data-id="${opinion.opinion_id }">삭제</a>
+										</span>
 									</c:if>
 									<a href="#" class="toggle"> Reply ↕ </a>
 									<span class="opinion-date"> 작성일 : ${opinion.date }</span>
@@ -118,7 +124,7 @@
 											<span class="reply_content">${reply.content }</span>
 											<span class="reply_date">${reply.date }</span>
 											<c:if test="${sessionScope.user.nickname == reply.writer }">
-												<span><a class="deleted" href="#" style="float:right;" >삭제</a>
+												<span><a class="deleted_rp" href="#" style="float:right;" data-id="${reply.reply_id }" >삭제</a>
 												<a class="modified" href="#" style="float:right; ">수정</a></span>
 											</c:if>
 										</div>
@@ -157,39 +163,24 @@ function fill(name) {
 }
 
 $(function(){
-	$(".likes").click(function(){
-		$.post('likehateServlet', {
-			likehate : 'likes'
-		}, function(){
-			alert("감사합니다.");
-			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
-		});
+	$(".deleted_op").click(function(){
+		if(confirm("정말로 삭제 하시겠습니까?")){
+			location = 'pageServlet?op=delete&id=' + $(this).attr('data-id');
+		}
+		return false;
 	});
-	$(".like").click(function(){
-		$.post('likehateServlet', {
-			likehate : like
-		}, function(){
-			alert("감사합니다.");
-			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
-		});
+	$(".deleted_tp").click(function(){
+		if(confirm("정말로 삭제 하시겠습니까?")){
+			location = 'topicServlet?op=delete&id=' + $(this).attr('data-id');
+		}
+		return false;
 	});
-	$(".hates").click(function(){
-		$.post('likehateServlet', {
-			likehate : hates
-		}, function(){
-			alert("감사합니다.");
-			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
-		});
+	$(".deleted_rp").click(function(){
+		if(confirm("정말로 삭제 하시겠습니까?")){
+			location = 'replyServlet?op=delete&id=' + $(this).attr('data-id');
+		}
+		return false;
 	});
-	$(".hate").click(function(){
-		$.post('likehateServlet', {
-			likehate : hate
-		}, function(){
-			alert("감사합니다.");
-			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();
-		});
-	});
-	
 	
 	$("#opinionWrite").click(function(){
 		if($("#opiniontext").val().length == 0) {

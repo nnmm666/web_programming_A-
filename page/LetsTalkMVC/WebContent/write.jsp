@@ -1,5 +1,6 @@
+<%@page import="javax.sql.DataSource"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8" import="java.sql.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -17,6 +18,26 @@
 		</div>
 		<div id="content">
 		<div id="write">
+	<%int keyword_id = (Integer.parseInt(request.getParameter("keyword_id")));
+
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
+		String dbUser = "web";
+		String dbPassword = "asdf";
+
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);
+
+			stmt=conn.prepareStatement("select keyword from keyword where id=?");
+			
+			stmt.setInt(1,keyword_id);
+			rs=stmt.executeQuery();
+			
+	%>
 		
 			<c:if test="${sessionScope.user.nickname == null }">
 				<script>
@@ -35,10 +56,18 @@
 					<div id="section">
 					<div class="control-group">
 							<!-- Text input-->
-
+							<% while(rs.next()){ %>
 							<label class="control-label" for="keyword">무엇에 대해서?</label>
-							<div class="controls" id="keyword"><%=request.getParameter("keyword_id") %>	</div>
+							<div class="controls" id="keyword"><%=rs.getString("keyword") %>
+							</div>
 						</div>
+						<%	}
+							}catch(Exception e){ e.printStackTrace();
+							}finally{
+    							if(conn!=null)conn.close(); 
+    							if(stmt!=null)stmt.close();
+    							if(rs!=null)rs.close();
+    						} %>
 
 						<div class="control-group">
 							<!-- Text input-->
@@ -58,8 +87,8 @@
 						</div>
 						
 						<div class="control-group">
-							<!-- File Upload -->
-							<div class="controls">
+						<div class="controls">
+							<!-- File Upload -->		
 								<label class="control-label">첨부하기</label>
 								<input class="input-file" id="fileInput" type="file" name="photo">
 							</div>

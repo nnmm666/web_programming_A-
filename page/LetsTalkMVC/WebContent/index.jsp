@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*" import="bean.Keyword;"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -47,10 +48,12 @@
 		<div id="middle">
 			<div id="content">
 				<div id="content_top">
-					<form method="get" action="keyword.jsp">
-						<input type="text" placeholder="  토론하고 싶은 키워드를 추가하세요!" name="add_keyword" id="add_bar">
-						<input type="submit" value="추가" id="add_button">
-					</form>
+					<c:if test="${sessionScope.user.nickname != null }">
+						<div id="add_keyword_form">
+							<input type="text"  name="add_keyword" id="add_bar" placeholder="  토론하고 싶은 키워드를 추가하세요!">
+							<input type="button" value="추가" id="add_button">
+						</div>
+					</c:if>
 				</div>
 				<div id="content_center">
 					<div id="caption">Hot Keyword</div>
@@ -73,4 +76,31 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+
+$(function(){
+	
+	$("#add_button").click(function(){
+		if($("#add_bar").val().length == 0) {
+			alert("내용을 입력하여 주세요.");
+			$("#add_bar").focus();
+			return;
+		}
+
+		$.post('keywordAddServlet', {
+			keyword : $("#add_bar").val()
+		}, function(){
+			alert("키워드가 등록되었습니다.");
+			location = 'pageServlet';
+		});
+		$("#add_bar").val("");
+	});
+	
+	$('#add_bar').keydown(function(event){
+		if(event.keyCode == 13)
+		$(this).parent().find("#add_button").click();
+	});
+
+});
+</script>
 </html>

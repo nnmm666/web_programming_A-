@@ -65,14 +65,20 @@
 .section_left{  width: 600px; height: 60px; float : left; text-align: left;}
 .section_letf a{ width:30px; float :letf; }
 .section_right{ float:right; width:80px; height: 30px;}
-.section_bottom { float: right;}
+.section_bottom { width: 100%; float: right;}
 .section_reply { width: 710px; height: 20px; background-color: #ccc; margin: 5px 0 5px 0; padding: 5px; text-align: left; }
 .reply_writer { width: 70px; margin-left: 10px; float: left; }
-.reply_content { width: 540px; margin-right: 10px; float: left; }
-.reply_date {float:right; }
+.reply_content { width: 430px; margin-right: 10px; float: left; }
+.reply_date { float:right; }
 .section_reply_1 { width: 720px; height: 30px; background-color: #ccc; margin: 5px 0 5px 0; }
 .reply_more{ width: 550px; height: 20px; margin: 3px; float: left;}
 .replyInputName {width:60px; float: left; padding: 5px;}
 .replyInputButton { width: 55px; height: 25px; float: right; margin-top: 2px; margin-right: 20px; }
+.topicContentBottomInOpinion { width: 450px; } 
 
+.opinion-date { float: right;}
+.modified { float: left; margin-right: 10px;  }
+.deleted { float: left; margin-right: 10px;  }
 
+.modified:link, .deleted:link { color: #000; text-decoration: none; }
+.modified:hover, .deleted:hover  { text-decoration: underline;  }

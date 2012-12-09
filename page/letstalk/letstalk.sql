@@ -3,7 +3,7 @@ CREATE DATABASE web2012 DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 ﻿set character_set_results=euckr;
 set character_set_client=euckr;
 
-GRANT ALL ON web2012.* TO 'web@localhost' IDENTIFIED BY 'asdf';
+GRANT ALL ON web2012.* TO 'web'@'localhost' IDENTIFIED BY 'asdf';
 
 use web2012;
 
@@ -62,13 +62,6 @@ CREATE TABLE users (
 	password VARCHAR(255) NOT NULL, 
 	photo VARCHAR(255)
 );
-
-CREATE TABLE friend (
-	id INT NOT NULL,
-	friend_id INT NOT NULL,
-	PRIMARY KEY(id, friend_id)
-);
-
 
 INSERT INTO keyword (keyword, weight, type) VALUES ("안철수", 500, "reg");
 INSERT INTO keyword (keyword, weight, type) VALUES ("이명박", 500, "reg");

@@ -39,7 +39,7 @@
 								<a href="pageServlet?op=opinion&topic_id=${topic.topic_id }">
 									<div class="sliderkit-block">
 										<div id="topicPhoto">
-											<img src="./images/example.png" width='66px' height='60px'>
+											<img src="./upload/topic/${topic.photo }" width='66px' height='60px'>
 										</div>
 										<div id="topicContent">${topic.content }</div>
 										<div class="topicContentBottom">
@@ -60,7 +60,7 @@
 											<li class="disable"><a href="#">&laquo;</a></li>
 										</c:when>
 										<c:otherwise>
-											<li><a href="pageServlet?op=topic&keyword_id=${id }&page=${topics.page - 1 }">&laquo;</a></li>
+											<li><a href="pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${topics.page - 1 }">&laquo;</a></li>
 										</c:otherwise>
 									</c:choose>
 
@@ -70,7 +70,7 @@
 												<li class="active"><a	href='pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${i }'>${i }</a></li>
 											</c:when>
 											<c:otherwise>
-												<li><a href='pageServlet?op=topic&keyword_id=${keyword.id }&page=${i }'>${i }</a></li>
+												<li><a href='pageServlet?op=topic&keyword_id=${keyword.keyword_id }&page=${i }'>${i }</a></li>
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -85,7 +85,7 @@
 										</c:otherwise>
 									</c:choose>
 								</ul>
-								<a href="pageServlet?op=write&keyword_id=${keyword.keyword_id }" id=writeButton> 주제 추가하기 </a>
+								<a href="write.jsp?keyword_id=${keyword.keyword_id }" id=writeButton> 주제 추가하기 </a>
 							</div>
 						</div>
 

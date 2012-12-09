@@ -33,6 +33,21 @@ public class Opinion implements Serializable {
 		this.replies = replies;
 	}
 
+	public Opinion(int topic_id, String content, String writer, String position) {
+		super();
+		this.topic_id = topic_id;
+		this.content = content;
+		this.writer = writer;
+		this.position = position;
+	}
+
+	
+	public Opinion(String position) {
+		super();
+		this.position = position;
+	}
+
+
 	public int getOpinion_id() {
 		return opinion_id;
 	}

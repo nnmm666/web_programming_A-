@@ -42,7 +42,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 *---------------------------------*/
 /* Middle */
 #content_top { width: 960px; height: 80px; margin: 0; padding: 0; }
-#content_top form { width: 359px; height: 20px; margin: 0 auto; padding: 30px 0; }
+#content_top #add_keyword_form { width: 359px; height: 20px; margin: 0 auto; padding: 30px 0; }
 #content_top #add_bar { width: 300px; height: 20px; }
 #content_top #add_button { width: 50px; height: 25px; }
 #content_center { width: 960px; height: 440px; margin: 0; padding: 0; }
@@ -67,7 +67,7 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 .topicContentBottomInOpinion { float: right; width: 400px; text-align: right; margin-top: 20px; margin-right: 10px; }
 .topicContentBottomInOpinion a{text-decoration:none;}
 .topicContentBottom { text-align: right; }
-.topicContentBottom span, .topicContentBottomInOpinion span { margin-left: 20px; text-decoration: none; }
+.topicContentBottom span, .topicContentBottomInOpinion span { margin-left: 10px; text-decoration: none; }
 .pagination-basic .sliderkit-block{ width:640px; height:60px; margin:5px; padding:15px; border:1px solid #a6a6a6; text-align: left;}
 .pagination-basic .sliderkit-block:hover { background-color: #ccc;}
 .sliderkit-panel { height: 300px; }

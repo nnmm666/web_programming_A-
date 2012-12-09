@@ -105,4 +105,29 @@ public class TopicDAO {
 		
 		return topic;
 	}
+	public static boolean insert(int keyword_id, String writer, String content, String photo) throws NamingException, SQLException {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		int result;
+		
+		DataSource ds = getDataSource();
+		
+		try {
+			conn = ds.getConnection();
+			stmt = conn.prepareStatement("INSERT INTO topic VALUES (null, ?, ?, ?, null, null, null, ?)");
+			stmt.setInt(1, keyword_id);
+			stmt.setString(2, content);
+			stmt.setString(3, writer);
+			stmt.setString(4, photo);
+			
+			result = stmt.executeUpdate();	
+				
+		} finally {
+			// 무슨 일이 있어도 리소스를 제대로 종료
+			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+			if (conn != null) try{conn.close();} catch(SQLException e) {}
+		}
+		
+		return (result == 1);
+	}
 }

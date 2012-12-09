@@ -20,6 +20,7 @@ import bean.Keyword;
 import bean.Opinion;
 import bean.PageResult;
 import bean.Topic;
+import bean.User;
 
 /**
  * Servlet implementation class pageServlet
@@ -36,7 +37,7 @@ public class pageServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	private int getIntFromParameter(String str, int defaultValue) {
+	public static int getIntFromParameter(String str, int defaultValue) {
 		int id;
 		
 		try {
@@ -71,16 +72,16 @@ public class pageServlet extends HttpServlet {
 				
 			} else if(op.equals("opinion")) {
 				int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+				String align = request.getParameter("align");
 				Topic topic = TopicDAO.findById(topic_id);
 				Keyword keyword = KeywordDAO.findById(topic.getKeyword_id());
-				List<Opinion> opinions = OpinionDAO.getOpinions(topic_id);
+				List<Opinion> opinions = OpinionDAO.getOpinions(topic_id, align);
 				
 				request.setAttribute("topic", topic);
 				request.setAttribute("keyword", keyword);
 				request.setAttribute("opinions", opinions);
 				
 				actionUrl = "opinion.jsp";
-				
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -98,6 +99,26 @@ public class pageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession(true);
+			
+		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
+		
+		User user = (User) session.getAttribute("user");
+		String writer = user.getNickname();
+		String content = request.getParameter("content");
+		String position = request.getParameter("position");
+	
+		try{
+			if(OpinionDAO.sendOpinion(new Opinion(topic_id, content, writer, position))){
+				response.getWriter().write("ok");
+			}else {
+				response.getWriter().write("메세지 전송에 실패했습니다..");
+			}
+		}catch(Exception e){
+			response.getWriter().write(e.getMessage());
+
+		}
 	}
 
 }

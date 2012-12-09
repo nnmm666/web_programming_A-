@@ -17,7 +17,7 @@
 		String dbPassword = "asdf";
 		
 		request.setCharacterEncoding("utf-8");
-		String uploadPath = getServletContext().getRealPath("./upload/user");
+		String uploadPath = getServletContext().getRealPath("upload/user");
 		
 		String email = "";
 		String name = "";

@@ -37,6 +37,11 @@ public class Topic implements Serializable {
 		this.photo = photo;
 	}
 
+	public Topic(int keyword_id) {
+		super();
+		this.keyword_id = keyword_id;
+	}
+
 	public int getTopic_id() {
 		return topic_id;
 	}

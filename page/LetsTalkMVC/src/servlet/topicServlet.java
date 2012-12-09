@@ -122,8 +122,9 @@ public class topicServlet extends HttpServlet {
 			}
 			if(op.equals("find")){
 				String keyword = multi.getParameter("searchbar");
+				Topic keyword_id = null;
 				
-				int keyword_id = TopicDAO.findBykeyword(keyword);
+				keyword_id = TopicDAO.findBykeyword(keyword);
 				actionUrl = "pageServlet?op=topic&keyword_id=" + keyword_id;
 				response.sendRedirect(actionUrl);
 			}

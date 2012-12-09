@@ -101,7 +101,7 @@
 									<div class="section_right">
 										<span><a class="like" href="PositionServlet?likehate=like&opinion_id=${opinion.opinion_id}&topic_id=${topic.topic_id}">
 										<img src="./images/like.png"></a> ${opinion.pros } </span>
-										<span><a class="hate" href="PositionServlet?likehate=hate&&opinion_id=${opinion.opinion_id}topic_id=${topic.topic_id}">
+										<span><a class="hate" href="PositionServlet?likehate=hate&opinion_id=${opinion.opinion_id}&topic_id=${topic.topic_id}">
 										<img src="./images/hate.png"></a> ${opinion.cons } </span>
 									</div>
 									<div class="section_bottom">

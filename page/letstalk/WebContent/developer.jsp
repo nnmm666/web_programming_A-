@@ -23,19 +23,19 @@
 							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz"></div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
-									<span class="factor">Name</span>
+									<span class="factor">Name : 이창희</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">H.P</span>
+									<span class="factor">H.P : 010-3320-6713</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">email</span>
+									<span class="factor">email : ctrl0703@naver</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
-									<span class="factor">Job</span>
+									<span class="factor">Job : 학생</span>
 									<span></span>
 								</div>
 								<div class="profile_factor">
@@ -73,7 +73,7 @@
 
 					<div id="right">
 						<div class="profiles_list">
-							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz">사진</div>
+							<div class="profile_factor_left"><img src="./images/image1.jpg" alt="zz"> </div>
 							<div class="profile_factor_right">
 								<div class="profile_factor">
 									<span class="factor">Name</span>

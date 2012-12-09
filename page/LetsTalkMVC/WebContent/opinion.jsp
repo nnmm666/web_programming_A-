@@ -19,11 +19,12 @@
 		<div id="middle">
 			<div id="content">
 				<div id="search">
-					<div class="form-search">
+					<form class="form-search" action="topicServlet">
+						<input type="hidden" id="op" name="op" value="find" >
 						<input type="text" id="searchbar" name="searchbar" placeholder="다른 키워드 검색">
-						<button type="button" class="searchButton">Search</button>
+						<button type="submit" class="searchButton">Search</button>
 						<div id="suggest_box" class="suggest_box"></div> 		
-					</div>
+					</form>
 				</div>
 				<div id="topicdiv">${keyword.keyword }</div>
 
@@ -160,21 +161,9 @@ function fill(name) {
 	$('#searchbar').val(name);
 	$('#suggest_box').fadeOut();
 }
-		
-$(".searchButton").click(function(){
-	if($("#searchbar").val().length == 0) {
-		alert("키워드를 입력하여 주세요.");
-		$("#searchbar").focus();
-		return;
-	}
-	$.post('topicServlet?op=find', {
-		searchbar : $("#searchbar").val()
-	}, function(){});
-	$("#opiniontext").val("");
-	
-});
 
 $(function(){
+	
 	$(".deleted_op").click(function(){
 		if(confirm("정말로 삭제 하시겠습니까?")){
 			location = 'pageServlet?op=delete&id=' + $(this).attr('data-id');

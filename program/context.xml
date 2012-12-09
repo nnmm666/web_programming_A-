@@ -50,10 +50,10 @@
               jmxEnabled="true"
               jdbcInterceptors=
 "org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"
-              username="root" 
-              password="32Armyband" 
+              username="web" 
+              password="asdf" 
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/web2012"
+              url="jdbc:mysql://localhost:3306/web2012?characterEncoding=utf8"
               />
     <!-- 
      <Resource name="jdbc/WebDB" auth="Container" type="javax.sql.DataSource"

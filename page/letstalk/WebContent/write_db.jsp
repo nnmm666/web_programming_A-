@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.io.*" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest"%>
@@ -20,58 +19,51 @@
 	String uploadPath = context.getRealPath("upload/topic");
 	MultipartRequest multi = new MultipartRequest(request,uploadPath,size,"UTF-8",new DefaultFileRenamePolicy());  
 
-
 	keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
 	photo=multi.getParameter("photo");
 	content = multi.getParameter("content");
 	writer=(String)session.getAttribute("userName");
 
-
 	String dbUrl = "jdbc:mysql://localhost:3306/web2012?useUnicode=true& useUnicode=true&characterEncoding=euc_kr";
 	String dbUser = "web";
 	String dbPassword = "asdf";
 
+	keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
+	photo=multi.getParameter("photo");
+	content = multi.getParameter("content");
+	writer=(String)session.getAttribute("userName");
 	
+	Enumeration files = multi.getFileNames();
+	String file = (String)files.nextElement();
+	fileName = multi.getFilesystemName(file);
 	
-		keyword_id = Integer.parseInt(multi.getParameter("keyword_id"));
-		photo=multi.getParameter("photo");
-		content = multi.getParameter("content");
-		writer=(String)session.getAttribute("userName");
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	List<String> errorMsg = new ArrayList<String>();
+	int result = 0;
+	if (content == null || content.trim().length() == 0) {
+		errorMsg.add("내용을 반드시 입력해주세요.");
+	}
+	if (errorMsg.size() == 0) {
+	try{
 	
-		Enumeration files = multi.getFileNames();
-		String file = (String)files.nextElement();
-		fileName = multi.getFilesystemName(file);
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1,keyword_id);
+		pstmt.setString(2,content);
+		pstmt.setString(3,writer);
+		pstmt.setString(4,fileName);
 		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		List<String> errorMsg = new ArrayList<String>();
-		int result = 0;
-	
-		if (content == null || content.trim().length() == 0) {
-			errorMsg.add("내용을 반드시 입력해주세요.");
-		}
-
-		if (errorMsg.size() == 0) {
-		try{
-		
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(dbUrl,dbUser,dbPassword);
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,keyword_id);
-			pstmt.setString(2,content);
-			pstmt.setString(3,writer);
-			pstmt.setString(4,fileName);
-			
-			result = pstmt.executeUpdate();
-	  }catch(Exception e){
-		  e.printStackTrace();
-	  }finally{
-	    	if(conn!=null)conn.close(); 
-	    	if(pstmt!=null)pstmt.close();
-	    	}
-		}
+		result = pstmt.executeUpdate();
+  }catch(Exception e){
+	  e.printStackTrace();
+  }finally{
+    	if(conn!=null)conn.close(); 
+    	if(pstmt!=null)pstmt.close();
+    	}
+	}
   %>
 <!DOCTYPE html>
 <html lang="kr">

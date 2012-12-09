@@ -154,3 +154,16 @@ h2 {font-size:12px; line-height:24px; font-weight:bold;}
 #write textarea {margin: 0px;width: 476px;height: 146px;}
 #write legend{display: block;width: 100%;font-size: 21px;line-height: 40px;border: 0;border-bottom: 1px solid #E5E5E5;}
 
+/*--------------------------------
+* developer
+*-----------------------------------/
+.profiles{width : 890px; height:500px; padding-left:110px;}
+.profiles .profiles_list{width:400px; height:150px; border:1px solid #eee; background: #eee; margin-bottom:70px; padding:5px;}
+.profiles .profiles_list .profile_factor_left{width:130px; float:left; padding:5px;}
+.profiles .profiles_list .profile_factor_right{margin-left:15px; text-align:left; padding:10px;}
+.profiles .profiles_list .profile_factor_right .profile_factor .factor{line-height: 25px; font-weight:bold;color:#555;}
+.profiles .profiles_list .profile_factor_right .profile_factor span{}
+#profil_left{float:left; margin:25px 0 3px 10px;}
+#profil_right{float:right; margin:25px 3px 0 10px;}
+
+.profile_factor_left {margin-right:50px;}

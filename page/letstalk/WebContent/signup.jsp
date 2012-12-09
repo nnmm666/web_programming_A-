@@ -154,7 +154,6 @@
 	</div>
 	</div>
 </body>
-</html>
 <script>
 	$("a[data-action = 'delete']").click(function(){
 		if(confirm("정말로 삭제 하시겠습니까?")){
@@ -163,3 +162,4 @@
 		return false;
 	});
 </script>
+</html>

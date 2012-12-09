@@ -81,6 +81,8 @@
 								<input type="hidden" name="op" value="register">
 								<input id="cancel" type="button" class="btn" value="취소하기">
 								<input id="btn" type="button" class="btn btn-primary" value="가입">
+								<a href="#" class="btn btn-primary" data-action="delete"
+									data-id="${id }">탈퇴 </a>
 							</div>
 						</form>
 						
@@ -115,6 +117,13 @@
 	});
 	$("#cancel").click(function() {
 		history.back();
+	});
+
+	$("a[data-action = 'delete']").click(function(){
+		if(confirm("정말로 삭제 하시겠습니까?")){
+			location = 'delete.jsp?id=' + $(this).attr('data-id');
+			}
+		return false;
 	});
 </script>
 </html>

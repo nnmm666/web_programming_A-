@@ -117,10 +117,16 @@ public class topicServlet extends HttpServlet {
 				result = TopicDAO.insert(keyword_id, nickname, content, photo);
 
 				actionUrl = "pageServlet?op=topic&keyword_id=" + keyword_id;
-
-
 				response.sendRedirect(actionUrl);
 
+			}
+			if(op.equals("find")){
+				String keyword = multi.getParameter("searchbar");
+				Topic keyword_id = null;
+				
+				keyword_id = TopicDAO.findBykeyword(keyword);
+				actionUrl = "pageServlet?op=topic&keyword_id=" + keyword_id;
+				response.sendRedirect(actionUrl);
 			}
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

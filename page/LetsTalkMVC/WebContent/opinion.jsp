@@ -19,11 +19,11 @@
 		<div id="middle">
 			<div id="content">
 				<div id="search">
-					<form class="form-search" action="topicServlet">
-						<input type="text" id="searchbar" placeholder="다른 키워드 검색">
-						<button type="submit" class="searchButton">Search</button>
+					<div class="form-search">
+						<input type="text" id="searchbar" name="searchbar" placeholder="다른 키워드 검색">
+						<button type="button" class="searchButton">Search</button>
 						<div id="suggest_box" class="suggest_box"></div> 		
-					</form>
+					</div>
 				</div>
 				<div id="topicdiv">${keyword.keyword }</div>
 
@@ -160,6 +160,19 @@ function fill(name) {
 	$('#searchbar').val(name);
 	$('#suggest_box').fadeOut();
 }
+		
+$(".searchButton").click(function(){
+	if($("#searchbar").val().length == 0) {
+		alert("키워드를 입력하여 주세요.");
+		$("#searchbar").focus();
+		return;
+	}
+	$.post('topicServlet?op=find', {
+		searchbar : $("#searchbar").val()
+	}, function(){});
+	$("#opiniontext").val("");
+	
+});
 
 $(function(){
 	$(".deleted_op").click(function(){

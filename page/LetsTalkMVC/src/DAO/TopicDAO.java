@@ -154,4 +154,31 @@ public class TopicDAO {
 		
 		return (result == 1);
 	}
+	public static Topic findBykeyword(String keyword) throws NamingException, SQLException {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs;
+		
+		DataSource ds = getDataSource();
+		Topic topic = null;
+		
+		try {
+			conn = ds.getConnection();
+			
+			stmt = conn.prepareStatement("select id from keyword WHERE keyword =?");
+			stmt.setString(1,keyword);
+			
+			rs = stmt.executeQuery();	
+			if (rs.next()) { 
+				topic = new Topic(rs.getInt("id"));
+			}
+				
+		} finally {
+			// 무슨 일이 있어도 리소스를 제대로 종료
+			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+			if (conn != null) try{conn.close();} catch(SQLException e) {}
+		}
+		
+		return topic;
+	}
 }

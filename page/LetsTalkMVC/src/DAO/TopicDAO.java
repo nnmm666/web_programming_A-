@@ -114,7 +114,7 @@ public class TopicDAO {
 		
 		try {
 			conn = ds.getConnection();
-			stmt = conn.prepareStatement("INSERT INTO topic VALUES (null, ?, ?, ?, null, null, null, ?)");
+			stmt = conn.prepareStatement("INSERT INTO topic(keyword_id, content, writer, photo) VALUES (?, ?, ?, ?)");
 			stmt.setInt(1, keyword_id);
 			stmt.setString(2, content);
 			stmt.setString(3, writer);

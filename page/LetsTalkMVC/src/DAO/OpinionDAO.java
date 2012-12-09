@@ -141,7 +141,6 @@ public class OpinionDAO {
 		ResultSet rs = null;
 		
 		DataSource ds = getDataSource();
-		Opinion opinion = new Opinion();
 		
 		try {
 			conn = ds.getConnection();

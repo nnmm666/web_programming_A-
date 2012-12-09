@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.naming.NamingException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +30,7 @@ public class PositionServlet extends HttpServlet {
 
 	public static int getIntFromParameter(String str, int defaultValue) {
 		int id;
-		
+
 		try {
 			id = Integer.parseInt(str);
 		} catch (Exception e) {
@@ -39,7 +40,8 @@ public class PositionServlet extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		String actionUrl = "";
+
 		String likehate = request.getParameter("likehate");
 		int topic_id = getIntFromParameter(request.getParameter("topic_id"), 0);
 		int opinion_id = getIntFromParameter(request.getParameter("opinion_id"), 0);
@@ -47,12 +49,16 @@ public class PositionServlet extends HttpServlet {
 		try {
 			if(likehate.equals("likes")) {
 				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}else if(likehate.equals("like")) {
 				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}else if(likehate.equals("hates")) {
 				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}else if(likehate.equals("hate")) {
 				OpinionDAO.sendlikehate(likehate,topic_id, opinion_id);
+				actionUrl = "pageServlet?op=opinion&topic_id=" + topic_id;
 			}
 		}catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -61,11 +67,14 @@ public class PositionServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);
+		dispatcher.forward(request, response);
 	}
 
+
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*
+		/*
 		request.setCharacterEncoding("UTF-8");
 
 		String position = request.getParameter("likehate");
@@ -80,8 +89,8 @@ public class PositionServlet extends HttpServlet {
 			response.getWriter().write(e.getMessage());
 
 		}
-*/
+		 */
 	}
-	
+
 
 }

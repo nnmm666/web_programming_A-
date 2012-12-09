@@ -33,7 +33,7 @@
 						<img src="./upload/topic/${topic.photo }" width='120px' height='100px'>
 					</div>
 					<div id="topicContentInOpinion">
-					<pre>${topic.content }</pre>
+					${topic.content }
 					</div>
 					<div class="topicContentBottomInOpinion">
 
@@ -79,6 +79,7 @@
 					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=hate">반대순</a></li>
 					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=likeOnly">찬성만</a></li>
 					        <li><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=hateOnly">반대만</a></li>
+
 					        <li style="border-bottom: 1px solid #ccc;"><a href="pageServlet?op=opinion&topic_id=${topic.topic_id}&align=default">최신순</a></li>
 					    </ul>
 				    </li>
@@ -96,7 +97,7 @@
 							<div class="section">
 								<div class="section_top_${opinion.position }">
 									<div class="section_left">
-										<pre>${opinion.content }</pre>
+										${opinion.content }
 									</div>
 									<div class="section_right">
 										<span><a class="like" href="PositionServlet?likehate=like&opinion_id=${opinion.opinion_id}&topic_id=${topic.topic_id}">

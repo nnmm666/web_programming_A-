@@ -99,7 +99,6 @@ public class pageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		boolean ret = false;
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession(true);
 			

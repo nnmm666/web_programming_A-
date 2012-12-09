@@ -159,7 +159,7 @@ function fill(name) {
 $(function(){
 	$(".likes").click(function(){
 		$.post('likehateServlet', {
-			likehate : likes
+			likehate : 'likes'
 		}, function(){
 			alert("감사합니다.");
 			location = 'pageServlet?op=opinion&topic_id=' + $("#topic_id").val();

@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +26,6 @@ public class replyServlet extends HttpServlet {
 	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		boolean ret = false;
 
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession(true);

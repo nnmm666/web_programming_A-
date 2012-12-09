@@ -79,6 +79,7 @@
 <script type="text/javascript">
 
 $(function(){
+	
 	$("#add_button").click(function(){
 		if($("#add_bar").val().length == 0) {
 			alert("내용을 입력하여 주세요.");
@@ -99,6 +100,7 @@ $(function(){
 		if(event.keyCode == 13)
 		$(this).parent().find("#add_button").click();
 	});
+
 });
 </script>
 </html>

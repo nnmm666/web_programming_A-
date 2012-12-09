@@ -6,11 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import DAO.OpinionDAO;
 import bean.Opinion;
-import bean.User;
 
 @WebServlet("/likehateServlet")
 public class likehateServlet extends HttpServlet {

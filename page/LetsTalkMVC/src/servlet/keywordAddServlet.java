@@ -6,13 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import DAO.KeywordDAO;
-import DAO.OpinionDAO;
 import bean.Keyword;
-import bean.Opinion;
-import bean.User;
 
 @WebServlet("/keywordAddServlet")
 public class keywordAddServlet extends HttpServlet {
@@ -26,7 +22,6 @@ public class keywordAddServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		boolean ret = false;
 		request.setCharacterEncoding("UTF-8");
 
 		String keyword = request.getParameter("keyword");
